@@ -1,0 +1,5382 @@
+{
+  "component": "EaseChatDemo",
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-13T00:24:13.039Z",
+  "platform": "ios",
+  "files": [
+    {
+      "path": "ios/EaseChatDemo/AppDelegate.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "AppDelegate"
+      ],
+      "lines": 540
+    },
+    {
+      "path": "ios/EaseChatDemo/CustomConstants/PublicDefines.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 14
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineCallInviteUsersController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MineCallInviteUsersController"
+      ],
+      "lines": 148
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MineContactDetailViewController"
+      ],
+      "lines": 426
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactRemarkEditViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MineContactRemarkEditViewController"
+      ],
+      "lines": 135
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MineContactsViewController"
+      ],
+      "lines": 181
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MineConversationsController"
+      ],
+      "lines": 363
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MineGroupDetailViewController"
+      ],
+      "lines": 226
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MineMessageListViewController"
+      ],
+      "lines": 458
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineChatThreadViewModel.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MineChatThreadViewModel"
+      ],
+      "lines": 27
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineConversationInfo.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MineConversationInfo"
+      ],
+      "lines": 90
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineMessageEntity.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MineMessageEntity"
+      ],
+      "lines": 261
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineMessageListViewModel.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MineMessageListViewModel"
+      ],
+      "lines": 28
+    },
+    {
+      "path": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Views/FraudAlertView.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "FraudAlertView"
+      ],
+      "lines": 83
+    },
+    {
+      "path": "ios/EaseChatDemo/LoginViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "LoginViewController",
+        "EaseChatProfile",
+        "CodingKeys"
+      ],
+      "lines": 683
+    },
+    {
+      "path": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MainViewController"
+      ],
+      "lines": 348
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Cells/AboutEasemobCell.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "AboutEasemobCell"
+      ],
+      "lines": 51
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Cells/ColorHueSettingCell.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "ColorHueSettingCell"
+      ],
+      "lines": 80
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Cells/FeatureSwitchCell.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "FeatureSwitchCell"
+      ],
+      "lines": 65
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Cells/LanguageCell.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "LanguageCell"
+      ],
+      "lines": 64
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Cells/MeMenuCell.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MeMenuCell"
+      ],
+      "lines": 91
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Cells/PersonalInfoCell.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "PersonalInfoCell"
+      ],
+      "lines": 73
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/AboutEasemobController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "AboutEasemobController"
+      ],
+      "lines": 88
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "CallBackgroundSettingController"
+      ],
+      "lines": 392
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/ColorSettingViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "ColorSettingViewController"
+      ],
+      "lines": 133
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/CommonWebViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "CommonWebViewController"
+      ],
+      "lines": 205
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/FeatureSwitchViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "FeatureSwitchViewController"
+      ],
+      "lines": 127
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "GeneralViewController"
+      ],
+      "lines": 199
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/LanguageSettingViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "LanguageSettingViewController"
+      ],
+      "lines": 93
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "MeViewController"
+      ],
+      "lines": 427
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/NotificationSettingViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "NotificationSettingViewController"
+      ],
+      "lines": 104
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "PersonalInfoViewController"
+      ],
+      "lines": 323
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/PrivacyPolicyViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "PrivacyPolicyViewController"
+      ],
+      "lines": 39
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/PrivacySettingViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "PrivacySettingViewController"
+      ],
+      "lines": 104
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/ShowMenuStyleViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "ShowMenuStyle",
+        "ShowMenuStyleViewController"
+      ],
+      "lines": 161
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/ThemesSettingViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "ThemesSettingViewController"
+      ],
+      "lines": 92
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Controllers/TranslateLanguageSettingController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "TranslateLanguageSettingController"
+      ],
+      "lines": 88
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Views/AboutEasemobHeader.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "AboutEasemobHeader"
+      ],
+      "lines": 60
+    },
+    {
+      "path": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "GradientSlider"
+      ],
+      "lines": 432
+    },
+    {
+      "path": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "ImagePreviewCell"
+      ],
+      "lines": 266
+    },
+    {
+      "path": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "ImagePreviewController"
+      ],
+      "lines": 116
+    },
+    {
+      "path": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewTransitionDelegate.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "ImagePreviewTransitionDelegate"
+      ],
+      "lines": 107
+    },
+    {
+      "path": "ios/EaseChatDemo/PhotoBrowser/PreviewImage.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "PreviewImage",
+        "ImageBrowserProtocol"
+      ],
+      "lines": 43
+    },
+    {
+      "path": "ios/EaseChatDemo/SceneDelegate.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "SceneDelegate"
+      ],
+      "lines": 168
+    },
+    {
+      "path": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "ServerConfigViewController"
+      ],
+      "lines": 365
+    },
+    {
+      "path": "ios/EaseChatDemo/Utils/DemoLanguage.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "DemoLanguage"
+      ],
+      "lines": 40
+    },
+    {
+      "path": "ios/EaseChatDemo/Utils/EaseMobHUD.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "EaseMobHUD"
+      ],
+      "lines": 94
+    },
+    {
+      "path": "ios/EaseChatDemo/Utils/EasemobBusinessApi.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "EasemobBusinessApi"
+      ],
+      "lines": 23
+    },
+    {
+      "path": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "EasemobError",
+        "EasemobBusinessRequest"
+      ],
+      "lines": 381
+    },
+    {
+      "path": "ios/EaseChatDemo/Utils/EasemobRequest.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "EasemobRequestHTTPMethod",
+        "EasemobRequest"
+      ],
+      "lines": 207
+    },
+    {
+      "path": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "GCDTimer",
+        "GCDTimerMaker",
+        "TimerMaker",
+        "TimerState"
+      ],
+      "lines": 108
+    },
+    {
+      "path": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "PresenceDidChangedListener",
+        "PresenceManager",
+        "State"
+      ],
+      "lines": 210
+    },
+    {
+      "path": "ios/EaseChatDemo/Utils/UIButton+Throttle.swift",
+      "platform": "ios",
+      "component": "EaseChatDemo",
+      "classes": [
+        "AssociatedKeys"
+      ],
+      "lines": 48
+    }
+  ],
+  "symbols": [
+    {
+      "name": "AppDelegate",
+      "type": "class",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 19,
+      "signature": "final class AppDelegate: UIResponder, UIApplicationDelegate {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "application",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 43,
+      "signature": "func application(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupEaseChatUIKit",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 54,
+      "signature": "private func setupEaseChatUIKit() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupEaseChatUIKitConfig",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 118,
+      "signature": "private func setupEaseChatUIKitConfig() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupCallKit",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 176,
+      "signature": "private func setupCallKit() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "application",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 196,
+      "signature": "func application(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "application",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 207,
+      "signature": "func application(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "registerRemoteNotification",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 213,
+      "signature": "private func registerRemoteNotification() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "application",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 235,
+      "signature": "func application(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "application",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 249,
+      "signature": "func application(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "application",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 261,
+      "signature": "func application(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "emGetNotificationMessage",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 271,
+      "signature": "func emGetNotificationMessage(_ notification: UNNotification, state: EMNotificationState) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "logoutUser",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 297,
+      "signature": "private func logoutUser() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "onUserTokenDidExpired",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 308,
+      "signature": "func onUserTokenDidExpired() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "onUserLoginOtherDevice",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 313,
+      "signature": "func onUserLoginOtherDevice(device: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "onUserTokenWillExpired",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 319,
+      "signature": "func onUserTokenWillExpired() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "onSocketConnectionStateChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 324,
+      "signature": "func onSocketConnectionStateChanged(state: EaseChatUIKit.ConnectionState) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "userAccountDidRemoved",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 329,
+      "signature": "func userAccountDidRemoved() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "userDidForbidden",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 335,
+      "signature": "func userDidForbidden() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "userAccountDidForcedToLogout",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 341,
+      "signature": "func userAccountDidForcedToLogout(error: EaseChatUIKit.ChatError?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "onUserAutoLoginCompletion",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 347,
+      "signature": "func onUserAutoLoginCompletion(error: EaseChatUIKit.ChatError?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "didOccurError",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 387,
+      "signature": "func didOccurError(error: CallError) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "didUpdateCallEndReason",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 435,
+      "signature": "func didUpdateCallEndReason(reason: CallEndReason, info: CallInfo) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "remoteUserDidJoined",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 441,
+      "signature": "func remoteUserDidJoined(userId: String, uid: UInt, channelName: String, type: CallType) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "remoteUserDidLeft",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 445,
+      "signature": "func remoteUserDidLeft(userId: String, uid: UInt, channelName: String, type: CallType) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "onReceivedCall",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 449,
+      "signature": "func onReceivedCall(callType: CallType, userId: String, extensionInfo: [String : Any]?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "onRtcEngineCreated",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 500,
+      "signature": "func onRtcEngineCreated(engine: AgoraRtcEngineKit) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "dismissPickerControllers",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 510,
+      "signature": "func dismissPickerControllers() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "getTopViewController",
+      "type": "method",
+      "file": "ios/EaseChatDemo/AppDelegate.swift",
+      "line": 522,
+      "signature": "func getTopViewController() -> UIViewController? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MineCallInviteUsersController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineCallInviteUsersController.swift",
+      "line": 11,
+      "signature": "final class MineCallInviteUsersController: GroupParticipantsRemoveController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "createNavigation",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineCallInviteUsersController.swift",
+      "line": 35,
+      "signature": "override func createNavigation() -> ChatNavigationBar {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineCallInviteUsersController.swift",
+      "line": 39,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fetchParticipants",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineCallInviteUsersController.swift",
+      "line": 49,
+      "signature": "private func fetchParticipants() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "didSelectRowAt",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineCallInviteUsersController.swift",
+      "line": 113,
+      "signature": "override func didSelectRowAt(indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "rightAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineCallInviteUsersController.swift",
+      "line": 128,
+      "signature": "override func rightAction() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "prepare",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineCallInviteUsersController.swift",
+      "line": 137,
+      "signature": "override func prepare(for segue: UIStoryboardSegue, sender: Any?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineCallInviteUsersController.swift",
+      "line": 143,
+      "signature": "override func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MineContactDetailViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 14,
+      "signature": "final class MineContactDetailViewController: ContactInfoViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "createHeader",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 16,
+      "signature": "override func createHeader() -> DetailInfoHeader {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "dataSource",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 20,
+      "signature": "override func dataSource() -> [DetailInfo] {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 28,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setup",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 42,
+      "signature": "override func setup() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "rightActions",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 50,
+      "signature": "override func rightActions(indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "processItemAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 62,
+      "signature": "private func processItemAction(item: EaseChatUIKit.ActionSheetItemProtocol) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "deleteUser",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 71,
+      "signature": "private func deleteUser() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "reportUser",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 82,
+      "signature": "private func reportUser() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fetchUserStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 90,
+      "signature": "@objc func fetchUserStatus() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewWillDisappear",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 113,
+      "signature": "override func viewWillDisappear(_ animated: Bool) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "requestRemark",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 118,
+      "signature": "private func requestRemark() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "updateHeader",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 130,
+      "signature": "private func updateHeader() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "requestInfo",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 144,
+      "signature": "private func requestInfo() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "headerActions",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 191,
+      "signature": "override func headerActions() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "processHeaderActionEvents",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 205,
+      "signature": "override func processHeaderActionEvents(item: any ContactListHeaderItemProtocol) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "startSingleCall",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 215,
+      "signature": "private func startSingleCall(callType: EaseCallUIKit.CallType) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "checkPermissionsAndCall",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 229,
+      "signature": "private func checkPermissionsAndCall(callType: EaseCallUIKit.CallType, completion: @escaping (Bool) -> Void) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "checkMicrophonePermission",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 269,
+      "signature": "private func checkMicrophonePermission(completion: @escaping (Bool) -> Void) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "checkCameraPermission",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 285,
+      "signature": "private func checkCameraPermission(completion: @escaping (Bool) -> Void) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showPermissionAlert",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 301,
+      "signature": "private func showPermissionAlert(message: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "didSelectRow",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 315,
+      "signature": "override func didSelectRow(indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showClearChatHistoryAlert",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 329,
+      "signature": "private func showClearChatHistoryAlert() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "editRemark",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 338,
+      "signature": "private func editRemark() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "updateRemark",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 359,
+      "signature": "private func updateRemark(remark: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "blockUserRefresh",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactDetailViewController.swift",
+      "line": 381,
+      "signature": "override func blockUserRefresh(blocked: Bool) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MineContactRemarkEditViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactRemarkEditViewController.swift",
+      "line": 11,
+      "signature": "final class MineContactRemarkEditViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactRemarkEditViewController.swift",
+      "line": 43,
+      "signature": "public override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidAppear",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactRemarkEditViewController.swift",
+      "line": 61,
+      "signature": "override func viewDidAppear(_ animated: Bool) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "navigationClick",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactRemarkEditViewController.swift",
+      "line": 66,
+      "signature": "private func navigationClick(type: ChatNavigationBarClickEvent,indexPath: IndexPath?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "textLimit",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactRemarkEditViewController.swift",
+      "line": 75,
+      "signature": "private func textLimit() -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "save",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactRemarkEditViewController.swift",
+      "line": 79,
+      "signature": "private func save() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "pop",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactRemarkEditViewController.swift",
+      "line": 91,
+      "signature": "private func pop() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "textView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactRemarkEditViewController.swift",
+      "line": 102,
+      "signature": "public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "textViewDidChange",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactRemarkEditViewController.swift",
+      "line": 115,
+      "signature": "public func textViewDidChange(_ textView: UITextView) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactRemarkEditViewController.swift",
+      "line": 127,
+      "signature": "public func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MineContactsViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 11,
+      "signature": "final class MineContactsViewController: ContactViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 21,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "listenToUserStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 27,
+      "signature": "private func listenToUserStatus() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showUserStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 31,
+      "signature": "private func showUserStatus() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "navigationClick",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 57,
+      "signature": "override func navigationClick(type: ChatNavigationBarClickEvent, indexPath: IndexPath?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showOnlineStatusDialog",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 68,
+      "signature": "@objc func showOnlineStatusDialog() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "publishPresenceState",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 79,
+      "signature": "@objc func publishPresenceState(item: ActionSheetItemProtocol) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showCustomOnlineStatusAlert",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 101,
+      "signature": "@objc func showCustomOnlineStatusAlert() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "publishCustomStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 131,
+      "signature": "private func publishCustomStatus() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "textField",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 143,
+      "signature": "func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "presenceStatusChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 161,
+      "signature": "func presenceStatusChanged(users: [String]) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineContactsViewController.swift",
+      "line": 165,
+      "signature": "override func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MineConversationsController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 11,
+      "signature": "final class MineConversationsController: ConversationListController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 20,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "navigationClick",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 41,
+      "signature": "override func navigationClick(type: ChatNavigationBarClickEvent, indexPath: IndexPath?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "rightActions",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 51,
+      "signature": "override func rightActions(indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "listenToUserStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 71,
+      "signature": "private func listenToUserStatus() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showUserStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 75,
+      "signature": "private func showUserStatus() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showOnlineStatusDialog",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 101,
+      "signature": "@objc func showOnlineStatusDialog() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "publishPresenceState",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 112,
+      "signature": "@objc func publishPresenceState(item: ActionSheetItemProtocol) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showCustomOnlineStatusAlert",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 134,
+      "signature": "@objc func showCustomOnlineStatusAlert() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "publishCustomStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 164,
+      "signature": "private func publishCustomStatus() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewWillAppear",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 172,
+      "signature": "public override func viewWillAppear(_ animated: Bool) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "create",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 179,
+      "signature": "override func create(profiles: [ChatUserProfileProtocol]) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "autoDestroyGroupChat",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 215,
+      "signature": "private func autoDestroyGroupChat(groupId: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fetchGroupAvatar",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 223,
+      "signature": "private func fetchGroupAvatar(groupId: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "previewRequestContact",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 245,
+      "signature": "private func previewRequestContact() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "addContact",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 259,
+      "signature": "override func addContact() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "addContactRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 266,
+      "signature": "@objc public func addContactRequest(text: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "textField",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 306,
+      "signature": "func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "presenceStatusChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 324,
+      "signature": "func presenceStatusChanged(users: [String]) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 328,
+      "signature": "override func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "customFont",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineConversationsController.swift",
+      "line": 340,
+      "signature": "static func customFont(ofSize size: CGFloat, weight: UIFont.Weight) -> UIFont {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MineGroupDetailViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 13,
+      "signature": "final class MineGroupDetailViewController: GroupInfoViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "cleanHistoryMessages",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 15,
+      "signature": "override func cleanHistoryMessages() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 24,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "headerActions",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 35,
+      "signature": "override func headerActions() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "processHeaderActionEvents",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 58,
+      "signature": "override func processHeaderActionEvents(item: any ContactListHeaderItemProtocol) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "groupCall",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 68,
+      "signature": "private func groupCall() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "startGroupCall",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 76,
+      "signature": "private func startGroupCall() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "checkPermissionsAndCall",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 87,
+      "signature": "private func checkPermissionsAndCall(completion: @escaping (Bool) -> Void) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "checkMicrophonePermission",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 111,
+      "signature": "private func checkMicrophonePermission(completion: @escaping (Bool) -> Void) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "checkCameraPermission",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 127,
+      "signature": "private func checkCameraPermission(completion: @escaping (Bool) -> Void) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showPermissionAlert",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 143,
+      "signature": "private func showPermissionAlert(message: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fetchGroupInfo",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 157,
+      "signature": "override func fetchGroupInfo(groupId: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "disbandRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 184,
+      "signature": "override func disbandRequest() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "rightActions",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 199,
+      "signature": "override func rightActions(indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "reportUser",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineGroupDetailViewController.swift",
+      "line": 218,
+      "signature": "private func reportUser() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MineMessageListViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 18,
+      "signature": "final class MineMessageListViewController: MessageListController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "createMessageContainer",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 28,
+      "signature": "override func createMessageContainer() -> MessageListView {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 34,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "subscribeUserStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 72,
+      "signature": "@objc func subscribeUserStatus() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "performTypingTask",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 81,
+      "signature": "override func performTypingTask() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showUserStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 90,
+      "signature": "private func showUserStatus(state: PresenceManager.State) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "updateUserState",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 122,
+      "signature": "@MainActor @objc public func updateUserState(state: UserState) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "rightImages",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 126,
+      "signature": "override func rightImages() -> [UIImage] {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "rightItemsAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 140,
+      "signature": "override func rightItemsAction(indexPath: IndexPath?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "callAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 157,
+      "signature": "private func callAction() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "processItemAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 167,
+      "signature": "private func processItemAction(item: ActionSheetItemProtocol) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "startSingleCall",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 178,
+      "signature": "private func startSingleCall(callType: CallType) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "startGroupCall",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 203,
+      "signature": "private func startGroupCall() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "checkPermissionsAndCall",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 229,
+      "signature": "private func checkPermissionsAndCall(callType: CallType, completion: @escaping (Bool) -> Void) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "checkMicrophonePermission",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 269,
+      "signature": "private func checkMicrophonePermission(completion: @escaping (Bool) -> Void) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "checkCameraPermission",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 285,
+      "signature": "private func checkCameraPermission(completion: @escaping (Bool) -> Void) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showPermissionAlert",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 301,
+      "signature": "private func showPermissionAlert(message: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "filterMessageActions",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 315,
+      "signature": "override func filterMessageActions(message: EaseChatUIKit.MessageEntity) -> [EaseChatUIKit.ActionSheetItemProtocol] {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "messageBubbleClicked",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 327,
+      "signature": "override func messageBubbleClicked(message: EaseChatUIKit.MessageEntity) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewImage",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 371,
+      "signature": "func viewImage(entity: EaseChatUIKit.MessageEntity) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "numberOfPhotos",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 384,
+      "signature": "func numberOfPhotos(with browser: ImagePreviewController) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "photo",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 388,
+      "signature": "func photo(of index: Int, with browser: ImagePreviewController) -> PreviewImage {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "didLongPressPhoto",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 395,
+      "signature": "func didLongPressPhoto(at index: Int, with browser: ImagePreviewController) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "saveImageToAlbum",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 406,
+      "signature": "func saveImageToAlbum() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "image",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 438,
+      "signature": "@objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "presenceStatusChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Controllers/MineMessageListViewController.swift",
+      "line": 450,
+      "signature": "func presenceStatusChanged(users: [String]) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MineChatThreadViewModel",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineChatThreadViewModel.swift",
+      "line": 11,
+      "signature": "class MineChatThreadViewModel: ChatThreadViewModel {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "inertAlertMessage",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineChatThreadViewModel.swift",
+      "line": 13,
+      "signature": "func inertAlertMessage() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "messageDidReceived",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineChatThreadViewModel.swift",
+      "line": 20,
+      "signature": "override func messageDidReceived(message: ChatMessage) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MineConversationInfo",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineConversationInfo.swift",
+      "line": 12,
+      "signature": "class MineConversationInfo: ConversationInfo {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "contentAttribute",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineConversationInfo.swift",
+      "line": 13,
+      "signature": "override func contentAttribute() -> NSAttributedString {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MineMessageEntity",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineMessageEntity.swift",
+      "line": 12,
+      "signature": "class MineMessageEntity: MessageEntity {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "customSize",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineMessageEntity.swift",
+      "line": 15,
+      "signature": "override func customSize() -> CGSize {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "convertTextAttribute",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineMessageEntity.swift",
+      "line": 33,
+      "signature": "open override func convertTextAttribute() -> NSAttributedString? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MineMessageListViewModel",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineMessageListViewModel.swift",
+      "line": 11,
+      "signature": "class MineMessageListViewModel: MessageListViewModel {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "inertAlertMessage",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineMessageListViewModel.swift",
+      "line": 14,
+      "signature": "func inertAlertMessage() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "messageDidReceived",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/ViewModels/MineMessageListViewModel.swift",
+      "line": 21,
+      "signature": "override func messageDidReceived(message: ChatMessage) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "FraudAlertView",
+      "type": "class",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Views/FraudAlertView.swift",
+      "line": 11,
+      "signature": "final class FraudAlertView: UIView {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "closeAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/IntegratedFromEaseChatUIKit/Views/FraudAlertView.swift",
+      "line": 78,
+      "signature": "@objc private func closeAction() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "LoginViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 18,
+      "signature": "final class LoginViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "createLoading",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 88,
+      "signature": "@objc public func createLoading() -> LoadingView {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewWillAppear",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 109,
+      "signature": "override func viewWillAppear(_ animated: Bool) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 114,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "addGesture",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 140,
+      "signature": "private func addGesture() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showServerConfig",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 147,
+      "signature": "@objc private func showServerConfig() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "resetDisplay",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 153,
+      "signature": "private func resetDisplay() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "changeServerConfig",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 179,
+      "signature": "@objc private func changeServerConfig() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fieldSetting",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 185,
+      "signature": "private func fieldSetting() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setContainerShadow",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 194,
+      "signature": "private func setContainerShadow() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "timerFire",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 206,
+      "signature": "@objc func timerFire() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "getAgain",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 217,
+      "signature": "private func getAgain() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "startCountdown",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 223,
+      "signature": "private func startCountdown() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "touchesBegan",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 228,
+      "signature": "override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "textFieldDidEndEditing",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 233,
+      "signature": "func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "loginAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 237,
+      "signature": "@objc private func loginAction() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "loginRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 256,
+      "signature": "@objc private func loginRequest() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "login",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 308,
+      "signature": "private func login(user: ChatUserProfileProtocol,token: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "loadCache",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 342,
+      "signature": "private func loadCache() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fillCache",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 359,
+      "signature": "private func fillCache() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "getPinCode",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 383,
+      "signature": "@objc private func getPinCode() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "agreeAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 398,
+      "signature": "@objc private func agreeAction(sender: UIButton) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "entryHome",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 402,
+      "signature": "@objc private func entryHome() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 409,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "userContentController",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 431,
+      "signature": "func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "encryptWithAES",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 464,
+      "signature": "func encryptWithAES(data: String) -> String {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showWebViewModal",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 487,
+      "signature": "private func showWebViewModal() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "getConfigValue",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 548,
+      "signature": "func getConfigValue(forKey key: String) -> String? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "dismissWebView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 557,
+      "signature": "@objc private func dismissWebView() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "backgroundTapped",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 573,
+      "signature": "@objc private func backgroundTapped() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "webView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 580,
+      "signature": "func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "webView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 586,
+      "signature": "func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "webView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 592,
+      "signature": "func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "localized",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 601,
+      "signature": "public func localized() -> String {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setGradient",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 609,
+      "signature": "func setGradient(_ colors: [UIColor],_ points: [CGPoint]) -> Self {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "EaseChatProfile",
+      "type": "class",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 620,
+      "signature": "final class EaseChatProfile:NSObject, ChatUserProfileProtocol, FFObject {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "ignoreProperties",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 622,
+      "signature": "static func ignoreProperties() -> [String]? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "customColumnsType",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 626,
+      "signature": "static func customColumnsType() -> [String : String]? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "customColumns",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 630,
+      "signature": "static func customColumns() -> [String : String]? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "primaryKeyColumn",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 634,
+      "signature": "static func primaryKeyColumn() -> String {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "toJsonObject",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 652,
+      "signature": "public func toJsonObject() -> Dictionary<String, Any>? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setValue",
+      "type": "method",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 656,
+      "signature": "override func setValue(_ value: Any?, forUndefinedKey key: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "CodingKeys",
+      "type": "enum",
+      "file": "ios/EaseChatDemo/LoginViewController.swift",
+      "line": 660,
+      "signature": "private enum CodingKeys: String, CodingKey {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MainViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 14,
+      "signature": "final class MainViewController: UITabBarController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLayoutSubviews",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 36,
+      "signature": "override func viewDidLayoutSubviews() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 44,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupDataProvider",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 57,
+      "signature": "private func setupDataProvider() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "callKitSet",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 66,
+      "signature": "private func callKitSet() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "loadViewControllers",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 78,
+      "signature": "private func loadViewControllers() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "gestureRecognizerShouldBegin",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 102,
+      "signature": "func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 115,
+      "signature": "func switchTheme(style: EaseChatUIKit.ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fetchProfiles",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 152,
+      "signature": "func fetchProfiles(profileIds: [String]) async -> [any EaseChatUIKit.ChatUserProfileProtocol] {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fetchGroupProfiles",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 172,
+      "signature": "func fetchGroupProfiles(profileIds: [String]) async -> [any EaseChatUIKit.ChatUserProfileProtocol] {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "requestUserInfos",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 192,
+      "signature": "private func requestUserInfos(profileIds: [String]) async -> [ChatUserProfileProtocol]? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "requestGroupsInfo",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 230,
+      "signature": "private func requestGroupsInfo(groupIds: [String]) async -> [ChatUserProfileProtocol]? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "onResult",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 249,
+      "signature": "func onResult(error: EaseChatUIKit.ChatError?, type: EaseChatUIKit.ConversationEmergencyType) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "onConversationLastMessageUpdate",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 253,
+      "signature": "func onConversationLastMessageUpdate(message: EaseChatUIKit.ChatMessage, info: EaseChatUIKit.ConversationInfo) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "onConversationsUnreadCountUpdate",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 257,
+      "signature": "func onConversationsUnreadCountUpdate(unreadCount: UInt) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "onResult",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 267,
+      "signature": "func onResult(error: EaseChatUIKit.ChatError?, type: EaseChatUIKit.ContactEmergencyType, operatorId: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "updateContactBadge",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 279,
+      "signature": "private func updateContactBadge() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fetchGroupProfiles",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 297,
+      "signature": "func fetchGroupProfiles(profileIds: [String]) async -> [any EaseCallUIKit.CallProfileProtocol] {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fetchUserProfiles",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Main/MainViewController.swift",
+      "line": 323,
+      "signature": "func fetchUserProfiles(profileIds: [String]) async -> [any EaseCallUIKit.CallProfileProtocol] {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "AboutEasemobCell",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Cells/AboutEasemobCell.swift",
+      "line": 11,
+      "signature": "final class AboutEasemobCell: UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "layoutSubviews",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/AboutEasemobCell.swift",
+      "line": 28,
+      "signature": "override func layoutSubviews() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/AboutEasemobCell.swift",
+      "line": 43,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "ColorHueSettingCell",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Cells/ColorHueSettingCell.swift",
+      "line": 11,
+      "signature": "final class ColorHueSettingCell: UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "layoutSubviews",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/ColorHueSettingCell.swift",
+      "line": 55,
+      "signature": "override func layoutSubviews() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sliderValueChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/ColorHueSettingCell.swift",
+      "line": 64,
+      "signature": "@objc private func sliderValueChanged() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/ColorHueSettingCell.swift",
+      "line": 73,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "FeatureSwitchCell",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Cells/FeatureSwitchCell.swift",
+      "line": 11,
+      "signature": "final class FeatureSwitchCell: UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "layoutSubviews",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/FeatureSwitchCell.swift",
+      "line": 42,
+      "signature": "override func layoutSubviews() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/FeatureSwitchCell.swift",
+      "line": 57,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "LanguageCell",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Cells/LanguageCell.swift",
+      "line": 11,
+      "signature": "final class LanguageCell: UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "layoutSubviews",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/LanguageCell.swift",
+      "line": 35,
+      "signature": "override func layoutSubviews() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/LanguageCell.swift",
+      "line": 50,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MeMenuCell",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Cells/MeMenuCell.swift",
+      "line": 12,
+      "signature": "final class MeMenuCell: UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "layoutSubviews",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/MeMenuCell.swift",
+      "line": 44,
+      "signature": "override func layoutSubviews() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "refreshViews",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/MeMenuCell.swift",
+      "line": 52,
+      "signature": "func refreshViews(hasIcon: Bool) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/MeMenuCell.swift",
+      "line": 82,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "PersonalInfoCell",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Cells/PersonalInfoCell.swift",
+      "line": 11,
+      "signature": "final class PersonalInfoCell: UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "layoutSubviews",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/PersonalInfoCell.swift",
+      "line": 42,
+      "signature": "override func layoutSubviews() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "refresh",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/PersonalInfoCell.swift",
+      "line": 50,
+      "signature": "func refresh(title: String, detail: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Cells/PersonalInfoCell.swift",
+      "line": 65,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "AboutEasemobController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/AboutEasemobController.swift",
+      "line": 11,
+      "signature": "final class AboutEasemobController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/AboutEasemobController.swift",
+      "line": 34,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/AboutEasemobController.swift",
+      "line": 52,
+      "signature": "func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/AboutEasemobController.swift",
+      "line": 56,
+      "signature": "func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/AboutEasemobController.swift",
+      "line": 67,
+      "signature": "func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "openURL",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/AboutEasemobController.swift",
+      "line": 73,
+      "signature": "private func openURL(urlString: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/AboutEasemobController.swift",
+      "line": 83,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "CallBackgroundSettingController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 11,
+      "signature": "class CallBackgroundSettingController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 35,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLayoutSubviews",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 43,
+      "signature": "override func viewDidLayoutSubviews() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "loadSavedBackground",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 49,
+      "signature": "private func loadSavedBackground() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupUI",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 57,
+      "signature": "private func setupUI() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupGradientBackground",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 78,
+      "signature": "private func setupGradientBackground() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupNavigationBar",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 82,
+      "signature": "private func setupNavigationBar() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupCenterContent",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 109,
+      "signature": "private func setupCenterContent() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupBottomControls",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 146,
+      "signature": "private func setupBottomControls() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupHomeIndicator",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 183,
+      "signature": "private func setupHomeIndicator() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupConstraints",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 190,
+      "signature": "private func setupConstraints() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupActions",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 302,
+      "signature": "private func setupActions() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "backButtonTapped",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 321,
+      "signature": "@objc private func backButtonTapped() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "confirmButtonTapped",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 325,
+      "signature": "@objc private func confirmButtonTapped() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "leftArrowTapped",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 333,
+      "signature": "@objc private func leftArrowTapped() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "rightArrowTapped",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 338,
+      "signature": "@objc private func rightArrowTapped() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "swipeLeft",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 343,
+      "signature": "@objc private func swipeLeft() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "swipeRight",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 347,
+      "signature": "@objc private func swipeRight() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "hangUpTapped",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 351,
+      "signature": "@objc private func hangUpTapped() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "answerTapped",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 356,
+      "signature": "@objc private func answerTapped() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchToNextBackground",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 365,
+      "signature": "private func switchToNextBackground() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchToPreviousBackground",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 370,
+      "signature": "private func switchToPreviousBackground() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "updateBackgroundDisplay",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CallBackgroundSettingController.swift",
+      "line": 375,
+      "signature": "private func updateBackgroundDisplay() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "ColorSettingViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/ColorSettingViewController.swift",
+      "line": 11,
+      "signature": "final class ColorSettingViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ColorSettingViewController.swift",
+      "line": 31,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "numberOfSections",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ColorSettingViewController.swift",
+      "line": 60,
+      "signature": "func numberOfSections(in tableView: UITableView) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ColorSettingViewController.swift",
+      "line": 64,
+      "signature": "func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ColorSettingViewController.swift",
+      "line": 71,
+      "signature": "func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ColorSettingViewController.swift",
+      "line": 75,
+      "signature": "func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "updateHues",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ColorSettingViewController.swift",
+      "line": 94,
+      "signature": "private func updateHues(hue: CGFloat,indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ColorSettingViewController.swift",
+      "line": 129,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "CommonWebViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/CommonWebViewController.swift",
+      "line": 12,
+      "signature": "final class CommonWebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CommonWebViewController.swift",
+      "line": 55,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupConstraints",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CommonWebViewController.swift",
+      "line": 74,
+      "signature": "private func setupConstraints() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "loadWebContent",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CommonWebViewController.swift",
+      "line": 111,
+      "signature": "private func loadWebContent() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "addProgressObserver",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CommonWebViewController.swift",
+      "line": 138,
+      "signature": "private func addProgressObserver() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "observeValue",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CommonWebViewController.swift",
+      "line": 142,
+      "signature": "override func observeValue(forKeyPath keyPath: String?,",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "injectPrivacyData",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CommonWebViewController.swift",
+      "line": 163,
+      "signature": "func injectPrivacyData(to webView: WKWebView,",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "webView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/CommonWebViewController.swift",
+      "line": 194,
+      "signature": "func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "FeatureSwitchViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/FeatureSwitchViewController.swift",
+      "line": 12,
+      "signature": "final class FeatureSwitchViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/FeatureSwitchViewController.swift",
+      "line": 39,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/FeatureSwitchViewController.swift",
+      "line": 58,
+      "signature": "func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/FeatureSwitchViewController.swift",
+      "line": 62,
+      "signature": "func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/FeatureSwitchViewController.swift",
+      "line": 78,
+      "signature": "@objc private func switchAction(_ sender: UISwitch) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/FeatureSwitchViewController.swift",
+      "line": 117,
+      "signature": "func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/FeatureSwitchViewController.swift",
+      "line": 123,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "GeneralViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 12,
+      "signature": "final class GeneralViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 52,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewWillAppear",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 66,
+      "signature": "override func viewWillAppear(_ animated: Bool) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fillDatas",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 74,
+      "signature": "private func fillDatas() -> [DetailInfo] {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 85,
+      "signature": "func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 89,
+      "signature": "func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 105,
+      "signature": "func switchChanged(isOn: Bool, indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 119,
+      "signature": "func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "changeCallBackground",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 138,
+      "signature": "private func changeCallBackground() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 143,
+      "signature": "private func switchTheme() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "colorSet",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 148,
+      "signature": "private func colorSet() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "featureSwitch",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 153,
+      "signature": "private func featureSwitch() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "languageSet",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 158,
+      "signature": "private func languageSet() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "translateLanguageSet",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 163,
+      "signature": "private func translateLanguageSet() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "openLog",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 168,
+      "signature": "private func openLog() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "chooseMenuStyle",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 174,
+      "signature": "private func chooseMenuStyle(style : ShowMenuStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "numberOfPreviewItems",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 181,
+      "signature": "public func numberOfPreviewItems(in controller: QLPreviewController) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "previewController",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 185,
+      "signature": "public func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/GeneralViewController.swift",
+      "line": 194,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "LanguageSettingViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/LanguageSettingViewController.swift",
+      "line": 11,
+      "signature": "final class LanguageSettingViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/LanguageSettingViewController.swift",
+      "line": 27,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/LanguageSettingViewController.swift",
+      "line": 57,
+      "signature": "func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/LanguageSettingViewController.swift",
+      "line": 61,
+      "signature": "func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/LanguageSettingViewController.swift",
+      "line": 79,
+      "signature": "func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/LanguageSettingViewController.swift",
+      "line": 89,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "MeViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 12,
+      "signature": "final class MeViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 39,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fetchUserInfo",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 59,
+      "signature": "private func fetchUserInfo(userId: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewWillAppear",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 91,
+      "signature": "override func viewWillAppear(_ animated: Bool) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "refreshProfile",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 108,
+      "signature": "@objc private func refreshProfile() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "listenToUserStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 112,
+      "signature": "private func listenToUserStatus() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showUserStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 116,
+      "signature": "private func showUserStatus() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "numberOfSections",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 143,
+      "signature": "func numberOfSections(in tableView: UITableView) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 147,
+      "signature": "func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 151,
+      "signature": "func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 155,
+      "signature": "func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 162,
+      "signature": "func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 192,
+      "signature": "func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "thirdLibsInfo",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 214,
+      "signature": "private func thirdLibsInfo() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "collectedPersonInfo",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 220,
+      "signature": "private func collectedPersonInfo() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "privacyPolice",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 227,
+      "signature": "private func privacyPolice() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewService",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 233,
+      "signature": "private func viewService() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "deregister",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 239,
+      "signature": "private func deregister() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewProfile",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 266,
+      "signature": "private func viewProfile() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewGeneral",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 272,
+      "signature": "private func viewGeneral() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewNotification",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 278,
+      "signature": "private func viewNotification() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewAbout",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 284,
+      "signature": "private func viewAbout() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "privacySetting",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 290,
+      "signature": "private func privacySetting() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "logout",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 296,
+      "signature": "private func logout() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showOnlineStatusDialog",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 302,
+      "signature": "@objc func showOnlineStatusDialog() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "publishPresenceState",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 313,
+      "signature": "@objc func publishPresenceState(item: ActionSheetItemProtocol) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showCustomOnlineStatusAlert",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 334,
+      "signature": "@objc func showCustomOnlineStatusAlert() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "publishCustomStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 364,
+      "signature": "private func publishCustomStatus() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "presenceStatusChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 377,
+      "signature": "func presenceStatusChanged(users: [String]) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "textField",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 381,
+      "signature": "func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 401,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "updateFFDB",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/MeViewController.swift",
+      "line": 410,
+      "signature": "public func updateFFDB() -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "NotificationSettingViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/NotificationSettingViewController.swift",
+      "line": 11,
+      "signature": "final class NotificationSettingViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/NotificationSettingViewController.swift",
+      "line": 37,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fetchSilentMode",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/NotificationSettingViewController.swift",
+      "line": 64,
+      "signature": "private func fetchSilentMode() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "valueChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/NotificationSettingViewController.swift",
+      "line": 78,
+      "signature": "@objc private func valueChanged(sender: UISwitch) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/NotificationSettingViewController.swift",
+      "line": 95,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "PersonalInfoViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 17,
+      "signature": "final class PersonalInfoViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 36,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 60,
+      "signature": "func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 64,
+      "signature": "func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 68,
+      "signature": "func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 82,
+      "signature": "func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "editName",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 101,
+      "signature": "private func editName() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "updateUserInfo",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 111,
+      "signature": "private func updateUserInfo(userId: String,nickname: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "processAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 144,
+      "signature": "@objc private func processAction(item: ActionSheetItemProtocol) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "selectPhoto",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 158,
+      "signature": "@objc private func selectPhoto() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "openCamera",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 172,
+      "signature": "@objc private func openCamera() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "imagePickerController",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 191,
+      "signature": "public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "processImagePickerData",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 202,
+      "signature": "@objc private func processImagePickerData(info: [UIImagePickerController.InfoKey : Any]) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "uploadImage",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 211,
+      "signature": "private func uploadImage(image: UIImage) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setUserAvatar",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 249,
+      "signature": "private func setUserAvatar(url: String) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "imagePickerControllerDidCancel",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 259,
+      "signature": "public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 265,
+      "signature": "func switchTheme(style: EaseChatUIKit.ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fixOrientation",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PersonalInfoViewController.swift",
+      "line": 273,
+      "signature": "func fixOrientation() -> UIImage {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "PrivacyPolicyViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/PrivacyPolicyViewController.swift",
+      "line": 11,
+      "signature": "final class PrivacyPolicyViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PrivacyPolicyViewController.swift",
+      "line": 17,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "prepare",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PrivacyPolicyViewController.swift",
+      "line": 32,
+      "signature": "override func prepare(for segue: UIStoryboardSegue, sender: Any?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "PrivacySettingViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/PrivacySettingViewController.swift",
+      "line": 11,
+      "signature": "final class PrivacySettingViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PrivacySettingViewController.swift",
+      "line": 37,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PrivacySettingViewController.swift",
+      "line": 56,
+      "signature": "func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PrivacySettingViewController.swift",
+      "line": 60,
+      "signature": "func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PrivacySettingViewController.swift",
+      "line": 78,
+      "signature": "func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PrivacySettingViewController.swift",
+      "line": 84,
+      "signature": "func switchChanged(isOn: Bool, indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/PrivacySettingViewController.swift",
+      "line": 100,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "ShowMenuStyle",
+      "type": "enum",
+      "file": "ios/EaseChatDemo/Me/Controllers/ShowMenuStyleViewController.swift",
+      "line": 11,
+      "signature": "enum ShowMenuStyle {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "ShowMenuStyleViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/ShowMenuStyleViewController.swift",
+      "line": 16,
+      "signature": "final class ShowMenuStyleViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ShowMenuStyleViewController.swift",
+      "line": 53,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setPreviewConstrains",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ShowMenuStyleViewController.swift",
+      "line": 84,
+      "signature": "private func setPreviewConstrains() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ShowMenuStyleViewController.swift",
+      "line": 105,
+      "signature": "func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ShowMenuStyleViewController.swift",
+      "line": 109,
+      "signature": "func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ShowMenuStyleViewController.swift",
+      "line": 127,
+      "signature": "func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ShowMenuStyleViewController.swift",
+      "line": 136,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "ThemesSettingViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/ThemesSettingViewController.swift",
+      "line": 11,
+      "signature": "final class ThemesSettingViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ThemesSettingViewController.swift",
+      "line": 27,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ThemesSettingViewController.swift",
+      "line": 62,
+      "signature": "func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ThemesSettingViewController.swift",
+      "line": 66,
+      "signature": "func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ThemesSettingViewController.swift",
+      "line": 80,
+      "signature": "func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/ThemesSettingViewController.swift",
+      "line": 88,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "TranslateLanguageSettingController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Controllers/TranslateLanguageSettingController.swift",
+      "line": 11,
+      "signature": "final class TranslateLanguageSettingController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/TranslateLanguageSettingController.swift",
+      "line": 27,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/TranslateLanguageSettingController.swift",
+      "line": 51,
+      "signature": "func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/TranslateLanguageSettingController.swift",
+      "line": 55,
+      "signature": "func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tableView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/TranslateLanguageSettingController.swift",
+      "line": 73,
+      "signature": "func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Controllers/TranslateLanguageSettingController.swift",
+      "line": 84,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "AboutEasemobHeader",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Views/AboutEasemobHeader.swift",
+      "line": 11,
+      "signature": "final class AboutEasemobHeader: UIView {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/AboutEasemobHeader.swift",
+      "line": 51,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "GradientSlider",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 10,
+      "signature": "@IBDesignable class GradientSlider: UIControl {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setValue",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 25,
+      "signature": "func setValue(_ value:CGFloat, animated:Bool = true) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "encode",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 202,
+      "signature": "override func encode(with aCoder: NSCoder) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "commonSetup",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 221,
+      "signature": "private func commonSetup() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "alignmentRectInsets",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 233,
+      "signature": "//    func alignmentRectInsets() -> UIEdgeInsets {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "layoutSublayers",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 238,
+      "signature": "override func layoutSublayers(of layer: CALayer) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setGradientVaryingHue",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 280,
+      "signature": "func setGradientVaryingHue(saturation:CGFloat,brightness:CGFloat){",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setGradientVaryingSaturation",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 285,
+      "signature": "func setGradientVaryingSaturation(hue:CGFloat,brightness:CGFloat){",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setGradientVaryingBrightness",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 291,
+      "signature": "func setGradientVaryingBrightness(hue:CGFloat,saturation:CGFloat){",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setGradientVaryingRed",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 297,
+      "signature": "func setGradientVaryingRed(green:CGFloat,blue:CGFloat){",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setGradientVaryingGreen",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 303,
+      "signature": "func setGradientVaryingGreen(red:CGFloat,blue:CGFloat){",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setGradientVaryingBlue",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 309,
+      "signature": "func setGradientVaryingBlue(red:CGFloat,green:CGFloat){",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setGradientForGrayscale",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 315,
+      "signature": "func setGradientForGrayscale(){",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "beginTracking",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 323,
+      "signature": "override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "continueTracking",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 337,
+      "signature": "override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "endTracking",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 349,
+      "signature": "override func endTracking(_ touch: UITouch?, with event: UIEvent?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "updateThumbPosition",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 362,
+      "signature": "private func updateThumbPosition(animated: Bool){",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "valueForLocation",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 380,
+      "signature": "private func valueForLocation(point:CGPoint)->CGFloat {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "updateTrackColors",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Me/Views/GradientSlider.swift",
+      "line": 406,
+      "signature": "private func updateTrackColors() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "ImagePreviewCell",
+      "type": "class",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 12,
+      "signature": "class ImagePreviewCell: UICollectionViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "layoutSubviews",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 67,
+      "signature": "override func layoutSubviews() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setPhoto",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 92,
+      "signature": "func setPhoto(photo: PreviewImage?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "showImage",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 131,
+      "signature": "func showImage(_ image: UIImage) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "doubleTapAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 142,
+      "signature": "@objc func doubleTapAction() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tapAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 147,
+      "signature": "@objc func tapAction() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "pacAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 151,
+      "signature": "@objc func pacAction(pan: UIPanGestureRecognizer) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "longPressAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 185,
+      "signature": "@objc func longPressAction(longPress: UILongPressGestureRecognizer) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "dissmissAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 194,
+      "signature": "func dissmissAction() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewForZooming",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 205,
+      "signature": "func viewForZooming(in scrollView: UIScrollView) -> UIView? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "scrollViewDidZoom",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 209,
+      "signature": "func scrollViewDidZoom(_ scrollView: UIScrollView) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "gestureRecognizer",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 218,
+      "signature": "func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "gestureRecognizerShouldBegin",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 225,
+      "signature": "override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fitRect",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewCell.swift",
+      "line": 238,
+      "signature": "func fitRect() -> CGRect {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "ImagePreviewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewController.swift",
+      "line": 11,
+      "signature": "public class ImagePreviewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewController.swift",
+      "line": 35,
+      "signature": "override public func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "disAction",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewController.swift",
+      "line": 73,
+      "signature": "@objc func disAction() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "collectionView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewController.swift",
+      "line": 81,
+      "signature": "public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "collectionView",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewController.swift",
+      "line": 85,
+      "signature": "public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "scrollViewDidEndDragging",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewController.swift",
+      "line": 98,
+      "signature": "public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "scrollViewDidEndDecelerating",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewController.swift",
+      "line": 105,
+      "signature": "public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "ImagePreviewTransitionDelegate",
+      "type": "class",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewTransitionDelegate.swift",
+      "line": 11,
+      "signature": "public class ImagePreviewTransitionDelegate: NSObject, UIViewControllerTransitioningDelegate {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "animationController",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewTransitionDelegate.swift",
+      "line": 15,
+      "signature": "public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "animationController",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewTransitionDelegate.swift",
+      "line": 20,
+      "signature": "public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "transitionDuration",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewTransitionDelegate.swift",
+      "line": 32,
+      "signature": "public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "animateTransition",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewTransitionDelegate.swift",
+      "line": 36,
+      "signature": "public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "animationForPresented",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewTransitionDelegate.swift",
+      "line": 46,
+      "signature": "func animationForPresented(using transitionContext: UIViewControllerContextTransitioning) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "animationForDissmissed",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/ImagePreviewTransitionDelegate.swift",
+      "line": 81,
+      "signature": "func animationForDissmissed(using transitionContext: UIViewControllerContextTransitioning) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "PreviewImage",
+      "type": "class",
+      "file": "ios/EaseChatDemo/PhotoBrowser/PreviewImage.swift",
+      "line": 10,
+      "signature": "@objcMembers final public class PreviewImage: NSObject {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "ImageBrowserProtocol",
+      "type": "protocol",
+      "file": "ios/EaseChatDemo/PhotoBrowser/PreviewImage.swift",
+      "line": 30,
+      "signature": "@objc public protocol ImageBrowserProtocol {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "numberOfPhotos",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/PreviewImage.swift",
+      "line": 33,
+      "signature": "func numberOfPhotos(with browser: ImagePreviewController) -> Int",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "photo",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/PreviewImage.swift",
+      "line": 35,
+      "signature": "func photo(of index: Int, with browser: ImagePreviewController) -> PreviewImage",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "didDisplayPhoto",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/PreviewImage.swift",
+      "line": 38,
+      "signature": "@objc optional func didDisplayPhoto(at index: Int, with browser: ImagePreviewController) -> Void",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "didLongPressPhoto",
+      "type": "method",
+      "file": "ios/EaseChatDemo/PhotoBrowser/PreviewImage.swift",
+      "line": 40,
+      "signature": "@objc optional func didLongPressPhoto(at index: Int, with browser: ImagePreviewController) -> Void",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "SceneDelegate",
+      "type": "class",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 13,
+      "signature": "final class SceneDelegate: UIResponder, UIWindowSceneDelegate {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "scene",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 21,
+      "signature": "func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 68,
+      "signature": "private func switchTheme() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "chooseRootViewController",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 74,
+      "signature": "private func chooseRootViewController() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "loadCache",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 87,
+      "signature": "private func loadCache() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sceneDidDisconnect",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 106,
+      "signature": "func sceneDidDisconnect(_ scene: UIScene) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sceneDidBecomeActive",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 113,
+      "signature": "func sceneDidBecomeActive(_ scene: UIScene) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sceneWillResignActive",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 118,
+      "signature": "func sceneWillResignActive(_ scene: UIScene) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sceneWillEnterForeground",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 123,
+      "signature": "func sceneWillEnterForeground(_ scene: UIScene) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sceneDidEnterBackground",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 130,
+      "signature": "func sceneDidEnterBackground(_ scene: UIScene) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "loadMain",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 137,
+      "signature": "@objc private func loadMain() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "loadLogin",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 145,
+      "signature": "@objc private func loadLogin() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/SceneDelegate.swift",
+      "line": 163,
+      "signature": "func switchTheme(style: EaseChatUIKit.ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "ServerConfigViewController",
+      "type": "class",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 11,
+      "signature": "final class ServerConfigViewController: UIViewController {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewDidLoad",
+      "type": "method",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 144,
+      "signature": "override func viewDidLoad() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setFields",
+      "type": "method",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 179,
+      "signature": "private func setFields() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "touchesBegan",
+      "type": "method",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 225,
+      "signature": "override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "viewWillDisappear",
+      "type": "method",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 229,
+      "signature": "override func viewWillDisappear(_ animated: Bool) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "useCustomServer",
+      "type": "method",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 234,
+      "signature": "@objc func useCustomServer() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "tokenValidationChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 250,
+      "signature": "@objc func tokenValidationChanged() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "textFieldShouldReturn",
+      "type": "method",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 257,
+      "signature": "func textFieldShouldReturn(_ textField: UITextField) -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "textFieldDidEndEditing",
+      "type": "method",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 261,
+      "signature": "func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "textFieldShouldBeginEditing",
+      "type": "method",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 271,
+      "signature": "func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "saveServerConfig",
+      "type": "method",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 282,
+      "signature": "func saveServerConfig() -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "switchTheme",
+      "type": "method",
+      "file": "ios/EaseChatDemo/ServerConfigViewController.swift",
+      "line": 337,
+      "signature": "func switchTheme(style: ThemeStyle) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "DemoLanguage",
+      "type": "struct",
+      "file": "ios/EaseChatDemo/Utils/DemoLanguage.swift",
+      "line": 11,
+      "signature": "struct DemoLanguage {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "localValue",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/DemoLanguage.swift",
+      "line": 15,
+      "signature": "public static func localValue(key: String) -> String {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "localValue",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/DemoLanguage.swift",
+      "line": 19,
+      "signature": "private func localValue(_ key: String) -> String {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "chineseLanguage",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/DemoLanguage.swift",
+      "line": 31,
+      "signature": "static func chineseLanguage() -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "EaseMobHUD",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Utils/EaseMobHUD.swift",
+      "line": 11,
+      "signature": "final class EaseMobHUD: UIView {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "setupHUD",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EaseMobHUD.swift",
+      "line": 26,
+      "signature": "private func setupHUD() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "show",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EaseMobHUD.swift",
+      "line": 80,
+      "signature": "func show(window: UIWindow) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "dismiss",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EaseMobHUD.swift",
+      "line": 88,
+      "signature": "func dismiss() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "EasemobBusinessApi",
+      "type": "enum",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessApi.swift",
+      "line": 10,
+      "signature": "public enum EasemobBusinessApi {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "EasemobError",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 13,
+      "signature": "public class EasemobError: Error,Convertible {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "kj_modelKey",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 24,
+      "signature": "public func kj_modelKey(from property: Property) -> ModelPropertyKey {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "EasemobBusinessRequest",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 29,
+      "signature": "@objc public class EasemobBusinessRequest: NSObject {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sendRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 84,
+      "signature": "public func sendRequest(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sendGETRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 238,
+      "signature": "func sendGETRequest(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sendPOSTRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 253,
+      "signature": "func sendPOSTRequest(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sendPUTRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 268,
+      "signature": "func sendPUTRequest(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sendDELETERequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 283,
+      "signature": "func sendDELETERequest(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sendGETRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 298,
+      "signature": "func sendGETRequest(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sendPOSTRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 312,
+      "signature": "func sendPOSTRequest(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sendPUTRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 326,
+      "signature": "func sendPUTRequest(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sendDELETERequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 340,
+      "signature": "func sendDELETERequest(",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "convertApi",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobBusinessRequest.swift",
+      "line": 350,
+      "signature": "func convertApi(api: EasemobBusinessApi) -> String {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "EasemobRequestHTTPMethod",
+      "type": "struct",
+      "file": "ios/EaseChatDemo/Utils/EasemobRequest.swift",
+      "line": 11,
+      "signature": "public struct EasemobRequestHTTPMethod: RawRepresentable, Equatable, Hashable {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "EasemobRequest",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Utils/EasemobRequest.swift",
+      "line": 38,
+      "signature": "@objcMembers public class EasemobRequest: NSObject, URLSessionDelegate,URLSessionDataDelegate {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "constructRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobRequest.swift",
+      "line": 68,
+      "signature": "public func constructRequest(method: EasemobRequestHTTPMethod,",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "sendRequest",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobRequest.swift",
+      "line": 101,
+      "signature": "@objc public func sendRequest(method: String,",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "uploadImage",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobRequest.swift",
+      "line": 132,
+      "signature": "@objc public func uploadImage(image: UIImage, callBack: @escaping ((Error?,Dictionary<String,Any>?) -> Void)) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "urlSession",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobRequest.swift",
+      "line": 170,
+      "signature": "public func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "cURL",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/EasemobRequest.swift",
+      "line": 183,
+      "signature": "func cURL(pretty: Bool = false) -> String {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "GCDTimer",
+      "type": "protocol",
+      "file": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "line": 11,
+      "signature": "public protocol GCDTimer {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "resume",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "line": 13,
+      "signature": "func resume()",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "suspend",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "line": 15,
+      "signature": "func suspend()",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "cancel",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "line": 17,
+      "signature": "func cancel()",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "GCDTimerMaker",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "line": 20,
+      "signature": "public class GCDTimerMaker {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "exec",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "line": 22,
+      "signature": "static func exec(_ task: (() -> ())?, interval: Int, repeats: Bool = true, async: Bool = true) -> GCDTimer? {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "TimerMaker",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "line": 36,
+      "signature": "private class TimerMaker: GCDTimer {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "TimerState",
+      "type": "enum",
+      "file": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "line": 39,
+      "signature": "enum TimerState {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "resume",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "line": 69,
+      "signature": "func resume() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "suspend",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "line": 78,
+      "signature": "func suspend() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "cancel",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/GCDTimer.swift",
+      "line": 87,
+      "signature": "func cancel() {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "PresenceDidChangedListener",
+      "type": "protocol",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 12,
+      "signature": "@objc public protocol PresenceDidChangedListener: NSObjectProtocol {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "presenceStatusChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 13,
+      "signature": "func presenceStatusChanged(users: [String])",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "PresenceManager",
+      "type": "class",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 16,
+      "signature": "class PresenceManager: NSObject {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "addHandler",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 20,
+      "signature": "func addHandler(handler: PresenceDidChangedListener) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "removeHandler",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 27,
+      "signature": "func removeHandler(handler: PresenceDidChangedListener) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "State",
+      "type": "enum",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 31,
+      "signature": "enum State: String {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "status",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 60,
+      "signature": "class func status(with presence: EMPresence?) -> State {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "subscribe",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 101,
+      "signature": "func subscribe(members: [String], completion: ((_ presence: [EMPresence]?, _ error: ChatError?) -> Void)?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "unsubscribe",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 131,
+      "signature": "func unsubscribe(members: [String], completion: ((_ error: ChatError?) -> Void)?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "publishPresence",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 152,
+      "signature": "func publishPresence(description: String?, completion: ((_ error: ChatError?) -> Void)?) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "fetchPresenceStatus",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 164,
+      "signature": "func fetchPresenceStatus(userId: String, completion: @escaping (_ presence: EMPresence?, _ error: ChatError?) -> Void) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "presenceStatusDidChanged",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 177,
+      "signature": "func presenceStatusDidChanged(_ presences: [EMPresence]) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "connectionStateDidChange",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/PresenceManager.swift",
+      "line": 193,
+      "signature": "func connectionStateDidChange(_ aConnectionState: EMConnectionState) {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "AssociatedKeys",
+      "type": "struct",
+      "file": "ios/EaseChatDemo/Utils/UIButton+Throttle.swift",
+      "line": 14,
+      "signature": "private struct AssociatedKeys {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    },
+    {
+      "name": "isClickValid",
+      "type": "method",
+      "file": "ios/EaseChatDemo/Utils/UIButton+Throttle.swift",
+      "line": 37,
+      "signature": "func isClickValid() -> Bool {",
+      "platform": "ios",
+      "component": "EaseChatDemo"
+    }
+  ],
+  "stats": {
+    "fileCount": 53,
+    "symbolCount": 541,
+    "classCount": 63,
+    "topClasses": [
+      "tableView",
+      "switchTheme",
+      "viewDidLoad",
+      "layoutSubviews",
+      "application",
+      "presenceStatusChanged",
+      "showUserStatus",
+      "viewWillAppear",
+      "webView",
+      "rightActions"
+    ]
+  }
+}

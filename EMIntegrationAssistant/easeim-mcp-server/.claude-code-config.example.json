@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "easeim": {
+      "command": "node",
+      "args": [
+        "/Users/zhujichao_1/Desktop/zjc19891106/EMIntegrationAssistant/easeim-mcp-server/dist/index.js"
+      ]
+    }
+  }
+}

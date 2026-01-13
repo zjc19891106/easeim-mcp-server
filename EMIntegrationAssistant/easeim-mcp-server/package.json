@@ -1,0 +1,41 @@
+{
+  "name": "easeim-mcp-server",
+  "version": "1.0.0",
+  "description": "环信 IM SDK MCP Server - 提供文档查询和源码搜索能力",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "easeim-mcp-server": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepare": "npm run build",
+    "generate-docs-index": "tsx scripts/generate-docs-index.ts",
+    "generate-source-index": "tsx scripts/generate-source-index.ts",
+    "generate-config-index": "tsx scripts/generate-config-index.ts",
+    "analyze-config-impact": "tsx scripts/analyze-config-impact.ts",
+    "generate-all": "npm run generate-docs-index && npm run generate-source-index && npm run generate-config-index && npm run analyze-config-impact"
+  },
+  "keywords": [
+    "easemob",
+    "im",
+    "mcp",
+    "sdk",
+    "documentation",
+    "ios"
+  ],
+  "author": "EaseMob",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

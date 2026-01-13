@@ -1,0 +1,167 @@
+//
+//  SceneDelegate.swift
+//  EaseChatDemo
+//
+//  Created by 朱继超 on 2024/3/5.
+//
+
+import UIKit
+import EaseChatUIKit
+import SwiftFFDBHotFix
+import EaseCallUIKit
+
+final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    @UserDefault("EaseChatDemoDarkMode", defaultValue: false) var darkMode: Bool
+    
+    @UserDefault("EaseChatDemoPreferencesLanguage", defaultValue: "zh-Hans") var language: String
+    
+    var window: UIWindow?
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
+        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
+        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        //设置整个UIKit中的语言 目前只支持中英文
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        
+        appearance.backgroundColor = .systemBackground
+        let normalAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 12),
+            .foregroundColor: UIColor.secondaryLabel
+        ]
+        
+        let selectedAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 12),
+            .foregroundColor: UIColor.label
+        ]
+        
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = normalAttributes
+        appearance.stackedLayoutAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -4)
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = selectedAttributes
+        appearance.stackedLayoutAppearance.normal.iconColor = .secondaryLabel
+        appearance.stackedLayoutAppearance.selected.iconColor = .label
+        // 可选：统一微调文字位置（一般不需要）
+        appearance.stackedLayoutAppearance.normal.titlePositionAdjustment =
+        UIOffset(horizontal: 0, vertical: 2)
+        appearance.stackedLayoutAppearance.selected.titlePositionAdjustment =
+        UIOffset(horizontal: 0, vertical: 2)
+        
+        // ===== 全局生效 =====
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+        //设置整个UIKit中的语言 目前只支持中英文
+        Appearance.ease_chat_language = LanguageType(rawValue: self.language) ?? .Chinese
+        self.window = nil
+        self.window = UIWindow(windowScene: windowScene)
+        self.window?.backgroundColor = .black
+        EaseChatProfile.registerTable()//使用三方数据库，将模型注册成为表
+        self.chooseRootViewController()
+        self.window?.makeKeyAndVisible()
+        self.switchTheme()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadMain), name: Notification.Name(loginSuccessfulSwitchMainPage), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(loadLogin), name: Notification.Name(backLoginPage), object: nil)
+    }
+    
+    private func switchTheme() {
+        EaseChatUIKit.Theme.registerSwitchThemeViews(view: self)
+        EaseChatUIKit.Theme.switchTheme(style: self.darkMode ? .dark:.light)
+        self.switchTheme(style: self.darkMode ? .dark:.light)
+    }
+    
+    private func chooseRootViewController() {
+        if !ChatClient.shared().isAutoLogin {
+            self.window?.rootViewController = LoginViewController()
+        } else {
+            guard let userId = ChatClient.shared().currentUsername,!userId.isEmpty else {
+                self.window?.rootViewController = LoginViewController()
+                return
+            }
+            self.loadCache()
+            self.window?.rootViewController = MainViewController()
+        }
+    }
+    
+    private func loadCache() {
+        if let profiles = EaseChatProfile.select(where: nil) as? [EaseChatProfile] {
+            for profile in profiles {
+                if let conversation = ChatClient.shared().chatManager?.getConversationWithConvId(profile.id) {
+                    if conversation.type == .chat {
+                        ChatUIKitContext.shared?.userCache?[profile.id] = profile
+                    } else {
+                        ChatUIKitContext.shared?.groupCache?[profile.id] = profile
+                    }
+                }
+                if profile.id == ChatClient.shared().currentUsername ?? "" {
+                    ChatUIKitContext.shared?.currentUser = profile
+                    ChatUIKitContext.shared?.userCache?[profile.id] = profile
+                }
+            }
+        }
+        
+    }
+
+    func sceneDidDisconnect(_ scene: UIScene) {
+        // Called as the scene is being released by the system.
+        // This occurs shortly after the scene enters the background, or when its session is discarded.
+        // Release any resources associated with this scene that can be re-created the next time the scene connects.
+        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+    }
+
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        // Called when the scene has moved from an inactive state to an active state.
+        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+    }
+
+    func sceneWillResignActive(_ scene: UIScene) {
+        // Called when the scene will move from an active state to an inactive state.
+        // This may occur due to temporary interruptions (ex. an incoming phone call).
+    }
+
+    func sceneWillEnterForeground(_ scene: UIScene) {
+        // Called as the scene transitions from the background to the foreground.
+        // Use this method to undo the changes made on entering the background.
+        self.switchTheme(style: self.darkMode == false ? .light:.dark)
+        ChatClient.shared().applicationWillEnterForeground(UIApplication.shared)
+    }
+
+    func sceneDidEnterBackground(_ scene: UIScene) {
+        // Called as the scene transitions from the foreground to the background.
+        // Use this method to save data, release shared resources, and store enough scene-specific state information
+        // to restore the scene back to its current state.
+        ChatClient.shared().applicationDidEnterBackground(UIApplication.shared)
+    }
+
+    @objc private func loadMain() {
+        DispatchQueue.main.async {
+            if self.window?.rootViewController is LoginViewController {
+                self.window?.rootViewController = MainViewController()
+            }
+        }
+    }
+    
+    @objc private func loadLogin() {
+        ChatUIKitClient.shared.logout(unbindNotificationDeviceToken: true) { error in
+            if error != nil {
+                consoleLogInfo("Logout failed:\(error?.errorDescription ?? "")", type: .error)
+                ChatUIKitClient.shared.logout(unbindNotificationDeviceToken: false) { _ in }
+            }
+        }
+        CallKitManager.shared.hangup()
+        CallKitManager.shared.cleanUserDefaults()
+        DispatchQueue.main.async {
+            self.window?.rootViewController = LoginViewController()
+        }
+        
+    }
+
+}
+
+extension SceneDelegate: EaseChatUIKit.ThemeSwitchProtocol {
+    func switchTheme(style: EaseChatUIKit.ThemeStyle) {
+        self.window?.backgroundColor = style == .dark ? UIColor.theme.neutralColor1 : UIColor.theme.neutralColor98
+        UIApplication.shared.windows.forEach { $0.overrideUserInterfaceStyle = (style == .dark ? .dark:.light) }
+    }
+}

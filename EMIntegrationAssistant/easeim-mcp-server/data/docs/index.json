@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "lastUpdated": "2026-01-13T02:08:33.865Z",
+  "lastUpdated": "2026-01-13T07:53:32.202Z",
   "platforms": [
     "ios"
   ],
@@ -555,6 +555,94 @@
       "name": "苹果隐私策略 PrivacyInfo.xcprivacy",
       "description": "根据苹果公司发布的 [App Store 提交的隐私更新](https://developer.apple.com/news/?id=r1henawx)，自 2024 年春季开始，上架 App Store 的应用需要同时提供一份 App 的隐私清单文件，就 App 及第三方 SDK 中使用的 **Required Reason APIs** 提供批准原因。因此，所有第三方 SDK 均需包含 **PrivacyInfo.xcprivacy**。",
       "docPath": "ios/api/privacy_policy.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_apns",
+      "name": "在即时通讯 IM 中集成 APNs",
+      "description": "本页介绍如何在即时通讯 IM 中集成 APNs 并测试推送是否成功集成。",
+      "docPath": "ios/api/push_apns.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_display_attribute",
+      "name": "设置和获取推送通知的显示属性",
+      "description": "你可以调用 `updatePushDisplayName` 设置推送通知中显示的昵称，如以下代码示例所示：",
+      "docPath": "ios/api/push_display_attribute.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_display_field",
+      "name": "使用消息扩展字段设置推送通知显示内容",
+      "description": "创建推送消息时，你可以设置消息扩展字段自定义要显示的推送标题 `em_push_title` 和推送内容 `em_push_content`。",
+      "docPath": "ios/api/push_display_field.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_display_overview",
+      "name": "设置推送通知的显示内容",
+      "description": "通知收到后，通知栏中显示的推送标题和内容可通过以下方式设置，配置的优先级为由低到高：",
+      "docPath": "ios/api/push_display_overview.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_extension",
+      "name": "设置推送扩展",
+      "description": "你可以利用扩展字段实现自定义推送设置，本文以强制推送、发送静默消息和富文本推送为例介绍如何实现推送扩展功能。",
+      "docPath": "ios/api/push_extension.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_notification_mode_dnd",
+      "name": "设置推送通知方式和免打扰模式",
+      "description": "环信即时通讯 IM 3.9.2 及以上版本对离线消息推送进行了优化。你可以在 app 和会话层面提供了推送通知方式和免打扰模式的细粒度选项。",
+      "docPath": "ios/api/push_notification_mode_dnd.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_overview",
+      "name": "**离线推送概述**",
+      "description": "即时通讯 IM 支持集成 APNs 消息推送服务，为 iOS 开发者提供低延时、高送达、高并发、不侵犯用户个人数据的离线消息推送服务。",
+      "docPath": "ios/api/push_overview.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_parsing",
+      "name": "**解析收到的推送字段**",
+      "description": "当设备收到推送通知并点击时，iOS 系统会将推送通知中的自定义推送内容（JSON）传递给 app，这样你就可以根据推送内容自定义点击推送通知触发的行为，例如，页面跳转等。当收到推送通知并点击时，app 获取推送内容的方式如下：",
+      "docPath": "ios/api/push_parsing.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_solution",
+      "name": "常见问题",
+      "description": "**Q**：如果推送通知栏未展示推送通知，是什么原因？",
+      "docPath": "ios/api/push_solution.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_template",
+      "name": "推送模板",
+      "description": "推送模板主要用于服务器提供的默认离线推送配置不满足你的需求时，设置全局范围的推送标题和推送内容。例如，服务器提供的默认设置为中文和英文的推送标题和内容，你若需要使用韩语或日语的推送标题和内容，则可以设置对应语言的推送模板。",
+      "docPath": "ios/api/push_template.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_translation",
+      "name": "设置推送翻译",
+      "description": "如果用户启用 [自动翻译](/document/ios/message_translation.html) 功能并发送消息，SDK 会同时发送原始消息和翻译后的消息。",
+      "docPath": "ios/api/push_translation.md",
       "platform": "ios",
       "product": "general"
     },

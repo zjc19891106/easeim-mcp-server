@@ -93,8 +93,8 @@ export class IntentClassifier {
     {
       intent: UserIntent.CUSTOMIZE_UI,
       patterns: [
-        /自定义.*(样式|颜色|UI|界面|气泡|头像|主题)/i,
-        /修改.*(样式|外观|主题|颜色|背景|头像|昵称)/i,
+        /自定义.*(样式|颜色|UI|界面|气泡|头像|主题|字体|字号)/i,
+        /修改.*(样式|外观|主题|颜色|背景|头像|昵称|字体|字号)/i,
         /更换.*(图标|图片|颜色|背景|头像)/i,
         /设置.*(头像|昵称|用户信息)/i,
         /更新.*(头像|昵称|用户资料)/i,
@@ -420,7 +420,8 @@ export class IntentClassifier {
   private matchSemanticScenario(query: string) {
     const scenarioTargets: Vectorizable[] = [
       { id: 'custom_message', text: '自定义 消息 类型 实现 样式 发送 展示 逻辑 注册 Cell' },
-      { id: 'user_profile_update', text: '更新 头像 修改 昵称 用户 信息 缓存 userCache Provider 设置 头像 个人 资料 刷新' }
+      { id: 'user_profile_update', text: '更新 头像 修改 昵称 用户 信息 缓存 userCache Provider 设置 头像 个人 资料 刷新' },
+      { id: 'text_style_customization', text: '修改 文本 消息 颜色 字体 大小 样式 color font size' }
     ];
     return SimilarityMatcher.findBestMatch(query, scenarioTargets, 0.15);
   }
@@ -428,6 +429,7 @@ export class IntentClassifier {
   private mapScenarioToIntent(scenarioId: string): UserIntent {
     switch (scenarioId) {
       case 'user_profile_update': return UserIntent.CUSTOMIZE_UI;
+      case 'text_style_customization': return UserIntent.CUSTOMIZE_UI;
       default: return UserIntent.CUSTOMIZE_MESSAGE;
     }
   }

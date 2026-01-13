@@ -1214,6 +1214,18 @@ Appearance.errorHue = 350/360.0       // 红色
 \`\`\`\n\n`;
         break;
 
+      case 'custom_text_style':
+      case 'text_style_customization':
+        resultText += `### 文本消息样式深度定制\n\n`;
+        resultText += `由于文本消息的渲染涉及复杂的富文本计算，修改颜色和字体需要通过重载 \`MessageEntity\` 实现：\n\n`;
+        
+        const textStyleResult = this.codeGenerator.generate('text_style_customization');
+        if (textStyleResult.success) {
+          resultText += `\`\`\`swift\n${textStyleResult.code}\n\`\`\`\n\n`;
+          resultText += `**集成步骤**:\n${textStyleResult.usage}\n`;
+        }
+        break;
+
       default:
         resultText += `### 常用配置项\n\n`;
         resultText += `| 配置项 | 作用 | 示例 |\n`;

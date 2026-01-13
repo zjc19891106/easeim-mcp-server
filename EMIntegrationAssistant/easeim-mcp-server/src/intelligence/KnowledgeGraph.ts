@@ -276,8 +276,8 @@ export class KnowledgeGraph {
     });
 
     // 自定义文本样式 (颜色/字体)
-    this.scenarios.set('custom_text_style', {
-      id: 'custom_text_style',
+    this.scenarios.set('text_style_customization', {
+      id: 'text_style_customization',
       scenario: '自定义文本消息样式 (颜色/字体)',
       description: '修改文本消息的显示颜色、字体大小、行间距等。注意：气泡大小是根据富文本提前计算的，修改字体大小必须通过重写 MessageEntity 否则会导致气泡布局错误。',
       keywords: ['文本颜色', '修改文字颜色', '字体大小', '修改字号', 'font size', '紫色文字', '富文本', '行间距'],
@@ -338,7 +338,7 @@ export class KnowledgeGraph {
       file: 'EaseChatUIKit/Classes/UI/Components/Chat/ViewModel/MessageEntity.swift',
       keyMethods: ['cellHeight()', 'updateBubbleSize()', 'customSize()', 'convertTextAttribute()'],
       keyProperties: ['message', 'bubbleSize', 'height', 'content', 'replySize'],
-      usageScenarios: ['custom_message', 'custom_text_style'],
+      usageScenarios: ['custom_message', 'text_style_customization'],
     });
 
     this.classes.set('MessageListController', {
@@ -520,7 +520,7 @@ export class KnowledgeGraph {
       'message_long_press_menu': '📋',
       'chat_background_customization': '🖼️',
       'user_profile_update': '👤',
-      'custom_text_style': '✍️'
+      'text_style_customization': '✍️'
     };
 
     return scenarios.map(s => ({

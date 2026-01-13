@@ -228,8 +228,8 @@ export const TOOLS = [
       properties: {
         scenario: {
           type: 'string',
-          enum: ['custom_message', 'attachment_menu', 'bubble_style', 'theme_config', 'avatar_config', 'long_press_menu'],
-          description: '场景类型：custom_message(自定义消息), attachment_menu(添加菜单项), bubble_style(气泡样式), theme_config(主题配置), avatar_config(头像配置), long_press_menu(长按菜单)'
+          enum: ['custom_message', 'attachment_menu', 'bubble_style', 'theme_config', 'avatar_config', 'long_press_menu', 'text_style_customization'],
+          description: '场景类型：custom_message(自定义消息), attachment_menu(添加菜单项), bubble_style(气泡样式), theme_config(主题配置), avatar_config(头像配置), long_press_menu(长按菜单), text_style_customization(文本样式定制)'
         },
         name: {
           type: 'string',

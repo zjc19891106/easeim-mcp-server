@@ -1,21 +1,19 @@
 # 安装方案
 
-方案 1: GitHub 直接安装 (最快)
 
-## 用户安装（无需发布 npm）
-npm install -g github:easemob/easeim-mcp-server
+## 方案 1: GitHub 直接安装 (最快)
 
-## 或指定分支/tag
-npm install -g github:easemob/easeim-mcp-server#v1.0.0
+`npm install -g github:easemob/easeim-mcp-server`
 
-需要准备：
-1. 推送到 GitHub
-2. 确保 dist/ 目录已提交（或配置 prepare 脚本）
+或指定分支/tag
+
+`npm install -g github:easemob/easeim-mcp-server#v1.0.0`
+
 
 ---
-方案 2: 手动配置路径 (零发布)
+## 方案 2: 手动配置路径 (零发布)
 
-## 用户克隆
+用户克隆repo或者下载源码
 git clone https://github.com/easemob/easeim-mcp-server
 cd easeim-mcp-server && npm install && npm run build
 

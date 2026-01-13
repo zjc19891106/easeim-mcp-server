@@ -18,14 +18,16 @@ git clone https://github.com/zjc19891106/easeim-mcp-server
 cd easeim-mcp-server && npm install && npm run build
 
 ## 配置 Claude（使用绝对路径）
+```Json
 {
   "mcpServers": {
     "easeim":{
       "command": "node",
-      "args": ["/Users/zhujichao_1/Desktop/easeim-mcp-server/EMIntegrationAssistant/easeim-mcp-server/dist/index.js"]
+      "args": ["/Path/easeim-mcp-server/EMIntegrationAssistant/easeim-mcp-server/dist/index.js"]
     }
   }
 }
+```
 
 # 功能概览
 

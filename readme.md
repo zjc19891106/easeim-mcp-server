@@ -3,28 +3,28 @@
 
 ## 方案 1: GitHub 直接安装 (最快)
 
-`npm install -g github:easemob/easeim-mcp-server`
+`npm install -g github:zjc19891106/easeim-mcp-server`
 
 或指定分支/tag
 
-`npm install -g github:easemob/easeim-mcp-server#v1.0.0`
+`npm install -g github:zjc19891106/easeim-mcp-server#v1.0.0`
 
 
 ---
 ## 方案 2: 手动配置路径 (零发布)
 
 用户克隆repo或者下载源码
-git clone https://github.com/easemob/easeim-mcp-server
+git clone https://github.com/zjc19891106/easeim-mcp-server
 cd easeim-mcp-server && npm install && npm run build
 
 ## 配置 Claude（使用绝对路径）
 {
-"mcpServers": {
-"easeim": {
-"command": "node",
-"args": ["/path/to/easeim-mcp-server/dist/index.js"]
-}
-}
+  "mcpServers": {
+    "easeim":{
+      "command": "node",
+      "args": ["/Users/zhujichao_1/Desktop/easeim-mcp-server/EMIntegrationAssistant/easeim-mcp-server/dist/index.js"]
+    }
+  }
 }
 
 # 功能概览

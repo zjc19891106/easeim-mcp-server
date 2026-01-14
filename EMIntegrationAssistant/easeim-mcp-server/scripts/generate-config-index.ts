@@ -183,6 +183,151 @@ function findOverridableClasses(componentDir: string, baseDir: string): Extensio
   return overridableClasses;
 }
 
+// ... (Swift parsing functions remain unchanged)
+
+function parseAndroidConfigFile(filePath: string, baseDir: string): ConfigProperty[] {
+  const content = fs.readFileSync(filePath, 'utf-8');
+  const lines = content.split('\n');
+  const relativePath = path.relative(baseDir, filePath);
+  const properties: ConfigProperty[] = [];
+
+  // 匹配 Kotlin object/companion object 或 Java static final 字段
+  // Kotlin: const val PRIMARY_COLOR = 0xFF0000
+  // Java: public static final int PRIMARY_COLOR = 0xFF0000;
+  const kotlinRegex = /^\s*(const\s+)?val\s+(\w+)\s*(?::\s*(\w+))?\s*=\s*(.+)/;
+  const javaRegex = /^\s*public\s+static\s+(?:final\s+)?(\w+)\s+(\w+)\s*=\s*(.+);/;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line.startsWith('//') || line.startsWith('/*') || line.startsWith('*')) continue;
+
+    let match = line.match(kotlinRegex);
+    if (match) {
+      const [, , name, type, defaultValue] = match;
+      const description = extractDescription(lines, i);
+      properties.push({
+        name,
+        type: type || 'Unknown',
+        defaultValue: defaultValue.trim(),
+        description,
+        file: relativePath,
+        line: i + 1
+      });
+      continue;
+    }
+
+    match = line.match(javaRegex);
+    if (match) {
+      const [, type, name, defaultValue] = match;
+      const description = extractDescription(lines, i);
+      properties.push({
+        name,
+        type,
+        defaultValue: defaultValue.trim(),
+        description,
+        file: relativePath,
+        line: i + 1
+      });
+    }
+  }
+  return properties;
+}
+
+function parseAndroidResources(filePath: string, baseDir: string): ConfigProperty[] {
+  const content = fs.readFileSync(filePath, 'utf-8');
+  const relativePath = path.relative(baseDir, filePath);
+  const properties: ConfigProperty[] = [];
+  
+  // 简单正则匹配 XML 资源
+  // <color name="ease_primary_color">#0091FF</color>
+  // <string name="ease_cancel">Cancel</string>
+  const resourceRegex = /<(\w+)\s+name="([^"]+)"[^>]*>(.*?)<\/\1>/g;
+  
+  let match;
+  while ((match = resourceRegex.exec(content)) !== null) {
+    const [fullMatch, type, name, value] = match;
+    // 过滤一些无需索引的资源类型
+    if (['color', 'string', 'dimen', 'bool', 'integer'].includes(type)) {
+      // 计算行号（简单估算）
+      const line = content.substring(0, match.index).split('\n').length;
+      properties.push({
+        name,
+        type: `xml:${type}`,
+        defaultValue: value,
+        description: `${type} resource in ${path.basename(filePath)}`,
+        file: relativePath,
+        line
+      });
+    }
+  }
+  return properties;
+}
+
+function findAndroidOverridableClasses(componentDir: string, baseDir: string): ExtensionPoint[] {
+    const extensionPoints: ExtensionPoint[] = [];
+    
+    function traverse(dir: string) {
+        const entries = fs.readdirSync(dir, { withFileTypes: true });
+        for (const entry of entries) {
+            const fullPath = path.join(dir, entry.name);
+            if (entry.isDirectory()) {
+                traverse(fullPath);
+            } else if (entry.isFile() && (entry.name.endsWith('.kt') || entry.name.endsWith('.java'))) {
+                const content = fs.readFileSync(fullPath, 'utf-8');
+                const lines = content.split('\n');
+                const relativePath = path.relative(baseDir, fullPath);
+                
+                // Kotlin: open class / interface / abstract class
+                const kotlinClassRegex = /^\s*(?:@\w+(?:\([^)]*\))?\s+)*(open|abstract)\s+class\s+(\w+)/;
+                const kotlinInterfaceRegex = /^\s*(?:@\w+(?:\([^)]*\))?\s+)*(?:public\s+)?interface\s+(\w+)/;
+                
+                // Java: public abstract class / public interface
+                const javaClassRegex = /^\s*public\s+abstract\s+class\s+(\w+)/;
+                const javaInterfaceRegex = /^\s*public\s+interface\s+(\w+)/;
+
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i].trim();
+                    let match = line.match(kotlinClassRegex);
+                    if (match) {
+                        extensionPoints.push({
+                            name: match[2],
+                            type: 'class',
+                            description: extractDescription(lines, i) || `Open/Abstract class`,
+                            file: relativePath,
+                            line: i + 1
+                        });
+                        continue;
+                    }
+                     match = line.match(javaClassRegex);
+                    if (match) {
+                        extensionPoints.push({
+                            name: match[1],
+                            type: 'class',
+                            description: extractDescription(lines, i) || `Abstract class`,
+                            file: relativePath,
+                            line: i + 1
+                        });
+                        continue;
+                    }
+                    
+                    match = line.match(kotlinInterfaceRegex) || line.match(javaInterfaceRegex);
+                     if (match) {
+                        extensionPoints.push({
+                            name: match[match.length - 1], // Last group is name
+                            type: 'protocol',
+                            description: extractDescription(lines, i) || `Interface`,
+                            file: relativePath,
+                            line: i + 1
+                        });
+                    }
+                }
+            }
+        }
+    }
+    traverse(componentDir);
+    return extensionPoints;
+}
+
 function processComponent(platform: string, component: string): ComponentConfig | null {
   const componentDir = path.join(RAW_SOURCES_DIR, platform, component);
   if (!fs.existsSync(componentDir)) return null;
@@ -198,17 +343,35 @@ function processComponent(platform: string, component: string): ComponentConfig 
       if (entry.isDirectory()) {
         findFiles(fullPath);
       } else if (entry.isFile()) {
+        // iOS / Swift 处理逻辑
         if (entry.name === 'Appearance.swift') {
           configProperties.push(...parseAppearanceFile(fullPath, RAW_SOURCES_DIR));
         } else if (entry.name.endsWith('.swift')) {
           extensionPoints.push(...parseProtocolFile(fullPath, RAW_SOURCES_DIR));
+        }
+        
+        // Android / Kotlin / Java 处理逻辑
+        else if (platform === 'android') {
+             // 匹配配置类：包含 Config 且为 .kt/.java
+             if (entry.name.match(/Config\.(kt|java)$/)) {
+                 configProperties.push(...parseAndroidConfigFile(fullPath, RAW_SOURCES_DIR));
+             }
+             // 匹配资源文件：XML 且在 values 目录下
+             else if (entry.name.endsWith('.xml') && fullPath.includes('/res/values')) {
+                 configProperties.push(...parseAndroidResources(fullPath, RAW_SOURCES_DIR));
+             }
         }
       }
     }
   }
 
   findFiles(componentDir);
-  extensionPoints.push(...findOverridableClasses(componentDir, RAW_SOURCES_DIR));
+  
+  if (platform === 'ios') {
+      extensionPoints.push(...findOverridableClasses(componentDir, RAW_SOURCES_DIR));
+  } else if (platform === 'android') {
+      extensionPoints.push(...findAndroidOverridableClasses(componentDir, RAW_SOURCES_DIR));
+  }
 
   return {
     name: component,

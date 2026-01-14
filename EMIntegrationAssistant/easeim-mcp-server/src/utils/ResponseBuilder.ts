@@ -195,8 +195,10 @@ export class ResponseBuilder {
       { label: 'iOS', value: 'ios', description: 'iPhone/iPad 应用开发 (Swift/ObjC)' },
       { label: 'Android', value: 'android', description: 'Android 应用开发 (Kotlin/Java)' },
       { label: 'Web', value: 'web', description: '网页端开发 (JavaScript/TypeScript)' },
-      { label: 'Flutter', value: 'flutter', description: '跨平台移动开发 (Dart)' },
-      { label: 'Unity', value: 'unity', description: '游戏开发 (C#)' }
+      { label: 'Flutter', value: 'flutter', description: '跨平台开发 (Dart, 无 CallKit 文档/源码)' },
+      { label: 'React Native', value: 'react-native', description: '跨平台开发 (JS, 无 CallKit 文档/源码)' },
+      { label: 'Unity', value: 'unity', description: '游戏开发 (C#, 仅支持 IMSDK)' },
+      { label: 'Windows', value: 'windows', description: 'Windows 桌面开发 (C++/C#, 仅支持 IMSDK)' }
     ];
 
     if (options?.includeAll) {
@@ -227,7 +229,7 @@ export class ResponseBuilder {
 
     if (options.askPlatform) {
       questions.push('您的目标平台是什么？');
-      missingFields.push('目标平台 (iOS/Android/Web/Flutter/Unity)');
+      missingFields.push('目标平台 (iOS/Android/Web/Flutter/RN/Windows/Unity)');
     }
 
     if (options.askDetails) {
@@ -239,8 +241,10 @@ export class ResponseBuilder {
       { label: 'iOS', value: 'ios', description: 'Swift/Objective-C' },
       { label: 'Android', value: 'android', description: 'Kotlin/Java' },
       { label: 'Web', value: 'web', description: 'JavaScript/TypeScript' },
-      { label: 'Flutter', value: 'flutter', description: 'Dart 跨平台' },
-      { label: 'Unity', value: 'unity', description: 'C# 游戏开发' }
+      { label: 'Flutter', value: 'flutter', description: 'Dart 跨平台 (无 CallKit)' },
+      { label: 'React Native', value: 'react-native', description: 'JavaScript 跨平台 (无 CallKit)' },
+      { label: 'Unity', value: 'unity', description: 'C# 游戏开发 (仅 IMSDK)' },
+      { label: 'Windows', value: 'windows', description: 'C++/C# 桌面开发 (仅 IMSDK)' }
     ];
 
     // 合并平台选项和自定义选项
@@ -470,7 +474,9 @@ export function detectMissingPlatform(query: string, providedPlatform?: string):
     { pattern: /\b(android|kotlin|java|安卓)\b/i, platform: 'android' },
     { pattern: /\b(web|javascript|typescript|js|ts|网页|h5|浏览器)\b/i, platform: 'web' },
     { pattern: /\b(flutter|dart)\b/i, platform: 'flutter' },
-    { pattern: /\b(unity|c#|游戏)\b/i, platform: 'unity' }
+    { pattern: /\b(react-native|rn|reactnative)\b/i, platform: 'react-native' },
+    { pattern: /\b(unity|c#|游戏)\b/i, platform: 'unity' },
+    { pattern: /\b(windows|cpp|c\+\+|c-sharp|win32|pc)\b/i, platform: 'windows' }
   ];
 
   let detectedPlatform: string | undefined;
@@ -533,6 +539,8 @@ export const SUPPORTED_PLATFORMS = [
   { value: 'ios', label: 'iOS', description: 'iPhone/iPad (Swift/ObjC)' },
   { value: 'android', label: 'Android', description: 'Android (Kotlin/Java)' },
   { value: 'web', label: 'Web', description: '网页端 (JS/TS)' },
-  { value: 'flutter', label: 'Flutter', description: '跨平台 (Dart)' },
-  { value: 'unity', label: 'Unity', description: '游戏 (C#)' }
+  { value: 'flutter', label: 'Flutter', description: '跨平台 (Dart, 无 CallKit)' },
+  { value: 'react-native', label: 'React Native', description: '跨平台 (JS, 无 CallKit)' },
+  { value: 'unity', label: 'Unity', description: '游戏 (C#, 仅支持 IMSDK)' },
+  { value: 'windows', label: 'Windows', description: '桌面端 (C++/C#, 仅支持 IMSDK)' }
 ];

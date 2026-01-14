@@ -70,7 +70,8 @@ export const PLATFORM_REQUIREMENTS: Record<string, PlatformRequirement> = {
       '需要开通环信 RTC 功能',
       '开通 RTC 后需等待 15 分钟数据同步',
       'VOIP 功能需要在 Apple Developer 申请证书',
-      '画中画功能需要 iOS 15+'
+      '画中画功能需要 iOS 15+',
+      '注意：新版 Flutter 和 React Native 暂无 CallKit 源码及文档'
     ]
   },
   'EaseChatroomUIKit': {

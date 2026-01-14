@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llFloatRoot"
+    android:layout_width="69dp"
+    android:layout_height="64dp"
+    android:background="@drawable/callkit_float_window_background_8"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <!-- 通话图标 -->
+    <ImageView
+        android:id="@+id/ivCallIcon"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/callkit_phone_pick"
+         />
+
+    <!-- 通话时长 -->
+    <TextView
+        android:id="@+id/tvCallDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00:00"
+        android:textColor="@color/callkit_float_text_color"
+        android:textSize="12sp" />
+
+</LinearLayout>

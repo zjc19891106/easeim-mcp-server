@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ease_list_item_root">
+        <item name="android:background">@drawable/callkit_view_default_touch_shadow_bg</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ease_contact_list_item_initial">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:textColor">@color/ease_contact_list_item_initial_text_color</item>
+        <item name="android:textAppearance">@style/Ease.TextAppearance.Label.Medium</item>
+        <item name="android:background">@color/callkit_color_background</item>
+    </style>
+
+    <style name="Ease.TextAppearance.Label.Medium" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ease_checkbox_style">
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:clickable">false</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/callkit_checkbox_bg_selector_style</item>
+    </style>
+
+    <style name="ease_list_item_divider">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/callkit_color_outline_variant</item>
+    </style>
+
+
+</resources>

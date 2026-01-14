@@ -1,0 +1,275 @@
+# 管理用户关系
+
+<Toc />
+
+SDK 提供用户关系管理功能，包括好友列表管理和黑名单管理：
+
+- 好友列表管理：查询好友列表、请求添加好友、接受好友请求、拒绝好友请求、删除好友和设置好友备注等操作。
+- 黑名单管理：查询黑名单列表、添加用户至黑名单以及将用户移除黑名单等操作。使用该功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通该服务。详见 [环信控制台文档](/product/console/basic_user.html#用户黑名单)。
+
+此外，环信即时通讯 IM 默认支持陌生人之间发送单聊消息，即无需添加好友即可聊天。若仅允许好友之间发送单聊消息，你需要在[环信控制台](https://console.easemob.com/user/login)[开启好友关系检查](/product/console/basic_user.html#好友关系检查)。该功能开启后，SDK 会在用户发起单聊时检查好友关系，若用户向陌生人发送单聊消息，SDK 会提示错误码 221。
+
+## 技术原理
+
+环信即时通讯 IM Android SDK 提供 [EMContactManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_contact_manager.html) 类实现好友的添加移除，黑名单的添加移除等功能。
+
+- `EMContactManager#addContact/deleteContact` ：添加、删除好友。
+- `EMContactManager#asyncSetContactRemark`：设置和获取好友备注。
+- `EMContactManager#asyncFetchAllContactsFromServer`：从服务器获取好友列表。
+- `EMContactManager#fetchContactFromLocal`：从本地获取好友列表
+- `EMContactManager#addUserToBlackList`：将用户添加到或移除黑名单。
+- `EMContactManager#getBlackListFromServer`：从服务器获取黑名单列表。
+
+## 前提条件
+
+开始前，请确保满足以下条件：
+
+- 完成 SDK 初始化，并连接到服务器，详见 [快速开始](quickstart.html)。
+- 了解环信即时通讯 IM 的使用限制，详见 [使用限制](/product/limitation.html)。
+- 已在 [环信控制台](https://console.easemob.com/user/login) 开通黑名单功能。详见 [环信控制台文档](/product/console/basic_user.html#用户黑名单)。
+
+## 实现方法
+
+本节展示如何在项目中管理好友的添加移除和黑名单的添加移除。
+
+
+
+### 添加好友
+
+添加好友部分主要功能是发送好友请求、接受好友请求、处理好友请求和好友请求处理结果回调等。
+
+1. 添加监听。 
+
+请监听与好友请求相关事件的回调，这样当用户收到好友请求，可以调用接受请求的 API 添加好友。服务器不会重复下发与好友请求相关的事件，建议退出应用时保存相关的请求数据。设置监听示例代码如下：
+
+```java
+EMClient.getInstance().contactManager().setContactListener(new EMContactListener() {
+    // 对方接受了好友请求。用户 A 向用户 B 发送好友请求，用户 B 收到好友请求后，同意加好友，则用户 A 收到该事件。
+    @Override
+    public void onFriendRequestAccepted(String username) { }
+
+    // 对方拒绝了好友请求。用户 A 向用户 B 发送好友请求，用户 B 收到好友请求后，拒绝加好友，则用户 A 收到该事件。
+    @Override
+    public void onFriendRequestDeclined(String username) { }
+
+    // 接收到好友请求。用户 B 向用户 A 发送好友请求，用户 A 收到该事件。
+    @Override
+    public void onContactInvited(String username, String reason) { }
+
+    // 联系人被删除。用户 B 将用户 A 从联系人列表上删除，用户 A 收到该事件。
+    @Override
+    public void onContactDeleted(String username) { }
+
+    // 联系人已添加。用户 B 向用户 A 发送好友请求，用户 A 接受该请求，用户 B 收到 `onFriendRequestAccepted` 事件，双方用户收到 `onContactAdded` 事件。
+    @Override
+    public void onContactAdded(String username) { }
+});
+```
+
+2. 请求添加好友。
+
+示例代码如下：
+
+```java
+// 添加好友。
+// 同步方法，会阻塞当前线程。异步方法为 asyncAddContact(String, String, EMCallBack)。
+EMClient.getInstance().contactManager().addContact(toAddUsername, reason);
+```
+
+3. 对端用户通过 `onContactInvited` 监听收到好友请求，确认是否成为好友。
+   
+   - 若接受好友请求，需调用 `acceptInvitation` 方法。请求方收到 `onFriendRequestAccepted` 事件，双方都收到 `onContactAdded` 事件。
+ 
+```java
+// 同步方法，会阻塞当前线程。异步方法为 asyncAcceptInvitation(String, EMCallBack)。
+EMClient.getInstance().contactManager().acceptInvitation(username);
+```
+
+- 若拒绝好友请求，需调用 `declineInvitation` 方法。请求方收到 `onFriendRequestDeclined` 事件。
+
+```java
+// 同步方法，会阻塞当前线程。异步方法为 asyncDeclineInvitation(String, EMCallBack)。
+EMClient.getInstance().contactManager().declineInvitation(username);
+```
+
+### 删除好友
+
+删除联系人时会同时删除对方联系人列表中的该用户，建议执行双重确认，以免发生误删操作。删除操作不需要对方同意或者拒绝。
+
+示例代码如下：
+
+```java
+// 同步方法，会阻塞当前线程。
+// 异步方法为 asyncDeleteContact(String, EMCallBack)。
+EMClient.getInstance().contactManager().deleteContact(username);
+```
+
+调用 `deleteContact` 删除好友后，对方会收到 `onContactDeleted` 事件。
+
+### 设置好友备注
+
+自 4.2.1 版本开始，你可以调用 `asyncSetContactRemark` 方法设置单个好友的备注。
+
+好友备注的长度不能超过 100 个字符。
+
+```java
+EMClient.getInstance().contactManager().asyncSetContactRemark(userId, remark, new EMCallBack() {
+    @Override
+    public void onSuccess() {
+        
+    }
+
+    @Override
+    public void onError(int code, String error) {
+        
+    }
+});
+```
+
+### 从服务端获取好友列表
+
+自 4.2.1 版本开始，你可以调用 `asyncFetchAllContactsFromServer` 方法从服务器一次性或分页获取好友列表，其中每个好友对象包含好友的用户 ID 和好友备注。
+
+- 一次性获取服务端好友列表。
+
+```java
+EMClient.getInstance().contactManager().asyncFetchAllContactsFromServer(new EMValueCallBack<List<EMContact>>() {
+    @Override
+    public void onSuccess(List<EMContact> value) {
+        
+    }
+
+    @Override
+    public void onError(int error, String errorMsg) {
+        
+    }
+});
+```
+
+- 分页获取服务端好友列表。
+
+```java
+// limit 的取值范围为 [1,50]
+List<EMContact> contacts=new ArrayList<>();
+String cursor= "";
+int limit=20;
+doAsyncFetchAllContactsFromServer(contacts,cursor,limit);
+
+private void doAsyncFetchAllContactsFromServer(List<EMContact> contacts, String cursor, int limit) {
+    EMClient.getInstance().contactManager().asyncFetchAllContactsFromServer(limit, cursor, new EMValueCallBack<EMCursorResult<EMContact>>() {
+        @Override
+        public void onSuccess(EMCursorResult<EMContact> value) {
+            List<EMContact> data = value.getData();
+            String resultCursor = value.getCursor();
+            if(!CollectionUtils.isEmpty(data)) {
+                contacts.addAll(data);
+            }
+            if(!TextUtils.isEmpty(resultCursor)) {
+                doAsyncFetchAllContactsFromServer(contacts, resultCursor, limit);
+            }
+        }
+
+        @Override
+        public void onError(int error, String errorMsg) {
+            
+        }
+    });
+```
+
+此外，你也可以调用 `getAllContactsFromServer` 方法从服务器获取所有好友的列表，该列表只包含好友的用户 ID。
+
+```java
+// 同步方法，会阻塞当前线程。异步方法为 asyncGetAllContactsFromServer(EMValueCallBack)。
+List<String> usernames = EMClient.getInstance().contactManager().getAllContactsFromServer();
+```
+
+### 从本地获取好友列表
+
+自 4.2.1 版本开始，你可以调用 `fetchContactFromLocal` 方法从本地获取单个好友的用户 ID 和好友备注。你也可以调用 `asyncFetchAllContactsFromLocal` 方法一次性获取整个好友列表，其中每个好友对象包含好友的用户 ID 和好友备注。
+
+:::tip
+需要从服务器获取好友列表之后，才能从本地获取到好友列表。
+:::
+
+- 获取本地单个好友。
+
+```java
+try {
+    EMContact emContact = EMClient.getInstance().contactManager().fetchContactFromLocal(userId);
+    String remark = emContact.getRemark();
+    String username = emContact.getUsername();
+    EMLog.e(TAG, "fetchContactFromLocal success, username:" + username + ",remark:" + remark);
+} catch (HyphenateException e) {
+    EMLog.e(TAG, "fetchContactFromLocal error:" + e.getMessage());
+};
+```
+
+- 一次性获取本地好友列表。
+
+```java
+EMClient.getInstance().contactManager().asyncFetchAllContactsFromLocal(new EMValueCallBack<List<EMContact>>() {
+    @Override
+    public void onSuccess(List<EMContact> value) {
+        
+    }
+
+    @Override
+    public void onError(int error, String errorMsg) {
+        
+    }
+});
+```
+
+此外，你也可以调用 `getContactsFromLocal` 方法从本地一次性获取所有好友的列表，该列表只包含好友的用户 ID。
+
+示例代码如下：
+
+```java
+List<String> usernames = EMClient.getInstance().contactManager().getContactsFromLocal();
+```
+
+### 添加用户到黑名单
+
+黑名单是与好友无任何关系的独立体系。可以将任何用户加入黑名单，不论该用户与你是否是好友关系。
+
+黑名单功能包括加入黑名单，从黑名单移出用户和获取黑名单列表。对于获取黑名单，你可从服务器获取黑名单列表，也可从本地数据库获取已保存的黑名单列表。
+
+你可以调用 `addUserToBlackList` 添加用户到黑名单。用户被加入黑名单后，无法向你发送消息，也无法发送好友申请。
+
+用户可以将任何其他用户添加到黑名单列表，无论该用户是否是好友。好友被加入黑名单后仍在好友列表上显示。
+
+```java
+// 同步方法，会阻塞当前线程。
+// 异步方法为 asyncAddUserToBlackList(String, boolean, EMCallBack)。
+EMClient.getInstance().contactManager().addUserToBlackList(username,true);
+```
+
+### 将用户从黑名单移除
+
+你可以调用 `removeUserFromBlackList` 将用户从黑名单移除，用户发送消息等行为将恢复。
+
+```java
+// 同步方法，会阻塞当前线程。
+// 异步方法为 asyncRemoveUserFromBlackList(String, EMCallBack)。
+EMClient.getInstance().contactManager().removeUserFromBlackList(username);
+```
+
+### 从服务器获取黑名单列表
+
+你可以调用 `getBlackListFromServer` 从服务端获取黑名单列表。示例代码如下：
+
+```java
+// 同步方法，会阻塞当前线程。
+// 异步方法为 asyncGetBlackListFromServer(EMValueCallBack)。
+EMClient.getInstance().contactManager().getBlackListFromServer();
+```
+
+### 从本地数据库获取黑名单列表
+
+从服务器获取黑名单列表之后，才能从本地数据库获取到黑名单列表。
+
+示例代码如下：
+
+```java
+EMClient.getInstance().contactManager().getBlackListUsernames();
+```

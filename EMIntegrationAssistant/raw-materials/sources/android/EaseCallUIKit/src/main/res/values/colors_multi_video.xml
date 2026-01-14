@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 多人视频通话相关颜色 -->
+    <color name="callkit_video_background">#1A1A1A</color>
+    <color name="callkit_top_bar_background">#80000000</color>
+    <color name="callkit_control_panel_background">#80000000</color>
+    <color name="callkit_speaking_indicator_color">#4CAF50</color>
+    <color name="callkit_end_call_background">#F44336</color>
+    <color name="callkit_network_poor_color">#FF9800</color>
+    <color name="callkit_network_bad_color">#F44336</color>
+</resources> 

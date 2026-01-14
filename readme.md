@@ -15,7 +15,7 @@
 
 用户克隆repo或者下载源码
 git clone https://github.com/zjc19891106/easeim-mcp-server
-cd easeim-mcp-server && npm install && npm run build
+cd easeim-mcp-server/EMIntegrationAssistant/easeim-mcp-server/ && npm install && npm run build
 
 ## 配置 Claude（使用绝对路径）
 ```Json

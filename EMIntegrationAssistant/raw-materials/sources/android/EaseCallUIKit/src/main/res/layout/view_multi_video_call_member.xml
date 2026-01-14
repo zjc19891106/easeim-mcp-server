@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_rectangle_conner_12">
+
+    <ImageView
+        android:id="@+id/avatar_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/callkit_video_default" />
+
+    <TextureView
+        android:id="@+id/texture_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/csl_connecting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/translucence">
+
+        <ImageView
+            android:id="@+id/iv_connecting"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/callkit_connecting"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_container"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/shape_rectangle_bg_80000000_conner_6"
+        android:gravity="center"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginStart="2dp"
+            android:textColor="@color/callkit_neutral_98"
+            android:textSize="10sp"
+            android:layout_marginEnd="2dp"
+            android:visibility="visible"
+            tools:text="username" />
+
+        <com.hyphenate.callkit.widget.CallKitImageView
+            android:id="@+id/mic_status"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/callkit_mic_off_small"
+            app:shape_type="rectangle"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/tv_name"
+            app:layout_constraintStart_toEndOf="@id/tv_name"
+            app:layout_constraintTop_toTopOf="@id/tv_name" />
+
+        <com.hyphenate.callkit.widget.CallKitImageView
+            android:id="@+id/speaking_indicator"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:visibility="visible"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:src="@drawable/callkit_speaker_wave"
+            app:shape_type="rectangle"
+            app:layout_constraintBottom_toBottomOf="@id/tv_name"
+            app:layout_constraintStart_toEndOf="@id/tv_name"
+            app:layout_constraintTop_toTopOf="@id/tv_name" />
+    </LinearLayout>
+
+
+    <!-- 网络状态 - 减小到16dp -->
+    <ImageView
+        android:id="@+id/network_status"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/shape_rectangle_bg_80000000_conner_6"
+        android:padding="2dp"
+        android:src="@drawable/callkit_network_good"
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

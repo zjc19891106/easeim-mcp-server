@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@drawable/shape_rectangle_bg_2f3437_conner_12">
+
+    <com.hyphenate.callkit.widget.CallKitImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/callkit_default_avatar"
+        app:ease_radius="4dp"
+        app:shape_type="rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/callkit_color_text_primary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar"
+        tools:text="UserName" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:ellipsize="end"
+        android:maxLength="30"
+        android:textColor="@color/callkit_color_text_secondary"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        tools:text="Inviting you to a video call" />
+
+    <com.hyphenate.callkit.widget.CallKitImageView
+        android:id="@+id/iv_accept"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/callkit_accept_tel"
+        app:shape_type="round"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.hyphenate.callkit.widget.CallKitImageView
+        android:id="@+id/iv_decline"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/callkit_decline"
+        app:shape_type="round"
+        app:layout_constraintBottom_toBottomOf="@id/iv_accept"
+        app:layout_constraintEnd_toStartOf="@id/iv_accept"
+        app:layout_constraintTop_toTopOf="@id/iv_accept" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

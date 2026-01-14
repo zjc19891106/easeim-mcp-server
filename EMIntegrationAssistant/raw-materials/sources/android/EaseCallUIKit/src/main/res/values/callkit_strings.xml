@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="callkit_loading">Loading…</string>
+    <string name="callkit_connecting">Connecting…</string>
+
+    <string name="alert_request_video">%1$s initiated a video call invitation</string>
+    <string name="alert_request_voice">%1$s initiated a voice call invitation</string>
+    <string name="alert_request_multiple_video">%1$s initiated a multi-user video call invitation</string>
+
+    <string name="easemob">Easemob</string>
+
+    <string name="callkit_decline">Decline</string>
+    <string name="callkit_accept">Accept</string>
+
+    <string name="The_other_is_recived">Call answered on another device</string>
+    <string name="The_other_is_refused">Call ended on another device</string>
+    <string name="The_other_is_busy">The other party is busy</string>
+
+
+    <string name="callkit_flip">Flip</string>
+    <string name="callkit_mike_on">Mike\non</string>
+    <string name="callkit_mike_off">Mike\noff</string>
+    <string name="callkit_speaker_on">Speaker\non</string>
+    <string name="callkit_speaker_off">Speaker\noff</string>
+    <string name="callkit_camera_on">Camera\non</string>
+    <string name="callkit_camera_off">Camera\noff</string>
+    <string name="callkit_end">End</string>
+
+    <string name="callkit_inviting_you_to_a_group_call">Inviting you to a group call</string>
+    <string name="callkit_inviting_you_to_a_video_call">Inviting you to a video call</string>
+    <string name="callkit_inviting_you_to_a_voice_call">Inviting you to a voice call</string>
+
+    <string name="contact_send_message">You have %2$s message(s) from %1$s contact(s)</string>
+    <string name="callkit_group_call">Group Call</string>
+    <string name="callkit_add">Add(%1$d)</string>
+    <string name="callkit_call">Call(%1$d)</string>
+
+    <string name="callkit_over_max_members">The number exceeds the maximum limit of %1$d</string>
+
+    <string name="callkit_waiting">waiting</string>
+    <string name="callkit_calling">Callkit Calling</string>
+    <string name="callkit_call_duration">Call Duration %1$s</string>
+    <string name="callkit_self_cancel">Canceled</string>
+    <string name="callkit_remote_refused">Remote Refused</string>
+    <string name="callkit_remote_busy">Remote Busy</string>
+    <string name="callkit_self_no_response">No Response</string>
+    <string name="callkit_remote_no_response">Remote No Response</string>
+    <string name="callkit_handle_on_other_device">Handled on Another Device</string>
+    <string name="callkit_remote_cancel">Remote Canceled</string>
+    <string name="callkit_refused_on_other_device">Refused On Another Device</string>
+    <string name="callkit_self_refused">Refused</string>
+    <string name="callkit_remote_drop">Interrupted</string>
+
+    <string name="callkit_enable_call_function">Enable the call function</string>
+    <string name="callkit_enable_call_function_desc">To use the VoIP call function, you need to enable the call account in the system Settings.</string>
+    <string name="callkit_set_call_function">Set</string>
+    <string name="callkit_not_set_call_function">Not set </string>
+
+</resources>

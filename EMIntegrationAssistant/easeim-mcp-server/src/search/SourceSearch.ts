@@ -13,6 +13,7 @@ import type { SourceIndex, SourceSearchResult, CodeSymbol, AmbiguityDetection } 
 import { AmbiguityDetector } from './AmbiguityDetector.js';
 import { QueryExpander } from '../intelligence/QueryExpander.js';
 import { SpellCorrector, QueryCorrectionResult } from '../intelligence/SpellCorrector.js';
+import { SearchSuggester, SearchSuggestion } from '../intelligence/SearchSuggester.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -23,6 +24,7 @@ export class SourceSearch {
   private ambiguityDetector: AmbiguityDetector;
   private queryExpander: QueryExpander;
   private spellCorrector: SpellCorrector;
+  private searchSuggester: SearchSuggester;
   private isSpellDictBuilt: boolean = false;
 
   constructor() {
@@ -30,6 +32,7 @@ export class SourceSearch {
     this.ambiguityDetector = new AmbiguityDetector();
     this.queryExpander = new QueryExpander();
     this.spellCorrector = new SpellCorrector();
+    this.searchSuggester = new SearchSuggester();
   }
 
   /**
@@ -86,6 +89,7 @@ export class SourceSearch {
     ambiguity: AmbiguityDetection;
     expandedTerms?: string[];
     spellCorrection?: QueryCorrectionResult;
+    suggestion?: SearchSuggestion;
   } {
     const index = this.loadIndex();
     const results: Array<SourceSearchResult & { _score: number }> = [];
@@ -211,11 +215,22 @@ export class SourceSearch {
     // 检测歧义
     const ambiguity = this.ambiguityDetector.detectSourceAmbiguity(query, sortedResults);
 
+    // 生成搜索建议
+    const suggestion = this.searchSuggester.generateSuggestions(
+      query,
+      sortedResults,
+      {
+        correctedQuery: spellCorrection.hasCorrected ? spellCorrection.correctedQuery : undefined,
+        expandedTerms: searchTerms
+      }
+    );
+
     return {
       results: sortedResults,
       ambiguity,
       expandedTerms: expandedQuery.synonymsUsed.length > 0 ? searchTerms : undefined,
-      spellCorrection: spellCorrection.hasCorrected ? spellCorrection : undefined
+      spellCorrection: spellCorrection.hasCorrected ? spellCorrection : undefined,
+      suggestion
     };
   }
 

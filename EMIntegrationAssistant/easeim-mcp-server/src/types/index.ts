@@ -328,6 +328,65 @@ export interface ConfigIndex {
   components: Record<string, ComponentConfig>;
 }
 
+// ==================== 智能交互相关类型 ====================
+
+/**
+ * 交互引导选项
+ */
+export interface InteractionOption {
+  /** 选项标签 */
+  label: string;
+  /** 选项值（用于后续查询） */
+  value: string;
+  /** 选项描述 */
+  description?: string;
+}
+
+/**
+ * 交互引导信息
+ * AI 客户端可根据此信息自动向用户追问
+ */
+export interface InteractionHint {
+  /** 是否需要用户澄清 */
+  needsClarification: boolean;
+  /** 澄清类型 */
+  clarificationType?: 'missing_info' | 'ambiguous_query' | 'too_broad' | 'no_results' | 'multiple_options';
+  /** 建议 AI 客户端问用户的问题 */
+  question?: string;
+  /** 可选答案列表 */
+  options?: InteractionOption[];
+  /** 示例输入 */
+  examples?: string[];
+  /** 推荐使用的其他工具 */
+  suggestedTools?: Array<{
+    tool: string;
+    reason: string;
+    exampleArgs?: Record<string, any>;
+  }>;
+  /** 缺失的关键信息 */
+  missingInfo?: string[];
+}
+
+/**
+ * MCP 工具统一响应格式
+ */
+export interface MCPToolResponse {
+  /** 是否成功获取到有效结果 */
+  success: boolean;
+  /** 结果数据 */
+  data?: any;
+  /** 结果数量（如果是搜索结果） */
+  resultCount?: number;
+  /** 交互引导信息 */
+  interaction?: InteractionHint;
+  /** 上下文信息（用于连续对话） */
+  context?: {
+    topic?: string;
+    relatedQueries?: string[];
+    sessionId?: string;
+  };
+}
+
 // ==================== MCP 工具相关类型 ====================
 
 /**

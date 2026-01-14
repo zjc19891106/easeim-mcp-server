@@ -19,6 +19,7 @@ import { KnowledgeGraph } from './intelligence/KnowledgeGraph.js';
 import { CodeGenerator } from './intelligence/CodeGenerator.js';
 import { IntegrationGuide } from './intelligence/IntegrationGuide.js';
 import { ContextManager } from './intelligence/ContextManager.js';
+import { ResponseBuilder, analyzeQueryAmbiguity, detectMissingPlatform, SUPPORTED_PLATFORMS } from './utils/ResponseBuilder.js';
 
 export class EaseIMServer {
   private server: Server;
@@ -215,12 +216,34 @@ ${error.solutions.map((s: any, i: number) => `${i + 1}. ${s}`).join('\n')}
 
   /**
    * 处理 search_api
+   * 支持智能交互引导
    */
   private async handleSearchApi(args: any) {
     const { query, platform, layer, component, limit = 10 } = args;
 
     if (typeof query !== 'string' || !query.trim()) {
       throw new Error('query 参数必须是非空字符串');
+    }
+
+    // === 查询模糊度分析 ===
+    const ambiguityAnalysis = analyzeQueryAmbiguity(query);
+    if (ambiguityAnalysis.isAmbiguous) {
+      const builder = ResponseBuilder.create();
+      builder.addTitle('🔍 API 搜索');
+      builder.addParagraph(`查询 "${query}" 过于模糊，请提供更具体的关键词。`);
+      builder.setMissingInfoInteraction({
+        question: '请描述您要搜索的 API 功能：',
+        missingFields: ['API 名称或功能关键词'],
+        examples: [
+          'sendMessage - 发送消息相关',
+          'login - 登录相关',
+          'group - 群组相关',
+          'chatroom - 聊天室相关'
+        ]
+      });
+      builder.addSuggestedTool('get_guide', '获取功能模块完整指南', { topic: 'message' });
+      builder.addSuggestedTool('smart_assist', '使用智能助手描述需求');
+      return builder.build();
     }
 
     // 构造搜索上下文
@@ -232,15 +255,34 @@ ${error.solutions.map((s: any, i: number) => `${i + 1}. ${s}`).join('\n')}
 
     const { results, ambiguity } = this.docSearch.searchApi(query, context, limit);
 
+    // === 无结果时的交互引导 ===
     if (results.length === 0) {
-      return {
-        content: [
-          {
-            type: 'text',
-            text: `未找到与 "${query}" 相关的 API。\n\n建议：\n1. 尝试使用更通用的关键词\n2. 使用中文或英文关键词\n3. 使用 get_guide 获取模块的完整文档`
-          }
+      const builder = ResponseBuilder.create();
+      builder.addTitle('🔍 API 搜索结果');
+      builder.addParagraph(`未找到与 "${query}" 相关的 API。`);
+      builder.setNoResultsInteraction({
+        query,
+        suggestions: [
+          '尝试使用更通用的关键词',
+          '使用中文或英文关键词',
+          '检查拼写是否正确'
+        ],
+        alternativeTools: [
+          { tool: 'get_guide', reason: '获取功能模块的完整文档', exampleArgs: { topic: 'message' } },
+          { tool: 'search_source', reason: '搜索 UIKit 源码', exampleArgs: { query } },
+          { tool: 'smart_assist', reason: '用自然语言描述需求', exampleArgs: { query: `如何使用 ${query}` } }
         ]
-      };
+      });
+
+      // 提供常用搜索建议
+      builder.addParagraph('\n**常用 API 搜索关键词：**');
+      builder.addListItem('message / 消息 - 消息发送接收');
+      builder.addListItem('conversation / 会话 - 会话管理');
+      builder.addListItem('group / 群组 - 群组操作');
+      builder.addListItem('contact / 好友 - 好友关系');
+      builder.addListItem('push / 推送 - 消息推送');
+
+      return builder.build();
     }
 
     // 构建结果文本
@@ -290,6 +332,7 @@ ${results.map((r, i) => `
 
   /**
    * 处理 search_source
+   * 支持智能交互引导
    */
   private async handleSearchSource(args: any) {
     const { query, component = 'all', limit = 10 } = args;
@@ -298,17 +341,64 @@ ${results.map((r, i) => `
       throw new Error('query 参数必须是非空字符串');
     }
 
+    // === 查询模糊度分析 ===
+    const ambiguityAnalysis = analyzeQueryAmbiguity(query);
+    if (ambiguityAnalysis.isAmbiguous) {
+      const builder = ResponseBuilder.create();
+      builder.addTitle('📦 源码搜索');
+      builder.addParagraph(`查询 "${query}" 过于模糊，请提供更具体的关键词。`);
+      builder.setMissingInfoInteraction({
+        question: '请描述您要搜索的源码内容：',
+        missingFields: ['类名、方法名或功能关键词'],
+        examples: [
+          'MessageCell - 消息单元格',
+          'bubbleColor - 气泡颜色',
+          'Appearance - 外观配置',
+          'InputBar - 输入框'
+        ]
+      });
+      builder.setAmbiguousInteraction({
+        question: '或者选择一个组件范围：',
+        options: [
+          { label: 'EaseChatUIKit', value: 'EaseChatUIKit', description: '聊天界面 UI 组件' },
+          { label: 'EaseCallUIKit', value: 'EaseCallUIKit', description: '音视频通话 UI' },
+          { label: 'EaseChatroomUIKit', value: 'EaseChatroomUIKit', description: '聊天室 UI' },
+          { label: '全部组件', value: 'all', description: '搜索所有组件' }
+        ]
+      });
+      return builder.build();
+    }
+
     const { results, ambiguity } = this.sourceSearch.search(query, component, limit);
 
+    // === 无结果时的交互引导 ===
     if (results.length === 0) {
-      return {
-        content: [
-          {
-            type: 'text',
-            text: `未找到与 "${query}" 相关的源码。\n\n建议：\n1. 尝试使用更通用的关键词\n2. 检查拼写是否正确\n3. 尝试搜索相关的类名或方法名`
-          }
+      const builder = ResponseBuilder.create();
+      builder.addTitle('📦 源码搜索结果');
+      builder.addParagraph(`未找到与 "${query}" 相关的源码。`);
+      builder.setNoResultsInteraction({
+        query,
+        suggestions: [
+          '尝试使用更通用的关键词',
+          '检查拼写是否正确',
+          '尝试搜索相关的类名或方法名'
+        ],
+        alternativeTools: [
+          { tool: 'list_config_options', reason: '查看可配置的 Appearance 属性', exampleArgs: { component: 'EaseChatUIKit' } },
+          { tool: 'get_extension_points', reason: '查看可扩展的协议和类', exampleArgs: { component: 'EaseChatUIKit' } },
+          { tool: 'explain_class', reason: '了解特定类的用法', exampleArgs: { className: 'MessageCell' } }
         ]
-      };
+      });
+
+      // 提供常用源码搜索建议
+      builder.addParagraph('\n**常用源码搜索关键词：**');
+      builder.addListItem('MessageCell / 消息 - 消息展示相关');
+      builder.addListItem('Appearance - 外观配置类');
+      builder.addListItem('bubble / 气泡 - 消息气泡样式');
+      builder.addListItem('avatar / 头像 - 用户头像');
+      builder.addListItem('InputBar / 输入 - 输入框组件');
+
+      return builder.build();
     }
 
     // 构建结果文本
@@ -391,6 +481,7 @@ ${r.matchedSymbols.map(s => `- **${s.name}** (${s.type}) - 第 ${s.line} 行${s.
 
   /**
    * 处理 diagnose
+   * 支持智能交互引导
    */
   private async handleDiagnose(args: any) {
     const { symptom } = args;
@@ -399,17 +490,67 @@ ${r.matchedSymbols.map(s => `- **${s.name}** (${s.type}) - 第 ${s.line} 行${s.
       throw new Error('symptom 参数必须是非空字符串');
     }
 
+    // === 症状模糊度分析 ===
+    const ambiguityAnalysis = analyzeQueryAmbiguity(symptom);
+    if (ambiguityAnalysis.isAmbiguous) {
+      const builder = ResponseBuilder.create();
+      builder.addTitle('🔧 问题诊断');
+      builder.addParagraph(`症状描述 "${symptom}" 不够具体，请提供更详细的信息。`);
+      builder.setMissingInfoInteraction({
+        question: '请详细描述您遇到的问题：',
+        missingFields: ['错误信息', '出现问题的操作', '期望的结果'],
+        examples: [
+          '发送消息失败，返回错误码 508',
+          '登录时提示 token 过期',
+          '收不到推送消息',
+          '群组创建失败'
+        ]
+      });
+      builder.setAmbiguousInteraction({
+        question: '或者选择一个问题类型：',
+        options: [
+          { label: '消息相关', value: 'message', description: '发送/接收消息失败' },
+          { label: '登录问题', value: 'login', description: '登录失败、token 问题' },
+          { label: '推送问题', value: 'push', description: '收不到推送、推送延迟' },
+          { label: '群组问题', value: 'group', description: '群组操作失败' }
+        ]
+      });
+      builder.addSuggestedTool('lookup_error', '如果有错误码，可以直接查询', { code: 508 });
+      return builder.build();
+    }
+
     const errors = this.docSearch.diagnose(symptom);
 
+    // === 无诊断结果时的交互引导 ===
     if (errors.length === 0) {
-      return {
-        content: [
-          {
-            type: 'text',
-            text: `未能诊断出与 "${symptom}" 相关的错误。\n\n建议：\n1. 提供更详细的症状描述\n2. 包含具体的错误信息或现象\n3. 使用 search_api 搜索相关功能的文档`
-          }
+      const builder = ResponseBuilder.create();
+      builder.addTitle('🔧 问题诊断结果');
+      builder.addParagraph(`未能诊断出与 "${symptom}" 相关的已知错误。`);
+      builder.setNoResultsInteraction({
+        query: symptom,
+        suggestions: [
+          '提供更详细的症状描述',
+          '包含具体的错误信息或错误码',
+          '描述操作步骤和期望结果'
+        ],
+        alternativeTools: [
+          { tool: 'lookup_error', reason: '如果有错误码，直接查询错误码', exampleArgs: { code: 508 } },
+          { tool: 'search_api', reason: '搜索相关功能的 API 文档', exampleArgs: { query: symptom } },
+          { tool: 'diagnose_build_error', reason: '如果是编译错误，使用构建错误诊断', exampleArgs: { errorMessage: symptom } }
         ]
-      };
+      });
+
+      // 提供常见问题类别
+      builder.addParagraph('\n**常见问题类别：**');
+      builder.addListItem('**消息问题**：发送失败、消息丢失、消息延迟');
+      builder.addListItem('**登录问题**：登录失败、token 过期、被踢下线');
+      builder.addListItem('**推送问题**：收不到推送、推送延迟、推送内容异常');
+      builder.addListItem('**群组问题**：创建失败、加入失败、权限问题');
+      builder.addListItem('**网络问题**：连接失败、超时、断线重连');
+
+      builder.addParagraph('\n请描述具体症状，例如："发送消息后对方收不到，但是没有报错"');
+
+      return builder.build();
     }
 
     const resultText = `# 问题诊断：${symptom}
@@ -834,6 +975,7 @@ ${e.solutions.map((s: any, j: number) => `${j + 1}. ${s}`).join('\n')}
    * 处理 smart_assist - 智能助手
    * 理解用户自然语言意图，自动调用合适的工具
    * 集成上下文感知搜索
+   * 支持智能交互引导
    */
   private async handleSmartAssist(args: any) {
     const { query, session_id } = args;
@@ -843,6 +985,14 @@ ${e.solutions.map((s: any, j: number) => `${j + 1}. ${s}`).join('\n')}
     }
 
     const sessionId = session_id || 'default';
+
+    // === 查询模糊度分析 ===
+    const ambiguityAnalysis = analyzeQueryAmbiguity(query);
+
+    // 如果查询过于模糊，直接返回引导信息
+    if (ambiguityAnalysis.isAmbiguous) {
+      return this.buildAmbiguousQueryResponse(query, ambiguityAnalysis);
+    }
 
     // === 上下文感知：检测连续性 ===
     const continuity = this.contextManager.detectContinuity(query, sessionId);
@@ -858,15 +1008,28 @@ ${e.solutions.map((s: any, j: number) => `${j + 1}. ${s}`).join('\n')}
     // 记录搜索历史
     this.contextManager.recordSearch(query, intentResult, undefined, sessionId);
 
-    let resultText = `# 🧠 智能助手分析\n\n`;
-    resultText += `**您的问题**: ${query}\n\n`;
+    // === 低置信度时的交互引导 ===
+    if (confidence < 50 && intent === UserIntent.UNKNOWN) {
+      return this.buildLowConfidenceResponse(query, intentResult, sessionId);
+    }
+
+    // === 平台检测：功能实现类查询需要明确平台 ===
+    const platformCheck = detectMissingPlatform(query);
+    if (platformCheck.needsPlatform && platformCheck.isImplementationQuery) {
+      return this.buildPlatformSelectionResponse(query, platformCheck.featureName, intentResult);
+    }
+
+    const builder = ResponseBuilder.create();
+
+    builder.addTitle('🧠 智能助手分析');
+    builder.addParagraph(`**您的问题**: ${query}`);
 
     // 如果检测到连续性，显示上下文信息
     if (continuity.isContinuation && continuity.suggestedContext) {
-      resultText += `> 📎 **上下文**: ${continuity.suggestedContext}\n\n`;
+      builder.addParagraph(`> 📎 **上下文**: ${continuity.suggestedContext}`);
     }
 
-    resultText += `**识别意图**: ${this.intentClassifier.getIntentDescription(intent)} (置信度: ${confidence.toFixed(0)}%)\n\n`;
+    builder.addParagraph(`**识别意图**: ${this.intentClassifier.getIntentDescription(intent)} (置信度: ${confidence.toFixed(0)}%)`);
 
     // 2. 提取的实体
     const extractedEntities: string[] = [];
@@ -878,10 +1041,12 @@ ${e.solutions.map((s: any, j: number) => `${j + 1}. ${s}`).join('\n')}
     if (entities.configProperty) extractedEntities.push(`配置项: ${entities.configProperty}`);
 
     if (extractedEntities.length > 0) {
-      resultText += `**提取的关键信息**: ${extractedEntities.join(' | ')}\n\n`;
+      builder.addParagraph(`**提取的关键信息**: ${extractedEntities.join(' | ')}`);
     }
 
-    resultText += `---\n\n`;
+    builder.addDivider();
+
+    let resultText = builder.build().content[0].text;
 
     // 3. 根据意图提供解决方案
     switch (intent) {
@@ -1819,6 +1984,197 @@ Appearance.errorHue = 350/360.0       // 红色
         }
       ]
     };
+  }
+
+  // ============================================================
+  // 智能交互引导辅助方法
+  // ============================================================
+
+  /**
+   * 构建模糊查询响应 - 当查询过于模糊时引导用户提供更多信息
+   */
+  private buildAmbiguousQueryResponse(
+    query: string,
+    ambiguityAnalysis: { isAmbiguous: boolean; ambiguityType?: string; suggestions?: string[] }
+  ) {
+    const builder = ResponseBuilder.create();
+
+    builder.addTitle('🤔 需要更多信息');
+    builder.addParagraph(`您的查询 "${query}" 比较模糊，我需要更多信息来帮助您。`);
+
+    // 根据模糊类型给出不同的引导
+    switch (ambiguityAnalysis.ambiguityType) {
+      case 'too_short':
+        builder.setMissingInfoInteraction({
+          question: '请提供更具体的描述',
+          missingFields: ['具体功能名称', '问题描述', '错误信息'],
+          examples: [
+            '如何发送图片消息',
+            '错误码 508 怎么解决',
+            '修改消息气泡颜色',
+            'MessageCell 类怎么用'
+          ]
+        });
+        break;
+
+      case 'too_generic':
+        builder.setAmbiguousInteraction({
+          question: '请选择您想了解的方向：',
+          options: [
+            { label: '消息相关', value: 'message', description: '发送/接收/自定义消息' },
+            { label: 'UI 定制', value: 'ui', description: '修改界面样式、颜色、布局' },
+            { label: '错误处理', value: 'error', description: '错误码查询、问题诊断' },
+            { label: 'SDK 集成', value: 'integration', description: '安装配置、初始化' },
+            { label: '群组/聊天室', value: 'group', description: '群组和聊天室功能' }
+          ]
+        });
+        break;
+
+      case 'missing_context':
+        builder.setMissingInfoInteraction({
+          question: '请说明具体要操作的对象：',
+          missingFields: ['操作对象（如：消息气泡、头像、输入框）', '具体属性（如：颜色、大小、样式）'],
+          examples: [
+            '修改消息气泡的背景颜色',
+            '设置头像为圆形',
+            '配置输入框的占位符文字'
+          ]
+        });
+        break;
+
+      default:
+        builder.setMissingInfoInteraction({
+          question: '请提供更详细的描述',
+          missingFields: ['具体需求'],
+          examples: [
+            '我想自定义一个订单消息',
+            '如何添加发送位置的菜单',
+            '登录失败错误码 200'
+          ]
+        });
+    }
+
+    // 添加推荐工具
+    builder.addSuggestedTool('list_scenarios', '查看所有支持的开发场景');
+    builder.addSuggestedTool('search_api', '搜索 API 文档', { query: '消息' });
+    builder.addSuggestedTool('list_config_options', '查看所有可配置项', { component: 'EaseChatUIKit' });
+
+    return builder.build();
+  }
+
+  /**
+   * 构建低置信度响应 - 当意图识别置信度较低时引导用户
+   */
+  private buildLowConfidenceResponse(
+    query: string,
+    intentResult: { intent: UserIntent; confidence: number; entities: any },
+    sessionId: string
+  ) {
+    const builder = ResponseBuilder.create();
+
+    builder.addTitle('🤔 让我确认一下您的需求');
+    builder.addParagraph(`您说的是 "${query}"，我有几种理解方式：`);
+
+    // 基于可能的意图提供选项
+    const possibleIntents = this.getPossibleIntents(query);
+
+    builder.setMultipleOptionsInteraction({
+      question: '请选择最符合您需求的选项：',
+      options: possibleIntents.map(pi => ({
+        label: pi.label,
+        value: pi.intent,
+        description: pi.description
+      }))
+    });
+
+    // 添加示例
+    builder.addParagraph('\n**或者您可以这样描述：**');
+    builder.addListItem('"我想自定义一个订单消息" - 自定义消息类型');
+    builder.addListItem('"错误码 508 怎么解决" - 错误处理');
+    builder.addListItem('"修改消息气泡颜色为蓝色" - UI 定制');
+    builder.addListItem('"如何集成 EaseChatUIKit" - SDK 集成');
+
+    return builder.build();
+  }
+
+  /**
+   * 构建平台选择响应 - 当用户要实现功能但未指定平台时
+   */
+  private buildPlatformSelectionResponse(
+    query: string,
+    featureName: string | undefined,
+    intentResult: { intent: UserIntent; confidence: number; entities: any }
+  ) {
+    const builder = ResponseBuilder.create();
+
+    builder.addTitle('📱 请选择目标平台');
+
+    if (featureName) {
+      builder.addParagraph(`您想实现「**${featureName}**」功能，请先告诉我您的目标开发平台：`);
+    } else {
+      builder.addParagraph(`您的需求是："${query}"\n\n为了提供准确的代码示例和集成指南，请选择您的目标平台：`);
+    }
+
+    // 使用平台选择交互
+    builder.setFeatureImplementationInteraction({
+      featureName: featureName,
+      askPlatform: true
+    });
+
+    // 添加平台说明
+    builder.addDivider();
+    builder.addTitle('各平台 SDK 说明', 2);
+    builder.addParagraph('');
+    builder.addListItem('**iOS** - 使用 `EaseChatUIKit` (Swift)，支持 CocoaPods 集成');
+    builder.addListItem('**Android** - 使用 `ease-chat-uikit` (Kotlin)，支持 Maven 集成');
+    builder.addListItem('**Web** - 使用 `easemob-chat-uikit` (React)，支持 npm 集成');
+    builder.addListItem('**Flutter** - 使用 `em_chat_uikit` (Dart)，支持 pub.dev 集成');
+    builder.addListItem('**Unity** - 使用 `Agora Chat SDK`，支持 Unity Package 集成');
+
+    builder.addParagraph('\n💡 **提示**: 您也可以在问题中直接说明平台，例如：');
+    builder.addListItem(`"iOS 上${featureName ? '如何实现' + featureName : query}"`);
+    builder.addListItem(`"Android ${featureName ? featureName + '怎么做' : query}"`);
+
+    return builder.build();
+  }
+
+  /**
+   * 获取可能的意图列表
+   */
+  private getPossibleIntents(query: string): Array<{ intent: string; label: string; description: string }> {
+    const intents = [
+      { intent: 'customize_ui', label: '定制 UI 样式', description: '修改颜色、字体、布局等界面元素' },
+      { intent: 'custom_message', label: '自定义消息类型', description: '创建订单、卡片等自定义消息' },
+      { intent: 'fix_error', label: '解决错误/问题', description: '查询错误码、诊断问题' },
+      { intent: 'integrate_sdk', label: 'SDK 集成配置', description: '安装、初始化、配置 SDK' },
+      { intent: 'understand_api', label: '了解 API 用法', description: '查看接口文档和使用方法' }
+    ];
+
+    // 根据查询关键词调整顺序
+    const lowerQuery = query.toLowerCase();
+    if (lowerQuery.includes('颜色') || lowerQuery.includes('样式') || lowerQuery.includes('ui')) {
+      const uiIntent = intents.find(i => i.intent === 'customize_ui');
+      if (uiIntent) {
+        intents.splice(intents.indexOf(uiIntent), 1);
+        intents.unshift(uiIntent);
+      }
+    }
+    if (lowerQuery.includes('错误') || lowerQuery.includes('失败') || lowerQuery.includes('error')) {
+      const errorIntent = intents.find(i => i.intent === 'fix_error');
+      if (errorIntent) {
+        intents.splice(intents.indexOf(errorIntent), 1);
+        intents.unshift(errorIntent);
+      }
+    }
+    if (lowerQuery.includes('消息') || lowerQuery.includes('message')) {
+      const msgIntent = intents.find(i => i.intent === 'custom_message');
+      if (msgIntent) {
+        intents.splice(intents.indexOf(msgIntent), 1);
+        intents.unshift(msgIntent);
+      }
+    }
+
+    return intents.slice(0, 4); // 最多返回 4 个选项
   }
 
   /**

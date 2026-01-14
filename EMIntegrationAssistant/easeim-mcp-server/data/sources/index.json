@@ -1,10 +1,5016 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-01-13T07:53:38.745Z",
+  "lastUpdated": "2026-01-14T06:56:45.710Z",
   "platforms": [
+    "android",
     "ios"
   ],
   "files": [
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/CallKitClient.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 541
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/CallKitConfig.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 81
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/adapter/GroupSelectListAdapter.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 121
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/base/BaseAdapter.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 434
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/base/BaseCallActivity.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 521
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/base/BaseFragment.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 94
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/base/BaseListFragment.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 130
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/base/BaseViewModel.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 77
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/bean/CallAction.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 35
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/bean/CallEndReason.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 146
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/bean/CallInfo.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 42
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/bean/CallKitGroupInfo.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/bean/CallKitUserInfo.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 46
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/bean/CallState.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 58
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/bean/CallType.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 55
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/bean/Constant.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 64
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/bean/NetworkQuality.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 56
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/event/AlertEvent.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/event/AnswerEvent.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 23
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/event/BaseEvent.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 35
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/event/CallCancelEvent.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 23
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/event/ConfirmCallEvent.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 20
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/event/ConfirmRingEvent.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 20
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/event/InviteEvent.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 21
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/event/LeaveEvent.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/event/VideoToVoiceeEvent.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/extension/ChatMessage.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 112
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/extension/Int.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 18
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/global/CallKitActivityLifecycleCallback.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 55
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/interfaces/CallInfoProvider.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 101
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/interfaces/CallKitListener.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 134
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/interfaces/CallbackImpl.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 43
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/interfaces/IGroupRequest.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 51
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/interfaces/IUIKitGroupResultView.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 18
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/interfaces/OnGroupSelectedListener.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/interfaces/OnItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 25
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/interfaces/RTCConfigProvider.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 61
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/manager/AudioController.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 341
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/manager/FloatWindow.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 703
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/manager/IncomingCallTopWindow.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 641
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/manager/RtcManager.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 896
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/manager/SignalingManager.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 1166
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/repo/ChatCallKitGroupRepository.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 80
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/repo/ChatGroupSuspend.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 54
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/service/CallForegroundService.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 363
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/telecom/IncomingCallService.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 131
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/telecom/PhoneAccountHelper.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 325
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/telecom/TelecomHelper.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 227
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/telecom/VoipConnectionService.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 182
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/ui/MultiCallActivity.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 540
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/ui/SelectGroupMembersActivity.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 160
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/ui/SingleCallActivity.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 634
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/ui/fragment/SelectGroupMemberFragment.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 167
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/utils/CallKitCache.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 351
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/utils/CallKitNotifier.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 599
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/utils/CallKitUtils.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 302
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/utils/Flow.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 39
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/utils/PermissionHelper.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 166
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/utils/RomUtils.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 291
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/utils/TimerUtils.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 113
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/utils/TypealiasSDK.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 136
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/viewmodel/CallKitGroupViewModel.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 67
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/viewmodel/MultipleCallViewModel.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 189
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/viewmodel/SingleCallViewModel.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 259
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/widget/CallKitImageView.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 496
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/widget/MultiVideoCallGridLayout.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 851
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/widget/MultiVideoCallMemberView.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 300
+    },
+    {
+      "path": "android/EaseCallUIKit/src/main/java/com/hyphenate/callkit/widget/RefreshLayout.kt",
+      "platform": "android",
+      "component": "EaseCallUIKit",
+      "classes": [],
+      "lines": 43
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/DemoApplication.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 99
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/DemoHelper.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 159
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/MainActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 324
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/base/ActivityState.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 32
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/base/BaseDialogFragment.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 131
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/base/BaseInitActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 38
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/base/ErrorCode.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 66
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/base/UserActivityLifecycleCallbacks.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 104
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/bean/Language.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 27
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/bean/LoginResult.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 8
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/bean/PresenceData.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 34
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/CallKitActivityLifecycleCallback.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 109
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/CallKitManager.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 369
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/CallUserInfo.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 39
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/ConferenceInviteActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 121
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/ConferenceInviteAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 43
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/ConferenceInviteFragment.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 79
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/ConferenceMemberSelectViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 76
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/MultipleVideoActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/VideoCallActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 21
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/extensions/Activity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 88
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/extensions/JSONObject.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 14
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/viewholder/ChatConferenceInviteViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 6
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/viewholder/ChatVoiceCallViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 48
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/views/ChatRowConferenceInvite.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 40
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/callkit/views/ChatRowVoiceCall.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 45
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/CustomCountDownTimer.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 43
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/DemoConstant.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/DemoDataModel.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 351
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/DeveloperModeHelper.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 10
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/LanguageUtil.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/ListenersWrapper.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 144
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/LocalNotifyHelper.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 53
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/MenuFilterHelper.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 28
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/PreferenceManager.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 53
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/PresenceCache.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 31
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/ProfileFetchManager.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 27
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/PushActivityLifecycleCallback.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 40
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/ReportHelper.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 38
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/RequestToAppServerManager.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 29
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/dialog/DemoAgreementDialogFragment.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 109
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/dialog/DemoDialogFragment.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 386
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/dialog/SimpleDialog.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 269
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/extensions/String.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 32
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/extensions/internal/Activity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 10
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/extensions/internal/ChatGroup.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 8
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/extensions/internal/ChatOptions.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 27
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/extensions/internal/ChatUserInfo.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/extensions/internal/EditText.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 101
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/extensions/internal/SwitchView.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 8
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/extensions/internal/TextView.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 41
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/push/PushManager.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 206
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/push/fcm/EMFCMMSGService.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 68
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/push/receiver/MiMsgReceiver.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 36
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/push/service/HMSPushService.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/push/service/HONORPushService.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 23
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/room/AppDatabase.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 42
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/room/dao/DemoUserDao.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 96
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/room/entity/DemoUser.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 22
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/room/extensions/DbEntity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/room/viewmodel/BusUserViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 130
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/suspend/ChatContactsUsupend.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 33
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/suspend/ChatUserInfoManagerSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 64
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/suspend/PresenceManagerSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 118
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/common/suspend/PushManagerSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 45
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/controller/PresenceController.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 135
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/interfaces/IMainRequest.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 16
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/interfaces/IMainResultView.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 16
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/interfaces/IPresenceRequest.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 38
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/interfaces/IPresenceResultView.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 61
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/interfaces/LanguageListItemSelectListener.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/repository/BaseRepository.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 10
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/repository/ChatClientRepository.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 34
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/repository/ChatContactRepository.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 107
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/repository/ChatPresenceRepository.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 39
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/repository/EMClientRepository.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 358
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/repository/GroupRepository.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 92
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/repository/ProfileInfoRepository.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 244
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/repository/PushRepository.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 29
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/chat/ChatActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 46
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/chat/ChatFragment.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 197
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/chat/CustomMessagesAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 52
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/contact/ChatContactCheckActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 69
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/contact/ChatContactDetailActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 229
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/contact/ChatContactListFragment.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 153
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/contact/ChatContactRemarkActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 134
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/contact/ChatNewRequestActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 24
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/conversation/ConversationListFragment.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 156
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/group/ChatCreateGroupActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 48
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/group/ChatGroupDetailActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 66
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/login/LoginActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 59
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/login/LoginFragment.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 442
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/login/ServerSetFragment.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 220
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/login/SplashActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 131
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/me/AboutActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 117
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/me/AboutMeFragment.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 301
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/me/CurrencyActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 235
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/me/EditUserNicknameActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 101
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/me/FeaturesActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 89
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/me/LanguageSettingActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 208
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/me/NotifyActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 104
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/me/StyleSettingActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 221
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/me/UserInformationActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 409
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/me/WebViewActivity.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 72
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/ui/me/controller/CameraAndCroppingController.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 145
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/uikit/UIKitManager.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 154
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/utils/CameraAndCropFileUtils.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 87
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/utils/EasePresenceUtil.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 101
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/utils/PhoneNumberUtils.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 18
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/utils/ToastUtils.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 401
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/viewmodel/ChatContactViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 142
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/viewmodel/LoginFragmentViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 45
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/viewmodel/LoginViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 38
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/viewmodel/MainViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 58
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/viewmodel/PresenceViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 96
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/viewmodel/ProfileInfoViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 65
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/viewmodel/PushViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 27
+    },
+    {
+      "path": "android/EaseChatDemo/src/main/kotlin/com/hyphenate/chatdemo/viewmodel/SplashViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatDemo",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/ChatUIKitClient.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 411
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/ChatUIKitConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/base/ChatUIKitBaseActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 179
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/base/ChatUIKitBaseAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 13
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/base/ChatUIKitBaseExtendMenuAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 33
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/base/ChatUIKitBaseFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 188
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/base/ChatUIKitBaseFullDialogFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 52
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/base/ChatUIKitBaseListFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 157
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/base/ChatUIKitBaseRecyclerViewAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 448
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/base/ChatUIKitBaseSearchFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 138
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/base/ChatUIKitBaseSheetFragmentDialog.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 144
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/base/ChatUIKitContainChildBottomSheetFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 108
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/ChatListenersWrapper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 1281
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/ChatUIKitCache.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 199
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/ChatUIKitConstant.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 94
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/ChatUIKitError.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/HorizontalPageLayoutManager.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 281
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/PageDecorationLastJudge.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 23
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/TypealiasSDK.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 126
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/TypealiasThirdLibararies.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/bus/ChatUIKitFlowBus.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 198
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/dialog/AlertController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 117
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/dialog/ChatUIKitAlertDialog.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 239
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/dialog/ChatUIKitBottomSheetChildHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 58
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/dialog/ChatUIKitBottomSheetContainerHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 23
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/dialog/ChatUIKitContactBottomSheetFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 56
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/dialog/ChatUIKitNewBottomSheetFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 51
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/dialog/CustomDialog.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 126
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/dialog/DialogViewHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 84
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/dialog/SimpleListSheetDialog.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 165
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/enums/ChatUIKitAvatarShape.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 10
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/enums/ChatUIKitCacheType.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 14
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/enums/ChatUIKitFinishReason.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 28
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/enums/ChatUIKitGroupMemberType.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 8
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/enums/ChatUIKitListViewType.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 13
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/enums/ChatUIKitReplyMap.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 52
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/enums/ChatUIKitTranslationLanguageType.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 30
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/ChatConversation.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 30
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/ChatGroup.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 60
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/ChatMessage.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 644
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/ChatMessageReaction.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 13
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/ChatThread.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 10
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/ChatUIKitProfile.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 30
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/ChatUIKitUser.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 11
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/ChatUserInfo.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 22
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/ConcatAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 19
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/Context.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 174
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/Float.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 16
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/Flow.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 35
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/ImageView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 171
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/Int.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 22
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/Intent.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 11
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/String.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 98
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/TextView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/URL.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 4
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/Uri.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 101
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/View.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 28
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/extensions/ViewGroup.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 69
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ChatUIKitAtMessageHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 232
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ChatUIKitDingMessageHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 294
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ChatUIKitEmojiHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 341
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ChatUIKitMenuFilterHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 48
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ChatUIKitNotifier.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 399
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ChatUIKitPreferenceManager.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 163
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ChatUIKitRowVoicePlayer.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 129
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ChatUIKitThreadNotifyHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 40
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ChatUIKitTimerHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 146
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ChatUIKitTitleBarHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 40
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ChatUIKitVoiceRecorder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 206
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/ContactSortedHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 13
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/DateFormatHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 604
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/PagingScrollHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 273
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/SidebarHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 88
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/helper/URLPreviewHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 193
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/impl/CallbackImpl.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 52
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/impl/ChatCallbackWrapper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 38
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/impl/ChatUIKitClientImpl.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 327
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/impl/OnItemClickListenerImpl.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/impl/OnItemLongClickListenerImpl.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/impl/OnMenuItemClickListenerImpl.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/interfaces/IAvatarStyle.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 42
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/interfaces/IControlDataView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 6
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/interfaces/IRecyclerView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 62
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/permission/PermissionCompat.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 108
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/permission/Permissions.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 23
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/permission/PermissionsManager.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 501
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/permission/PermissionsResultAction.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 160
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/player/IUIKitUserMethods.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 59
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/player/IUIKitVideoCallback.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/player/IUIKitVideoProgressCallback.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/player/UIKitVideoPlayer.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 837
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/player/Util.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 51
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/suspends/ChatClientSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 65
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/suspends/ChatContactSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 195
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/suspends/ChatConversationSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 48
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/suspends/ChatGroupSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 272
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/suspends/ChatManagerSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 459
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/suspends/ChatNotificationSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 113
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/suspends/ChatPushManagerSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 78
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/suspends/ChatThreadManagerSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 274
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/suspends/ChatroomManagerSuspend.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 49
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/utils/ChatMessage.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 29
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/utils/ChatUIKitCompat.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 507
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/utils/ChatUIKitFileUtils.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 214
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/utils/ChatUIKitImageUtils.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 505
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/utils/ChatUIKitVoiceLengthUtils.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 27
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/utils/RomUtils.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 284
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/common/utils/StatusBarCompat.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 261
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/configs/ChatUIKitAvatarConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 103
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/configs/ChatUIKitBottomMenuConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 191
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/configs/ChatUIKitConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 144
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/configs/ChatUIKitCustomMentionItemConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 22
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/configs/ChatUIKitDateFormatConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 115
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/configs/ChatUIKitDetailMenuConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 159
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/configs/ChatUIKitHeaderItemConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 84
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/configs/ChatUIKitMultiDeviceEventConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 24
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/configs/ChatUIKitSystemMsgConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/ChatUIKitAddUserCardFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 14
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/UIKitChatFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 1439
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/UIKitNewChatFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 19
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/activities/ChatUIKitHistoryActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 85
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/activities/ChatUIKitMessageSearchResultActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 48
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/activities/ChatUIKitShowBigImageActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 263
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/activities/ChatUIKitShowLocalVideoActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 112
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/activities/ChatUIKitShowNormalFileActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 89
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/activities/ChatUIKitShowVideoActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 143
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/activities/UIKitChatActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 259
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/adapter/ChatUIKitEmojiGridAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 81
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/adapter/ChatUIKitExtendMenuAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 74
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/adapter/ChatUIKitExtendMenuIndicatorAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 45
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/adapter/ChatUIKitMessagesAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 191
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/adapter/ChatUIKitPinMessageListAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 49
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/adapter/EmojiconPagerAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 25
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/ChatUIKitHistoryAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 22
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/ChatUIKitHistoryFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 214
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/ChatUIKitHistoryLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 115
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/viewholder/ChatUIKitHistoryCombineViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/viewholder/ChatUIKitHistoryExpressionViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/viewholder/ChatUIKitHistoryFileViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/viewholder/ChatUIKitHistoryImageViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/viewholder/ChatUIKitHistoryTextViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/viewholder/ChatUIKitHistoryUserCardViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/viewholder/ChatUIKitHistoryVideoViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/viewholder/ChatUIKitHistoryViewHolderFactory.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 97
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/viewholder/ChatUIKitHistoryVoiceViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/widget/ChatUIKitRowHistoryBigExpression.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 43
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/widget/ChatUIKitRowHistoryCombine.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 39
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/widget/ChatUIKitRowHistoryFile.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 47
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/widget/ChatUIKitRowHistoryImage.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 42
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/widget/ChatUIKitRowHistoryLocation.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 42
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/widget/ChatUIKitRowHistoryText.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 39
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/widget/ChatUIKitRowHistoryUserCard.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 47
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/widget/ChatUIKitRowHistoryVideo.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 39
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/chathistory/widget/ChatUIKitRowHistoryVoice.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 45
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/config/ChatUIKitMessageItemConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 235
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitAddExtendFunctionViewController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 181
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitAttachmentController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 273
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitDialogController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 59
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitMentionController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 90
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitMessageEditController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 79
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitMessageListScrollAndDataController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 293
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitMessageMultipleSelectController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 204
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitMessageReplyController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 152
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitMessageReportController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 30
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitMessageTranslationController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 53
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitNotificationController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 78
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/controllers/ChatUIKitPinMessageController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 182
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/enums/ChatUIKitLoadDataType.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 51
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/enums/ChatUIKitReactionType.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 23
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/enums/ChatUIKitType.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 28
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/forward/ChatUIKitContactForwardFragmentEvent.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 51
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/forward/ChatUIKitGroupListForwardFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 35
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/forward/ChatUIKitMessageForwardDialogFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 63
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/forward/adapter/ChatUIKitContactForwardAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 79
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/forward/adapter/ChatUIKitGroupListForwardAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 41
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/forward/adapter/ChatUIKitMessageForwardPagerAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 33
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/forward/dialog/ChatUIKitSearchForwardUserDialogFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 42
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/forward/helper/ChatUIKitMessageMultiSelectHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 370
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/forward/viewholder/ChatUIKitContactForwardViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 42
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/forward/viewholder/ChatUIKitGroupForwardViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 45
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/forward/widgets/ChatUIKitMultipleSelectMenuView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 116
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/ChatInputMenuListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 57
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/ChatUIKitEmojiconMenuListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 19
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/ChatUIKitExtendMenuItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/ChatUIKitPrimaryMenuListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 67
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatEmojiconMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 34
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatExtendMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 36
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatHistoryLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 28
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatHistoryResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 19
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatInputMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 102
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 239
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 39
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatMessageItemStyle.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 112
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatMessageListLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 141
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatMessageListResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 131
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatNotification.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 37
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatPrimaryMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 97
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatTopExtendMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 9
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IChatUnreadNotification.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 19
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/IHandleChatResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 280
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnChatErrorListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 10
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnChatExtendMenuItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnChatFinishListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 13
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnChatInputChangeListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnChatLayoutListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnChatRecordTouchListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 14
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnCombineMessageDownloadCallback.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 23
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnEditTextChangeListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 14
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnItemBubbleClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnMessageAckSendCallback.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 19
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnMessageForwardCallback.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 18
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnMessageItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 41
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnMessageListItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 44
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnMessageSendCallback.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 18
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnMessageTouchListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 27
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnModifyMessageListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 22
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnMultipleSelectChangeListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 14
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnMultipleSelectRemoveMsgListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 14
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnPeerTypingListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 9
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnReactionMessageListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 38
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnRecallMessageResultListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 20
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnReportMessageListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnSendCombineMessageCallback.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 18
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnTranslationMessageListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 22
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/interfaces/OnWillSendMessageListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/internal/SpannableStringBuilder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 8
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/pin/ChatUIKitPinItemSpaceDecoration.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/pin/ChatUIKitPinMessageListViewGroup.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 159
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/pin/holder/ChatUIKitPinDefaultViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 54
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/pin/holder/ChatUIKitPinImageMessageViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 55
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/pin/holder/ChatUIKitPinTextMessageViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 54
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/ChatUIKitMessageMenuReactionView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 143
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/ChatUIKitMessageReactionView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 178
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/ChatUIKitMessageReactionsDialog.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 153
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/ChatUIKitReactionUserListFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 168
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/ChatUIKitReactionsDialog.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 134
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/adapter/ChatUIKitMessageReactionAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 16
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/adapter/ChatUIKitMessageReactionViewHolderFactory.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 54
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/adapter/ChatUIKitReactionUserAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 56
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/adapter/ChatUIKitReactionUserPagerAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 42
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/interfaces/IChatReactionResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 43
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/interfaces/IMessageMenuReaction.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/interfaces/IMessageReaction.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 48
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/interfaces/IMessageReactionList.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 16
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/interfaces/IMessageReactionListResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 18
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/interfaces/IMessageReactionUsers.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 25
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/interfaces/IReactionUserListResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 37
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/interfaces/OnChatUIKitReactionErrorListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 16
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/viewholder/ChatUIKitReactionAddViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 22
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/viewholder/ChatUIKitReactionDefaultViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 22
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/viewholder/ChatUIKitReactionMoreViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 10
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reaction/viewholder/ChatUIKitReactionNormalViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 20
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reply/ChatUIKitExtendMessageReplyView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 127
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reply/ChatUIKitMessageReplyView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 448
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reply/interfaces/IChatMessageReply.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 23
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reply/interfaces/IChatMessageReplyResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 38
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/reply/interfaces/OnMessageReplyViewClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 30
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/report/ChatUIKitReportSheetDialog.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 135
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/search/ChatUIKitMessageSearchResultFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 28
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/translation/ChatUIKitMessageTranslationView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 85
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/urlpreview/ChatUIKitMessageUrlPreview.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 169
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitAlertViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitCombineViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitCustomViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitExpressionViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitFileViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 38
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitImageViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 58
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitMessageViewType.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 44
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitRowViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 139
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitTextViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitThreadNotifyViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitThreadUnKnownViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitUnknownViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitUnsentViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitUserCardViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitVideoViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 49
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitViewHolderFactory.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 211
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/viewholders/ChatUIKitVoiceViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 137
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitCustomLayoutManager.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 73
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitEmojiScrollTabBar.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 102
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitEmojiconIndicatorView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 129
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitEmojiconMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 160
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitEmojiconPagerView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 277
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitExtendMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 216
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitInputMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 351
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitInputMenuStyle.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 31
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 1392
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitMessageListLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 891
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitNotificationView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 91
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitPrimaryMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 331
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitUnreadNotificationView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 50
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/chat/widgets/ChatUIKitVoiceRecorderDialog.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 402
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/ChatUIKitBlockListActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 52
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/ChatUIKitBlockListFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 425
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/ChatUIKitContactCheckActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 171
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/ChatUIKitContactDetailsActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 461
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/ChatUIKitContactsListFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 624
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/adapter/ChatUIKitContactDetailItemAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 65
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/adapter/ChatUIKitContactListAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 94
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/adapter/ChatUIKitCustomHeaderAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 42
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/adapter/ChatUIKitListViewHolderFactory.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 38
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/config/ChatUIKitContactHeaderConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 18
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/config/ChatUIKitContactHeaderConfigBinding.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 24
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/interfaces/IContactItemStyle.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 8
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/interfaces/IContactListLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 60
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/interfaces/IUIKitContactResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 135
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/interfaces/OnContactEventListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 25
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/interfaces/OnHeaderItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/interfaces/OnMentionResultListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/item/ChatUIKitUserContactItem.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 112
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/viewholders/ChatUIKitGroupMemberViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/viewholders/ContactHeaderViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 76
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/viewholders/ContactViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 41
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/contact/widgets/ChatUIKitContactListLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 306
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/ChatUIKitConversationListFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 495
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/adapter/ChatUIKitConversationListAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 33
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/config/ChatUIKitConvItemConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 143
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/config/ChatUIKitConvItemConfigBinding.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 63
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/controllers/ChatUIKitConvDialogController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 83
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/interfaces/IConvItemStyle.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 37
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/interfaces/IConvItemTextStyle.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 41
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/interfaces/IConvMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 47
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/interfaces/IConversationListLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 66
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/interfaces/IUIKitConvListResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 95
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/interfaces/OnConvSelectedListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 14
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/interfaces/OnConversationListChangeListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 21
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/interfaces/OnConversationListLoadListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 21
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/interfaces/OnLoadConversationListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 10
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/viewholders/ChatUIKitConvViewType.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/viewholders/ChatUIKitConversationViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 166
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/viewholders/ChatUIKitConversationViewHolderFactory.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 45
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/conversation/widgets/ChatUIKitConversationListLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 601
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/ChatUIKitCreateGroupActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 150
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/ChatUIKitGroupDetailActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 533
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/ChatUIKitGroupDetailEditActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 366
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/ChatUIKitGroupListActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 41
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/ChatUIKitGroupMembersListActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 551
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/ChatUIKitGroupMentionBottomSheet.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 159
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/adapter/ChatUIKitGroupListAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 27
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/adapter/ChatUIKitGroupMemberListAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 82
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/adapter/ChatUIKitGroupSelectListAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 163
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/config/ChatUIKitGroupListConfig.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/config/ChatUIKitGroupListConfigBinding.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 33
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/fragments/ChatUIKitGroupAddMemberFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 159
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/fragments/ChatUIKitGroupListFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 200
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/fragments/ChatUIKitGroupMemberFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 178
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/fragments/ChatUIKitGroupRemoveMemberFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 160
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/interfaces/IGroupMemberEventListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 11
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/interfaces/ISearchResultListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/interfaces/IUIKitGroupResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 207
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/viewholders/ChatUIKitGroupListViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 60
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/group/viewholders/ChatUIKitSelectContactViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 82
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/invitation/ChatUIKitNewRequestsActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 357
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/invitation/ChatUIKitNewRequestsDetailsActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 101
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/invitation/adapter/ChatUIKitRequestAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/invitation/enums/InviteMessageStatus.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/invitation/helper/ChatUIKitNotificationMsgManager.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 265
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/invitation/helper/RequestMsgHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 77
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/invitation/holder/ChatUIKitNewRequestsViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 70
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/invitation/interfaces/IUIKitNotificationResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 58
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/ChatUIKitSearchActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 203
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/ChatUIKitSearchConversationFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 85
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/ChatUIKitSearchForwardUserFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 46
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/ChatUIKitSearchMessageFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 176
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/ChatUIKitSearchSelectUserFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 81
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/ChatUIKitSearchUserFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 167
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/adapter/ChatUIKitSearchConversationAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 96
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/adapter/ChatUIKitSearchMessageAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 60
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/adapter/ChatUIKitSearchUserAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 148
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/interfaces/IUIKitSearchResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 8
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/interfaces/OnContactSelectListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/interfaces/OnSearchMsgItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 14
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/search/interfaces/OnSearchUserItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 14
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/ChatUIKitCreateThreadActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 193
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/ChatUIKitThreadActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 215
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/ChatUIKitThreadListActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 65
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/ChatUIKitThreadMemberActivity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 99
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/adapter/ChatUIKitThreadListAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 40
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/controllers/ChatUIKitThreadAttachmentController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 272
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/controllers/ChatUIKitThreadController.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 160
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/fragment/ChatUIKitCreateThreadFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 492
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/fragment/ChatUIKitThreadFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 445
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/fragment/ChatUIKitThreadListFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 408
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/fragment/ChatUIKitThreadMemberFragment.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 114
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/interfaces/IChatThreadResultView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 137
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/interfaces/IMessageThread.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 11
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/interfaces/OnChatThreadListItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 8
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/interfaces/OnChatThreadRoleResultCallback.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/interfaces/OnJoinChatThreadResultListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/interfaces/OnMessageChatThreadClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 9
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/interfaces/OnThreadMemberItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/viewholder/ChatUIKitThreadListViewHolder.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 81
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/widgets/ChatUIKitMessageThreadView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 113
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/feature/thread/widgets/ChatUIKitThreadRole.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 36
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/ChatUIKitConnectionListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/ChatUIKitContactListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/ChatUIKitConversationListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 9
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/ChatUIKitGroupListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 60
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/ChatUIKitMessageListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 42
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/ChatUIKitMultiDeviceListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 54
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/IActivityBackPressed.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 11
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/IChatUIKitClient.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 292
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnContactSelectedListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 9
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnEventResultListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnForwardClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnItemDataClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 10
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnItemLongClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnMenuChangeListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnMenuDismissListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnMenuItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnMenuPreShowListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnMultiSelectMenuListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnRecyclerViewTouchListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 30
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnUserListItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 9
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/OnVoiceClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 8
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/SimpleListSheetItemClickListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 8
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/SimpleListSheetItemSelectListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/UIKitChatRoomListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/interfaces/UrlPreviewStatusCallback.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 10
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/ChatUIKitMenuAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 96
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/ChatUIKitMenuDialog.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 177
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/ChatUIKitMenuHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 261
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/ChatUIKitMenuItemView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 129
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/ChatUIKitMenuPopupWindow.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 385
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/IMenu.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 54
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/chat/ChatUIKitChatMenuHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 244
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/chat/ChatUIKitExtendMenuDialog.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 70
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/select/ChatUIKitSelectPopAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 57
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/select/SelectImageSpan.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 53
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/select/SelectTextHelper.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 1060
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/select/SelectTextPopAdapter.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 71
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/menu/select/SelectUtils.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 309
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitConversation.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 106
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitCustomHeaderItem.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 13
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitDefaultEmojiconDatas.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 141
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitEmojicon.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 62
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitEmojiconGroupEntity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitEvent.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 111
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitGroupProfile.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitMenuItem.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 25
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitPager.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitPreview.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 10
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitProfile.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 51
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitReaction.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 13
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitReactionEmojiconEntity.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 8
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitSize.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 11
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/model/ChatUIKitUser.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 116
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/provider/ChatUIKitCustomActivityRoute.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 18
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/provider/ChatUIKitEmojiconInfoProvider.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 21
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/provider/ChatUIKitGroupProfileProvider.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 52
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/provider/ChatUIKitSettingsProvider.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 36
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/provider/ChatUIKitUserProfileProvider.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 51
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/repository/ChatUIKitContactListRepository.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 126
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/repository/ChatUIKitConversationRepository.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 240
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/repository/ChatUIKitGroupRepository.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 207
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/repository/ChatUIKitManagerRepository.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 203
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/repository/ChatUIKitNotificationRepository.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 56
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/repository/ChatUIKitReportRepository.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 17
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/repository/ChatUIKitSearchRepository.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 119
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/repository/ChatUIKitThreadRepository.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 101
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/ChatUIKitBaseViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 20
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/IAttachView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 9
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/chathistory/ChatUIKitHistoryViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 33
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/chathistory/IChatHistoryRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 13
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/contacts/ChatUIKitContactListViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 308
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/contacts/IContactListRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 86
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/conversations/ChatUIKitConversationListViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 194
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/conversations/IConversationListRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 68
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/group/ChatUIKitGroupViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 389
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/group/IGroupRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 167
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/messages/ChatUIKitMessageListViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 248
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/messages/ChatUIKitViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 739
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/messages/IChatMessageListRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 99
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/messages/IChatViewRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 266
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/reaction/ChatUIKitReactionListViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 41
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/reaction/ChatUIKitReactionUserListViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 122
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/reaction/ChatUIKitReactionViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 159
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/reaction/IChatReactionRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 44
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/reaction/IMessageReactionListRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/reaction/IReactionUserListRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 22
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/reply/ChatUIKitMessageReplyViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 183
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/reply/IChatMessageReplyRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 12
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/request/ChatUIKitNotificationViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 167
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/request/INotificationRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 22
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/search/ChatUIKitSearchViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 95
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/search/IUIKitSearchRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 23
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/thread/ChatUIKitThreadViewModel.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 260
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/viewmodel/thread/IChatThreadRequest.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 83
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitArrowItemView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 273
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitCustomAvatarView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 124
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitDividerGridItemDecoration.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 156
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitFlowLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 238
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitImageView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 415
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitInputEditText.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 73
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitSearchEditText.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 143
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitSearchView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 216
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitSidebar.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 290
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitSwitchItemView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 177
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitTitleBar.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 652
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ChatUIKitWaveView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 314
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/RefreshLayout.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 43
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/ToolbarUtils.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 125
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/AutolinkSpan.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 15
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRow.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 409
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowAlert.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 32
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowBigExpression.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 57
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowCombine.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 43
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowCustom.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 30
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowFile.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 141
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowImage.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 201
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowLocation.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 33
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowText.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 219
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowThreadNotify.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 76
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowThreadUnknown.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowUnknown.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowUnsent.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowUserCard.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 56
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowVideo.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 136
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/chatrow/ChatUIKitRowVoice.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 184
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/photoview/ChatUIKitPhotoView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 123
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/photoview/Compat.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 16
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/photoview/IPhotoView.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 129
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/photoview/OnPhotoTapListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 27
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/photoview/OnViewTapListener.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 25
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/photoview/PhotoViewAttacher.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 825
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/photoview/SDK16.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 11
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/photoview/ScrollerProxy.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 120
+    },
+    {
+      "path": "android/EaseChatUIKit/src/main/kotlin/com/hyphenate/easeui/widget/photoview/VersionedGestureDetector.kt",
+      "platform": "android",
+      "component": "EaseChatUIKit",
+      "classes": [],
+      "lines": 239
+    },
     {
       "path": "ios/EaseCallUIKit/Classes/Commons/Appearance.swift",
       "platform": "ios",

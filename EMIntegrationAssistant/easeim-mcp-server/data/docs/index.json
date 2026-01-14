@@ -1,10 +1,394 @@
 {
   "version": "3.0.0",
-  "lastUpdated": "2026-01-13T07:53:32.202Z",
+  "lastUpdated": "2026-01-14T06:56:45.265Z",
   "platforms": [
+    "android",
     "ios"
   ],
   "guides": [
+    {
+      "id": "android_guides_callkit_api_overview",
+      "title": "API 参考",
+      "path": "android/guides/callkit/api_overview.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "API 参考"
+      ],
+      "description": "`CallKitClient` 中的主要方法如下表所示："
+    },
+    {
+      "id": "android_guides_callkit_architecture",
+      "title": "CallKit 架构",
+      "path": "android/guides/callkit/architecture.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "CallKit 架构"
+      ],
+      "description": "环信 Android CallKit 是基于环信即时通讯 IM SDK 和声网 RTC SDK 开发的实时音视频通话框架。项目采用 Kotlin 作为开发语言，使用 MVVM 架构模式来分离业务逻辑和 UI 展示。通过 Kotlin Flow（StateFlow/SharedFlow）进行响应式状态管理，确保 UI 能够及时响应数据变化。异步操作统一使用 Kotlin Coroutines 处理，提供流畅的用户体验。"
+    },
+    {
+      "id": "android_guides_callkit_beginner_guide",
+      "title": "入门指引",
+      "path": "android/guides/callkit/beginner_guide.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "入门指引"
+      ],
+      "description": "环信音视频通话 CallKit 是基于环信即时通讯 IM 和声网实时音视频 RTC 深度整合开发的实时音视频通话框架，实现了一对一及群组音视频通话功能。本文提供从零开始接入音视频通话 CallKit 的完整指南。"
+    },
+    {
+      "id": "android_guides_callkit_common_issue",
+      "title": "常见问题",
+      "path": "android/guides/callkit/common_issue.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "常见问题"
+      ],
+      "description": "若 CallKit 初始化返回 `false`，你可进行如下排查："
+    },
+    {
+      "id": "android_guides_callkit_customization",
+      "title": "自定义",
+      "path": "android/guides/callkit/customization.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "自定义"
+      ],
+      "description": "CallKit 支持发起呼叫时的声音、接收呼叫时的声音以及被挂断时的声音。建议铃声文件格式为 MP3、WAV 等，铃声时长为 1-20 秒，文件大小不超过 1 MB。"
+    },
+    {
+      "id": "android_guides_callkit_design_guide",
+      "title": "通话套件人机交互界面工具包设计指南",
+      "path": "android/guides/callkit/design_guide.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "通话套件人机交互界面工具包设计指南"
+      ],
+      "description": "环信通话套件人机交互界面工具包基于环信移动端单/群聊人机交互界面工具包进行设计，设计原则、全局样式、小控件样式均复用自环信单/群聊人机交互界面工具包，详见 [单/群聊人机交互界面工具包](/uikit/chatuikit/android/chatuikit_design_guide.html)。"
+    },
+    {
+      "id": "android_guides_callkit_easecallkit",
+      "title": "EaseCallKit 使用指南",
+      "path": "android/guides/callkit/easecallkit.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "EaseCallKit 使用指南"
+      ],
+      "description": "`EaseCallKit` 是一套基于环信 IM 和声网音视频结合开发的音视频 UI 库，实现了一对一语音和视频通话以及多人音视频通话的功能。基于 `EaseCallKit` 可以快速实现通用音视频功能。"
+    },
+    {
+      "id": "android_guides_callkit_float_top",
+      "title": "来电通知和悬浮窗",
+      "path": "android/guides/callkit/float_top.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "来电通知和悬浮窗"
+      ],
+      "description": "要展示来电通知栏和悬浮窗，需要用户授予悬浮窗权限（`android.permission.SYSTEM_ALERT_WINDOW`）。"
+    },
+    {
+      "id": "android_guides_callkit_integration",
+      "title": "CallKit 集成指南",
+      "path": "android/guides/callkit/integration.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "CallKit 集成指南"
+      ],
+      "description": "环信 CallKit 是一套基于环信即时通讯 IM（基于 IM 4.16.0 及以上）和声网 RTC 结合开发的音视频 UI 库。使用环信 CallKit 之前，你需要将其集成到你的应用中。"
+    },
+    {
+      "id": "android_guides_callkit_permission",
+      "title": "权限与业务逻辑",
+      "path": "android/guides/callkit/permission.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "权限与业务逻辑"
+      ],
+      "description": "环信 CallKit 所需权限已在 `Manifest.xml` 文件中声明。若不需要某项功能，可根据实际情况修改。"
+    },
+    {
+      "id": "android_guides_callkit_product_activation",
+      "title": "开通服务",
+      "path": "android/guides/callkit/product_activation.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "开通服务"
+      ],
+      "description": "使用环信音视频通话 CallKit 之前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通实时音视频服务。"
+    },
+    {
+      "id": "android_guides_callkit_product_overview",
+      "title": "产品概述",
+      "path": "android/guides/callkit/product_overview.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "产品概述"
+      ],
+      "description": "环信音视频通话 CallKit 是基于环信即时通讯 IM 和声网实时音视频 RTC 深度整合开发的实时音视频通话框架，实现了一对一及群组音视频通话功能。开发者只需简单集成，即可快速获得稳定流畅的高品质音视频通话能力。环信音视频通话 CallKit 可用于在线互动课堂、视频客服中心、远程会诊系统或视频相亲等场景。"
+    },
+    {
+      "id": "android_guides_callkit_product_purchase",
+      "title": "购买指南",
+      "path": "android/guides/callkit/product_purchase.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "购买指南"
+      ],
+      "description": "实时音视频服务通过 RTC 套餐包和加油包计费。"
+    },
+    {
+      "id": "android_guides_callkit_quickstart",
+      "title": "快速开始",
+      "path": "android/guides/callkit/quickstart.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "快速开始"
+      ],
+      "description": "利用环信 CallKit（基于 IM 4.16.0 或以上版本），你可以轻松实现一对一通话和群组通话功能。本文介绍如何快速实现发起音视频通话。"
+    },
+    {
+      "id": "android_guides_callkit_releasenote",
+      "title": "Android CallKit 更新日志",
+      "path": "android/guides/callkit/releasenote.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "Android CallKit 更新日志"
+      ],
+      "description": "- 群组通话来电页面中视频开关可控制预览。"
+    },
+    {
+      "id": "android_guides_callkit_sample_runthrough",
+      "title": "跑通示例项目",
+      "path": "android/guides/callkit/sample_runthrough.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "跑通示例项目"
+      ],
+      "description": "本文档基于 MainActivity 示例，帮助你快速集成和运行环信 CallKit（基于 IM 4.16.0 或以上版本），实现一对一音视频通话和群组音视频通话功能。"
+    },
+    {
+      "id": "android_guides_callkit_signaling",
+      "title": "signaling.md",
+      "path": "android/guides/callkit/signaling.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android"
+      ],
+      "description": ""
+    },
+    {
+      "id": "android_guides_callkit_telecom",
+      "title": "Telecom",
+      "path": "android/guides/callkit/telecom.md",
+      "platform": "android",
+      "product": "callkit",
+      "keywords": [
+        "android",
+        "Telecom"
+      ],
+      "description": "Android 系统中的 Telecom 框架主要负责管理设备上的所有通话，包括传统的基于 SIM 卡的通话和 VoIP 通话。当有来电时，Telecom 框架会处理来电显示、接听、挂断等功能，并通知相关的应用程序。"
+    },
+    {
+      "id": "android_guides_chatuikit_chatuikit_custom_chat_ inputmenu",
+      "title": "设置底部输入框",
+      "path": "android/guides/chatuikit/chatuikit_custom_chat_ inputmenu.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "设置底部输入框"
+      ],
+      "description": "消息底部输入框 `ChatUIkitinputMenu` 实现各类消息的输入和发送以及消息表情等功能，包括两部分："
+    },
+    {
+      "id": "android_guides_chatuikit_chatuikit_custom_chat_advanced",
+      "title": "消息列表的高级设置",
+      "path": "android/guides/chatuikit/chatuikit_custom_chat_advanced.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "消息列表的高级设置"
+      ],
+      "description": "消息列表是聊天界面的核心组件，基于 `ChatUIKitMessageListLayout` 实现。本文介绍如何通过 `ChatUIKitMessageListLayout` 实现消息列表的高级设置。"
+    },
+    {
+      "id": "android_guides_chatuikit_chatuikit_custom_chat_basic",
+      "title": "消息列表的基本设置",
+      "path": "android/guides/chatuikit/chatuikit_custom_chat_basic.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "消息列表的基本设置"
+      ],
+      "description": "消息列表是聊天界面的核心组件，基于 `ChatUIKitMessageListLayout` 实现。本文介绍如何通过 `UIKitChatFragment.Builder` 实现消息列表和消息条目的基本设置。"
+    },
+    {
+      "id": "android_guides_chatuikit_chatuikit_custom_chat_intro",
+      "title": "聊天页面介绍",
+      "path": "android/guides/chatuikit/chatuikit_custom_chat_intro.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "聊天页面介绍"
+      ],
+      "description": "环信单群聊 UIKit 提供 `UIKitChatActivity` 和 `UIKitChatFragment` 两种方式方便用户快速集成聊天页面和自定义聊天页面。该页面提供如下功能："
+    },
+    {
+      "id": "android_guides_chatuikit_chatuikit_custom_conversation_list_advanced",
+      "title": "会话列表的高级设置",
+      "path": "android/guides/chatuikit/chatuikit_custom_conversation_list_advanced.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "会话列表的高级设置"
+      ],
+      "description": "本文介绍如何通过 `ChatUIKitConversationListLayout` 实现会话列表的高级设置，包括会话条目的样式、头像、长按菜单以及图标等。"
+    },
+    {
+      "id": "android_guides_chatuikit_chatuikit_custom_conversation_list_basic",
+      "title": "会话列表的基本设置",
+      "path": "android/guides/chatuikit/chatuikit_custom_conversation_list_basic.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "会话列表的基本设置"
+      ],
+      "description": "本文介绍如何通过 `ChatUIKitConversationListFragment` 实现会话列表的基本设置，包括会话列表空白页面、添加自定义会话列表和设置会话事件监听。"
+    },
+    {
+      "id": "android_guides_chatuikit_chatuikit_custom_conversation_list_intro",
+      "title": "会话列表页面介绍",
+      "path": "android/guides/chatuikit/chatuikit_custom_conversation_list_intro.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "会话列表页面介绍"
+      ],
+      "description": "`ChatUIKitConversationListFragment` 用于展示当前用户的所有会话，包含单聊和群组聊天（不包括聊天室），并且提供会话搜索、删除、置顶和免打扰功能。"
+    },
+    {
+      "id": "android_guides_chatuikit_chatuikit_custom_conversation_list_searchbar",
+      "title": "设置会话搜索栏",
+      "path": "android/guides/chatuikit/chatuikit_custom_conversation_list_searchbar.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "设置会话搜索栏"
+      ],
+      "description": "会话列表页面支持按会话名称搜索会话。你可以设置是否使用搜索栏、自定义搜索栏的样式和自定义跳转路由。"
+    },
+    {
+      "id": "android_guides_chatuikit_chatuikit_custom_titlebar",
+      "title": "页面标题栏",
+      "path": "android/guides/chatuikit/chatuikit_custom_titlebar.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "页面标题栏"
+      ],
+      "description": "`ChatUIKitTitleBar` 是可自定义的标题栏组件，基于 Material Toolbar 提供灵活的布局方式，支持显示头像、状态图标、标题、副标题、导航按钮和菜单等多种元素。聊天页面、会话列表页面、联系人列表页面、群详情页面和联系人详情页面的标题栏均使用 `ChatUIKitTitleBar`。你可以根据自身需求设置标题栏。"
+    },
+    {
+      "id": "android_guides_sdk_apireference",
+      "title": "API 参考",
+      "path": "android/guides/sdk/apireference.md",
+      "platform": "android",
+      "product": "sdk",
+      "keywords": [
+        "android",
+        "API 参考"
+      ],
+      "description": "如需了解 Android SDK 中的 API 详情，请参见 [API 参考文档](https://doc.easemob.com/apidoc/android/chat3.0/annotated.html)。"
+    },
+    {
+      "id": "android_guides_sdk_beginner_guide",
+      "title": "入门指引",
+      "path": "android/guides/sdk/beginner_guide.md",
+      "platform": "android",
+      "product": "sdk",
+      "keywords": [
+        "android",
+        "入门指引"
+      ],
+      "description": "环信即时通讯 IM 可实现发送文本、图片、位置、语音、视频等各类型消息，提供单聊、群聊、聊天室、离线推送、账号鉴权、用户属性和用户关系等服务。"
+    },
+    {
+      "id": "android_guides_sdk_demo",
+      "title": "环信即时通讯 IM Android Demo",
+      "path": "android/guides/sdk/demo.md",
+      "platform": "android",
+      "product": "sdk",
+      "keywords": [
+        "android",
+        "环信即时通讯 IM Android Demo"
+      ],
+      "description": "环信即时通讯 IM Android Demo 提供用户登录、单聊、群组、子区、消息(文字、表情、语音、视频、图片、文件等)发送及管理、会话管理、好友管理、用户属性、用户在线状态（Presence）以及实时音视频通话等功能。"
+    },
+    {
+      "id": "android_guides_sdk_quickstart",
+      "title": "快速开始",
+      "path": "android/guides/sdk/quickstart.md",
+      "platform": "android",
+      "product": "sdk",
+      "keywords": [
+        "android",
+        "快速开始"
+      ],
+      "description": "本文介绍如何快速集成环信即时通讯 IM Android SDK 实现单聊。"
+    },
+    {
+      "id": "android_guides_sdk_releasenote",
+      "title": "Android IM SDK 更新日志",
+      "path": "android/guides/sdk/releasenote.md",
+      "platform": "android",
+      "product": "sdk",
+      "keywords": [
+        "android",
+        "Android IM SDK 更新日志"
+      ],
+      "description": "私有化部署底层链路支持 TCP 和 WebSocket 之间切换。"
+    },
     {
       "id": "ios_guides_callkit_APIOverView",
       "title": "API 参考",
@@ -246,6 +630,582 @@
     }
   ],
   "apiModules": [
+    {
+      "id": "android_api_connection",
+      "name": "连接",
+      "description": "应用客户端成功连接到环信服务器后，才能使用环信即时通讯 SDK 的收发消息等功能。",
+      "docPath": "android/api/connection.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_conversation_delete",
+      "name": "删除会话",
+      "description": "删除好友或退出群组后，SDK 不会自动删除对应的单聊或群聊会话。你可以调用相应的接口从服务器和本地删除单个会话及其历史消息。",
+      "docPath": "android/api/conversation_delete.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_conversation_list",
+      "name": "会话列表",
+      "description": "对于单聊、群组聊天和聊天室会话，用户发消息时 SDK 会自动创建会话并将会话添加至用户的会话列表。",
+      "docPath": "android/api/conversation_list.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_conversation_mark",
+      "name": "会话标记",
+      "description": "某些情况下，你可能需要对会话添加标记，例如会话标星或将会话标为已读或未读。即时通讯云 IM 支持对单聊和群聊会话添加标记，最大支持 20 个标记，所以一个会话最多可添加 20 个标记。",
+      "docPath": "android/api/conversation_mark.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_conversation_overview",
+      "name": "会话介绍",
+      "description": "**会话**：用户收发消息时，会创建对应的会话。会话分为 3 种：单聊、群聊、聊天室会话。单聊是指两个用户建立的会话，双方可以在会话中收发消息。群聊会话由群成员发送消息组成，群成员可以在群会话中收发消息。聊天室会话与群聊会话类似，区别是其中的成员无固定关系。除了收发消息，用户还可查看会话中的消息、清空历史消息等操作。",
+      "docPath": "android/api/conversation_overview.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_conversation_pin",
+      "name": "会话置顶",
+      "description": "会话置顶指将单聊或群聊会话固定在会话列表的顶部，方便用户查找。例如，将重点会话置顶，可快速定位会话。",
+      "docPath": "android/api/conversation_pin.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_conversation_receipt",
+      "name": "会话已读回执",
+      "description": "会话已读回执指接收方进入会话页面，阅读会话中的所有消息后，调用接口向服务器发送会话已读回执，服务器将该回执回调给消息发送方，消息发送方将会收到会话已读回调。在多端多设备登录下，接收方的其他设备也会收到该回调。",
+      "docPath": "android/api/conversation_receipt.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_conversation_unread",
+      "name": "会话未读数",
+      "description": "你可以查看本地所有会话或指定会话的未读消息数，并针对会话的未读消息数清零。",
+      "docPath": "android/api/conversation_unread.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_elite_sdk",
+      "name": "精简版 SDK",
+      "description": "精简版 SDK 4.2.3-lite 是专为 Android 平台设计的轻量级即时通讯解决方案，包体积约 1.11 MB。与标准版 SDK 相比，精简版保留了核心的单聊与聊天室功能，移除了好友关系等高级能力，专注于满足对包体积有严格要求、仅需核心收发消息功能的开发场景，助力开发者构建更轻量的 Android 应用。",
+      "docPath": "android/api/elite_sdk.md",
+      "platform": "android",
+      "product": "sdk"
+    },
+    {
+      "id": "android_api_group_@",
+      "name": "群组 @ 消息",
+      "description": "群组 @ 消息指在群组聊天中，用户可以 @ 单个、多个或所有成员，发送消息。群组中的每个成员均可使用 @ 功能，而且可以 @ 群所有成员。",
+      "docPath": "android/api/group_@.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_group_attributes",
+      "name": "管理群组属性",
+      "description": "群组是支持多人沟通的即时通讯系统，本文指导你如何使用环信即时通讯 IM Android SDK 在实时互动 app 中实现群组属性相关功能。",
+      "docPath": "android/api/group_attributes.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_group_manage",
+      "name": "创建和管理群组及监听群组事件",
+      "description": "群组是支持多人沟通的即时通讯系统，本文介绍如何使用环信即时通讯 IM SDK 在实时互动 app 中创建和管理群组，并实现群组相关功能。",
+      "docPath": "android/api/group_manage.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_group_members",
+      "name": "管理群组成员",
+      "description": "群组是支持多人沟通的即时通讯系统，本文指导你如何使用环信即时通讯 IM SDK 在实时互动 app 中实现群组成员管理相关功能。",
+      "docPath": "android/api/group_members.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_group_overview",
+      "name": "group_overview.md",
+      "description": "",
+      "docPath": "android/api/group_overview.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_initialization",
+      "name": "初始化",
+      "description": "初始化是使用 SDK 的必要步骤，需在所有接口方法调用前完成。",
+      "docPath": "android/api/initialization.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_integration",
+      "name": "导入 SDK",
+      "description": "本文介绍如何将环信即时通讯 IM SDK 集成到你的 Android 项目。",
+      "docPath": "android/api/integration.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_limitation",
+      "name": "limitation.md",
+      "description": "",
+      "docPath": "android/api/limitation.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_log",
+      "name": "SDK 日志",
+      "description": "环信即时通讯 IM 日志记录 SDK 相关的信息和事件。环信技术支持团队帮你排查问题时可能会请你发送 SDK 日志。",
+      "docPath": "android/api/log.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_login",
+      "name": "登录",
+      "description": "初始化 IM SDK 后，你需要首先调用接口登录。登录成功后，才能使用 IM 的功能。",
+      "docPath": "android/api/login.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_delete",
+      "name": "删除消息",
+      "description": "本文介绍用户如何单向删除服务端以及本地的历史消息。",
+      "docPath": "android/api/message_delete.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_deliver_only_online",
+      "name": "消息仅投递在线用户",
+      "description": "环信即时通讯 IM 支持只将消息投递给在线用户。若接收方不在线，则无法收到消息。该功能用于实现应用只需要向在线用户进行展示目的，例如，利用透传消息实现群投票的票数实时变化, 只有在线用户需要关注实时变化的动态, 离线用户只需要再次上线时获取最终状态。",
+      "docPath": "android/api/message_deliver_only_online.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_extension",
+      "name": "消息扩展",
+      "description": "当 SDK 提供的消息类型不满足需求时，你可以通过消息扩展字段传递自定义的内容，从而生成自己需要的消息类型，例如，消息中需要携带被回复的消息内容或者是图文消息等场景。",
+      "docPath": "android/api/message_extension.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_forward",
+      "name": "转发消息",
+      "description": "转发消息即将会话中发送成功或收到的消息转发给别人，例如，用户 A 向用户 B 发送了一条消息，用户 B 收到后，将其转发给用户 C。",
+      "docPath": "android/api/message_forward.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_import_insert",
+      "name": "导入和插入消息",
+      "description": "本文介绍环信即时通讯 IM Android SDK 如何在本地导入和插入消息。",
+      "docPath": "android/api/message_import_insert.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_modify",
+      "name": "修改消息",
+      "description": "环信即时通讯 IM 提供修改消息功能，支持对发送成功的消息进行编辑，然后再发送，提高沟通效率和准确性，例如，发送消息后发觉消息内容中包含错别字、遗漏了的关键信息、内容不够完善清晰、甚至临时想更改自己的想法，可以编辑消息后再次发送。",
+      "docPath": "android/api/message_modify.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_overview",
+      "name": "message_overview.md",
+      "description": "",
+      "docPath": "android/api/message_overview.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_pin",
+      "name": "消息置顶",
+      "description": "消息置顶指将会话中的消息固定在会话顶部，方便会话中的所有用户快速查看重要消息。",
+      "docPath": "android/api/message_pin.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_quote",
+      "name": "消息引用",
+      "description": "消息引用是指用户可以引用一条已发送的消息。消息引用可以帮助用户回复特定的消息，或强调特定的信息。",
+      "docPath": "android/api/message_quote.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_recall",
+      "name": "撤回消息",
+      "description": "单聊、群聊和聊天室聊天支持撤回一条发送成功的消息：",
+      "docPath": "android/api/message_recall.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_receipt",
+      "name": "实现消息回执",
+      "description": "**单聊会话支持消息送达回执和消息已读回执**，发送方发送消息后可及时了解接收方是否及时收到并阅读了消息。",
+      "docPath": "android/api/message_receipt.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_receive",
+      "name": "接收消息",
+      "description": "环信即时通讯 IM Android SDK 通过 [EMMessageListener](https://sdkdocs.easemob.com/apidoc/android/chat3.0/interfacecom_1_1hyphenate_1_1_e_m_message_listener.html) 类实现文本、图片、音频、视频和文件等类型的消息的接收。",
+      "docPath": "android/api/message_receive.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_retrieve",
+      "name": "获取历史消息",
+      "description": "本文介绍环信即时通讯 IM Android SDK 如何从服务器和本地获取历史消息。",
+      "docPath": "android/api/message_retrieve.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_search",
+      "name": "搜索消息",
+      "description": "本文介绍环信即时通讯 IM Android SDK 如何搜索本地消息。调用本文中的消息搜索方法可以搜索本地数据库中除命令消息之外的所有类型的消息，因为命令消息不在本地数据库中存储。",
+      "docPath": "android/api/message_search.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_send",
+      "name": "发送消息",
+      "description": "环信即时通讯 IM Android SDK 通过 [EMChatManager](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_chat_manager.html)、[EMMessage](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_message.html) 和 [EMOptions](https://sdkdocs.easemob.com/apidoc/android/chat3.0/classcom_1_1hyphenate_1_1chat_1_1_e_m_options.html) 类实现文本、图片、音频、视频和文件等类型的消息的发送和接收。",
+      "docPath": "android/api/message_send.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_target",
+      "name": "定向消息",
+      "description": "发送定向消息是指向群组或聊天室的单个或多个指定的成员发送消息，其他成员不会收到该消息。",
+      "docPath": "android/api/message_target.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_traffic_statis",
+      "name": "获取本地消息的流量统计信息",
+      "description": "即时通讯 IM 提供本地消息的流量统计功能。该功能默认关闭。若要使用该功能，需在 SDK 初始化前设置 `EMOptions#setEnableStatistics(boolean)` 开启。",
+      "docPath": "android/api/message_traffic_statis.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_translation",
+      "name": "消息翻译",
+      "description": "为方便用户在聊天过程中对文字消息进行翻译，环信即时通讯 IM SDK 集成了 Microsoft Azure Translation API，支持在发送或接收消息时对文本消息进行按需翻译或自动翻译：",
+      "docPath": "android/api/message_translation.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_message_update",
+      "name": "更新消息",
+      "description": "本文介绍环信即时通讯 IM Android SDK 如何更新本地消息。",
+      "docPath": "android/api/message_update.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_moderation",
+      "name": "消息审核（举报）",
+      "description": "即时通讯 IM SDK 提供消息举报接口。你的用户可以在客户端举报违规消息。当服务器收到举报消息后，会将举报消息存储到数据库，并在[环信控制台](https://console.easemob.com/user/login)展示。你可在环信控制台查看举报记录，并进行相应处理。",
+      "docPath": "android/api/moderation.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_multi_device",
+      "name": "在多个设备上登录",
+      "description": "即时通讯 IM 支持同一账号在多个设备上登录。使用该功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通该服务。详见 [环信控制台文档](/product/console/basic_user.html#多端多设备)。",
+      "docPath": "android/api/multi_device.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_presence",
+      "name": "在线状态订阅",
+      "description": "用户在线状态（即 Presence）包含用户的在线、离线以及自定义状态。使用该功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通该服务。详见 [环信控制台文档](/product/console/basic_user.html#用户离在线状态实时同步)。",
+      "docPath": "android/api/presence.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_private_ip_domain",
+      "name": "私有云 SDK IP 地址/域名配置",
+      "description": "SDK 默认指向公有云地址。部署私有云后，需要将地址重新指向新的地址，以下是地址修改方法：",
+      "docPath": "android/api/private_ip_domain.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_privatecloud",
+      "name": "私有云 SDK 集成配置",
+      "description": "SDK 默认指向公有云地址，在部署私有云后，需要将地址重新指向到新的地址，以下是地址修改方法：",
+      "docPath": "android/api/privatecloud.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_display_attribute",
+      "name": "设置和获取推送通知的显示属性",
+      "description": "调用 `updatePushNickname` 方法设置推送通知中显示的昵称，如以下代码示例所示：",
+      "docPath": "android/api/push_display_attribute.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_display_field",
+      "name": "使用消息扩展字段设置推送通知显示内容",
+      "description": "创建推送消息时，你可以设置消息扩展字段自定义要显示的推送标题 `em_push_title` 和推送内容 `em_push_content`。",
+      "docPath": "android/api/push_display_field.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_display_overview",
+      "name": "设置推送通知的显示内容",
+      "description": "通知收到后，通知栏中显示的推送标题和内容可通过以下方式设置，配置的优先级为由低到高：",
+      "docPath": "android/api/push_display_overview.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_extension",
+      "name": "设置推送扩展功能",
+      "description": "你可以利用扩展字段实现自定义推送设置，本文以强制推送和发送静默消息为例介绍如何实现推送扩展功能。",
+      "docPath": "android/api/push_extension.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_fcm",
+      "name": "在即时通讯 IM 中集成 FCM",
+      "description": "环信即时通讯 IM SDK 中已集成 FCM 推送相关逻辑，你还需要完成以下步骤。",
+      "docPath": "android/api/push_fcm.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_honor",
+      "name": "在即时通讯 IM 中集成荣耀推送",
+      "description": "环信即时通讯 IM SDK 4.0.3 版本中集成了荣耀推送。本节介绍如何集成荣耀厂商的离线推送通道，使消息通过荣耀推送服务推送至离线的用户。",
+      "docPath": "android/api/push_honor.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_huawei",
+      "name": "在即时通讯 IM 中集成华为 HMS 推送",
+      "description": "环信即时通讯 IM SDK 中已集成华为 HMS 推送相关逻辑，你还需要完成以下步骤。",
+      "docPath": "android/api/push_huawei.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_meizu",
+      "name": "在即时通讯 IM 中集成魅族推送",
+      "description": "环信即时通讯 IM SDK 中已集成魅族推送相关逻辑，你还需要完成以下步骤。",
+      "docPath": "android/api/push_meizu.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_message_classification",
+      "name": "推送消息分类",
+      "description": "华为推送通道将根据应用类型对资讯营销类消息的每日推送数量进行上限管理。详情请参考[推送数量管理细则](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/message-restriction-description-0000001361648361)。",
+      "docPath": "android/api/push_message_classification.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_notification_mode_dnd",
+      "name": "设置推送通知方式和免打扰模式",
+      "description": "环信即时通讯 IM 3.9.2 及以上版本对离线消息推送进行了优化。你可以在 app 和会话层面提供了推送通知方式和免打扰模式的细粒度选项。",
+      "docPath": "android/api/push_notification_mode_dnd.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_oppo",
+      "name": "在即时通讯 IM 中集成 OPPO 推送",
+      "description": "环信即时通讯 IM SDK 中已集成 OPPO 推送相关逻辑，你还需要完成以下步骤。",
+      "docPath": "android/api/push_oppo.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_overview",
+      "name": "离线推送概述",
+      "description": "即时通讯 IM 支持集成第三方离线消息推送服务，为 Android 开发者提供低延时、高送达、高并发、不侵犯用户个人数据的离线消息推送服务。目前支持的手机厂商推送服务包括：Google FCM、华为、荣耀、小米、OPPO、VIVO 和魅族。",
+      "docPath": "android/api/push_overview.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_parsing",
+      "name": "解析收到的推送字段",
+      "description": "收到推送通知后，你需要解析数据。",
+      "docPath": "android/api/push_parsing.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_parsing_unified",
+      "name": "统一获取消息方案",
+      "description": "Android 设备品牌丰富，各厂商对于点击通知栏后获取消息的方式不尽相同，华为、荣耀等厂商官方推荐使用 Activity 获取消息，而小米、vivo 等厂商支持通过监听器解析获取消息，详见 [解析推送消息](push_parsing.html)。",
+      "docPath": "android/api/push_parsing_unified.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_solution",
+      "name": "常见问题",
+      "description": "**Q**：如果推送通知栏未展示推送通知，是什么原因？",
+      "docPath": "android/api/push_solution.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_template",
+      "name": "推送模板",
+      "description": "推送模板主要用于服务器提供的默认离线推送配置不满足你的需求时，设置全局范围的推送标题和推送内容。例如，服务器提供的默认设置为中文和英文的推送标题和内容，你若需要使用韩语或日语的推送标题和内容，则可以设置对应语言的推送模板。",
+      "docPath": "android/api/push_template.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_translation",
+      "name": "设置推送翻译",
+      "description": "推送通知与翻译功能协同工作。如果用户启用 [自动翻译](/document/android/message_translation.html) 功能并发送消息，SDK 会同时发送原始消息和翻译后的消息。",
+      "docPath": "android/api/push_translation.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_vivo",
+      "name": "在即时通讯 IM 中集成 VIVO 推送",
+      "description": "环信即时通讯 IM SDK 中已经集成了 VIVO 推送（基于 `vivo_push_v4.0.4.0_504.aar`）相关逻辑，你还需要完成以下步骤。",
+      "docPath": "android/api/push_vivo.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_push_xiaomi",
+      "name": "在即时通讯 IM 中集成小米推送",
+      "description": "环信即时通讯 IM SDK 中已经集成了小米推送（基于 ` MiPush_SDK_Client_6_0_1-C_3rd.aar`）相关逻辑，你还需要完成以下步骤。",
+      "docPath": "android/api/push_xiaomi.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_reaction",
+      "name": "消息表情回复 Reaction",
+      "description": "环信即时通讯 IM 提供消息表情回复（下文统称 “Reaction”）功能。用户可以在单聊和群聊中对消息添加、删除表情。表情可以直观地表达情绪，利用 Reaction 可以提升用户的使用体验。同时在群组中，利用 Reaction 可以发起投票，根据不同表情的追加数量来确认投票。",
+      "docPath": "android/api/reaction.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_room_attributes",
+      "name": "管理聊天室属性",
+      "description": "聊天室是支持多人沟通的即时通讯系统。聊天室属性可分为聊天室名称、描述和公告等基本属性和自定义属性（key-value）。若聊天室基本属性不满足业务要求，用户可增加自定义属性并同步给所有成员。利用自定义属性可以存储直播聊天室的类型、狼人杀等游戏中的角色信息和游戏状态以及实现语聊房的麦位管理和同步等。聊天室自定义属性以键值对（key-value）形式存储，属性信息变更会实时同步给聊天室成员。",
+      "docPath": "android/api/room_attributes.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_room_manage",
+      "name": "创建和管理聊天室以及监听事件",
+      "description": "聊天室是支持多人沟通的即时通讯系统。聊天室中的成员没有固定关系，一旦离线后，不会收到聊天室中的任何消息，超过 2 分钟会自动退出聊天室。聊天室可以应用于直播、消息广播等。若需调整该时间，需联系环信商务经理。",
+      "docPath": "android/api/room_manage.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_room_members",
+      "name": "管理聊天室成员",
+      "description": "聊天室是支持多人沟通的即时通讯系统。本文介绍如何使用环信即时通讯 IM Android SDK 在实时互动 app 中管理聊天室成员，并实现聊天室的相关功能。",
+      "docPath": "android/api/room_members.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_room_overview",
+      "name": "room_overview.md",
+      "description": "",
+      "docPath": "android/api/room_overview.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_thread",
+      "name": "管理子区",
+      "description": "子区是群组成员的子集，是支持多人沟通的即时通讯系统。使用子区功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通。详见 [环信控制台文档](/product/console/basic_conversation_group_chatroom.html#消息话题)。",
+      "docPath": "android/api/thread.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_thread_message",
+      "name": "管理子区消息",
+      "description": "子区消息消息类型属于群聊消息类型，与普通群组消息的区别是需要添加 `isChatThreadMessage` 标记。使用子区消息功能前，你需要在 [环信控制台](https://console.easemob.com/user/login)开通。详见 [环信控制台文档](/product/console/basic_conversation_group_chatroom.html#消息话题)。",
+      "docPath": "android/api/thread_message.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_typing_indication",
+      "name": "通过透传消息实现输入指示器",
+      "description": "输入指示器显示其他用户何时输入消息。通过该功能，用户之间可进行有效沟通，增加了用户对聊天应用中交互的期待感。",
+      "docPath": "android/api/typing_indication.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_user_relationship",
+      "name": "管理用户关系",
+      "description": "SDK 提供用户关系管理功能，包括好友列表管理和黑名单管理：",
+      "docPath": "android/api/user_relationship.md",
+      "platform": "android",
+      "product": "general"
+    },
+    {
+      "id": "android_api_userprofile",
+      "name": "管理用户属性",
+      "description": "环信即时通讯 IM 自 V3.8.1 开始支持用户属性管理功能。",
+      "docPath": "android/api/userprofile.md",
+      "platform": "android",
+      "product": "general"
+    },
     {
       "id": "ios_api_connection",
       "name": "连接",

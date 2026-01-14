@@ -3,6 +3,7 @@
  * 提供 UIKit 源码的搜索功能
  *
  * v2.1 优化：集成 QueryExpander 提升召回率
+ * v2.2 优化：集成 SpellCorrector 提升搜索容错能力
  */
 
 import * as fs from 'fs';
@@ -11,6 +12,7 @@ import { fileURLToPath } from 'url';
 import type { SourceIndex, SourceSearchResult, CodeSymbol, AmbiguityDetection } from '../types/index.js';
 import { AmbiguityDetector } from './AmbiguityDetector.js';
 import { QueryExpander } from '../intelligence/QueryExpander.js';
+import { SpellCorrector, QueryCorrectionResult } from '../intelligence/SpellCorrector.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,11 +22,14 @@ export class SourceSearch {
   private indexPath: string;
   private ambiguityDetector: AmbiguityDetector;
   private queryExpander: QueryExpander;
+  private spellCorrector: SpellCorrector;
+  private isSpellDictBuilt: boolean = false;
 
   constructor() {
     this.indexPath = path.join(__dirname, '../../data/sources/index.json');
     this.ambiguityDetector = new AmbiguityDetector();
     this.queryExpander = new QueryExpander();
+    this.spellCorrector = new SpellCorrector();
   }
 
   /**
@@ -38,6 +43,10 @@ export class SourceSearch {
     try {
       const content = fs.readFileSync(this.indexPath, 'utf-8');
       this.index = JSON.parse(content);
+
+      // 构建拼写纠错词典
+      this.buildSpellDictionary();
+
       return this.index!;
     } catch (error) {
       throw new Error(`Failed to load source index: ${error}`);
@@ -45,7 +54,28 @@ export class SourceSearch {
   }
 
   /**
-   * 搜索源码 - 支持查询扩展
+   * 构建拼写纠错词典 - 从源码索引中提取类名、符号名等
+   */
+  private buildSpellDictionary(): void {
+    if (this.isSpellDictBuilt || !this.index) return;
+
+    // 从文件中提取类名
+    for (const file of this.index.files) {
+      for (const className of file.classes) {
+        this.spellCorrector.addCamelCaseWords(className);
+      }
+    }
+
+    // 从符号中提取名称
+    for (const symbol of this.index.symbols) {
+      this.spellCorrector.addCamelCaseWords(symbol.name);
+    }
+
+    this.isSpellDictBuilt = true;
+  }
+
+  /**
+   * 搜索源码 - 支持查询扩展和拼写纠错
    */
   search(
     query: string,
@@ -55,14 +85,19 @@ export class SourceSearch {
     results: SourceSearchResult[];
     ambiguity: AmbiguityDetection;
     expandedTerms?: string[];
+    spellCorrection?: QueryCorrectionResult;
   } {
     const index = this.loadIndex();
     const results: Array<SourceSearchResult & { _score: number }> = [];
 
-    // === 查询扩展 ===
-    const expandedQuery = this.queryExpander.expand(query);
+    // === 步骤 1: 拼写纠错 ===
+    const spellCorrection = this.spellCorrector.correctQuery(query);
+    const correctedQuery = spellCorrection.correctedQuery;
+
+    // === 步骤 2: 查询扩展（基于纠错后的查询）===
+    const expandedQuery = this.queryExpander.expand(correctedQuery);
     const searchTerms = expandedQuery.expanded.map(t => t.toLowerCase());
-    const originalTerm = query.toLowerCase();
+    const originalTerm = correctedQuery.toLowerCase();
 
     // 过滤文件
     const files = component === 'all'
@@ -179,7 +214,8 @@ export class SourceSearch {
     return {
       results: sortedResults,
       ambiguity,
-      expandedTerms: expandedQuery.synonymsUsed.length > 0 ? searchTerms : undefined
+      expandedTerms: expandedQuery.synonymsUsed.length > 0 ? searchTerms : undefined,
+      spellCorrection: spellCorrection.hasCorrected ? spellCorrection : undefined
     };
   }
 

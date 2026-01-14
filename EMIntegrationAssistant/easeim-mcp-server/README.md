@@ -21,7 +21,7 @@
 │  ┌───────────────────────────────────────────────────────────┐ │
 │  │                    核心算法层                              │ │
 │  │                                                           │ │
-│  │  BM25 评分 • 倒排索引 • LRU 缓存 • 歧义检测 • 上下文感知   │ │
+│  │  BM25 评分 • 倒排索引 • LRU 缓存 • 歧义检测 • 上下文感知 • 拼写纠错 │ │
 │  └───────────────────────────────────────────────────────────┘ │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
@@ -83,6 +83,33 @@
 // 查询扩展示例
 "发送消息" → ["发送", "消息", "send", "message", "msg", "chat"]
 "气泡颜色" → ["气泡", "颜色", "bubble", "color", "背景色"]
+```
+
+#### P0.5: 拼写纠错 (SpellCorrector)
+
+| 优化项 | 实现 | 效果 |
+|--------|------|------|
+| **Levenshtein 距离** | 编辑距离算法，支持最大距离 2 | 自动纠正常见拼写错误 |
+| **领域词典** | 242+ 环信 SDK 专业术语 | 高准确率的领域纠错 |
+| **词频加权** | 高频词优先匹配 | message > msg 优先级更高 |
+| **驼峰拆分** | 自动从类名提取词汇 | 动态扩展词典 |
+
+```typescript
+// 拼写纠错示例
+"mesage bubble"  → "message bubble"   ✅ 自动纠正
+"avater style"   → "avatar style"     ✅ 自动纠正
+"custum cell"    → "custom cell"      ✅ 自动纠正
+"converstion"    → "conversation"     ✅ 自动纠正
+
+// 返回结果包含纠正提示
+{
+  results: [...],
+  spellCorrection: {
+    originalQuery: "mesage bubble",
+    correctedQuery: "message bubble",
+    suggestion: "已自动纠正: \"mesage\" → \"message\""
+  }
+}
 ```
 
 #### P1: 倒排索引 + BM25 评分
@@ -396,6 +423,7 @@ easeim-mcp-server/
 │   ├── intelligence/               # 智能化模块
 │   │   ├── IntentClassifier.ts     # 意图分类器
 │   │   ├── QueryExpander.ts        # 查询扩展
+│   │   ├── SpellCorrector.ts       # 拼写纠错器
 │   │   ├── KnowledgeGraph.ts       # 知识图谱
 │   │   ├── CodeGenerator.ts        # 代码生成器
 │   │   ├── SimilarityMatcher.ts    # 相似度匹配
@@ -418,7 +446,8 @@ easeim-mcp-server/
 │
 ├── tests/                          # 测试文件
 │   ├── benchmark-sharded-search.ts
-│   └── test-integration-guide.ts
+│   ├── test-integration-guide.ts
+│   └── test-spell-corrector.ts     # 拼写纠错测试
 │
 └── docs/
     └── TECHNICAL_OVERVIEW.md       # 技术文档
@@ -450,6 +479,9 @@ npx tsx tests/benchmark-sharded-search.ts
 
 # 集成诊断测试
 npx tsx tests/test-integration-guide.ts
+
+# 拼写纠错测试
+npx tsx tests/test-spell-corrector.ts
 ```
 
 ### 构建

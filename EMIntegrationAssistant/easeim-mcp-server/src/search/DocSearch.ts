@@ -4,6 +4,7 @@
  *
  * v2.1 优化：集成 QueryExpander 提升召回率
  * v2.2 优化：集成 InvertedIndex 提升搜索性能 (BM25 评分)
+ * v2.3 优化：集成 SpellCorrector 提升搜索容错能力
  */
 
 import * as fs from 'fs';
@@ -13,6 +14,7 @@ import type { DocsIndex, ErrorCode, ApiSearchResult, SearchContext, AmbiguityDet
 import { AmbiguityDetector } from './AmbiguityDetector.js';
 import { QueryExpander } from '../intelligence/QueryExpander.js';
 import { InvertedIndex, IndexedDocument } from './InvertedIndex.js';
+import { SpellCorrector, QueryCorrectionResult } from '../intelligence/SpellCorrector.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,6 +24,7 @@ export class DocSearch {
   private indexPath: string;
   private ambiguityDetector: AmbiguityDetector;
   private queryExpander: QueryExpander;
+  private spellCorrector: SpellCorrector;
 
   // 倒排索引实例
   private invertedIndex: InvertedIndex;
@@ -31,6 +34,7 @@ export class DocSearch {
     this.indexPath = path.join(__dirname, '../../data/docs/index.json');
     this.ambiguityDetector = new AmbiguityDetector();
     this.queryExpander = new QueryExpander();
+    this.spellCorrector = new SpellCorrector();
     this.invertedIndex = new InvertedIndex({
       fieldWeights: {
         'name': 4.0,      // 名称权重最高
@@ -64,6 +68,7 @@ export class DocSearch {
     if (this.isIndexBuilt || !this.index) return;
 
     const documents: IndexedDocument[] = [];
+    const allKeywords: string[] = [];
 
     // 索引 API 模块
     const modules = this.index.apiModules || [];
@@ -83,6 +88,10 @@ export class DocSearch {
           product: mod.product,
         }
       });
+
+      // 收集关键词用于拼写纠错词典
+      if (mod.keywords) allKeywords.push(...mod.keywords);
+      if (mod.name) this.spellCorrector.addCamelCaseWords(mod.name);
     }
 
     // 索引指南文档
@@ -103,7 +112,13 @@ export class DocSearch {
           product: guide.product,
         }
       });
+
+      // 收集关键词
+      if (guide.keywords) allKeywords.push(...guide.keywords);
     }
+
+    // 将索引关键词添加到拼写纠错词典
+    this.spellCorrector.addWords(allKeywords);
 
     this.invertedIndex.build(documents);
     this.isIndexBuilt = true;
@@ -118,14 +133,19 @@ export class DocSearch {
     results: ApiSearchResult[];
     ambiguity: AmbiguityDetection;
     expandedTerms?: string[];
+    spellCorrection?: QueryCorrectionResult;
   } {
     const index = this.loadIndex();
 
-    // === 查询扩展：获取同义词扩展后的搜索词 ===
-    const expandedQuery = this.queryExpander.expand(query);
+    // === 步骤 1: 拼写纠错 ===
+    const spellCorrection = this.spellCorrector.correctQuery(query);
+    const correctedQuery = spellCorrection.correctedQuery;
+
+    // === 步骤 2: 查询扩展（基于纠错后的查询）===
+    const expandedQuery = this.queryExpander.expand(correctedQuery);
     const expandedQueryStr = expandedQuery.expanded.join(' ');
 
-    // === 使用倒排索引进行 BM25 搜索（O(k) 复杂度）===
+    // === 步骤 3: 使用倒排索引进行 BM25 搜索（O(k) 复杂度）===
     const indexResults = this.invertedIndex.search(expandedQueryStr, limit * 2);
 
     // === 转换结果并应用平台过滤 ===
@@ -175,7 +195,8 @@ export class DocSearch {
     return {
       results: limitedResults,
       ambiguity,
-      expandedTerms: expandedQuery.synonymsUsed.length > 0 ? expandedQuery.expanded : undefined
+      expandedTerms: expandedQuery.synonymsUsed.length > 0 ? expandedQuery.expanded : undefined,
+      spellCorrection: spellCorrection.hasCorrected ? spellCorrection : undefined
     };
   }
 
@@ -183,17 +204,24 @@ export class DocSearch {
    * 搜索指南文档（使用倒排索引）
    */
   searchGuide(query: string, limit: number = 5): {
-    id: string;
-    title: string;
-    description: string;
-    path: string;
-    score: number;
-    platform?: string;
-  }[] {
+    results: {
+      id: string;
+      title: string;
+      description: string;
+      path: string;
+      score: number;
+      platform?: string;
+    }[];
+    spellCorrection?: QueryCorrectionResult;
+  } {
     this.loadIndex();
 
+    // 拼写纠错
+    const spellCorrection = this.spellCorrector.correctQuery(query);
+    const correctedQuery = spellCorrection.correctedQuery;
+
     // 查询扩展
-    const expandedQuery = this.queryExpander.expand(query);
+    const expandedQuery = this.queryExpander.expand(correctedQuery);
     const expandedQueryStr = expandedQuery.expanded.join(' ');
 
     // 使用倒排索引搜索
@@ -212,7 +240,10 @@ export class DocSearch {
         platform: r.metadata?.platform
       }));
 
-    return results;
+    return {
+      results,
+      spellCorrection: spellCorrection.hasCorrected ? spellCorrection : undefined
+    };
   }
 
   getGuidePath(topic: string): string | null {

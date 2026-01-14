@@ -88,7 +88,29 @@ function parseFile(filePath: string, platform: Platform, component: string): { s
       }
     });
   }
-  // Android / Web 解析可在此扩展
+
+  // Kotlin / Java 解析
+  if (filePath.endsWith('.kt') || filePath.endsWith('.java')) {
+    const classRegex = /(class|interface|object|enum)\s+([A-Z]\w+)/g;
+    const methodRegex = /(fun|void|[\w<>]+)\s+([a-z]\w+)\s*\(/g; // 简化版匹配
+
+    lines.forEach((line, index) => {
+      let match;
+      if ((match = classRegex.exec(line)) !== null) {
+        classes.push(match[2]);
+        symbols.push({ name: match[2], type: match[1], file: relativePath, line: index + 1, signature: line.trim(), platform, component });
+      }
+      // Java/Kotlin 方法匹配比较复杂，这里仅做简单匹配，避免噪音
+      if ((match = methodRegex.exec(line)) !== null) {
+        const methodName = match[2];
+        const keyword = match[1];
+        // 排除常见控制流关键字
+        if (!['if', 'for', 'while', 'switch', 'catch'].includes(methodName) && keyword !== 'new') {
+           symbols.push({ name: methodName, type: 'method', file: relativePath, line: index + 1, signature: line.trim(), platform, component });
+        }
+      }
+    });
+  }
   
   return { symbols, classes };
 }

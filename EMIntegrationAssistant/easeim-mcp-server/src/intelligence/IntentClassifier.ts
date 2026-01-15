@@ -423,7 +423,7 @@ export class IntentClassifier {
       { id: 'user_profile_update', text: '更新 头像 修改 昵称 用户 信息 缓存 userCache Provider 设置 头像 个人 资料 刷新' },
       { id: 'text_style_customization', text: '修改 文本 消息 颜色 字体 大小 样式 color font size' }
     ];
-    return SimilarityMatcher.findBestMatch(query, scenarioTargets, 0.15);
+    return SimilarityMatcher.findBestMatch(query, scenarioTargets, 0.20);
   }
 
   private mapScenarioToIntent(scenarioId: string): UserIntent {

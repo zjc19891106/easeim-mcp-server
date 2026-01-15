@@ -511,7 +511,7 @@ Claude: [调用 check_integration]
 
 ## 项目结构
 
-```
+```text
 easeim-mcp-server/
 ├── src/
 │   ├── index.ts                    # 入口文件

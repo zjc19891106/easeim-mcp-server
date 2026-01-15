@@ -12,28 +12,28 @@
 
 ```mermaid
 graph TD
-    Client[MCP Client (Claude/Cursor)] <--> Server[MCP Server (Node.js)]
+    Client["MCP Client (Claude/Cursor)"] <--> Server["MCP Server (Node.js)"]
     
     subgraph "Server Core"
-        Router[Request Router]
+        Router["Request Router"]
         
         subgraph "Intelligence Layer (智能化层)"
-            Intent[Intent Classifier]
-            Graph[Knowledge Graph]
-            Spell[Spell Corrector]
-            Gen[Code Generator]
+            Intent["Intent Classifier"]
+            Graph["Knowledge Graph"]
+            Spell["Spell Corrector"]
+            Gen["Code Generator"]
         end
         
         subgraph "Search Engine Layer (搜索引擎层)"
-            DocSearch[Doc Search (BM25)]
-            SourceSearch[Source Search (Symbolic)]
-            ConfigSearch[Config Search]
+            DocSearch["Doc Search (BM25)"]
+            SourceSearch["Source Search (Symbolic)"]
+            ConfigSearch["Config Search"]
         end
         
         subgraph "Data Layer (数据层)"
-            DocIndex[Doc JSON Index]
-            SourceIndex[Source JSON Index]
-            ConfigIndex[Config JSON Index]
+            DocIndex["Doc JSON Index"]
+            SourceIndex["Source JSON Index"]
+            ConfigIndex["Config JSON Index"]
         end
     end
     
@@ -66,7 +66,7 @@ graph TD
     *   *例如*: 识别到错误码 `508` -> 自动调用 `lookup_error`；识别到 `Appearance` -> 自动调用 `list_config_options`。
 *   **知识图谱 (Knowledge Graph)**: 手动构建了 SDK 的概念关系网。
     *   *关联*: `CustomMessageCell` (类) -> `custom_message` (场景) -> `sendMessage` (API)。让助手能像架构师一样思考。
-*   **代码生成器 (Code Generator)**: 内置多场景代码模板（如自定义消息、主题配置），支持动态参数填充，直接生成可运行的 Swift/Kotlin 代码。
+*   **代码生成器 (Code Generator)**: 内置多场景代码模板（如自定义消息、主题配置），支持动态参数填充，直接生成可运行特定的 Swift/Kotlin 代码。
 
 ---
 

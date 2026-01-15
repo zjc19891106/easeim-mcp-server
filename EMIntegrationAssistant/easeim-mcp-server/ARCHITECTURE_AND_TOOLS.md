@@ -10,7 +10,7 @@
 
 ```mermaid
 graph TD
-    UserRequest[用户请求] --> IntentLayer[🧠 智能化层]
+    UserRequest[用户请求] --> IntentLayer["🧠 智能化层"]
     
     subgraph IntentLayer [意图识别与分发]
         IntentClassifier[意图分类器]
@@ -19,21 +19,21 @@ graph TD
         PlatformDetector[平台检测]
     end
     
-    IntentLayer --> |意图: 查文档/API| SearchEngine[🔍 搜索引擎]
-    IntentLayer --> |意图: 找代码| SourceEngine[📦 源码引擎]
-    IntentLayer --> |意图: 改配置| ConfigEngine[⚙️ 配置引擎]
-    IntentLayer --> |意图: 诊断问题| DiagnosticEngine[🩺 诊断引擎]
-    IntentLayer --> |意图: 生成代码| CodeGen[📝 代码生成器]
+    IntentLayer --> |意图: 查文档/API| SearchEngine["🔍 搜索引擎"]
+    IntentLayer --> |意图: 找代码| SourceEngine["📦 源码引擎"]
+    IntentLayer --> |意图: 改配置| ConfigEngine["⚙️ 配置引擎"]
+    IntentLayer --> |意图: 诊断问题| DiagnosticEngine["🩺 诊断引擎"]
+    IntentLayer --> |意图: 生成代码| CodeGen["📝 代码生成器"]
     
     subgraph SearchEngine [文档搜索]
-        BM25[BM25 算法]
-        DocIndex[文档索引 (docs/index.json)]
+        BM25["BM25 算法"]
+        DocIndex["文档索引 (docs/index.json)"]
         BM25 --> DocIndex
     end
     
     subgraph SourceEngine [源码搜索]
         SymbolSearch[符号搜索]
-        ShardedIndex[分片索引 (sources/shards/*)]
+        ShardedIndex["分片索引 (sources/shards/*)"]
         SymbolSearch --> ShardedIndex
     end
     
@@ -43,7 +43,7 @@ graph TD
         LogAnalyzer[日志分析器]
     end
     
-    SearchEngine --> ResponseBuilder[📋 响应构建器]
+    SearchEngine --> ResponseBuilder["📋 响应构建器"]
     SourceEngine --> ResponseBuilder
     ConfigEngine --> ResponseBuilder
     DiagnosticEngine --> ResponseBuilder
@@ -111,7 +111,7 @@ graph TD
         CodeGen --> Response
         Solution --> Response
     ```
-*   **输出**: 综合性的回答，可能包含代码片段、步骤说明 o 或进一步的交互选项。
+*   **输出**: 综合性的回答，可能包含代码片段、步骤说明或进一步的交互选项。
 
 #### `generate_code` (代码生成)
 *   **用途**: 生成特定场景的完整代码模板。

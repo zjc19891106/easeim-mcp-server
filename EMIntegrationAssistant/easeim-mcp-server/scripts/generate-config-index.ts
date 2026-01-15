@@ -41,6 +41,121 @@ interface ComponentConfig {
   extensionPoints: ExtensionPoint[];
 }
 
+function extractInlineDescription(line: string): string | undefined {
+  const commentIndex = line.indexOf('//');
+  if (commentIndex === -1) return undefined;
+  const comment = line.slice(commentIndex + 2).trim();
+  return comment.length > 0 ? comment : undefined;
+}
+
+function parseWebConfigFile(filePath: string, baseDir: string, allowedTypes: Set<string>): ConfigProperty[] {
+  const content = fs.readFileSync(filePath, 'utf-8');
+  const lines = content.split('\n');
+  const relativePath = path.relative(baseDir, filePath);
+  const properties: ConfigProperty[] = [];
+
+  const typeNameRegex = /^\s*(?:export\s+)?(interface|type)\s+(\w+)\s*(?:=)?\s*(\{)?/;
+  const propertyRegex = /^\s*([A-Za-z_]\w*)\s*\??\s*:\s*([^;{]+);?/;
+
+  let inTypeBlock = false;
+  let braceLevel = 0;
+  let currentTypeName = '';
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    const trimmed = line.trim();
+    if (trimmed.startsWith('//') || trimmed.startsWith('/*') || trimmed.startsWith('*')) continue;
+
+    const typeMatch = trimmed.match(typeNameRegex);
+    if (typeMatch) {
+      const [, , name, hasBrace] = typeMatch;
+      if (/(Props|Options|Config)$/.test(name)) {
+        inTypeBlock = true;
+        currentTypeName = name;
+        braceLevel = hasBrace ? 1 : 0;
+      } else {
+        inTypeBlock = false;
+        currentTypeName = '';
+      }
+    }
+
+    if (inTypeBlock) {
+      braceLevel += (line.match(/\{/g) || []).length;
+      braceLevel -= (line.match(/\}/g) || []).length;
+
+      const propMatch = trimmed.match(propertyRegex);
+      if (propMatch) {
+        const [, name, type] = propMatch;
+        if (name.startsWith('_') || name.startsWith('[')) continue;
+        if (!currentTypeName.endsWith('Props')) continue;
+        if (allowedTypes.size > 0 && !allowedTypes.has(currentTypeName)) continue;
+        const description = extractInlineDescription(line) || extractDescription(lines, i);
+        properties.push({
+          name,
+          type: type.trim(),
+          description: description ? `${currentTypeName}: ${description}` : currentTypeName,
+          file: relativePath,
+          line: i + 1
+        });
+      }
+
+      if (braceLevel === 0 && trimmed.endsWith('}')) {
+        inTypeBlock = false;
+        currentTypeName = '';
+      }
+    }
+  }
+
+  return properties;
+}
+
+function collectWebAllowedProps(componentDir: string): Set<string> {
+  const allowed = new Set<string>();
+  const exportRegex = /export\s*\{([^}]+)\}(?:\s*from\s*['"][^'"]+['"])?/g;
+  const exportTypeRegex = /export\s+type\s*\{([^}]+)\}(?:\s*from\s*['"][^'"]+['"])?/g;
+
+  function addExportedName(name: string) {
+    const clean = name.trim();
+    if (!clean) return;
+    const aliasParts = clean.split(/\s+as\s+/i);
+    const exportName = (aliasParts[1] || aliasParts[0]).trim();
+    if (!exportName) return;
+    if (exportName.endsWith('Props')) {
+      allowed.add(exportName);
+    } else {
+      allowed.add(`${exportName}Props`);
+    }
+  }
+
+  function scanIndexFile(filePath: string) {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    let match: RegExpExecArray | null;
+    while ((match = exportRegex.exec(content)) !== null) {
+      const names = match[1].split(',');
+      for (const name of names) addExportedName(name);
+    }
+    while ((match = exportTypeRegex.exec(content)) !== null) {
+      const names = match[1].split(',');
+      for (const name of names) addExportedName(name);
+    }
+  }
+
+  function traverse(dir: string) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        traverse(fullPath);
+      } else if (entry.isFile() && (entry.name === 'index.ts' || entry.name === 'index.tsx')) {
+        scanIndexFile(fullPath);
+      }
+    }
+  }
+
+  traverse(componentDir);
+  return allowed;
+}
+
 function extractDescription(lines: string[], startIndex: number): string | undefined {
   const descriptions: string[] = [];
   for (let i = startIndex - 1; i >= Math.max(0, startIndex - 10); i--) {
@@ -335,6 +450,7 @@ function processComponent(platform: string, component: string): ComponentConfig 
   console.log(`📦 处理 ${platform}/${component}...`);
   const configProperties: ConfigProperty[] = [];
   const extensionPoints: ExtensionPoint[] = [];
+  const webAllowedProps = platform === 'web' ? collectWebAllowedProps(componentDir) : new Set<string>();
 
   function findFiles(dir: string) {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -343,6 +459,7 @@ function processComponent(platform: string, component: string): ComponentConfig 
       if (entry.isDirectory()) {
         findFiles(fullPath);
       } else if (entry.isFile()) {
+        if (entry.name.endsWith('.stories.tsx') || entry.name.endsWith('.d.ts')) continue;
         // iOS / Swift 处理逻辑
         if (entry.name === 'Appearance.swift') {
           configProperties.push(...parseAppearanceFile(fullPath, RAW_SOURCES_DIR));
@@ -360,6 +477,11 @@ function processComponent(platform: string, component: string): ComponentConfig 
              else if (entry.name.endsWith('.xml') && fullPath.includes('/res/values')) {
                  configProperties.push(...parseAndroidResources(fullPath, RAW_SOURCES_DIR));
              }
+        }
+
+        // Web / TypeScript 处理逻辑
+        else if (platform === 'web' && (entry.name.endsWith('.ts') || entry.name.endsWith('.tsx'))) {
+          configProperties.push(...parseWebConfigFile(fullPath, RAW_SOURCES_DIR, webAllowedProps));
         }
       }
     }

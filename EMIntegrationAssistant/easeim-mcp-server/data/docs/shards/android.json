@@ -1,7 +1,7 @@
 {
   "version": "3.0.0",
   "platform": "android",
-  "lastUpdated": "2026-01-15T01:09:26.678Z",
+  "lastUpdated": "2026-01-15T07:45:58.288Z",
   "guides": [
     {
       "id": "android_guides_callkit_api_overview",
@@ -217,6 +217,42 @@
         "Telecom"
       ],
       "description": "Android 系统中的 Telecom 框架主要负责管理设备上的所有通话，包括传统的基于 SIM 卡的通话和 VoIP 通话。当有来电时，Telecom 框架会处理来电显示、接听、挂断等功能，并通知相关的应用程序。"
+    },
+    {
+      "id": "android_guides_chatroomuikit_ChatroomUIKit",
+      "title": "ChatroomUIKit",
+      "path": "android/guides/chatroomuikit/ChatroomUIKit.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "ChatroomUIKit"
+      ],
+      "description": "*English | [中文](ChatroomUIKit_zh.md)*"
+    },
+    {
+      "id": "android_guides_chatroomuikit_ChatroomUIKit_zh",
+      "title": "ChatroomUIKit",
+      "path": "android/guides/chatroomuikit/ChatroomUIKit_zh.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "ChatroomUIKit"
+      ],
+      "description": "*English | [英文](ChatroomUIKit.md)*"
+    },
+    {
+      "id": "android_guides_chatroomuikit_README",
+      "title": "ChatroomUIKit",
+      "path": "android/guides/chatroomuikit/README.md",
+      "platform": "android",
+      "product": "chatuikit",
+      "keywords": [
+        "android",
+        "ChatroomUIKit"
+      ],
+      "description": "*English | [英文](ChatroomUIKit.md)*"
     },
     {
       "id": "android_guides_chatuikit_chatuikit_custom_chat_ inputmenu",
@@ -966,7 +1002,7 @@
     }
   ],
   "stats": {
-    "guideCount": 32,
+    "guideCount": 35,
     "apiModuleCount": 72,
     "products": [
       "callkit",

@@ -1,29 +1,41 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-01-15T01:12:44.459Z",
+  "lastUpdated": "2026-01-15T08:01:09.610Z",
   "description": "配置索引清单 - 支持按平台分片加载",
   "platforms": [
+    "web",
     "ios"
   ],
   "shards": {
+    "web": {
+      "path": "shards/web.json",
+      "platform": "web",
+      "componentCount": 4,
+      "configPropertyCount": 1782,
+      "extensionPointCount": 0,
+      "sizeBytes": 410927,
+      "components": [
+        "EaseCallUIKit",
+        "EaseChatUIKit",
+        "EaseChatroomUIKit",
+        "_shared"
+      ]
+    },
     "ios": {
       "path": "shards/ios.json",
       "platform": "ios",
-      "componentCount": 4,
-      "configPropertyCount": 40,
-      "extensionPointCount": 148,
-      "sizeBytes": 67822,
+      "componentCount": 1,
+      "configPropertyCount": 0,
+      "extensionPointCount": 1,
+      "sizeBytes": 665,
       "components": [
-        "EaseCallUIKit",
-        "EaseChatDemo",
-        "EaseChatUIKit",
-        "EaseChatroomUIKit"
+        "EaseChatDemo"
       ]
     }
   },
   "stats": {
-    "totalComponents": 4,
-    "totalConfigProperties": 40,
-    "totalExtensionPoints": 148
+    "totalComponents": 5,
+    "totalConfigProperties": 1782,
+    "totalExtensionPoints": 1
   }
 }

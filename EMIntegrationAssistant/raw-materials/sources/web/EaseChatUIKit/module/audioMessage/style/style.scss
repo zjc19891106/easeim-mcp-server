@@ -1,0 +1,42 @@
+@import '~/common/style/index.scss';
+$audio-prefix-cls: #{$cui-prefix}-message-audio;
+
+.#{$audio-prefix-cls}{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    &-primary{
+        // .#{$audio-prefix-cls}-duration{
+        //     color: $gray-98
+        // }
+        svg path{
+            stroke: $gray-98
+        }
+        flex-direction: row-reverse;
+    }
+    &-secondly{
+        // .#{$audio-prefix-cls}-duration{
+        //     color: $font-color
+        // }
+        svg path{
+            stroke: $special-5
+        }
+        flex-direction: row;
+    }
+    &-duration{
+        font-size: $font-size-lg;
+        line-height: 24px;
+    }
+
+    &-dark.#{$audio-prefix-cls}-primary{
+            svg path{
+                stroke: $gray-2
+            }
+    }
+    &-dark.#{$audio-prefix-cls}-secondly{
+            svg path{
+                stroke: $gray-98
+            }
+    }
+}

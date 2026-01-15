@@ -1,7 +1,7 @@
 {
   "version": "3.0.0",
   "platform": "ios",
-  "lastUpdated": "2026-01-15T01:09:26.678Z",
+  "lastUpdated": "2026-01-15T07:45:58.288Z",
   "guides": [
     {
       "id": "ios_guides_callkit_APIOverView",
@@ -74,6 +74,66 @@
         "音视频通话信令交互逻辑"
       ],
       "description": "本系统使用即时通讯 IM 消息作为信令载体，通过消息扩展字段（`ext`）传递通话控制信息。"
+    },
+    {
+      "id": "ios_guides_chatroomuikit_Appearance",
+      "title": "Appearance",
+      "path": "ios/guides/chatroomuikit/Appearance.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "Appearance"
+      ],
+      "description": "Appearance.swift 是容纳了所有可配项的类，您需要在初始化ChatroomView之前修改它里面的属性."
+    },
+    {
+      "id": "ios_guides_chatroomuikit_ComponentRegister",
+      "title": "[ComponentRegister](https://github.com/easemob/UIKit_Chatroom_ios/ChatroomUIKit/blob/main/Sources/ChatroomUIKit/Classes/UI/Core/UIKit/Utils/ComponentsRegister.swift)",
+      "path": "ios/guides/chatroomuikit/ComponentRegister.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "[ComponentRegister](https://github.com/easemob/UIKit_Chatroom_ios/ChatroomUIKit/blob/main/Sources/ChatroomUIKit/Classes/UI/Core/UIKit/Utils/ComponentsRegister.swift)"
+      ],
+      "description": "聊天室UIKit中所有的可以继承注册自定义的组件类容器."
+    },
+    {
+      "id": "ios_guides_chatroomuikit_GiftsViewController",
+      "title": "[GiftsViewController](https://github.com/zjc19891106/ChatroomUIKit/blob/main/Sources/ChatroomUIKit/Classes/UI/Components/Gift/Controllers/GiftsViewController.swift)",
+      "path": "ios/guides/chatroomuikit/GiftsViewController.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "[GiftsViewController](https://github.com/zjc19891106/ChatroomUIKit/blob/main/Sources/ChatroomUIKit/Classes/UI/Components/Gift/Controllers/GiftsViewController.swift)"
+      ],
+      "description": "这是一个礼物容器Controller。您可以继承这个类在发送礼物之后调用您服务器的送礼api成功后再去调用`GiftsViewController`中原有的发送礼物消息到聊天室的api，并在可以在发送一些大额礼物的时候决定是否让礼物容器收起并展示礼物特效。礼物特效的话我们推荐腾讯的libpag动效库。"
+    },
+    {
+      "id": "ios_guides_chatroomuikit_README",
+      "title": "聊天室 UIKit",
+      "path": "ios/guides/chatroomuikit/README.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "聊天室 UIKit"
+      ],
+      "description": "本产品主要为了解决大部分用户的泛娱乐业务场景下对聊天室的绝大部分用户需求，主要为用户解决直接集成SDK繁琐，复杂度高，部分api体验不好（在用户侧开发者来看）等问题。致力于打造集成简单，自由度高，流程简单，文档说明足够详细的聊天室UIKit产品。"
+    },
+    {
+      "id": "ios_guides_chatroomuikit_README_en",
+      "title": "[Sample Demo](https://github.com/easemob/UIKit_Chatroom_ios#sample-demo)",
+      "path": "ios/guides/chatroomuikit/README_en.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "[Sample Demo](https://github.com/easemob/UIKit_Chatroom_ios#sample-demo)"
+      ],
+      "description": "In this project, there is a best practice demonstration project in the `Example` folder for you to build your own business capabilities."
     },
     {
       "id": "ios_guides_chatuikit_API_README",
@@ -726,7 +786,7 @@
     }
   ],
   "stats": {
-    "guideCount": 20,
+    "guideCount": 25,
     "apiModuleCount": 60,
     "products": [
       "callkit",

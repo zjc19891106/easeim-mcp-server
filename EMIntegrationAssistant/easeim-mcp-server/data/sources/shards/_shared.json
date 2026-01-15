@@ -1,0 +1,484 @@
+{
+  "component": "_shared",
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-15T07:46:03.308Z",
+  "platform": "web",
+  "files": [
+    {
+      "path": "web/_shared/common/config/colorContext.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 2
+    },
+    {
+      "path": "web/_shared/common/config/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 25
+    },
+    {
+      "path": "web/_shared/common/config/themeContext.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 2
+    },
+    {
+      "path": "web/_shared/component/_utils/motion.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 13
+    },
+    {
+      "path": "web/_shared/component/_utils/placements.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 117
+    },
+    {
+      "path": "web/_shared/component/_utils/reactNode.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 33
+    },
+    {
+      "path": "web/_shared/component/_utils/ref.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 23
+    },
+    {
+      "path": "web/_shared/component/_utils/styleChecker.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 11
+    },
+    {
+      "path": "web/_shared/component/_utils/type.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 2
+    },
+    {
+      "path": "web/_shared/component/_utils/warning.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 25
+    },
+    {
+      "path": "web/_shared/component/avatar/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 20
+    },
+    {
+      "path": "web/_shared/component/badge/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/broadcast/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/button/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/checkbox/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/collapse/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/config/colorContext.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 2
+    },
+    {
+      "path": "web/_shared/component/config/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 26
+    },
+    {
+      "path": "web/_shared/component/config/themeContext.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 2
+    },
+    {
+      "path": "web/_shared/component/drawer/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/dropdown/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/entry.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 72
+    },
+    {
+      "path": "web/_shared/component/icon/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/icon/vite-env.d.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 2
+    },
+    {
+      "path": "web/_shared/component/input/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/list/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/loading/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/modal/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/modal/util.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 44
+    },
+    {
+      "path": "web/_shared/component/networkQuality/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 6
+    },
+    {
+      "path": "web/_shared/component/notification/interface.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 84
+    },
+    {
+      "path": "web/_shared/component/popover/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/scrollList/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/svg.d.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 7
+    },
+    {
+      "path": "web/_shared/component/switch/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/tabs/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/component/tooltip/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 4
+    },
+    {
+      "path": "web/_shared/component/userItem/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 5
+    },
+    {
+      "path": "web/_shared/eventHandler/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 107
+    },
+    {
+      "path": "web/_shared/module-hooks/chat.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 397
+    },
+    {
+      "path": "web/_shared/module-hooks/dom.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 52
+    },
+    {
+      "path": "web/_shared/module-hooks/keybord.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 136
+    },
+    {
+      "path": "web/_shared/module-hooks/useAddress.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 255
+    },
+    {
+      "path": "web/_shared/module-hooks/useAddressContext.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 70
+    },
+    {
+      "path": "web/_shared/module-hooks/useChatContext.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 88
+    },
+    {
+      "path": "web/_shared/module-hooks/useChatroomContext.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 35
+    },
+    {
+      "path": "web/_shared/module-hooks/useChatroomMember.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 55
+    },
+    {
+      "path": "web/_shared/module-hooks/useClient.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 13
+    },
+    {
+      "path": "web/_shared/module-hooks/useConversation.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 61
+    },
+    {
+      "path": "web/_shared/module-hooks/useConversationContext.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 62
+    },
+    {
+      "path": "web/_shared/module-hooks/useHistoryMsg.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 123
+    },
+    {
+      "path": "web/_shared/module-hooks/usePinnedMessage.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 114
+    },
+    {
+      "path": "web/_shared/module-hooks/useSDK.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 11
+    },
+    {
+      "path": "web/_shared/module-hooks/useScreen.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 165
+    },
+    {
+      "path": "web/_shared/module-hooks/useThreadContext.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 78
+    },
+    {
+      "path": "web/_shared/module-store/AddressStore.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 999
+    },
+    {
+      "path": "web/_shared/module-store/ConversationStore.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 426
+    },
+    {
+      "path": "web/_shared/module-store/MessageStore.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 1135
+    },
+    {
+      "path": "web/_shared/module-store/PinnedMessagesStore.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 194
+    },
+    {
+      "path": "web/_shared/module-store/ThreadStore.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 346
+    },
+    {
+      "path": "web/_shared/module-store/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 103
+    },
+    {
+      "path": "web/_shared/module-store/rootContext.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 120
+    },
+    {
+      "path": "web/_shared/module-theme/hooks.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 168
+    },
+    {
+      "path": "web/_shared/module-types/messageType.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 180
+    },
+    {
+      "path": "web/_shared/module-utils/color.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 115
+    },
+    {
+      "path": "web/_shared/module-utils/download.js",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 187
+    },
+    {
+      "path": "web/_shared/module-utils/index.ts",
+      "platform": "web",
+      "component": "_shared",
+      "classes": [],
+      "lines": 296
+    }
+  ],
+  "symbols": [],
+  "stats": {
+    "fileCount": 67,
+    "symbolCount": 0,
+    "classCount": 0,
+    "topClasses": []
+  }
+}

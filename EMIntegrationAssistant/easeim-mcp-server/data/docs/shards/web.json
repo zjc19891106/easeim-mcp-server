@@ -1,0 +1,851 @@
+{
+  "version": "3.0.0",
+  "platform": "web",
+  "lastUpdated": "2026-01-15T07:45:58.288Z",
+  "guides": [
+    {
+      "id": "web_guides_callkit_CallKit-GroupInfo-Provider",
+      "title": "CallKit GroupInfoProvider 功能说明",
+      "path": "web/guides/callkit/CallKit-GroupInfo-Provider.md",
+      "platform": "web",
+      "product": "callkit",
+      "keywords": [
+        "web",
+        "CallKit GroupInfoProvider 功能说明"
+      ],
+      "description": "`groupInfoProvider` 是 CallKit 的新功能，用于在群组通话邀请中提供群组名称和头像信息。这样被邀请人可以在接收邀请时看到群组的详细信息，提升用户体验。"
+    },
+    {
+      "id": "web_guides_callkit_CallKit-GroupMembers-Auto-Fetch",
+      "title": "CallKit 群成员自动获取功能文档",
+      "path": "web/guides/callkit/CallKit-GroupMembers-Auto-Fetch.md",
+      "platform": "web",
+      "product": "callkit",
+      "keywords": [
+        "web",
+        "CallKit 群成员自动获取功能文档"
+      ],
+      "description": "CallKit 新增了基于群组 ID 自动获取群成员的功能，支持在多人通话中自动拉取群成员列表，无需手动配置成员信息。"
+    },
+    {
+      "id": "web_guides_callkit_callkit-avatar-display-fix",
+      "title": "CallKit 1v1 视频通话头像显示修复",
+      "path": "web/guides/callkit/callkit-avatar-display-fix.md",
+      "platform": "web",
+      "product": "callkit",
+      "keywords": [
+        "web",
+        "CallKit 1v1 视频通话头像显示修复"
+      ],
+      "description": "在 1v1 视频通话中，当一方关闭摄像头时，对方显示的是默认头像`PERSON_SINGLE_FILL`，而不是对方的真实头像。Header 中能正确显示对方的真实头像，但视频窗口中显示的是默认头像。"
+    },
+    {
+      "id": "web_guides_callkit_callkit-avatar-provider-fix",
+      "title": "CallKit 头像提供者修复",
+      "path": "web/guides/callkit/callkit-avatar-provider-fix.md",
+      "platform": "web",
+      "product": "callkit",
+      "keywords": [
+        "web",
+        "CallKit 头像提供者修复"
+      ],
+      "description": "在 CallKit 组件中，有多处硬编码了默认头像 URL `'https://api.dicebear.com/7.x/avataaars/svg?seed=me'`，这些硬编码没有使用 `userInfoProvider` 提供的用户信息，导致无法显示正确的用户头像。"
+    },
+    {
+      "id": "web_guides_callkit_callkit-background",
+      "title": "CallKit 背景图片功能",
+      "path": "web/guides/callkit/callkit-background.md",
+      "platform": "web",
+      "product": "callkit",
+      "keywords": [
+        "web",
+        "CallKit 背景图片功能"
+      ],
+      "description": "CallKit 组件新增了 `backgroundImage` 参数，允许为多人视频通话和 1v1 语音通话设置自定义背景图片。这个功能特别适用于群组视频会议和语音通话，可以提供更加美观和专业的视觉体验。"
+    },
+    {
+      "id": "web_guides_callkit_callkit-minimized-video-fix",
+      "title": "CallKit 最小化视频流显示问题修复",
+      "path": "web/guides/callkit/callkit-minimized-video-fix.md",
+      "platform": "web",
+      "product": "callkit",
+      "keywords": [
+        "web",
+        "CallKit 最小化视频流显示问题修复"
+      ],
+      "description": "在 1v1 视频通话中，当用户点击最小化按钮后，最小化窗口只显示默认头像，没有显示远程视频流。"
+    },
+    {
+      "id": "web_guides_callkit_callkit-preview-buttons-disable-fix",
+      "title": "CallKit 预览模式按钮禁用功能",
+      "path": "web/guides/callkit/callkit-preview-buttons-disable-fix.md",
+      "platform": "web",
+      "product": "callkit",
+      "keywords": [
+        "web",
+        "CallKit 预览模式按钮禁用功能"
+      ],
+      "description": "在 1v1 视频通话的预览模式下，除了接通和挂断按钮外，其他按钮（麦克风、摄像头、扬声器、屏幕共享）应该被禁用，提供更好的用户体验。"
+    },
+    {
+      "id": "web_guides_callkit_callkit-preview-buttons-fix",
+      "title": "CallKit 预览模式按钮修复",
+      "path": "web/guides/callkit/callkit-preview-buttons-fix.md",
+      "platform": "web",
+      "product": "callkit",
+      "keywords": [
+        "web",
+        "CallKit 预览模式按钮修复"
+      ],
+      "description": "在 1v1 视频通话的预览模式下，主叫方显示的按钮是 \"Reject\"，但点击时并没有真正挂断通话，而是调用了错误的方法。这导致用户体验混乱，因为："
+    },
+    {
+      "id": "web_guides_callkit_callkit-speaking-volume-threshold",
+      "title": "CallKit 音量指示器阈值配置",
+      "path": "web/guides/callkit/callkit-speaking-volume-threshold.md",
+      "platform": "web",
+      "product": "callkit",
+      "keywords": [
+        "web",
+        "CallKit 音量指示器阈值配置"
+      ],
+      "description": "CallKit 现在支持配置音量指示器的显示阈值，用户可以根据需要调整说话指示器的敏感度。"
+    },
+    {
+      "id": "web_guides_callkit_callkit-video-stream-fix",
+      "title": "CallKit 1v1 视频流播放问题修复",
+      "path": "web/guides/callkit/callkit-video-stream-fix.md",
+      "platform": "web",
+      "product": "callkit",
+      "keywords": [
+        "web",
+        "CallKit 1v1 视频流播放问题修复"
+      ],
+      "description": "在 1v1 视频通话中，有时会出现看不到对方视频流的问题。根据控制台日志分析，主要原因是："
+    },
+    {
+      "id": "web_guides_chatroomuikit_chatroom",
+      "title": "聊天室",
+      "path": "web/guides/chatroomuikit/chatroom.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "聊天室"
+      ],
+      "description": "聊天室 UIKit 旨在满足大多数用户对泛娱乐场景的聊天室需求。它通过简化 SDK 集成、促进定制和提供全面的文档，在 API 的使用方面（为用户端开发人员）提供了良好的用户体验。"
+    },
+    {
+      "id": "web_guides_chatroomuikit_chatroom.quickstart",
+      "title": "ChatroomUIKit",
+      "path": "web/guides/chatroomuikit/chatroom.quickstart.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "ChatroomUIKit"
+      ],
+      "description": "ChatroomUIKit is designed to address most users' chat room requirements specific to pan-entertainment scenarios. It delivers good user experience in the use of APIs (for user-side developers) by streamlining SDK integration, facilitating customization, and offering comprehensive documentation."
+    },
+    {
+      "id": "web_guides_chatuikit_CHANGELOG",
+      "title": "1.2.1",
+      "path": "web/guides/chatuikit/CHANGELOG.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "1.2.1"
+      ],
+      "description": "- CallKit 新增 `backgroundImage` 参数，支持为多人视频通话和 1v1 语音通话设置自定义背景图片"
+    },
+    {
+      "id": "web_guides_chatuikit_Conversation",
+      "title": "ConversationList",
+      "path": "web/guides/chatuikit/Conversation.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "ConversationList"
+      ],
+      "description": "`ConversationList` 组件用来展示当前用户的所有会话 (包含一对一单聊和群聊, 但是不包括聊天室)，并且提供搜索，删除，置顶，免打扰功能。 对于单聊, 会话展示出的名称是对方的昵称，如果对方没有设置昵称则展示对方的 user ID，会话头像是对方的头像，如果没有设置则使用默认头像。 对于群聊会话名称是当前群组的名称，头像是默认头像。"
+    },
+    {
+      "id": "web_guides_chatuikit_README",
+      "title": "Easemob UIKit for React",
+      "path": "web/guides/chatuikit/README.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "Easemob UIKit for React"
+      ],
+      "description": "![Static Badge](https://img.shields.io/badge/platform-React-green) ![Static Badge](https://img.shields.io/badge/language-typescript-green) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/easemob/Easemob-UIKit-web) ![GitHub last commit](https://img.shields.io/github/last-commit/easemob/Easemob-UIKit-web) ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/easemob/Easemob-UIKit-web) ![GitHub License](https://img.shields.io/github/license/easemob/Easemob-UIKit-web) ![GitHub Tag](https://img.shields.io/github/v/tag/easemob/Easemob-UIKit-web) ![NPM Version](https://img.shields.io/npm/v/easemob-chat-uikit)"
+    },
+    {
+      "id": "web_guides_chatuikit_ThemeProvider",
+      "title": "ThemeProvider 使用指南",
+      "path": "web/guides/chatuikit/ThemeProvider.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "ThemeProvider 使用指南"
+      ],
+      "description": "`ThemeProvider` 是一个独立的主题管理组件，支持主题嵌套、动态切换和 CSS 变量注入。它与原有的 `Provider` 分离，提供更灵活的主题管理能力。"
+    },
+    {
+      "id": "web_guides_chatuikit_chat",
+      "title": "Chat",
+      "path": "web/guides/chatuikit/chat.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "Chat"
+      ],
+      "description": "Chat 组件提供了以下功能:"
+    },
+    {
+      "id": "web_guides_chatuikit_contactList",
+      "title": "ContactList",
+      "path": "web/guides/chatuikit/contactList.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "ContactList"
+      ],
+      "description": "`ContactList` 组件用来展示通讯录，里面包含联系人列表，群组列表，和好友请求列表。昵称在中文或者英文的情况下可以实现按首字母分类。"
+    },
+    {
+      "id": "web_guides_chatuikit_formatDate",
+      "title": "格式化日期时间",
+      "path": "web/guides/chatuikit/formatDate.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "格式化日期时间"
+      ],
+      "description": "会话列表和消息组件支持自定义日期时间格式，可以通过 `formatDateTime` 参数来实现"
+    },
+    {
+      "id": "web_guides_chatuikit_i18n",
+      "title": "国际化",
+      "path": "web/guides/chatuikit/i18n.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "国际化"
+      ],
+      "description": "目前，单群聊 UIKit 默认支持中文和英文，作为界面展示语言。你可以使用默认语言包，也可以增加其他语言包，传入对应的 `resources` 和 `lng`，即语言的 ISO 代码，例如，`en` 表示英语，`zh` 表示中文。"
+    },
+    {
+      "id": "web_guides_chatuikit_index",
+      "title": "Chat-UI",
+      "path": "web/guides/chatuikit/index.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "Chat-UI"
+      ],
+      "description": "```bash"
+    },
+    {
+      "id": "web_guides_chatuikit_integrate",
+      "title": "Agora UI Kits",
+      "path": "web/guides/chatuikit/integrate.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "Agora UI Kits"
+      ],
+      "description": "agora-chat-uikit 是基于声网 IM SDK 的一款 UI 组件库，提供通用的 UI 组件，和包含业务逻辑的 module，包括聊天、会话、搜索、通讯录等 module 组件，这些组件允许用户自定义和使用通用 UI 组件来自定义更小级别的子组件，agora-chat-uikit 提供 provider 来管理数据，provider 自动监听 SDK 事件，来更新数据，并驱动 UI 更新。开发者可根据实际业务需求利用该库快速搭建自定义 IM 应用。"
+    },
+    {
+      "id": "web_guides_chatuikit_login",
+      "title": "登录",
+      "path": "web/guides/chatuikit/login.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "登录"
+      ],
+      "description": "如果初始化时已经设置了 userId 和 token，Chat UIKit 当 Provider 加载完会自动登录，当 Provider 被卸载时会自动登出。"
+    },
+    {
+      "id": "web_guides_chatuikit_provider",
+      "title": "UIKitProvider",
+      "path": "web/guides/chatuikit/provider.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "UIKitProvider"
+      ],
+      "description": "`easemob-chat-uikit` 提供 `UIKitProvider` 组件来管理数据。 `UIKitProvider` 不渲染任何 UI, 只用来为其他组件提供全局的 context，它自动监听 SDK 事件, 在组件树中向下传递数据来驱动组件更新，UIKit 中其他组件必须用 `UIKitProvider` 包裹。"
+    },
+    {
+      "id": "web_guides_chatuikit_quick_start",
+      "title": "Agora Chat UIKit Web 使用指南",
+      "path": "web/guides/chatuikit/quick_start.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "Agora Chat UIKit Web 使用指南"
+      ],
+      "description": "agora-chat-uikit 是基于声网 Chat SDK 的一款 UI 组件库，包含三个级别的组件：通用的纯 UI 组件，和包含聊天业务逻辑的 module 组件，以及可以完整使用的容器组件, 组件内部集成了 Chat SDK，用户可以使用 UIKit 快速搭建应用，同时 UIKit 也提供扩展和定制化能力，开发者可根据实际业务需求利用该库自定义 IM 应用。"
+    },
+    {
+      "id": "web_guides_chatuikit_store",
+      "title": "rootStore",
+      "path": "web/guides/chatuikit/store.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "rootStore"
+      ],
+      "description": "UIKit uses mobx to manage global data. Users can import the `rootStore` to get all the data and the action methods which can be used to modify the data to implement UI updates."
+    },
+    {
+      "id": "web_guides_chatuikit_theme",
+      "title": "主题",
+      "path": "web/guides/chatuikit/theme.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "主题"
+      ],
+      "description": "Chat UIKit 内置浅色和深色主题，默认为浅色主题。"
+    },
+    {
+      "id": "web_guides_chatuikit_userInfo",
+      "title": "头像昵称",
+      "path": "web/guides/chatuikit/userInfo.md",
+      "platform": "web",
+      "product": "chatuikit",
+      "keywords": [
+        "web",
+        "头像昵称"
+      ],
+      "description": "UIKit 在不做任何设置直接使用时，默认展示的是用户的 userId, 头像默认是 userId 前两个字母。UIKit 提供两种方式来设置用户的头像和昵称："
+    },
+    {
+      "id": "web_guides_sdk_apireference",
+      "title": "API 参考",
+      "path": "web/guides/sdk/apireference.md",
+      "platform": "web",
+      "product": "sdk",
+      "keywords": [
+        "web",
+        "API 参考"
+      ],
+      "description": "如需了解 Web SDK 中的 API 详情，请参见 [API 参考文档](https://doc.easemob.com/apidoc/web/index.html)。"
+    },
+    {
+      "id": "web_guides_sdk_beginner_guide",
+      "title": "入门指引",
+      "path": "web/guides/sdk/beginner_guide.md",
+      "platform": "web",
+      "product": "sdk",
+      "keywords": [
+        "web",
+        "入门指引"
+      ],
+      "description": "环信即时通讯 IM 可实现发送文本、图片、位置、语音、视频等各类型消息，提供单聊、群聊、聊天室、离线推送、账号鉴权、用户属性和用户关系等服务。"
+    },
+    {
+      "id": "web_guides_sdk_demo_react",
+      "title": "环信即时通讯 IM React Demo",
+      "path": "web/guides/sdk/demo_react.md",
+      "platform": "web",
+      "product": "sdk",
+      "keywords": [
+        "web",
+        "环信即时通讯 IM React Demo"
+      ],
+      "description": "环信即时通讯 IM React Demo 提供用户登录、单聊、群组、聊天室、子区、消息(文字、表情、语音、视频、图片、文件等)发送及管理、会话管理、好友管理、用户属性、用户在线状态（Presence）以及实时音视频通话等功能。"
+    },
+    {
+      "id": "web_guides_sdk_demo_vue",
+      "title": "Vue Demo（WebIM）介绍",
+      "path": "web/guides/sdk/demo_vue.md",
+      "platform": "web",
+      "product": "sdk",
+      "keywords": [
+        "web",
+        "Vue Demo（WebIM）介绍"
+      ],
+      "description": "环信即时通讯 Web 端提供示例应用可供体验。你可以按以下步骤体验："
+    },
+    {
+      "id": "web_guides_sdk_quickstart",
+      "title": "环信即时通讯 IM Web 快速开始",
+      "path": "web/guides/sdk/quickstart.md",
+      "platform": "web",
+      "product": "sdk",
+      "keywords": [
+        "web",
+        "环信即时通讯 IM Web 快速开始"
+      ],
+      "description": "本页面介绍如何快速集成环信即时通讯 IM Web SDK 实现单聊。"
+    },
+    {
+      "id": "web_guides_sdk_releasenote",
+      "title": "Web IM SDK 更新日志",
+      "path": "web/guides/sdk/releasenote.md",
+      "platform": "web",
+      "product": "sdk",
+      "keywords": [
+        "web",
+        "Web IM SDK 更新日志"
+      ],
+      "description": "- 优化日志输出格式和内容。"
+    }
+  ],
+  "apiModules": [
+    {
+      "id": "web_api_connection",
+      "name": "连接",
+      "description": "应用客户端成功连接到环信服务器后，才能使用环信即时通讯 SDK 的收发消息等功能。",
+      "docPath": "web/api/connection.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_conversation_delete",
+      "name": "删除会话",
+      "description": "删除好友或退出群组后，SDK 不会自动删除对应的单聊或群聊会话。你可以调用相应的接口从服务器删除单个会话及其历史消息。",
+      "docPath": "web/api/conversation_delete.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_conversation_list",
+      "name": "会话列表",
+      "description": "对于单聊和群组聊天会话，用户发消息时 SDK 会自动创建会话并将会话添加至用户的会话列表。",
+      "docPath": "web/api/conversation_list.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_conversation_local",
+      "name": "管理本地会话",
+      "description": "环信即时通讯 IM Web SDK 内部使用 IndexedDB 在本地数据库中保存单聊和群聊会话，通过 `LocalCache` 模块对本地会话数据进行管理。",
+      "docPath": "web/api/conversation_local.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_conversation_mark",
+      "name": "会话标记",
+      "description": "某些情况下，你可能需要对会话添加标记，例如会话标星或将会话标为已读或未读。即时通讯云 IM 支持对单聊和群聊会话添加标记，最大支持 20 个标记，所以一个会话最多可添加 20 个标记。",
+      "docPath": "web/api/conversation_mark.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_conversation_overview",
+      "name": "会话介绍",
+      "description": "会话包含单聊会话、群聊会话。用户可与在会话中发送消息、查看或清空历史消息等操作。",
+      "docPath": "web/api/conversation_overview.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_conversation_pin",
+      "name": "会话置顶",
+      "description": "会话置顶指将单聊或群聊会话固定在会话列表的顶部，方便用户查找。例如，将重点会话置顶，可快速定位会话。",
+      "docPath": "web/api/conversation_pin.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_conversation_receipt",
+      "name": "实现会话已读回执",
+      "description": "会话已读回执指接收方进入指定会话后就阅读了该会话中的所有未读消息。例如，当接收方进入会话页面，向服务器发送会话已读回执，服务器将该回执下发给发送方，并将接收方的指定会话的未读消息数置为 0。",
+      "docPath": "web/api/conversation_receipt.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_group_@",
+      "name": "群组 @ 消息",
+      "description": "群组 @ 消息指在群组聊天中，用户可以 @ 单个、多个或所有成员，发送消息。群组中的每个成员均可使用 @ 功能，而且可以 @ 群所有成员。",
+      "docPath": "web/api/group_@.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_group_attributes",
+      "name": "群属性管理",
+      "description": "群组是支持多人沟通的即时通讯系统，本文指导你如何使用环信即时通讯 IM Web SDK 在实时互动 app 中实现群组属性相关功能。",
+      "docPath": "web/api/group_attributes.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_group_manage",
+      "name": "创建和管理群组及监听群组事件",
+      "description": "群组是支持多人沟通的即时通讯系统，本文介绍如何使用环信即时通讯 IM Web SDK 在实时互动 app 中创建和管理群组，并实现群组相关功能。",
+      "docPath": "web/api/group_manage.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_group_members",
+      "name": "群组成员管理",
+      "description": "群组是支持多人沟通的即时通讯系统。本文介绍如何使用环信即时通讯 IM SDK 在实时互动 app 中实现群组成员管理相关功能。",
+      "docPath": "web/api/group_members.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_group_overview",
+      "name": "group_overview.md",
+      "description": "",
+      "docPath": "web/api/group_overview.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_import_sdk_minicore",
+      "name": "按需导入 SDK",
+      "description": "SDK 提供了灵活的模块化设计，允许开发者根据需求引入功能模块，并将其注册到 miniCore 中使用。",
+      "docPath": "web/api/import_sdk_minicore.md",
+      "platform": "web",
+      "product": "sdk"
+    },
+    {
+      "id": "web_api_initialization",
+      "name": "初始化",
+      "description": "初始化是使用 SDK 的必要步骤,需在所有接口方法调用前完成。",
+      "docPath": "web/api/initialization.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_integration",
+      "name": "导入 SDK",
+      "description": "本文介绍如何将环信即时通讯 IM SDK 集成到你的 Web 项目。",
+      "docPath": "web/api/integration.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_limitation",
+      "name": "limitation.md",
+      "description": "",
+      "docPath": "web/api/limitation.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_log",
+      "name": "SDK 日志",
+      "description": "环信即时通讯 IM 日志记录 SDK 相关的信息和事件。环信技术支持团队帮你排查问题时可能会请你发送 SDK 日志。",
+      "docPath": "web/api/log.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_login",
+      "name": "登录",
+      "description": "初始化 IM SDK 后，你需要首先调用接口登录。登录成功后，才能使用 IM 的功能。",
+      "docPath": "web/api/login.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_delete",
+      "name": "删除消息",
+      "description": "本文介绍用户如何单向清空本地和服务端的聊天记录和单向删除服务端的历史消息。",
+      "docPath": "web/api/message_delete.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_deliver_only_online",
+      "name": "消息仅投递在线用户",
+      "description": "环信即时通讯 IM 支持只将消息投递给在线用户。若接收方不在线，则无法收到消息。该功能用于实现应用只需要向在线用户进行展示目的，例如，利用透传消息实现群投票的票数实时变化, 只有在线用户需要关注实时变化的动态, 离线用户只需要再次上线时获取最终状态。",
+      "docPath": "web/api/message_deliver_only_online.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_extension",
+      "name": "消息扩展",
+      "description": "如果上述消息类型无法满足要求，你可以使用消息扩展为消息添加属性。这种情况可用于更复杂的消息传递场景，例如，消息中需要携带被回复的消息内容或者是图文消息等场景。",
+      "docPath": "web/api/message_extension.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_modify",
+      "name": "修改消息",
+      "description": "环信即时通讯 IM 提供修改消息功能，支持对发送成功的消息进行编辑，然后再发送，提高沟通效率和准确性，例如，发送消息后发觉消息内容中包含错别字、遗漏了的关键信息、内容不够完善清晰、甚至临时想更改自己的想法，可以编辑消息后再次发送。",
+      "docPath": "web/api/message_modify.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_overview",
+      "name": "message_overview.md",
+      "description": "",
+      "docPath": "web/api/message_overview.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_pin",
+      "name": "消息置顶",
+      "description": "消息置顶指将会话中的消息固定在会话顶部，方便会话中的所有用户快速查看重要消息。",
+      "docPath": "web/api/message_pin.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_quote",
+      "name": "消息引用",
+      "description": "消息引用是指用户可以引用一条已发送的消息。消息引用可以帮助用户回复特定的消息，或强调特定的信息。",
+      "docPath": "web/api/message_quote.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_recall",
+      "name": "撤回消息",
+      "description": "单聊、群聊和聊天室聊天支持撤回一条发送成功的消息：",
+      "docPath": "web/api/message_recall.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_receipt",
+      "name": "实现消息回执",
+      "description": "**单聊会话支持消息送达回执和消息已读回执**，发送方发送消息后可及时了解接收方是否及时收到并阅读了消息。",
+      "docPath": "web/api/message_receipt.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_receive",
+      "name": "接收消息",
+      "description": "环信即时通讯 IM Web SDK 可以实现文本、图片、音频、视频和文件等类型的消息的接收。",
+      "docPath": "web/api/message_receive.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_retrieve",
+      "name": "获取历史消息",
+      "description": "环信即时通讯 IM 提供消息漫游功能，即将用户的所有会话的历史消息保存在消息服务器，用户在任何一个终端设备上都能获取到历史信息，使用户在多个设备切换使用的情况下也能保持一致的会话场景。",
+      "docPath": "web/api/message_retrieve.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_send",
+      "name": "发送消息",
+      "description": "环信即时通讯 IM Web SDK 可以实现文本、图片、音频、视频和文件等类型的消息的发送和接收。",
+      "docPath": "web/api/message_send.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_target",
+      "name": "定向消息",
+      "description": "发送定向消息是指向群组或聊天室的单个或多个指定的成员发送消息，其他成员不会收到该消息。",
+      "docPath": "web/api/message_target.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_message_translation",
+      "name": "翻译",
+      "description": "为方便用户在聊天过程中对文字消息进行翻译，环信即时通讯 IM SDK 集成了 Microsoft Azure Translation API，支持在发送或接收消息时对文本消息进行按需翻译或自动翻译：",
+      "docPath": "web/api/message_translation.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_moderation",
+      "name": "消息审核（举报）",
+      "description": "即时通讯 IM SDK 提供消息举报接口。你的用户可以在客户端举报违规消息。当服务器收到举报消息后，会将举报消息存储到数据库，并在[环信控制台](https://console.easemob.com/user/login)展示。你可在环信控制台查看举报记录，并进行相应处理。",
+      "docPath": "web/api/moderation.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_multi_device",
+      "name": "在多个设备登录",
+      "description": "即时通讯 IM 支持同一账号在多个设备上登录。使用该功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通该服务。详见 [环信控制台文档](/product/console/basic_user.html#多端多设备)。",
+      "docPath": "web/api/multi_device.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_presence",
+      "name": "在线状态订阅",
+      "description": "用户在线状态（即 Presence）包含用户的在线、离线以及自定义状态。使用该功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通该服务。详见 [环信控制台文档](/product/console/basic_user.html#用户离在线状态实时同步)。",
+      "docPath": "web/api/presence.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_private_ip_domain",
+      "name": "私有云 SDK IP 地址/域名配置",
+      "description": "对于 Web Vue 3 Demo，进行私有化配置需在 [Vue 3 Demo 源代码](https://github.com/easemob/webim-vue-demo/tree/vue3-miniCore) 中进行修改。",
+      "docPath": "web/api/private_ip_domain.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_privatecloud",
+      "name": "私有云 SDK 集成配置",
+      "description": "对于 Web Vue Demo，进行私有化配置需在 [Vue 2 Demo 源代码](https://download-sdk.oss-cn-beijing.aliyuncs.com/zq/private-vue2-20230104.zip)中进行修改。",
+      "docPath": "web/api/privatecloud.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_push_extension",
+      "name": "设置推送扩展功能",
+      "description": "你可以实现推送扩展功能，包括设置强制推送和发送静默消息。",
+      "docPath": "web/api/push_extension.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_push_notification_mode_dnd",
+      "name": "设置推送通知方式和免打扰模式",
+      "description": "为优化用户在处理大量推送通知时的体验，环信 IM 在 app 和会话层面提供了推送通知方式和免打扰模式的细粒度选项。",
+      "docPath": "web/api/push_notification_mode_dnd.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_push_overview",
+      "name": "离线推送概述",
+      "description": "即时通讯 IM 支持集成第三方消息推送服务，为开发者提供低延时、高送达、高并发、不侵犯用户个人数据的离线消息推送服务。**环信 IM Web SDK 本身不支持离线推送，只支持对移动端离线推送进行配置。**",
+      "docPath": "web/api/push_overview.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_push_template",
+      "name": "推送模板",
+      "description": "推送模板主要用于服务器提供的默认离线推送配置不满足你的需求时，设置全局范围的推送标题和推送内容。例如，服务器提供的默认设置为中文和英文的推送标题和内容，你若需要使用韩语或日语的推送标题和内容，则可以设置对应语言的推送模板。",
+      "docPath": "web/api/push_template.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_push_translation",
+      "name": "设置推送翻译",
+      "description": "如果用户启用 [自动翻译](/document/web/message_translation.html) 功能并发送消息，SDK 会同时发送原始消息和翻译后的消息。",
+      "docPath": "web/api/push_translation.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_reaction",
+      "name": "消息表情回复 Reaction",
+      "description": "环信即时通讯 IM 提供消息表情回复（下文统称 “Reaction”）功能。用户可以在单聊和群聊中对消息添加、删除表情。表情可以直观地表达情绪，利用 Reaction 可以提升用户的使用体验。同时在群组中，利用 Reaction 可以发起投票，根据不同表情的追加数量确认投票。",
+      "docPath": "web/api/reaction.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_room_attributes",
+      "name": "管理聊天室属性",
+      "description": "聊天室是支持多人沟通的即时通讯系统。聊天室属性可分为聊天室名称、描述和公告等基本属性和自定义属性（key-value）。若聊天室基本属性不满足业务要求，用户可增加自定义属性并同步给所有成员。利用自定义属性可以存储直播聊天室的类型、狼人杀等游戏中的角色信息和游戏状态以及实现语聊房的麦位管理和同步等。聊天室自定义属性以键值对（key-value）形式存储，属性信息变更会实时同步给聊天室成员。",
+      "docPath": "web/api/room_attributes.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_room_manage",
+      "name": "创建和管理聊天室及监听聊天室事件",
+      "description": "聊天室是支持多人沟通的即时通讯系统。聊天室中的成员没有固定关系，一旦离线后，不会收到聊天室中的任何消息，（除了聊天室白名单中的成员）超过 2 分钟会自动退出聊天室。聊天室可以应用于直播、消息广播等。若需调整该时间，需联系环信商务经理。",
+      "docPath": "web/api/room_manage.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_room_members",
+      "name": "管理聊天室成员",
+      "description": "聊天室是支持多人沟通的即时通讯系统。本文介绍如何使用环信即时通讯 IM Web SDK 在实时互动 app 中管理聊天室成员，并实现聊天室的相关功能。",
+      "docPath": "web/api/room_members.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_room_overview",
+      "name": "聊天室概述",
+      "description": "聊天室是支持多人加入的类似 Twitch 的组织。聊天室中的成员没有固定关系，一旦离线后，不会收到聊天室中的任何消息，（除了聊天室白名单中的成员）超过 2 分钟会自动退出聊天室。聊天室可以应用于直播、消息广播等。若需调整该时间，需联系环信商务经理。",
+      "docPath": "web/api/room_overview.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_thread",
+      "name": "管理子区",
+      "description": "子区是群组成员的子集，是支持多人沟通的即时通讯系统。使用子区功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通。详见 [环信控制台文档](/product/console/basic_conversation_group_chatroom.html#消息话题)。",
+      "docPath": "web/api/thread.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_thread_message",
+      "name": "管理子区消息",
+      "description": "子区消息消息类型属于群聊消息类型，与普通群组消息的区别是需要添加 `isChatThread` 标记。使用子区消息功能前，你需要在 [环信控制台](https://console.easemob.com/user/login)开通。详见 [环信控制台文档](/product/console/basic_conversation_group_chatroom.html#消息话题)。",
+      "docPath": "web/api/thread_message.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_typing_indication",
+      "name": "通过透传消息实现输入指示器",
+      "description": "输入指示器显示其他用户何时输入消息。通过该功能，用户之间可进行有效沟通，增加了用户对聊天应用中交互的期待感。",
+      "docPath": "web/api/typing_indication.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_user_relationship",
+      "name": "管理用户关系",
+      "description": "SDK 提供用户关系管理功能，包括好友列表管理和黑名单管理：",
+      "docPath": "web/api/user_relationship.md",
+      "platform": "web",
+      "product": "general"
+    },
+    {
+      "id": "web_api_userprofile",
+      "name": "管理用户属性",
+      "description": "环信即时通讯 IM 自 V3.5.1 开始支持管理用户属性功能。",
+      "docPath": "web/api/userprofile.md",
+      "platform": "web",
+      "product": "general"
+    }
+  ],
+  "stats": {
+    "guideCount": 34,
+    "apiModuleCount": 53,
+    "products": [
+      "callkit",
+      "chatuikit",
+      "sdk",
+      "general"
+    ]
+  }
+}

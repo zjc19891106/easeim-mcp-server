@@ -1,19 +1,20 @@
 {
   "version": "3.0.0",
-  "lastUpdated": "2026-01-15T01:09:26.678Z",
+  "lastUpdated": "2026-01-15T07:45:58.288Z",
   "description": "文档索引清单 - 支持按平台分片加载",
   "platforms": [
     "android",
-    "ios"
+    "ios",
+    "web"
   ],
   "shards": {
     "android": {
       "path": "shards/android.json",
       "platform": "android",
-      "guideCount": 32,
+      "guideCount": 35,
       "apiModuleCount": 72,
       "errorCodeCount": 0,
-      "sizeBytes": 46051,
+      "sizeBytes": 47123,
       "keywords": [
         "android",
         "kotlin",
@@ -27,10 +28,10 @@
     "ios": {
       "path": "shards/ios.json",
       "platform": "ios",
-      "guideCount": 20,
+      "guideCount": 25,
       "apiModuleCount": 60,
       "errorCodeCount": 0,
-      "sizeBytes": 32661,
+      "sizeBytes": 35939,
       "keywords": [
         "ios",
         "swift",
@@ -41,6 +42,22 @@
         "apple",
         "iphone",
         "ipad"
+      ]
+    },
+    "web": {
+      "path": "shards/web.json",
+      "platform": "web",
+      "guideCount": 34,
+      "apiModuleCount": 53,
+      "errorCodeCount": 0,
+      "sizeBytes": 38895,
+      "keywords": [
+        "web",
+        "javascript",
+        "typescript",
+        "react",
+        "vue",
+        "angular"
       ]
     }
   },
@@ -53,8 +70,8 @@
     }
   },
   "stats": {
-    "totalGuides": 52,
-    "totalApiModules": 132,
+    "totalGuides": 94,
+    "totalApiModules": 185,
     "totalErrorCodes": 99
   }
 }

@@ -1,0 +1,815 @@
+@import '~/common/style/index.scss';
+@import './variables.scss';
+@import './mixins.scss';
+@import './layouts/one-to-one-full.scss';
+@import './layouts/multi-party-full.scss';
+@import './layouts/preview-full.scss';
+@import './layouts/main-video-layout.scss';
+@import './components/mini-size-window.scss';
+@import './invitation.scss';
+
+$callkit-prefix-cls: #{$cui-prefix}-callkit;
+
+// 等待状态的bounce动画
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+.#{$callkit-prefix-cls} {
+  @include callkit-container;
+  user-select: none !important;
+  z-index: 1000;
+  // 自动吸附过渡动画
+  &.#{$callkit-prefix-cls}-auto-snap {
+    transition: left 0.3s ease-out, top 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+    transform-origin: center center;
+  }
+  
+  // 最小化状态的特殊样式
+  &.#{$callkit-prefix-cls}-minimized {
+    // 确保最小化状态下有平滑的过渡
+    &.#{$callkit-prefix-cls}-auto-snap {
+      transition: left 0.3s ease-out, top 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+      transform-origin: center center;
+    }
+  }
+  
+  // 顶部栏
+  &-header {
+    height: $header-height;
+    flex-shrink: 0;
+    z-index: 10;
+  }
+  
+  // 内容区域
+  &-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  // 控制按钮区域
+  &-controls {
+    height: $controls-height;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+  
+  // 空状态
+  &-empty {
+    @include empty-state;
+  }
+  
+  // 视频窗口基础样式
+  &-window {
+    @include video-window-base;
+    
+    &-local {
+      // @include video-window-local;
+    }
+    
+    &-muted {
+      .#{$callkit-prefix-cls}-muted-indicator {
+        display: block;
+      }
+    }
+  }
+  
+  // 视频容器
+  &-video-container {
+    @include video-container;
+  }
+  
+  // 视频元素
+  &-video {
+    @include video-element;
+  }
+  
+  // 占位符
+  &-placeholder {
+    @include video-placeholder;
+  }
+  
+  // 头像
+  &-avatar {
+    @include avatar-image;
+  }
+  
+  &-avatar-placeholder {
+    @include avatar-placeholder;
+  }
+  
+  // 昵称
+  // &-nickname {
+  //   @include nickname-label;
+  // }
+  
+  // 静音指示器
+  &-muted-indicator {
+    @include muted-indicator;
+  }
+  
+  // 多人布局样式
+  &-multi-party {
+    width: 100%;
+    height: 100%;
+
+    // 行容器
+    .#{$callkit-prefix-cls}-row {
+      @include flex-row;
+    }
+
+    // 视频包装器
+    .#{$callkit-prefix-cls}-video-wrapper {
+      @include video-wrapper;
+    }
+
+    // 1排布局 (1-4个视频)
+    &.#{$callkit-prefix-cls}-rows-1 {
+      @include flex-row;
+      gap: $gap-medium;
+      
+      .#{$callkit-prefix-cls}-row {
+        flex: 1;
+      }
+      
+      .#{$callkit-prefix-cls}-window {
+        aspect-ratio: 1/1;
+      }
+    }
+
+    // 2排布局 (5-12个视频)
+    &.#{$callkit-prefix-cls}-rows-2 {
+      @include flex-column;
+      gap: 6px;
+      
+      .#{$callkit-prefix-cls}-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: inherit;
+      }
+      
+      .#{$callkit-prefix-cls}-video-wrapper {
+        // 使用 JavaScript 计算的固定尺寸，不依赖 CSS
+        flex-shrink: 0;
+        flex-grow: 0;
+      }
+      
+      .#{$callkit-prefix-cls}-window {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    // 3排布局 (13+个视频)
+    &.#{$callkit-prefix-cls}-rows-3 {
+      @include flex-column;
+      gap: $gap-small;
+      
+      .#{$callkit-prefix-cls}-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: inherit;
+      }
+      
+      .#{$callkit-prefix-cls}-video-wrapper {
+        // 使用 JavaScript 计算的固定尺寸，不依赖 CSS
+        flex-shrink: 0;
+        flex-grow: 0;
+      }
+      
+      .#{$callkit-prefix-cls}-window {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    // 4排布局
+    &.#{$callkit-prefix-cls}-rows-4 {
+      @include flex-column;
+      gap: $gap-small;
+      
+      .#{$callkit-prefix-cls}-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: inherit;
+      }
+      
+      .#{$callkit-prefix-cls}-video-wrapper {
+        // 使用 JavaScript 计算的固定尺寸，不依赖 CSS
+        flex-shrink: 0;
+        flex-grow: 0;
+      }
+    }
+  }
+  
+  // 1v1布局样式
+  &-one-to-one {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    // 1v1容器
+    .#{$callkit-prefix-cls}-one-to-one-container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    // 主视频（远程视频）
+    .#{$callkit-prefix-cls}-main-video {
+      width: 100%;
+      height: 100%;
+      
+      .#{$callkit-prefix-cls}-window {
+        width: 100%;
+        height: 100%;
+        border-radius: $video-border-radius;
+      }
+    }
+
+    // 画中画小视频（本地视频）
+    .#{$callkit-prefix-cls}-pip-video {
+      position: absolute;
+      top: 55px;
+      right: $gap-large;
+      width: 160px;
+      height: 120px;
+      z-index: $z-index-pip;
+      border-radius: $video-border-radius;
+      overflow: hidden;
+      // border: $video-border-width solid $border-color-hover;
+      transition: all $transition-fast;
+      
+      &:hover {
+        transform: scale(1.05);
+        border-color: $border-color-local;
+      }
+      
+      .#{$callkit-prefix-cls}-window {
+        width: 100%;
+        height: 100%;
+        border: none;
+        
+        &:hover {
+          // transform: none; // 禁用双重缩放效果
+        }
+      }
+      
+      // 移动端适配
+      @media (max-width: $breakpoint-mobile) {
+        width: 120px;
+        height: 90px;
+        top: $gap-medium;
+        right: $gap-medium;
+      }
+    }
+  }
+  
+  // 预览布局样式
+  &-preview {
+    width: 100%;
+    height: 100%;
+    @include flex-column;
+    gap: $gap-large;
+
+    // 预览容器
+    .#{$callkit-prefix-cls}-preview-container {
+      width: 100%;
+      height: 100%;
+      @include flex-column;
+      gap: $gap-medium;
+      padding: $gap-medium;
+      align-items: center;
+      justify-content: center;
+    }
+
+    // 预览视频
+    .#{$callkit-prefix-cls}-preview-video {
+      flex-shrink: 0;
+      border-radius: $video-border-radius;
+      overflow: hidden;
+      box-shadow: $shadow-medium;
+      
+      .#{$callkit-prefix-cls}-window {
+        width: 100%;
+        height: 100%;
+        border-radius: $video-border-radius;
+        
+        // 预览模式下的特殊样式
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border: 3px solid $border-color-local;
+          border-radius: $video-border-radius;
+          pointer-events: none;
+          animation: preview-pulse 2s infinite;
+        }
+      }
+    }
+
+    // 预览提示文字
+    .#{$callkit-prefix-cls}-preview-hint {
+      text-align: center;
+      color: $text-color;
+      
+      p {
+        margin: 0 0 $gap-small 0;
+        
+        &:first-child {
+          font-size: 18px;
+          font-weight: 600;
+          color: $text-color;
+        }
+        
+        &:last-child {
+          font-size: 14px;
+          color: $text-color-secondary;
+        }
+      }
+    }
+
+    // 预览脉冲动画
+    @keyframes preview-pulse {
+      0% {
+        border-color: $border-color-local;
+        opacity: 1;
+      }
+      50% {
+        border-color: rgba($border-color-local, 0.5);
+        opacity: 0.7;
+      }
+      100% {
+        border-color: $border-color-local;
+        opacity: 1;
+      }
+    }
+
+    // 移动端适配
+    @media (max-width: $breakpoint-mobile) {
+      .#{$callkit-prefix-cls}-preview-container {
+        padding: $gap-small;
+        gap: $gap-small;
+      }
+      
+      .#{$callkit-prefix-cls}-preview-hint {
+        p {
+          &:first-child {
+            font-size: 16px;
+          }
+          
+          &:last-child {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+  
+  // 拖动功能样式
+  &-draggable {
+    // 拖动时的光标样式由 useDraggable Hook 动态设置
+    
+    // 拖动中的状态
+    &.#{$callkit-prefix-cls}-dragging {
+      user-select: none;
+      pointer-events: auto;
+      
+      // 拖动中禁用所有子元素的pointer-events，避免干扰
+      * {
+        pointer-events: none !important;
+      }
+      
+      // 但保持视频控制按钮可用
+      .#{$callkit-prefix-cls}-controls {
+        pointer-events: auto;
+        
+        * {
+          pointer-events: auto !important;
+        }
+      }
+    }
+  }
+
+  // 全屏模式
+  &-fullscreen {
+    @include fullscreen-mode;
+    
+    // 全屏时禁用可调整大小功能
+    // &.#{$callkit-prefix-cls}-resizable {
+    //   cursor: default !important;
+      
+    //   &[data-resize-direction] {
+    //     cursor: default !important;
+    //   }
+    // }
+  }
+
+  // 可调整大小模式
+  &-resizable {
+    position: relative;
+    
+    // 边缘拖拽区域样式
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      border: 2px solid transparent;
+      border-radius: inherit;
+      transition: border-color $transition-fast;
+    }
+    
+    // 调整大小时的视觉反馈
+    &.#{$callkit-prefix-cls}-resizing {
+      &::before {
+        border-color: $border-color-local;
+        box-shadow: 0 0 0 1px rgba($border-color-local, 0.3);
+      }
+    }
+    
+    // 禁用子元素的pointer-events在调整大小时
+    &.#{$callkit-prefix-cls}-resizing {
+      .#{$callkit-prefix-cls}-content,
+      .#{$callkit-prefix-cls}-header,
+      .#{$callkit-prefix-cls}-controls {
+        pointer-events: none;
+        user-select: none;
+      }
+      
+      // 调整大小时，子元素不设置光标，让父容器的 resize 光标生效
+      * {
+        cursor: inherit !important;
+        user-select: none !important;
+      }
+    }
+    
+    // 确保所有子元素在非调整大小状态下也能正确继承光标
+    // 这样当鼠标在边缘时，子元素不会覆盖 resize 光标
+    &[data-resize-direction] {
+      *, 
+      *::before, 
+      *::after,
+      .#{$callkit-prefix-cls}-header,
+      .#{$callkit-prefix-cls}-header *,
+      .#{$callkit-prefix-cls}-content,
+      .#{$callkit-prefix-cls}-content *,
+      .#{$callkit-prefix-cls}-controls,
+      .#{$callkit-prefix-cls}-controls *,
+      .#{$cui-prefix}-call-controls,
+      .#{$cui-prefix}-call-controls *,
+      .#{$cui-prefix}-callkit-header,
+      .#{$cui-prefix}-callkit-header * {
+        cursor: inherit !important;
+      }
+    }
+    
+    // 在边缘区域显示调整大小光标 - 参考提供的代码逻辑
+    // 增加优先级，确保在 resizing 状态下也能正确显示
+    &[data-resize-direction="n"],
+    &.#{$callkit-prefix-cls}-resizing[data-resize-direction="n"] {
+      cursor: ns-resize !important;
+    }
+    
+    &[data-resize-direction="s"],
+    &.#{$callkit-prefix-cls}-resizing[data-resize-direction="s"] {
+      cursor: ns-resize !important;
+    }
+    
+    &[data-resize-direction="e"],
+    &.#{$callkit-prefix-cls}-resizing[data-resize-direction="e"] {
+      cursor: ew-resize !important;
+    }
+    
+    &[data-resize-direction="w"],
+    &.#{$callkit-prefix-cls}-resizing[data-resize-direction="w"] {
+      cursor: ew-resize !important;
+    }
+    
+    &[data-resize-direction="ne"],
+    &.#{$callkit-prefix-cls}-resizing[data-resize-direction="ne"] {
+      cursor: nesw-resize !important;
+    }
+    
+    &[data-resize-direction="nw"],
+    &.#{$callkit-prefix-cls}-resizing[data-resize-direction="nw"] {
+      cursor: nwse-resize !important;
+    }
+    
+    &[data-resize-direction="se"],
+    &.#{$callkit-prefix-cls}-resizing[data-resize-direction="se"] {
+      cursor: nwse-resize !important;
+    }
+    
+    &[data-resize-direction="sw"],
+    &.#{$callkit-prefix-cls}-resizing[data-resize-direction="sw"] {
+      cursor: nesw-resize !important;
+    }
+  }
+  
+  // 响应式布局
+  @include responsive-layout;
+
+  // 最小化布局样式
+  &-minimized {
+    padding: 0px;
+    box-shadow: 0 4px 8px 0 rgba(26, 26, 26, 0.20), 0 1px 3px 0 rgba(77, 77, 77, 0.30);
+    // 最小化时隐藏 header
+    .#{$callkit-prefix-cls}-header {
+      display: none;
+    }
+    
+    // 最小化时的内容区域
+    .#{$callkit-prefix-cls}-content {
+      width: 80px;
+      height: calc(100% - 60px); // 减去控制按钮区域的高度
+      position: relative;
+      border-radius: 12px 12px 0 0; // 上方圆角
+      overflow: hidden;
+      cursor: pointer;
+      background: #2c2c2e; // 深色背景
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    // 1v1视频模式的特殊尺寸（通过检测内部组件类名）
+    &:has(.#{$callkit-prefix-cls}-mini-window-video:not(.#{$callkit-prefix-cls}-mini-window-normal)) {
+      .#{$callkit-prefix-cls}-content {
+        width: 108px;
+        height: 192px;
+        padding: 0;
+        border-radius: 12px;
+        background: transparent;
+      }
+    }
+
+    // 支持不兼容:has()的浏览器，使用数据属性方式
+    &[data-video-mode="one-to-one"] {
+      .#{$callkit-prefix-cls}-content {
+        width: 108px;
+        height: 192px;
+        padding: 0;
+        border-radius: 12px;
+        background: transparent;
+      }
+    }
+    
+    // 最小化视频样式
+    .#{$callkit-prefix-cls}-minimized-video {
+      width: 100%;
+      height: 100%;
+      
+      .#{$callkit-prefix-cls}-window {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 8px;
+        
+        // 隐藏昵称和静音指示器，保持简洁
+        .#{$callkit-prefix-cls}-nickname,
+        .#{$callkit-prefix-cls}-muted-indicator {
+          display: none;
+        }
+      }
+    }
+    
+    // 最小化音频样式（语音通话）
+    .#{$callkit-prefix-cls}-minimized-audio {
+      width: 100%;
+      height: 100%;
+      background: #2c2c2e; // 深色背景
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      .#{$callkit-prefix-cls}-minimized-avatar {
+        margin-bottom: 6px;
+        
+        .#{$callkit-prefix-cls}-minimized-avatar-placeholder {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: #00c851; // 绿色背景
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          margin: 0 auto;
+          color: white;
+          
+          // 使用电话图标
+          &::before {
+            content: '☎';
+            font-size: 10px;
+            color: white;
+          }
+        }
+      }
+      
+      .#{$callkit-prefix-cls}-minimized-time {
+        text-align: center;
+        
+        span {
+          font-size: 12px;
+          font-weight: 600;
+          color: #00c851; // 绿色文字
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          letter-spacing: 0.3px;
+        }
+      }
+    }
+    
+    // 最小化时的控制按钮样式
+    .#{$callkit-prefix-cls}-controls {
+      height: 60px;
+      padding: 8px;
+      // background: rgba(0, 0, 0, 0.8);
+      border-radius: 0 0 12px 12px; // 下方圆角
+      
+      // 简化控制按钮显示
+      .#{$cui-prefix}-call-controls {
+        height: 44px;
+        padding: 0 12px;
+        gap: 12px;
+        
+        &-button {
+          width: 36px;
+          height: 36px;
+          
+          // 只显示关键按钮：静音、摄像头、挂断
+          &:nth-child(4), // 屏幕共享按钮
+          &:nth-child(5) { // 扬声器按钮
+            display: none;
+          }
+        }
+      }
+    }
+    
+    // 最小化状态下的悬停效果
+    &:hover {
+      .#{$callkit-prefix-cls}-content {
+        background: #3a3a3c; // 稍微亮一点的深色
+      }
+      
+      .#{$callkit-prefix-cls}-minimized-audio {
+        .#{$callkit-prefix-cls}-minimized-avatar-placeholder {
+          background: #00d456; // 稍微亮一点的绿色
+        }
+      }
+    }
+    
+    // 点击时的效果
+    .#{$callkit-prefix-cls}-content:active {
+      transform: scale(0.98);
+      background: #1c1c1e; // 更深的背景
+    }
+  }
+
+  // 视频信息区域样式
+  &-video-info {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    padding: 0px 4px;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    gap: 4px; 
+    
+    // 昵称样式
+    .#{$callkit-prefix-cls}-nickname {
+      flex: 1;
+      height: 22px;
+      padding: 4px 2px;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 510;
+      line-height: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: $gray-98;
+      box-sizing: border-box;
+    }
+    
+    // 指示器容器
+    .#{$callkit-prefix-cls}-indicators {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    
+    // 摄像头指示器
+    .#{$callkit-prefix-cls}-camera-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      font-size: 10px;
+      transition: all 0.2s ease;
+      
+      &.enabled {
+        background: rgba(76, 175, 80, 0.8);
+        color: white;
+      }
+      
+      &.disabled {
+        background: rgba(244, 67, 54, 0.8);
+        color: white;
+      }
+    }
+    
+    // 麦克风指示器
+    .#{$callkit-prefix-cls}-mic-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      font-size: 10px;
+      transition: all 0.2s ease;
+      
+      &.unmuted {
+        background: rgba(76, 175, 80, 0.8);
+        color: white;
+      }
+      
+      &.muted {
+        background: rgba(244, 67, 54, 0.8);
+        color: white;
+      }
+    }
+    
+    // 在小尺寸时隐藏指示器，只保留昵称
+    @media (max-width: 200px) {
+      .#{$callkit-prefix-cls}-indicators {
+        display: none;
+      }
+    }
+  }
+}
+
+// 🔧 网络质量组件样式覆盖
+.cui-callkit-network-quality {
+  width: 22px !important;
+  height: 22px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  // 保持其他样式不变
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+// 全局拖动状态样式
+body.#{$callkit-prefix-cls}-dragging {
+  user-select: none !important;
+  
+  // 不设置全局光标，让具体的拖动元素自己处理光标
+  * {
+    user-select: none !important;
+  }
+}

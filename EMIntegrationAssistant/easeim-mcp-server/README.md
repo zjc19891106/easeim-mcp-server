@@ -184,7 +184,7 @@ k1 = 1.2  // 词频饱和参数
 b = 0.75  // 文档长度归一化参数
 ```
 
-#### P2: 源码分片索引
+#### P2: 源码分片索引（按组件）
 
 | 优化项 | 实现 | 效果 |
 |--------|------|------|
@@ -202,6 +202,57 @@ data/sources/
     ├── EaseCallUIKit.json   (256 KB)
     ├── EaseChatroomUIKit.json (320 KB)
     └── EaseChatDemo.json    (172 KB)
+```
+
+#### P3: 平台分片索引（按平台）
+
+| 优化项 | 实现 | 效果 |
+|--------|------|------|
+| **文档平台分片** | 按 iOS/Android 等平台拆分文档索引 | 启动内存节省 99% |
+| **配置平台分片** | 按平台拆分配置索引 | 启动内存节省 99.1% |
+| **LRU 平台缓存** | 最多缓存 4 个平台分片 | 支持 10+ 平台无压力 |
+| **智能平台检测** | 根据查询关键词自动识别目标平台 | 无需手动指定平台 |
+| **错误码共享** | 错误码独立分片，跨平台共享 | 避免重复存储 |
+
+```
+索引结构:
+data/docs/
+├── manifest.json           (1.17 KB)   # 清单文件
+└── shards/
+    ├── ios.json            (32.66 KB)  # iOS 平台分片
+    ├── android.json        (46.05 KB)  # Android 平台分片
+    └── error-codes.json    (45.99 KB)  # 共享错误码
+
+data/configs/
+├── manifest.json           (0.61 KB)   # 清单文件
+└── shards/
+    └── ios.json            (66.11 KB)  # iOS 配置分片
+```
+
+**性能对比：**
+
+| 数据类型 | 原始大小 | Manifest 大小 | 启动内存节省 |
+|----------|----------|---------------|--------------|
+| 文档索引 | 120.92 KB | 1.17 KB | **99.0%** |
+| 配置索引 | 66.11 KB | 0.61 KB | **99.1%** |
+
+**使用方式：**
+
+```typescript
+// 推荐使用分片版本
+import { ShardedDocSearch, ShardedConfigSearch } from './search/index.js';
+
+const docSearch = new ShardedDocSearch(4);  // 最多缓存4个平台
+const configSearch = new ShardedConfigSearch(4);
+
+// 自动检测平台
+const results = docSearch.searchApi('发送消息');
+
+// 指定平台
+const iosResults = docSearch.searchApi('消息', { platform: 'ios' });
+
+// 预加载常用平台
+docSearch.preload(['ios', 'android']);
 ```
 
 ### 性能基准测试
@@ -467,10 +518,13 @@ easeim-mcp-server/
 │   ├── server.ts                   # MCP Server 实现
 │   │
 │   ├── search/                     # 搜索引擎
-│   │   ├── DocSearch.ts            # 文档搜索（BM25 + 倒排索引）
-│   │   ├── SourceSearch.ts         # 源码搜索
-│   │   ├── ShardedSourceSearch.ts  # 分片源码搜索
-│   │   ├── ConfigSearch.ts         # 配置搜索
+│   │   ├── index.ts                # 搜索模块导出
+│   │   ├── DocSearch.ts            # 文档搜索（全量加载，向后兼容）
+│   │   ├── ShardedDocSearch.ts     # 分片文档搜索（按平台，推荐）
+│   │   ├── SourceSearch.ts         # 源码搜索（全量加载）
+│   │   ├── ShardedSourceSearch.ts  # 分片源码搜索（按组件，推荐）
+│   │   ├── ConfigSearch.ts         # 配置搜索（全量加载）
+│   │   ├── ShardedConfigSearch.ts  # 分片配置搜索（按平台，推荐）
 │   │   ├── InvertedIndex.ts        # 倒排索引实现
 │   │   └── AmbiguityDetector.ts    # 歧义检测
 │   │
@@ -489,15 +543,28 @@ easeim-mcp-server/
 │   └── types/                      # 类型定义
 │
 ├── data/
-│   ├── docs/                       # 文档索引
-│   └── sources/                    # 源码索引（分片）
+│   ├── docs/                       # 文档索引（按平台分片）
+│   │   ├── manifest.json           # 文档清单
+│   │   ├── index.json              # 完整索引（向后兼容）
+│   │   └── shards/                 # 平台分片
+│   │       ├── ios.json
+│   │       ├── android.json
+│   │       └── error-codes.json
+│   ├── configs/                    # 配置索引（按平台分片）
+│   │   ├── manifest.json           # 配置清单
+│   │   ├── index.json              # 完整索引（向后兼容）
+│   │   └── shards/
+│   │       └── ios.json
+│   └── sources/                    # 源码索引（按组件分片）
 │       ├── manifest.json
 │       └── shards/
 │
 ├── scripts/                        # 索引生成脚本
-│   ├── generate-docs-index.ts
-│   ├── generate-source-index.ts
-│   └── generate-shards.ts
+│   ├── generate-docs-index.ts      # 文档索引生成
+│   ├── generate-source-index.ts    # 源码索引生成
+│   ├── generate-shards.ts          # 源码分片生成（按组件）
+│   ├── generate-doc-shards.ts      # 文档分片生成（按平台）
+│   └── generate-config-shards.ts   # 配置分片生成（按平台）
 │
 ├── tests/                          # 测试文件
 │   ├── benchmark-sharded-search.ts
@@ -520,12 +587,45 @@ npm run generate-docs-index
 # 生成源码索引
 npm run generate-source-index
 
-# 生成分片索引
+# 生成源码分片索引（按组件）
 npx tsx scripts/generate-shards.ts
+
+# 生成文档分片索引（按平台）
+npx tsx scripts/generate-doc-shards.ts
+
+# 生成配置分片索引（按平台）
+npx tsx scripts/generate-config-shards.ts
 
 # 生成所有索引
 npm run generate-all
 ```
+
+### 添加新平台
+
+当需要支持新平台（如 Flutter、Web、Unity）时：
+
+**1. 文档索引**
+```bash
+# 1. 编辑 data/docs/index.json，添加新平台的 guides 和 apiModules
+#    确保每个条目的 platform 字段设为正确的平台标识
+
+# 2. 重新生成分片
+npx tsx scripts/generate-doc-shards.ts
+```
+
+**2. 配置索引**
+```bash
+# 1. 编辑 data/configs/index.json，添加新平台组件
+#    确保文件路径以平台名开头，如 "flutter/EaseChatUIKit/..."
+
+# 2. 如需支持新平台名，编辑 scripts/generate-config-shards.ts:
+#    if (['ios', 'android', 'flutter', 'web', 'unity'].includes(platform))
+
+# 3. 重新生成分片
+npx tsx scripts/generate-config-shards.ts
+```
+
+分片生成后，搜索引擎会自动识别新平台，无需修改代码。
 
 ### 运行测试
 

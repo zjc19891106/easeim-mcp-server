@@ -1,0 +1,738 @@
+{
+  "version": "3.0.0",
+  "platform": "ios",
+  "lastUpdated": "2026-01-15T01:09:26.678Z",
+  "guides": [
+    {
+      "id": "ios_guides_callkit_APIOverView",
+      "title": "API 参考",
+      "path": "ios/guides/callkit/APIOverView.md",
+      "platform": "ios",
+      "product": "callkit",
+      "keywords": [
+        "ios",
+        "API 参考"
+      ],
+      "description": "| 方法 | 说明 | 参数 |"
+    },
+    {
+      "id": "ios_guides_callkit_ErrorHandler",
+      "title": "问题处理",
+      "path": "ios/guides/callkit/ErrorHandler.md",
+      "platform": "ios",
+      "product": "callkit",
+      "keywords": [
+        "ios",
+        "问题处理"
+      ],
+      "description": "使用 CallKit 实现通话过程中，出现的错误包含以下几类："
+    },
+    {
+      "id": "ios_guides_callkit_LiveCommunicationKit",
+      "title": "LiveCommunicationManager",
+      "path": "ios/guides/callkit/LiveCommunicationKit.md",
+      "platform": "ios",
+      "product": "callkit",
+      "keywords": [
+        "ios",
+        "LiveCommunicationManager"
+      ],
+      "description": "`LiveCommunicationManager` 是一个用于管理 iOS VoIP 通话的单例管理器类。它集成了 Apple 的 PushKit 和 LiveCommunicationKit 框架，提供完整的 VoIP 通话解决方案，包括来电推送、通话管理和音频会话控制。"
+    },
+    {
+      "id": "ios_guides_callkit_PictureInPicture",
+      "title": "视频通话画中画（PiP）",
+      "path": "ios/guides/callkit/PictureInPicture.md",
+      "platform": "ios",
+      "product": "callkit",
+      "keywords": [
+        "ios",
+        "视频通话画中画（PiP）"
+      ],
+      "description": "画中画（Picture-in-Picture，PiP）功能允许用户在视频通话时，将通话界面最小化为悬浮窗口，同时使用其他应用。该功能对于多任务处理场景尤其重要。"
+    },
+    {
+      "id": "ios_guides_callkit_README",
+      "title": "EaseCallUIKit for iOS",
+      "path": "ios/guides/callkit/README.md",
+      "platform": "ios",
+      "product": "callkit",
+      "keywords": [
+        "ios",
+        "EaseCallUIKit for iOS"
+      ],
+      "description": "本指南将介绍环信新EaseCallUIKit（基于环信IMSDK V4.16.0及其以上）。新EaseCallUIKit致力于为开发者提供高效集成、功能全面、设计美观的通话场景，轻松满足即时通信呼叫绝大多数场景。请下载示例进行体验。"
+    },
+    {
+      "id": "ios_guides_callkit_Signaling",
+      "title": "音视频通话信令交互逻辑",
+      "path": "ios/guides/callkit/Signaling.md",
+      "platform": "ios",
+      "product": "callkit",
+      "keywords": [
+        "ios",
+        "音视频通话信令交互逻辑"
+      ],
+      "description": "本系统使用即时通讯 IM 消息作为信令载体，通过消息扩展字段（`ext`）传递通话控制信息。"
+    },
+    {
+      "id": "ios_guides_chatuikit_API_README",
+      "title": "Open API Reference",
+      "path": "ios/guides/chatuikit/API_README.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "Open API Reference"
+      ],
+      "description": "| 模块 | 类名 | 方法名 | 方法作用                                                                                                                                                                                                                                                                                                                                                                                                                       |"
+    },
+    {
+      "id": "ios_guides_chatuikit_Appearance",
+      "title": "Appearance",
+      "path": "ios/guides/chatuikit/Appearance.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "Appearance"
+      ],
+      "description": "1. `Appearance.pageContainerTitleBarItemWidth` 底部弹窗页面titleBar的高宽度,文件请在Xcode files中搜索`PageContainerTitleBar.swift`"
+    },
+    {
+      "id": "ios_guides_chatuikit_ComponentsActionEventsRegister",
+      "title": "拦截单群聊UIKit中组件中的点击事件",
+      "path": "ios/guides/chatuikit/ComponentsActionEventsRegister.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "拦截单群聊UIKit中组件中的点击事件"
+      ],
+      "description": "注意：拦截后的业务逻辑与UI刷新逻辑用户需要完全自己去实现，建议使用注册继承即可更优雅的实现需求。"
+    },
+    {
+      "id": "ios_guides_chatuikit_ComponentsRegister",
+      "title": "如何继承组件注册并自定义",
+      "path": "ios/guides/chatuikit/ComponentsRegister.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "如何继承组件注册并自定义"
+      ],
+      "description": "所有的可继承组件都在ComponentsRegister.swift中，继承后替换原有的组件即可。"
+    },
+    {
+      "id": "ios_guides_chatuikit_chatfeature_message",
+      "title": "消息特性",
+      "path": "ios/guides/chatuikit/chatfeature_message.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "消息特性"
+      ],
+      "description": "本文介绍消息相关特性，包括消息复制、删除、撤回、编辑、引用、翻译、表情回复、话题和转发。"
+    },
+    {
+      "id": "ios_guides_chatuikit_custom_cell",
+      "title": "新类型自定义消息Cell",
+      "path": "ios/guides/chatuikit/custom_cell.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "新类型自定义消息Cell"
+      ],
+      "description": "这里以红包消息举例"
+    },
+    {
+      "id": "ios_guides_chatuikit_customize_click_jump",
+      "title": "拦截主要页面点击跳转事件",
+      "path": "ios/guides/chatuikit/customize_click_jump.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "拦截主要页面点击跳转事件"
+      ],
+      "description": "你可以继承`ConversationListController`并赋值注册到`ComponentsRegister.shared.ConversationsController`中，然后即可重载如下想要拦截的点击事件方法。"
+    },
+    {
+      "id": "ios_guides_chatuikit_modular_events_listener",
+      "title": "主要页面回调事件监听",
+      "path": "ios/guides/chatuikit/modular_events_listener.md",
+      "platform": "ios",
+      "product": "chatuikit",
+      "keywords": [
+        "ios",
+        "主要页面回调事件监听"
+      ],
+      "description": "IMSDK回调事件的监听以及UI触发事件的监听均在各自的ViewModel中"
+    },
+    {
+      "id": "ios_guides_sdk_README",
+      "title": "README.md",
+      "path": "ios/guides/sdk/README.md",
+      "platform": "ios",
+      "product": "sdk",
+      "keywords": [
+        "ios"
+      ],
+      "description": ""
+    },
+    {
+      "id": "ios_guides_sdk_apireference",
+      "title": "API 参考",
+      "path": "ios/guides/sdk/apireference.md",
+      "platform": "ios",
+      "product": "sdk",
+      "keywords": [
+        "ios",
+        "API 参考"
+      ],
+      "description": "如需了解 iOS SDK 中的 API 详情，请参见 [API 参考文档](https://doc.easemob.com/apidoc/ios/chat3.0/annotated.html)。"
+    },
+    {
+      "id": "ios_guides_sdk_beginner_guide",
+      "title": "入门指引",
+      "path": "ios/guides/sdk/beginner_guide.md",
+      "platform": "ios",
+      "product": "sdk",
+      "keywords": [
+        "ios",
+        "入门指引"
+      ],
+      "description": "环信即时通讯 IM 可实现发送文本、图片、位置、语音、视频等各类型消息，提供单聊、群聊、聊天室、离线推送、账号鉴权、用户属性和用户关系等服务。"
+    },
+    {
+      "id": "ios_guides_sdk_demo",
+      "title": "环信即时通讯 IM iOS Demo",
+      "path": "ios/guides/sdk/demo.md",
+      "platform": "ios",
+      "product": "sdk",
+      "keywords": [
+        "ios",
+        "环信即时通讯 IM iOS Demo"
+      ],
+      "description": "环信即时通讯 IM iOS Demo 提供用户登录、单聊、群组、子区、消息(文字、表情、语音、视频、图片、文件等)发送及管理、会话管理、好友管理、用户属性、用户在线状态（Presence）以及实时音视频通话等功能。"
+    },
+    {
+      "id": "ios_guides_sdk_quickstart",
+      "title": "环信即时通讯 IM iOS 快速开始",
+      "path": "ios/guides/sdk/quickstart.md",
+      "platform": "ios",
+      "product": "sdk",
+      "keywords": [
+        "ios",
+        "环信即时通讯 IM iOS 快速开始"
+      ],
+      "description": "本文介绍如何快速集成环信即时通讯 IM iOS SDK 实现单聊。"
+    },
+    {
+      "id": "ios_guides_sdk_releasenote",
+      "title": "iOS IM SDK 更新日志",
+      "path": "ios/guides/sdk/releasenote.md",
+      "platform": "ios",
+      "product": "sdk",
+      "keywords": [
+        "ios",
+        "iOS IM SDK 更新日志"
+      ],
+      "description": "私有化部署底层链路支持 TCP 和 WebSocket 之间切换。"
+    }
+  ],
+  "apiModules": [
+    {
+      "id": "ios_api_connection",
+      "name": "连接",
+      "description": "应用客户端成功连接到环信服务器后，才能使用环信即时通讯 SDK 的收发消息等功能。",
+      "docPath": "ios/api/connection.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_conversation_delete",
+      "name": "删除会话",
+      "description": "删除好友或退出群组后，SDK 不会自动删除对应的单聊或群聊会话。你可以调用相应的接口从服务器和本地删除单个会话及其历史消息。",
+      "docPath": "ios/api/conversation_delete.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_conversation_list",
+      "name": "会话列表",
+      "description": "对于单聊、群组聊天和聊天室会话，用户发消息时 SDK 会自动创建会话并将会话添加至用户的会话列表。",
+      "docPath": "ios/api/conversation_list.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_conversation_mark",
+      "name": "会话标记",
+      "description": "某些情况下，你可能需要对会话添加标记，例如会话标星或将会话标为已读或未读。即时通讯云 IM 支持对单聊和群聊会话添加标记，最大支持 20 个标记，所以一个会话最多可添加 20 个标记。",
+      "docPath": "ios/api/conversation_mark.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_conversation_overview",
+      "name": "会话介绍",
+      "description": "会话是一个单聊、群聊或者聊天室所有消息的集合。用户需在会话中发送消息、查看或清空历史消息等操作。",
+      "docPath": "ios/api/conversation_overview.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_conversation_pin",
+      "name": "会话置顶",
+      "description": "会话置顶指将单聊或群聊会话固定在会话列表的顶部，方便用户查找。例如，将重点会话置顶，可快速定位会话。",
+      "docPath": "ios/api/conversation_pin.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_conversation_receipt",
+      "name": "会话已读回执",
+      "description": "会话已读回执指接收方进入会话页面，阅读会话中的所有消息后，调用接口向服务器发送会话已读回执，服务器将该回执回调给消息发送方，将会话的未读消息数置为 0。",
+      "docPath": "ios/api/conversation_receipt.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_conversation_unread",
+      "name": "conversation_unread.md",
+      "description": "",
+      "docPath": "ios/api/conversation_unread.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_group_@",
+      "name": "群组 @ 消息",
+      "description": "群组 @ 消息指在群组聊天中，用户可以 @ 单个、多个或所有成员，发送消息。群组中的每个成员均可使用 @ 功能，而且可以 @ 群所有成员。",
+      "docPath": "ios/api/group_@.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_group_attributes",
+      "name": "管理群组属性",
+      "description": "群组是支持多人沟通的即时通讯系统，本文介绍如何使用环信即时通讯 IM SDK 在实时互动 app 中实现群组属性相关功能。",
+      "docPath": "ios/api/group_attributes.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_group_manage",
+      "name": "创建和管理群组及监听群组事件",
+      "description": "群组是支持多人沟通的即时通讯系统，本文介绍如何使用环信即时通讯 IM SDK 在实时互动 app 中创建和管理群组，并实现群组相关功能。",
+      "docPath": "ios/api/group_manage.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_group_members",
+      "name": "管理群组成员",
+      "description": "群组是支持多人沟通的即时通讯系统，本文介绍如何使用环信即时通讯 IM SDK 在实时互动 app 中实现群组成员管理相关功能。",
+      "docPath": "ios/api/group_members.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_group_overview",
+      "name": "group_overview.md",
+      "description": "",
+      "docPath": "ios/api/group_overview.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_initialization",
+      "name": "初始化",
+      "description": "初始化是使用 SDK 的必要步骤，需在所有接口方法调用前完成。",
+      "docPath": "ios/api/initialization.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_integration",
+      "name": "导入 SDK",
+      "description": "本文介绍如何将环信即时通讯 IM SDK 集成到你的 iOS 项目。",
+      "docPath": "ios/api/integration.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_log",
+      "name": "SDK 日志",
+      "description": "环信即时通讯 IM 日志记录 SDK 相关的信息和事件。环信技术支持团队帮你排查问题时可能会请你发送 SDK 日志。",
+      "docPath": "ios/api/log.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_login",
+      "name": "登录",
+      "description": "初始化 IM SDK 后，你需要首先调用接口登录。登录成功后，才能使用 IM 的功能。",
+      "docPath": "ios/api/login.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_delete",
+      "name": "删除消息",
+      "description": "本文介绍用户如何单向删除服务端和本地的历史消息。",
+      "docPath": "ios/api/message_delete.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_deliver_only_online",
+      "name": "消息仅投递在线用户",
+      "description": "环信即时通讯 IM 支持只将消息投递给在线用户。若接收方不在线，则无法收到消息。该功能用于实现应用只需要向在线用户进行展示目的，例如，利用透传消息实现群投票的票数实时变化, 只有在线用户需要关注实时变化的动态, 离线用户只需要再次上线时获取最终状态。",
+      "docPath": "ios/api/message_deliver_only_online.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_extension",
+      "name": "消息扩展",
+      "description": "当 SDK 提供的消息类型不满足需求时，你可以通过消息扩展字段来传递自定义的内容，从而生成自己需要的消息类型，例如，消息中需要携带被回复的消息内容或者是图文消息等场景。",
+      "docPath": "ios/api/message_extension.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_forward",
+      "name": "转发消息",
+      "description": "转发消息即将会话中发送成功或收到的消息转发给别人，例如，用户 A 向用户 B 发送了一条消息，用户 B 收到后，将其转发给用户 C。",
+      "docPath": "ios/api/message_forward.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_import_insert",
+      "name": "导入和插入消息",
+      "description": "本文介绍环信即时通讯 IM iOS SDK 如何在本地导入和插入消息。",
+      "docPath": "ios/api/message_import_insert.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_modify",
+      "name": "修改消息",
+      "description": "环信即时通讯 IM 提供修改消息功能，支持对发送成功的消息进行编辑，然后再发送，提高沟通效率和准确性，例如，发送消息后发觉消息内容中包含错别字、遗漏了的关键信息、内容不够完善清晰、甚至临时想更改自己的想法，可以编辑消息后再次发送。",
+      "docPath": "ios/api/message_modify.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_overview",
+      "name": "message_overview.md",
+      "description": "",
+      "docPath": "ios/api/message_overview.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_pin",
+      "name": "消息置顶",
+      "description": "消息置顶指将会话中的消息固定在会话顶部，方便会话中的所有用户快速查看重要消息。",
+      "docPath": "ios/api/message_pin.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_quote",
+      "name": "消息引用",
+      "description": "消息引用是指用户可以引用一条已发送的消息。消息引用可以帮助用户回复特定的消息，或强调特定的信息。",
+      "docPath": "ios/api/message_quote.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_recall",
+      "name": "撤回消息",
+      "description": "单聊、群聊和聊天室聊天支持撤回一条发送成功的消息：",
+      "docPath": "ios/api/message_recall.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_receipt",
+      "name": "实现消息回执",
+      "description": "**单聊会话支持消息送达回执和消息已读回执**，发送方发送消息后可及时了解接收方是否及时收到并阅读了消息。",
+      "docPath": "ios/api/message_receipt.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_receive",
+      "name": "接收消息",
+      "description": "环信即时通讯 IM iOS SDK 通过 `EMChatManagerDelegate` 类实现文本、图片、音频、视频和文件等类型的消息的接收。",
+      "docPath": "ios/api/message_receive.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_retrieve",
+      "name": "获取历史消息",
+      "description": "本文介绍环信即时通讯 IM SDK 如何从服务器和本地获取历史消息。",
+      "docPath": "ios/api/message_retrieve.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_search",
+      "name": "搜索消息",
+      "description": "本文介绍环信即时通讯 IM iOS SDK 如何搜索本地消息。调用本文中的消息搜索方法可以搜索本地数据库中除命令消息之外的所有类型的消息，因为命令消息不在本地数据库中存储。",
+      "docPath": "ios/api/message_search.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_send",
+      "name": "发送消息",
+      "description": "环信即时通讯 IM iOS SDK 通过 `ChatManager` 类和 `EMChatMessage` 类实现文本、图片、音频、视频和文件等类型的消息的发送。",
+      "docPath": "ios/api/message_send.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_target",
+      "name": "定向消息",
+      "description": "发送定向消息是指向群组或聊天室的单个或多个指定的成员发送消息，其他成员不会收到该消息。",
+      "docPath": "ios/api/message_target.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_traffic_statis",
+      "name": "获取本地消息的流量统计信息",
+      "description": "即时通讯 IM 提供本地消息的流量统计功能。该功能默认关闭。若要使用该功能，需在 SDK 初始化前设置 `EMOptions#enableStatistics` 开启。",
+      "docPath": "ios/api/message_traffic_statis.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_translation",
+      "name": "翻译",
+      "description": "为方便用户在聊天过程中对文字消息进行翻译，环信即时通讯 IM SDK 集成了 Microsoft Azure Translation API，支持在发送或接收消息时对文本消息进行按需翻译或自动翻译：",
+      "docPath": "ios/api/message_translation.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_message_update",
+      "name": "更新消息",
+      "description": "本文介绍环信即时通讯 IM SDK 如何更新本地消息。",
+      "docPath": "ios/api/message_update.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_moderation",
+      "name": "消息审核（举报）",
+      "description": "即时通讯 IM SDK 提供消息举报接口。你的用户可以在客户端举报违规消息。当服务器收到举报消息后，会将举报消息存储到数据库，并在[环信控制台](https://console.easemob.com/user/login)展示。你可在环信控制台查看举报记录，并进行相应处理。",
+      "docPath": "ios/api/moderation.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_presence",
+      "name": "管理在线状态订阅",
+      "description": "用户在线状态（即 Presence）包含用户的在线、离线以及自定义状态。使用该功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通该服务。详见 [环信控制台文档](/product/console/basic_user.html#用户离在线状态实时同步)。",
+      "docPath": "ios/api/presence.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_privacy_policy",
+      "name": "苹果隐私策略 PrivacyInfo.xcprivacy",
+      "description": "根据苹果公司发布的 [App Store 提交的隐私更新](https://developer.apple.com/news/?id=r1henawx)，自 2024 年春季开始，上架 App Store 的应用需要同时提供一份 App 的隐私清单文件，就 App 及第三方 SDK 中使用的 **Required Reason APIs** 提供批准原因。因此，所有第三方 SDK 均需包含 **PrivacyInfo.xcprivacy**。",
+      "docPath": "ios/api/privacy_policy.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_apns",
+      "name": "在即时通讯 IM 中集成 APNs",
+      "description": "本页介绍如何在即时通讯 IM 中集成 APNs 并测试推送是否成功集成。",
+      "docPath": "ios/api/push_apns.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_display_attribute",
+      "name": "设置和获取推送通知的显示属性",
+      "description": "你可以调用 `updatePushDisplayName` 设置推送通知中显示的昵称，如以下代码示例所示：",
+      "docPath": "ios/api/push_display_attribute.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_display_field",
+      "name": "使用消息扩展字段设置推送通知显示内容",
+      "description": "创建推送消息时，你可以设置消息扩展字段自定义要显示的推送标题 `em_push_title` 和推送内容 `em_push_content`。",
+      "docPath": "ios/api/push_display_field.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_display_overview",
+      "name": "设置推送通知的显示内容",
+      "description": "通知收到后，通知栏中显示的推送标题和内容可通过以下方式设置，配置的优先级为由低到高：",
+      "docPath": "ios/api/push_display_overview.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_extension",
+      "name": "设置推送扩展",
+      "description": "你可以利用扩展字段实现自定义推送设置，本文以强制推送、发送静默消息和富文本推送为例介绍如何实现推送扩展功能。",
+      "docPath": "ios/api/push_extension.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_notification_mode_dnd",
+      "name": "设置推送通知方式和免打扰模式",
+      "description": "环信即时通讯 IM 3.9.2 及以上版本对离线消息推送进行了优化。你可以在 app 和会话层面提供了推送通知方式和免打扰模式的细粒度选项。",
+      "docPath": "ios/api/push_notification_mode_dnd.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_overview",
+      "name": "**离线推送概述**",
+      "description": "即时通讯 IM 支持集成 APNs 消息推送服务，为 iOS 开发者提供低延时、高送达、高并发、不侵犯用户个人数据的离线消息推送服务。",
+      "docPath": "ios/api/push_overview.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_parsing",
+      "name": "**解析收到的推送字段**",
+      "description": "当设备收到推送通知并点击时，iOS 系统会将推送通知中的自定义推送内容（JSON）传递给 app，这样你就可以根据推送内容自定义点击推送通知触发的行为，例如，页面跳转等。当收到推送通知并点击时，app 获取推送内容的方式如下：",
+      "docPath": "ios/api/push_parsing.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_solution",
+      "name": "常见问题",
+      "description": "**Q**：如果推送通知栏未展示推送通知，是什么原因？",
+      "docPath": "ios/api/push_solution.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_template",
+      "name": "推送模板",
+      "description": "推送模板主要用于服务器提供的默认离线推送配置不满足你的需求时，设置全局范围的推送标题和推送内容。例如，服务器提供的默认设置为中文和英文的推送标题和内容，你若需要使用韩语或日语的推送标题和内容，则可以设置对应语言的推送模板。",
+      "docPath": "ios/api/push_template.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_push_translation",
+      "name": "设置推送翻译",
+      "description": "如果用户启用 [自动翻译](/document/ios/message_translation.html) 功能并发送消息，SDK 会同时发送原始消息和翻译后的消息。",
+      "docPath": "ios/api/push_translation.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_reaction",
+      "name": "消息表情回复 Reaction iOS",
+      "description": "环信即时通讯 IM 提供消息表情回复（下文统称 “Reaction”）功能。用户可以在单聊和群聊中对消息添加、删除表情。表情可以直观地表达情绪，利用 Reaction 可以提升用户的使用体验。同时在群组中，利用 Reaction 可以发起投票，根据不同表情的追加数量来确认投票。",
+      "docPath": "ios/api/reaction.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_room_attributes",
+      "name": "管理聊天室属性",
+      "description": "聊天室是支持多人沟通的即时通讯系统。聊天室属性可分为聊天室名称、描述和公告等基本属性和自定义属性（key-value）。若聊天室基本属性不满足业务要求，用户可增加自定义属性并同步给所有成员。利用自定义属性可以存储直播聊天室的类型、狼人杀等游戏中的角色信息和游戏状态以及实现语聊房的麦位管理和同步等。聊天室自定义属性以键值对（key-value）形式存储，属性信息变更会实时同步给聊天室成员。",
+      "docPath": "ios/api/room_attributes.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_room_manage",
+      "name": "创建和管理聊天室以及监听器介绍",
+      "description": "聊天室是支持多人沟通的即时通讯系统。聊天室中的成员没有固定关系，一旦离线后，不会收到聊天室中的任何消息，（除了聊天室白名单中的成员）超过 2 分钟会自动退出聊天室。聊天室可以应用于直播、消息广播等。若需调整该时间，需联系环信商务经理。",
+      "docPath": "ios/api/room_manage.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_room_members",
+      "name": "管理聊天室成员",
+      "description": "聊天室是支持多人沟通的即时通讯系统。本文介绍如何使用环信即时通讯 IM iOS SDK 在实时互动 app 中管理聊天室成员，并实现聊天室的相关功能。",
+      "docPath": "ios/api/room_members.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_room_overview",
+      "name": "room_overview.md",
+      "description": "",
+      "docPath": "ios/api/room_overview.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_thread",
+      "name": "管理子区",
+      "description": "子区是群组成员的子集，是支持多人沟通的即时通讯系统。使用子区功能前，你需要在 [环信控制台](https://console.easemob.com/user/login) 开通。详见 [环信控制台文档](/product/console/basic_conversation_group_chatroom.html#消息话题)。",
+      "docPath": "ios/api/thread.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_thread_message",
+      "name": "管理子区消息",
+      "description": "子区消息消息类型属于群聊消息类型，与普通群组消息的区别是需要添加 `isChatThread` 标记。使用子区消息功能前，你需要在[环信控制台](https://console.easemob.com/user/login)开通。详见 [环信控制台文档](/product/console/basic_conversation_group_chatroom.html#消息话题)。",
+      "docPath": "ios/api/thread_message.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_typing_indication",
+      "name": "通过透传消息实现输入指示器",
+      "description": "输入指示器显示其他用户何时输入消息。通过该功能，用户之间可进行有效沟通，增加了用户对聊天应用中交互的期待感。",
+      "docPath": "ios/api/typing_indication.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_user_relationship",
+      "name": "管理用户关系",
+      "description": "用户登录后，可进行添加联系人、获取好友列表等操作。",
+      "docPath": "ios/api/user_relationship.md",
+      "platform": "ios",
+      "product": "general"
+    },
+    {
+      "id": "ios_api_userprofile",
+      "name": "管理用户属性",
+      "description": "环信即时通讯 IM 自 V3.8.1 开始支持用户属性管理功能。",
+      "docPath": "ios/api/userprofile.md",
+      "platform": "ios",
+      "product": "general"
+    }
+  ],
+  "stats": {
+    "guideCount": 20,
+    "apiModuleCount": 60,
+    "products": [
+      "callkit",
+      "chatuikit",
+      "sdk",
+      "general"
+    ]
+  }
+}

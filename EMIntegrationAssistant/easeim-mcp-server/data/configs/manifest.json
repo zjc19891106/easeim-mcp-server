@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-01-15T01:12:44.459Z",
+  "description": "配置索引清单 - 支持按平台分片加载",
+  "platforms": [
+    "ios"
+  ],
+  "shards": {
+    "ios": {
+      "path": "shards/ios.json",
+      "platform": "ios",
+      "componentCount": 4,
+      "configPropertyCount": 40,
+      "extensionPointCount": 148,
+      "sizeBytes": 67822,
+      "components": [
+        "EaseCallUIKit",
+        "EaseChatDemo",
+        "EaseChatUIKit",
+        "EaseChatroomUIKit"
+      ]
+    }
+  },
+  "stats": {
+    "totalComponents": 4,
+    "totalConfigProperties": 40,
+    "totalExtensionPoints": 148
+  }
+}

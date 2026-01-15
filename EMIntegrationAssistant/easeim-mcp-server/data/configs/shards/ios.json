@@ -1,0 +1,1571 @@
+{
+  "version": "2.0.0",
+  "platform": "ios",
+  "lastUpdated": "2026-01-15T01:12:44.459Z",
+  "components": {
+    "EaseCallUIKit": {
+      "name": "EaseCallUIKit",
+      "description": "ios 平台的 EaseCallUIKit 组件",
+      "configProperties": [],
+      "extensionPoints": [
+        {
+          "name": "ThemeSwitchProtocol",
+          "type": "protocol",
+          "description": "When the system theme changes, you can use this static method to switch between the light and dark themes of the ease chat UIKit.",
+          "file": "ios/EaseCallUIKit/Classes/Commons/Theme/Theme.swift",
+          "line": 18,
+          "methods": [
+            "switchTheme"
+          ]
+        },
+        {
+          "name": "CallProfileProtocol",
+          "type": "protocol",
+          "description": "CallUserProfileProtocol.swift EaseCallUIKit Created by 朱继超 on 6/25/25. Profile of the EaseCallUIKit display needed.",
+          "file": "ios/EaseCallUIKit/Classes/CoreService/Provider/CallProfileProtocol.swift",
+          "line": 11,
+          "methods": [
+            "toJsonObject"
+          ]
+        },
+        {
+          "name": "EaseChatNavigationBarRightCell",
+          "type": "class",
+          "description": "可继承的 EaseChatNavigationBarRightCell 类",
+          "file": "ios/EaseCallUIKit/Classes/Commons/Utils/CallNavigationBar.swift",
+          "line": 333
+        },
+        {
+          "name": "DragFloatView",
+          "type": "class",
+          "description": "可继承的 DragFloatView 类",
+          "file": "ios/EaseCallUIKit/Classes/Commons/Utils/DragFloatView.swift",
+          "line": 18
+        },
+        {
+          "name": "GroupParticipantsCell",
+          "type": "class",
+          "description": "GroupParticipantsCell.swift EaseCallUIKit Created by 朱继超 on 6/30/25.",
+          "file": "ios/EaseCallUIKit/Classes/UI/Cells/GroupParticipantsCell.swift",
+          "line": 9
+        },
+        {
+          "name": "Call1v1VideoViewController",
+          "type": "class",
+          "description": "Call1v1VideoViewController.swift EaseCallUIKit Created by 朱继超 on 6/25/25.",
+          "file": "ios/EaseCallUIKit/Classes/UI/Controllers/Call1v1VideoViewController.swift",
+          "line": 11
+        },
+        {
+          "name": "CallMultiViewController",
+          "type": "class",
+          "description": "可继承的 CallMultiViewController 类",
+          "file": "ios/EaseCallUIKit/Classes/UI/Controllers/CallMultiViewController.swift",
+          "line": 15
+        },
+        {
+          "name": "MultiCallParticipantsController",
+          "type": "class",
+          "description": "MultiCallParticipantsController.swift EaseCallUIKit Created by 朱继超 on 6/30/25.",
+          "file": "ios/EaseCallUIKit/Classes/UI/Controllers/MultiCallParticipantsController.swift",
+          "line": 11
+        }
+      ]
+    },
+    "EaseChatDemo": {
+      "name": "EaseChatDemo",
+      "description": "ios 平台的 EaseChatDemo 组件",
+      "configProperties": [],
+      "extensionPoints": [
+        {
+          "name": "ImageBrowserProtocol",
+          "type": "protocol",
+          "file": "ios/EaseChatDemo/PhotoBrowser/PreviewImage.swift",
+          "line": 30,
+          "methods": [
+            "numberOfPhotos",
+            "photo"
+          ]
+        }
+      ]
+    },
+    "EaseChatUIKit": {
+      "name": "EaseChatUIKit",
+      "description": "ios 平台的 EaseChatUIKit 组件",
+      "configProperties": [
+        {
+          "name": "pageContainerTitleBarItemWidth",
+          "type": "CGFloat",
+          "defaultValue": "(ScreenWidth-32)/2.0",
+          "description": "An object containing visual configurations for the whole application. You can change the width of a single option with ``PageContainerTitleBar`` in the popup container by setting the current property.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/Appearance.swift",
+          "line": 13
+        },
+        {
+          "name": "alertStyle",
+          "type": "AlertStyle",
+          "defaultValue": ".large",
+          "description": "The corner radius of the alert view.``AlertView``",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/Appearance.swift",
+          "line": 22
+        },
+        {
+          "name": "primaryHue",
+          "type": "CGFloat",
+          "defaultValue": "203/360.0",
+          "description": "You can change the hue of the base color, and then change the thirteen UIColor objects of the related color series. The UI components that use the relevant color series in the ease chat UIKit will also change accordingly. The default value is 203/360.0.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/Appearance.swift",
+          "line": 25
+        },
+        {
+          "name": "secondaryHue",
+          "type": "CGFloat",
+          "defaultValue": "155/360.0",
+          "description": "You can change the primary hue. The default value is 203/360.0. After the primary hue is changed, thirteen UIColor objects of the related color series will be changed. The color of UI components that use the related color series in the ease chat UIKit will also change accordingly.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/Appearance.swift",
+          "line": 29
+        },
+        {
+          "name": "errorHue",
+          "type": "CGFloat",
+          "defaultValue": "350/360.0",
+          "description": "You can change the secondary hue. The default value is 155/360.0. After the secondary hue is changed, thirteen UIColor objects of the related color series will be changed. The color of UI components that use the related color series in the ease chat UIKit will also change accordingly.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/Appearance.swift",
+          "line": 33
+        },
+        {
+          "name": "neutralHue",
+          "type": "CGFloat",
+          "defaultValue": "203/360.0",
+          "description": "You can change the neutral hue. The default value is 203/360.0. After the neutral hue is changed, thirteen UIColor objects of the related color series will be changed. The color of UI components that use the related color series in the ease chat UIKit will also change accordingly.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/Appearance.swift",
+          "line": 37
+        },
+        {
+          "name": "neutralSpecialHue",
+          "type": "CGFloat",
+          "defaultValue": "220/360.0",
+          "description": "You can change the neutral special hue. The default value is 220/360.0. After the neutral special hue is changed, thirteen UIColor objects of the related color series will be changed. The color of UI components that use the relevant color series in the ease chat UIKit will also change accordingly.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/Appearance.swift",
+          "line": 41
+        },
+        {
+          "name": "avatarRadius",
+          "type": "CornerRadius",
+          "defaultValue": ".extraSmall",
+          "description": "The corner radius of the avatar image view of ``ChatInputBar``.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/Appearance.swift",
+          "line": 47
+        },
+        {
+          "name": "actionSheetRowHeight",
+          "type": "CGFloat",
+          "defaultValue": "56",
+          "description": "ActionSheet row height.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/Appearance.swift",
+          "line": 53
+        },
+        {
+          "name": "avatarPlaceHolder",
+          "type": "UIImage?",
+          "defaultValue": "UIImage(named: \"default_avatar\", in: .chatBundle, with: nil)",
+          "description": "The placeholder image of the avatar image view of ``MessageCell``.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/Appearance.swift",
+          "line": 56
+        }
+      ],
+      "extensionPoints": [
+        {
+          "name": "ChatUserProfileProtocol",
+          "type": "protocol",
+          "description": "Profile of the ChatUIKit display needed.",
+          "file": "ios/EaseChatUIKit/Classes/Service/Protocol/ChatUserProfileProtocol.swift",
+          "line": 17,
+          "methods": [
+            "toJsonObject"
+          ]
+        },
+        {
+          "name": "ContactServiceProtocol",
+          "type": "protocol",
+          "description": "ContactService.swift ChatUIKit Created by 朱继超 on 2023/11/1.",
+          "file": "ios/EaseChatUIKit/Classes/Service/Protocol/ContactService.swift",
+          "line": 10,
+          "methods": [
+            "bindContactEventListener",
+            "unbindContactEventListener",
+            "registerEmergencyListener",
+            "unregisterEmergencyListener",
+            "contacts",
+            "addContact",
+            "removeContact",
+            "agreeFriendRequest",
+            "declineFriendRequest",
+            "userBlackList",
+            "addUserToBlackList",
+            "removeUserFromBlackList",
+            "deviceIdsOnOtherPlatformOfCurrentUser",
+            "setRemark"
+          ]
+        },
+        {
+          "name": "GroupChatThreadEventListener",
+          "type": "protocol",
+          "file": "ios/EaseChatUIKit/Classes/Service/Protocol/GroupService.swift",
+          "line": 302,
+          "methods": [
+            "onGroupChatThreadEventOccur"
+          ]
+        },
+        {
+          "name": "UserServiceProtocol",
+          "type": "protocol",
+          "file": "ios/EaseChatUIKit/Classes/Service/Protocol/UserService.swift",
+          "line": 15,
+          "methods": [
+            "bindUserStateChangedListener",
+            "unBindUserStateChangedListener",
+            "userInfo",
+            "userInfos",
+            "updateUserInfo",
+            "login",
+            "logout"
+          ]
+        },
+        {
+          "name": "MessageListDriverEventsListener",
+          "type": "protocol",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/ViewModel/MessageListViewModel.swift",
+          "line": 16,
+          "methods": [
+            "onMessageAvatarClicked",
+            "onMessageBubbleClicked",
+            "onMessageBubbleLongPressed",
+            "onMessageAttachmentLoading",
+            "onInputBoxEventsOccur",
+            "onMessageWillSendFillExtensionInfo",
+            "onMessageMultiSelectBarClicked"
+          ]
+        },
+        {
+          "name": "MessageListViewActionEventsDelegate",
+          "type": "protocol",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageListView.swift",
+          "line": 25,
+          "methods": [
+            "onMessageListPullRefresh",
+            "onMessageListLoadMore",
+            "onMessageReplyClicked",
+            "onMessageContentClicked",
+            "onMessageContentLongPressed",
+            "onMessageAvatarClicked",
+            "onMessageAvatarLongPressed",
+            "onInputBoxEventsOccur",
+            "onFailureMessageRetrySend",
+            "onMessageVisible",
+            "onMessageTopicClicked",
+            "onMessageReactionClicked",
+            "onMessageMultiSelectBarClicked",
+            "onMoreMessagesClicked"
+          ]
+        },
+        {
+          "name": "IMessageListViewDriver",
+          "type": "protocol",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageListView.swift",
+          "line": 86,
+          "methods": [
+            "addActionHandler",
+            "removeEventHandler",
+            "refreshMessages",
+            "insertMessages",
+            "processMessage",
+            "showMessage",
+            "updateMessageStatus",
+            "updateMessageAttachmentStatus",
+            "addMentionUserToField",
+            "updateAudioMessageStatus",
+            "updateGroupMessageChatThreadChanged",
+            "reloadTopic",
+            "reloadReaction",
+            "updateThreadLoadMessagesFinished",
+            "endRefreshing",
+            "stopAudioMessagesPlay",
+            "readAllMessages",
+            "highlightMessage"
+          ]
+        },
+        {
+          "name": "IPinnedMessagesContainerDriver",
+          "type": "protocol",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/PinnedMessagesContainer.swift",
+          "line": 13,
+          "methods": [
+            "addActionHandler",
+            "removeEventHandler",
+            "refresh",
+            "remove"
+          ]
+        },
+        {
+          "name": "PinnedMessagesContainerDelegate",
+          "type": "protocol",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/PinnedMessagesContainer.swift",
+          "line": 28,
+          "methods": [
+            "didSelect",
+            "remove"
+          ]
+        },
+        {
+          "name": "ContactListHeaderItemProtocol",
+          "type": "protocol",
+          "description": "ContactListHeaderCell.swift ChatUIKit Created by 朱继超 on 2023/11/20. A protocol of the contact list item.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Cells/ContactListHeaderCell.swift",
+          "line": 12,
+          "methods": []
+        },
+        {
+          "name": "ContactListActionEventsDelegate",
+          "type": "protocol",
+          "description": "ContactList action events delegate.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Views/ContactView.swift",
+          "line": 14,
+          "methods": [
+            "onContactListScroll",
+            "onContactListOccurErrorWhenFetchServer",
+            "onContactListEndScrollNeededDisplayInfos",
+            "didSelected"
+          ]
+        },
+        {
+          "name": "IContactListDriver",
+          "type": "protocol",
+          "description": "A driver protocol of ``ContactList``.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Views/ContactView.swift",
+          "line": 36,
+          "methods": [
+            "addActionHandler",
+            "removeActionHandler",
+            "occurError",
+            "refreshProfiles",
+            "refreshList",
+            "refreshHeader",
+            "remove",
+            "appendThenRefresh"
+          ]
+        },
+        {
+          "name": "ISectionIndexListDriver",
+          "type": "protocol",
+          "description": "SectionIndexList.swift ChatUIKit Created by 朱继超 on 2023/11/22. A protocol that defines the driver for a section index list.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Views/SectionIndexList.swift",
+          "line": 11,
+          "methods": [
+            "refresh",
+            "selectItem"
+          ]
+        },
+        {
+          "name": "ConversationListActionEventsDelegate",
+          "type": "protocol",
+          "description": "MARK: - ConversationListActionEventsDelegate Session list touch event callback proxy",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Conversation/Views/ConversationList.swift",
+          "line": 369,
+          "methods": [
+            "onConversationListOccurErrorWhenFetchServer",
+            "onConversationListEndScrollNeededDisplayInfos",
+            "onConversationListRefresh",
+            "onConversationSwipe",
+            "onConversationDidSelected",
+            "onConversationLongPressed"
+          ]
+        },
+        {
+          "name": "IConversationListDriver",
+          "type": "protocol",
+          "description": "MARK: - IConversationListDriver ConversationList view driver.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Conversation/Views/ConversationList.swift",
+          "line": 402,
+          "methods": [
+            "addActionHandler",
+            "removeActionHandler",
+            "occurError",
+            "swipeMenuOperation",
+            "showNew",
+            "refreshProfiles",
+            "refreshList",
+            "appendThenRefresh"
+          ]
+        },
+        {
+          "name": "ThemeSwitchProtocol",
+          "type": "protocol",
+          "description": "When the system theme changes, you can use this static method to switch between the light and dark themes of the ease chat UIKit.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/Theme/Theme.swift",
+          "line": 18,
+          "methods": [
+            "switchTheme"
+          ]
+        },
+        {
+          "name": "PullRefresherDelegate",
+          "type": "protocol",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/PullRefresher.swift",
+          "line": 72,
+          "methods": [
+            "pullToRefreshAnimationDidStart",
+            "pullToRefreshAnimationDidEnd",
+            "pullToRefresh",
+            "pullToRefresh"
+          ]
+        },
+        {
+          "name": "ActionSheetItemProtocol",
+          "type": "protocol",
+          "description": "A protocol that defines properties and methods for an action sheet item.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/DialogComponent/DialogManager/ActionSheetItem.swift",
+          "line": 20,
+          "methods": []
+        },
+        {
+          "name": "AlertMessageCell",
+          "type": "class",
+          "description": "AlertMessageCell.swift ChatUIKit Created by 朱继超 on 2023/12/4.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/AlertMessageCell.swift",
+          "line": 10
+        },
+        {
+          "name": "AudioMessageCell",
+          "type": "class",
+          "description": "AudioMessageCell.swift ChatUIKit Created by 朱继超 on 2023/12/5.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/AudioMessageCell.swift",
+          "line": 10
+        },
+        {
+          "name": "ChatHistoryCell",
+          "type": "class",
+          "description": "ChatHistoryCell.swift ChatUIKit Created by 朱继超 on 2024/1/31.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/ChatHistoryCell.swift",
+          "line": 10
+        },
+        {
+          "name": "ChatThreadCell",
+          "type": "class",
+          "description": "ChatThreadCell.swift ChatUIKit Created by 朱继超 on 2024/2/7.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/ChatThreadCell.swift",
+          "line": 10
+        },
+        {
+          "name": "CombineMessageCell",
+          "type": "class",
+          "description": "CombineMessageCell.swift ChatUIKit Created by 朱继超 on 2023/12/29.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/CombineMessageCell.swift",
+          "line": 10
+        },
+        {
+          "name": "ContactCardCell",
+          "type": "class",
+          "description": "ContactCardCell.swift ChatUIKit Created by 朱继超 on 2023/12/5.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/ContactCardCell.swift",
+          "line": 10
+        },
+        {
+          "name": "CustomMessageCell",
+          "type": "class",
+          "description": "CustomMessageCell.swift ChatUIKit Created by 朱继超 on 2023/12/29.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/CustomMessageCell.swift",
+          "line": 10
+        },
+        {
+          "name": "FileMessageCell",
+          "type": "class",
+          "description": "FileMessageCell.swift ChatUIKit Created by 朱继超 on 2023/12/5.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/FileMessageCell.swift",
+          "line": 10
+        },
+        {
+          "name": "ForwardTargetCell",
+          "type": "class",
+          "description": "可继承的 ForwardTargetCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/ForwardTargetCell.swift",
+          "line": 15
+        },
+        {
+          "name": "GIFAnimatedImageView",
+          "type": "class",
+          "description": "GIFMessageCell.swift ChatUIKit Created by Trae AI on 2023/12/5. A custom view that wraps FLAnimatedImageView for displaying GIF images",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/GIFMessageCell.swift",
+          "line": 12
+        },
+        {
+          "name": "GIFMessageCell",
+          "type": "class",
+          "description": "可继承的 GIFMessageCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/GIFMessageCell.swift",
+          "line": 49
+        },
+        {
+          "name": "ImageMessageCell",
+          "type": "class",
+          "description": "ImageMessageCell.swift ChatUIKit Created by 朱继超 on 2023/12/5.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/ImageMessageCell.swift",
+          "line": 10
+        },
+        {
+          "name": "LocationMessageCell",
+          "type": "class",
+          "description": "LocationMessageCell.swift ChatUIKit Created by 朱继超 on 2023/12/29.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/LocationMessageCell.swift",
+          "line": 10
+        },
+        {
+          "name": "MessageCell",
+          "type": "class",
+          "description": "可继承的 MessageCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/MessageCell.swift",
+          "line": 66
+        },
+        {
+          "name": "PinnedMessageCell",
+          "type": "class",
+          "description": "PinnedMessageCell.swift ChatUIKit Created by 朱继超 on 2024/6/12.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/PinnedMessageCell.swift",
+          "line": 10
+        },
+        {
+          "name": "ReactionDetailCell",
+          "type": "class",
+          "description": "可继承的 ReactionDetailCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/ReactionDetailCell.swift",
+          "line": 12
+        },
+        {
+          "name": "ReactionEmojiCell",
+          "type": "class",
+          "description": "ReactionEmojiCellCollectionViewCell.swift ChatUIKit Created by 朱继超 on 2024/1/29.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/ReactionEmojiCell.swift",
+          "line": 10
+        },
+        {
+          "name": "ReactionUserCell",
+          "type": "class",
+          "description": "ReactionUserCell.swift ChatUIKit Created by 朱继超 on 2024/1/30.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/ReactionUserCell.swift",
+          "line": 10
+        },
+        {
+          "name": "ReportOptionCell",
+          "type": "class",
+          "description": "ReportOptionCell.swift ChatUIKit Created by 朱继超 on 2023/9/12.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/ReportOptionCell.swift",
+          "line": 10
+        },
+        {
+          "name": "SearchHistoryMessageCell",
+          "type": "class",
+          "description": "SearchHistoryMessageCell.swift ChatUIKit Created by 朱继超 on 2024/1/15.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/SearchHistoryMessageCell.swift",
+          "line": 10
+        },
+        {
+          "name": "TextMessageCell",
+          "type": "class",
+          "description": "TextMessageCell.swift ChatUIKit Created by 朱继超 on 2023/12/5.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/TextMessageCell.swift",
+          "line": 10
+        },
+        {
+          "name": "TranslateTextView",
+          "type": "class",
+          "description": "可继承的 TranslateTextView 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/TextMessageCell.swift",
+          "line": 232
+        },
+        {
+          "name": "VideoMessageCell",
+          "type": "class",
+          "description": "VideoMessageCell.swift ChatUIKit Created by 朱继超 on 2023/12/5.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Cells/VideoMessageCell.swift",
+          "line": 10
+        },
+        {
+          "name": "ChatHistoryViewController",
+          "type": "class",
+          "description": "ChatHistoryViewController.swift ChatUIKit Created by 朱继超 on 2024/1/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/ChatHistoryViewController.swift",
+          "line": 10
+        },
+        {
+          "name": "ChatThreadCreateController",
+          "type": "class",
+          "description": "Created by 朱继超 on 2024/1/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/ChatThreadCreateController.swift",
+          "line": 14
+        },
+        {
+          "name": "ChatThreadListController",
+          "type": "class",
+          "description": "ChatThreadListController.swift ChatUIKit Created by 朱继超 on 2024/1/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/ChatThreadListController.swift",
+          "line": 10
+        },
+        {
+          "name": "ChatThreadParticipantsController",
+          "type": "class",
+          "description": "ChatThreadParticipantsController.swift ChatUIKit Created by 朱继超 on 2024/1/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/ChatThreadParticipantsController.swift",
+          "line": 10
+        },
+        {
+          "name": "ChatThreadViewController",
+          "type": "class",
+          "description": "Created by 朱继超 on 2024/1/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/ChatThreadViewController.swift",
+          "line": 14
+        },
+        {
+          "name": "ForwardTargetViewController",
+          "type": "class",
+          "description": "ForwardTargetViewController.swift ChatUIKit Created by 朱继超 on 2024/2/19.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/ForwardTargetViewController.swift",
+          "line": 10
+        },
+        {
+          "name": "MessageListController",
+          "type": "class",
+          "description": "可继承的 MessageListController 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/MessageListController.swift",
+          "line": 14
+        },
+        {
+          "name": "MessageReactionsController",
+          "type": "class",
+          "description": "MessageReactionsController.swift ChatUIKit Created by 朱继超 on 2024/1/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/MessageReactionsController.swift",
+          "line": 11
+        },
+        {
+          "name": "MessageReactionsDetailController",
+          "type": "class",
+          "description": "MessageReactionsDetailController.swift ChatUIKit Created by 朱继超 on 2024/1/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/MessageReactionsDetailController.swift",
+          "line": 10
+        },
+        {
+          "name": "ReportOptionsController",
+          "type": "class",
+          "description": "ReportOptionsController.swift ChatUIKit Created by 朱继超 on 2023/9/12.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/ReportOptionsController.swift",
+          "line": 10
+        },
+        {
+          "name": "SearchHistoryMessagesViewController",
+          "type": "class",
+          "description": "SearchHistoryMessagesViewController.swift ChatUIKit Created by 朱继超 on 2024/1/15.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/SearchHistoryMessagesViewController.swift",
+          "line": 10
+        },
+        {
+          "name": "SearchResultMessagesController",
+          "type": "class",
+          "description": "HistoricalMessagesPreviewController.swift ChatUIKit Created by 朱继超 on 2024/2/27.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Controllers/SearchResultMessagesController.swift",
+          "line": 10
+        },
+        {
+          "name": "ChatThreadViewModel",
+          "type": "class",
+          "description": "可继承的 ChatThreadViewModel 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/ViewModel/ChatThreadViewModel.swift",
+          "line": 16
+        },
+        {
+          "name": "MessageListViewModel",
+          "type": "class",
+          "description": "可继承的 MessageListViewModel 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/ViewModel/MessageListViewModel.swift",
+          "line": 62
+        },
+        {
+          "name": "AudioMessageView",
+          "type": "class",
+          "description": "AudioMessageView.swift ChatUIKit Created by 朱继超 on 2023/12/9.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/AudioMessageView.swift",
+          "line": 10
+        },
+        {
+          "name": "CombineMessageView",
+          "type": "class",
+          "description": "CombineMessageView.swift ChatUIKit Created by 朱继超 on 2024/2/2.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/CombineMessageView.swift",
+          "line": 10
+        },
+        {
+          "name": "CommonReactionView",
+          "type": "class",
+          "description": "可继承的 CommonReactionView 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/CommonReactionView.swift",
+          "line": 12
+        },
+        {
+          "name": "ContactCardView",
+          "type": "class",
+          "description": "ContactCardView.swift ChatUIKit Created by 朱继超 on 2023/12/11.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/ContactCardView.swift",
+          "line": 10
+        },
+        {
+          "name": "FileMessageView",
+          "type": "class",
+          "description": "FileMessageView.swift ChatUIKit Created by 朱继超 on 2023/12/7.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/FileMessageView.swift",
+          "line": 10
+        },
+        {
+          "name": "GradientEmojiView",
+          "type": "class",
+          "description": "GradientEmojiView.swift chat-uikit Created by 朱继超 on 2024/7/3.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/GradientEmojiView.swift",
+          "line": 10
+        },
+        {
+          "name": "LinkRecognizeTextView",
+          "type": "class",
+          "description": "可继承的 LinkRecognizeTextView 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/LinkRecognizeTextView.swift",
+          "line": 65
+        },
+        {
+          "name": "MessageAudioRecordView",
+          "type": "class",
+          "description": "MessageAudioRecordView.swift ChatUIKit Created by 朱继超 on 2023/11/29.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageAudioRecordView.swift",
+          "line": 10
+        },
+        {
+          "name": "MessageInputEmojiView",
+          "type": "class",
+          "description": "ChatEmojiView.swift ChatUIKit Created by 朱继超 on 2023/8/30.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageInputEmojiView.swift",
+          "line": 10
+        },
+        {
+          "name": "ChatEmojiCell",
+          "type": "class",
+          "description": "可继承的 ChatEmojiCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageInputEmojiView.swift",
+          "line": 124
+        },
+        {
+          "name": "MessageInputExtensionView",
+          "type": "class",
+          "description": "MessageInputExtensionView.swift ChatUIKit Created by 朱继超 on 2024/7/31.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageInputExtensionView.swift",
+          "line": 10
+        },
+        {
+          "name": "MenuItemView",
+          "type": "class",
+          "description": "可继承的 MenuItemView 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageInputExtensionView.swift",
+          "line": 159
+        },
+        {
+          "name": "MessageListView",
+          "type": "class",
+          "description": "可继承的 MessageListView 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageListView.swift",
+          "line": 180
+        },
+        {
+          "name": "MessageReactionView",
+          "type": "class",
+          "description": "MessageReactionView.swift ChatUIKit Created by 朱继超 on 2024/1/18.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageReactionView.swift",
+          "line": 10
+        },
+        {
+          "name": "MessageReactionCell",
+          "type": "class",
+          "description": "可继承的 MessageReactionCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageReactionView.swift",
+          "line": 103
+        },
+        {
+          "name": "MessageReplyView",
+          "type": "class",
+          "description": "MessageReplyView.swift ChatUIKit Created by 朱继超 on 2023/12/5.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageReplyView.swift",
+          "line": 10
+        },
+        {
+          "name": "MessageTopicView",
+          "type": "class",
+          "description": "MessageTopicView.swift ChatUIKit Created by 朱继超 on 2024/1/16.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/MessageTopicView.swift",
+          "line": 10
+        },
+        {
+          "name": "PinnedIndicatorView",
+          "type": "class",
+          "description": "PinnedMessageContainer.swift ChatUIKit Created by 朱继超 on 2024/6/13.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/PinnedIndicatorView.swift",
+          "line": 10
+        },
+        {
+          "name": "TextEditorView",
+          "type": "class",
+          "description": "自适应输入框  支持： 1. 自适应高度 2. 设置 placeholder 3. 输入文字统计(需设置最大显示数量)",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/TextEditorView.swift",
+          "line": 17
+        },
+        {
+          "name": "TriangleView",
+          "type": "class",
+          "description": "可继承的 TriangleView 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/TriangleDirectionView.swift",
+          "line": 15
+        },
+        {
+          "name": "URLPreviewResultView",
+          "type": "class",
+          "description": "可继承的 URLPreviewResultView 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Chat/Views/URLPreviewResultView.swift",
+          "line": 16
+        },
+        {
+          "name": "ContactCell",
+          "type": "class",
+          "description": "可继承的 ContactCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Cells/ContactCell.swift",
+          "line": 8
+        },
+        {
+          "name": "ContactListHeaderCell",
+          "type": "class",
+          "description": "The header list cell of the contact list.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Cells/ContactListHeaderCell.swift",
+          "line": 38
+        },
+        {
+          "name": "DetailInfoHeaderExtensionCell",
+          "type": "class",
+          "description": "DetailInfoHeaderExtensionCell.swift ChatUIKit Created by 朱继超 on 2023/11/22.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Cells/DetailInfoHeaderExtensionCell.swift",
+          "line": 10
+        },
+        {
+          "name": "DetailInfoListCell",
+          "type": "class",
+          "description": "可继承的 DetailInfoListCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Cells/DetailInfoListCell.swift",
+          "line": 21
+        },
+        {
+          "name": "GroupListCell",
+          "type": "class",
+          "description": "GroupListCell.swift ChatUIKit Created by 朱继超 on 2023/11/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Cells/GroupListCell.swift",
+          "line": 10
+        },
+        {
+          "name": "GroupParticipantCell",
+          "type": "class",
+          "description": "GroupParticipantCell.swift ChatUIKit Created by 朱继超 on 2023/11/27.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Cells/GroupParticipantCell.swift",
+          "line": 10
+        },
+        {
+          "name": "GroupParticipantsSelectCell",
+          "type": "class",
+          "description": "GroupParticipantsSelectCell.swift ChatUIKit Created by 朱继超 on 2023/11/27.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Cells/GroupParticipantsSelectCell.swift",
+          "line": 10
+        },
+        {
+          "name": "NewContactRequestCell",
+          "type": "class",
+          "description": "可继承的 NewContactRequestCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Cells/NewContactRequestCell.swift",
+          "line": 17
+        },
+        {
+          "name": "BlockContactsViewController",
+          "type": "class",
+          "description": "BlockContactsViewController.swift ChatUIKit Created by 朱继超 on 2024/6/4.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Controllers/BlockContactsViewController.swift",
+          "line": 10
+        },
+        {
+          "name": "ContactInfoViewController",
+          "type": "class",
+          "description": "可继承的 ContactInfoViewController 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Controllers/ContactInfoViewController.swift",
+          "line": 23
+        },
+        {
+          "name": "ContactSearchResultController",
+          "type": "class",
+          "description": "ContactSearchResultController.swift ChatUIKit Created by 朱继超 on 2023/11/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Controllers/ContactSearchResultController.swift",
+          "line": 10
+        },
+        {
+          "name": "ContactViewController",
+          "type": "class",
+          "description": "可继承的 ContactViewController 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Controllers/ContactViewController.swift",
+          "line": 3
+        },
+        {
+          "name": "GroupInfoEditViewController",
+          "type": "class",
+          "description": "GroupInfoEditViewController.swift ChatUIKit Created by 朱继超 on 2023/11/27.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Controllers/GroupInfoEditViewController.swift",
+          "line": 10
+        },
+        {
+          "name": "GroupInfoViewController",
+          "type": "class",
+          "description": "GroupInfoViewController.swift ChatUIKit Created by 朱继超 on 2023/11/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Controllers/GroupInfoViewController.swift",
+          "line": 10
+        },
+        {
+          "name": "GroupParticipantsController",
+          "type": "class",
+          "description": "A view controller that displays the participants of a group.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Controllers/GroupParticipantsController.swift",
+          "line": 24
+        },
+        {
+          "name": "GroupParticipantsRemoveController",
+          "type": "class",
+          "description": "GroupParticipantsRemoveController.swift ChatUIKit Created by 朱继超 on 2023/11/27.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Controllers/GroupParticipantsRemoveController.swift",
+          "line": 10
+        },
+        {
+          "name": "JoinedGroupsViewController",
+          "type": "class",
+          "description": "JoinedGroupsViewController.swift ChatUIKit Created by 朱继超 on 2023/11/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Controllers/JoinedGroupsViewController.swift",
+          "line": 10
+        },
+        {
+          "name": "NewContactRequestController",
+          "type": "class",
+          "description": "NewRequestViewController.swift ChatUIKit Created by 朱继超 on 2023/11/24.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Controllers/NewContactRequestController.swift",
+          "line": 10
+        },
+        {
+          "name": "SearchBlockContactController",
+          "type": "class",
+          "description": "SearchBlockContactController.swift ChatUIKit Created by 朱继超 on 2024/6/5.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Controllers/SearchBlockContactController.swift",
+          "line": 10
+        },
+        {
+          "name": "ContactViewModel",
+          "type": "class",
+          "description": "ContactViewModel.swift ChatUIKit Created by 朱继超 on 2023/11/21. Bind service and driver",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/ViewModel/ContactViewModel.swift",
+          "line": 11
+        },
+        {
+          "name": "ContactView",
+          "type": "class",
+          "description": "可继承的 ContactView 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Contact/Views/ContactView.swift",
+          "line": 70
+        },
+        {
+          "name": "ConversationListCell",
+          "type": "class",
+          "description": "可继承的 ConversationListCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Conversation/Cells/ConversationListCell.swift",
+          "line": 4
+        },
+        {
+          "name": "ConversationSearchCell",
+          "type": "class",
+          "description": "ConversationSearchCell.swift ChatUIKit Created by 朱继超 on 2023/11/14.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Conversation/Cells/ConversationSearchCell.swift",
+          "line": 10
+        },
+        {
+          "name": "ConversationListController",
+          "type": "class",
+          "description": "可继承的 ConversationListController 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Conversation/Controllers/ConversationListController.swift",
+          "line": 7
+        },
+        {
+          "name": "SearchConversationsController",
+          "type": "class",
+          "description": "SearchConversationController.swift ChatUIKit Created by 朱继超 on 2023/11/14.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Conversation/Controllers/SearchConversationsController.swift",
+          "line": 10
+        },
+        {
+          "name": "ConversationViewModel",
+          "type": "class",
+          "description": "Bind service and driver",
+          "file": "ios/EaseChatUIKit/Classes/UI/Components/Conversation/ViewModel/ConversationViewModel.swift",
+          "line": 14
+        },
+        {
+          "name": "EaseChatNavigationBarRightCell",
+          "type": "class",
+          "description": "可继承的 EaseChatNavigationBarRightCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/ChatNavigationBar.swift",
+          "line": 338
+        },
+        {
+          "name": "CustomTextView",
+          "type": "class",
+          "description": "CustomTextView.swift ChatUIKit Created by 朱继超 on 2024/6/28.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/CustomTextView.swift",
+          "line": 10
+        },
+        {
+          "name": "EmptyStateView",
+          "type": "class",
+          "description": "可继承的 EmptyStateView 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/Commons/EmptyStateView.swift",
+          "line": 15
+        },
+        {
+          "name": "ActionSheetCell",
+          "type": "class",
+          "description": "可继承的 ActionSheetCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/DialogComponent/DialogManager/ActionSheet.swift",
+          "line": 211
+        },
+        {
+          "name": "AlertViewController",
+          "type": "class",
+          "description": "AlertViewController.swift ChatUIKit Created by 朱继超 on 2023/9/22.",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/DialogComponent/DialogManager/AlertViewController.swift",
+          "line": 10
+        },
+        {
+          "name": "AlertView",
+          "type": "class",
+          "description": "可继承的 AlertView 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/DialogComponent/DialogManager/AlertViewController.swift",
+          "line": 52
+        },
+        {
+          "name": "ChoiceItemCell",
+          "type": "class",
+          "description": "可继承的 ChoiceItemCell 类",
+          "file": "ios/EaseChatUIKit/Classes/UI/Core/UIKit/DialogComponent/DialogManager/PageContainerTitleBar.swift",
+          "line": 116
+        }
+      ]
+    },
+    "EaseChatroomUIKit": {
+      "name": "EaseChatroomUIKit",
+      "description": "ios 平台的 EaseChatroomUIKit 组件",
+      "configProperties": [
+        {
+          "name": "pageContainerTitleBarItemWidth",
+          "type": "CGFloat",
+          "defaultValue": "(ScreenWidth-32)/2.0",
+          "description": "Created by 朱继超 on 2023/9/6. An object containing visual configurations for the whole application. You can change the width of a single option with ``PageContainerTitleBar`` in the popup container by setting the current property.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 14
+        },
+        {
+          "name": "alertCornerRadius",
+          "type": "CornerRadius",
+          "defaultValue": ".medium",
+          "description": "The corner radius of the alert view.``AlertView``",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 26
+        },
+        {
+          "name": "messageDisplayStyle",
+          "type": "ChatMessageDisplayContentStyle",
+          "defaultValue": ".all",
+          "description": "You can change the overall cell layout style of the chat area by setting the current properties.``ChatMessageDisplayContentStyle``",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 29
+        },
+        {
+          "name": "primaryHue",
+          "type": "CGFloat",
+          "defaultValue": "203/360.0",
+          "description": "You can change the hue of the base color, and then change the thirteen UIColor objects of the related color series. The UI components that use the relevant color series in the chat room UIKit will also change accordingly. The default value is 203/360.0.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 32
+        },
+        {
+          "name": "secondaryHue",
+          "type": "CGFloat",
+          "defaultValue": "155/360.0",
+          "description": "You can change the primary hue. The default value is 203/360.0. After the primary hue is changed, thirteen UIColor objects of the related color series will be changed. The color of UI components that use the related color series in the chat room UIKit will also change accordingly.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 36
+        },
+        {
+          "name": "errorHue",
+          "type": "CGFloat",
+          "defaultValue": "350/360.0",
+          "description": "You can change the secondary hue. The default value is 155/360.0. After the secondary hue is changed, thirteen UIColor objects of the related color series will be changed. The color of UI components that use the related color series in the chat room UIKit will also change accordingly.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 40
+        },
+        {
+          "name": "neutralHue",
+          "type": "CGFloat",
+          "defaultValue": "203/360.0",
+          "description": "You can change the neutral hue. The default value is 203/360.0. After the neutral hue is changed, thirteen UIColor objects of the related color series will be changed. The color of UI components that use the related color series in the chat room UIKit will also change accordingly.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 44
+        },
+        {
+          "name": "neutralSpecialHue",
+          "type": "CGFloat",
+          "defaultValue": "220/360.0",
+          "description": "You can change the neutral special hue. The default value is 220/360.0. After the neutral special hue is changed, thirteen UIColor objects of the related color series will be changed. The color of UI components that use the relevant color series in the chat room UIKit will also change accordingly.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 48
+        },
+        {
+          "name": "emojiMap",
+          "type": "Dictionary<String,UIImage>",
+          "defaultValue": "Dictionary<String,UIImage>()",
+          "description": "Replace the emoji resource.``ChatEmojiConvertor`` - Parameters: Emoji map in key-value format, where the key can only be any of the following and value is a UIImage instance. `[\"U+1F600\", \"U+1F604\", \"U+1F609\", \"U+1F62E\", \"U+1F92A\", \"U+1F60E\", \"U+1F971\", \"U+1F974\", \"U+263A\", \"U+1F641\", \"U+1F62D\", \"U+1F610\", \"U+1F607\", \"U+1F62C\", \"U+1F913\", \"U+1F633\", \"U+1F973\", \"U+1F620\", \"U+1F644\", \"U+1F910\", \"U+1F97A\", \"U+1F928\", \"U+1F62B\", \"U+1F637\", \"U+1F912\", \"U+1F631\", \"U+1F618\", \"U+1F60D\", \"U+1F922\", \"U+1F47F\", \"U+1F92C\", \"U+1F621\", \"U+1F44D\", \"U+1F44E\", \"U+1F44F\", \"U+1F64C\", \"U+1F91D\", \"U+1F64F\", \"U+2764\", \"U+1F494\", \"U+1F495\", \"U+1F4A9\", \"U+1F48B\", \"U+2600\", \"U+1F31C\", \"U+1F308\", \"U+2B50\", \"U+1F31F\", \"U+1F389\", \"U+1F490\", \"U+1F382\", \"U+1F381\"]`",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 54
+        },
+        {
+          "name": "messageTranslationLanguage",
+          "type": "LanguageType",
+          "defaultValue": ".English",
+          "description": "The mirror type of the language code of LanguageType.``LanguageType``",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 57
+        },
+        {
+          "name": "defaultMessageActions",
+          "type": "[ActionSheetItemProtocol]",
+          "defaultValue": "[",
+          "description": "ActionSheet data source of the message being long pressed.``ActionSheetItemProtocol``",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 60
+        },
+        {
+          "name": "defaultOperationUserActions",
+          "type": "[ActionSheetItemProtocol]",
+          "defaultValue": "[ActionSheetItem(title: \"barrage_long_press_menu_mute\".chatroom.localize, type: .normal,tag: \"Mute\"),ActionSheetItem(title: \"participant_list_button_click_menu_remove\".chatroom.localize, type: .destructive,tag: \"Remove\")]",
+          "description": "ActionSheet data source of the member list cell on click ``...``.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 70
+        },
+        {
+          "name": "defaultOperationMuteUserActions",
+          "type": "[ActionSheetItemProtocol]",
+          "defaultValue": "[ActionSheetItem(title: \"barrage_long_press_menu_unmute\".chatroom.localize, type: .normal,tag: \"unMute\"),ActionSheetItem(title: \"participant_list_button_click_menu_remove\".chatroom.localize, type: .destructive,tag: \"Remove\")]",
+          "description": "ActionSheet data source of the mute member list cell on click ``...``.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 73
+        },
+        {
+          "name": "actionSheetRowHeight",
+          "type": "CGFloat",
+          "defaultValue": "56",
+          "description": "ActionSheet row height.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 76
+        },
+        {
+          "name": "giftPlaceHolder",
+          "type": "UIImage?",
+          "defaultValue": "UIImage(named: \"gift_placeholder\", in: .chatroomBundle, with: nil)",
+          "description": "The placeholder image of the gift image view of the gift list cell ``GiftEntityCell``.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 79
+        },
+        {
+          "name": "giftPriceIcon",
+          "type": "UIImage?",
+          "defaultValue": "UIImage(named: \"dollar\", in: .chatroomBundle, with: nil)",
+          "description": "The default image of the gift price of the gift list cell ``GiftEntityCell``.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 82
+        },
+        {
+          "name": "avatarPlaceHolder",
+          "type": "UIImage?",
+          "defaultValue": "UIImage(named: \"default_avatar\", in: .chatroomBundle, with: nil)",
+          "description": "The placeholder image of the avatar image view of ``ChatMessageCell``.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 85
+        },
+        {
+          "name": "notifyMessageIcon",
+          "type": "UIImage?",
+          "defaultValue": "UIImage(named: \"speaker\", in: .chatroomBundle, with: nil)",
+          "description": "The default icon of ``HorizontalTextCarousel``.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 88
+        },
+        {
+          "name": "notifyMessageOriginPoint",
+          "type": "CGPoint",
+          "defaultValue": "CGPoint(x: 20, y: NavigationHeight+10)",
+          "description": "The origin point of the global notification message. Deprecated 1.1.2",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 96
+        },
+        {
+          "name": "identityPlaceHolder",
+          "type": "UIImage?",
+          "defaultValue": "UIImage(named: \"achievement\", in: .chatroomBundle, with: nil)",
+          "description": "The placeholder image of the user-level image view of ``ChatMessageCell``.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 99
+        },
+        {
+          "name": "maxInputHeight",
+          "type": "CGFloat",
+          "defaultValue": "88",
+          "description": "The height limit of the input box in ``MessageInputBar``.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 102
+        },
+        {
+          "name": "inputBarCorner",
+          "type": "CornerRadius",
+          "defaultValue": ".medium",
+          "description": "The corner radius of ``MessageInputBar``.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 108
+        },
+        {
+          "name": "avatarRadius",
+          "type": "CornerRadius",
+          "defaultValue": ".large",
+          "description": "The corner radius of the avatar image view of ``MessageInputBar``.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 111
+        },
+        {
+          "name": "giftAreaRowHeight",
+          "type": "CGFloat",
+          "defaultValue": "44",
+          "description": "The default height of ``GiftBarrageCell``.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 114
+        },
+        {
+          "name": "reportTags",
+          "type": "[String]",
+          "defaultValue": "[\"tag1\",\"tag2\",\"tag3\",\"tag4\",\"tag5\",\"tag6\",\"tag7\",\"tag8\",\"tag9\"]",
+          "description": "The label for message reporting types.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 117
+        },
+        {
+          "name": "reportReasons",
+          "type": "[String]",
+          "defaultValue": "[\"violation_reason_1\".chatroom.localize,\"violation_reason_2\".chatroom.localize,\"violation_reason_3\".chatroom.localize,\"violation_reason_4\".chatroom.localize,\"violation_reason_5\".chatroom.localize,\"violation_reason_6\".chatroom.localize,\"violation_reason_7\".chatroom.localize,\"violation_reason_8\".chatroom.localize,\"violation_reason_9\".chatroom.localize]",
+          "description": "The label for message reporting types.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 120
+        },
+        {
+          "name": "participantsRowHeight",
+          "type": "CGFloat",
+          "defaultValue": "62",
+          "description": "The row height of the member cell.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 123
+        },
+        {
+          "name": "participantsPageSize",
+          "type": "UInt",
+          "defaultValue": "10",
+          "description": "The number of chat room members that you expect to get on each page.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 126
+        },
+        {
+          "name": "mutePageSize",
+          "type": "UInt",
+          "defaultValue": "200",
+          "description": "The number of  mute list page size.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 129
+        },
+        {
+          "name": "enablePinnedMessage",
+          "type": "Bool",
+          "defaultValue": "true",
+          "description": "Whether enable pin function of the message.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/Utils/Appearance.swift",
+          "line": 132
+        }
+      ],
+      "extensionPoints": [
+        {
+          "name": "GiftEntityProtocol",
+          "type": "protocol",
+          "description": "GiftService.swift ChatroomUIKit Created by 朱继超 on 2023/8/28.",
+          "file": "ios/EaseChatroomUIKit/Classes/Service/Protocol/GiftService.swift",
+          "line": 10,
+          "methods": [
+            "toJsonObject"
+          ]
+        },
+        {
+          "name": "UserInfoProtocol",
+          "type": "protocol",
+          "description": "UserService.swift ChatroomUIKit Created by 朱继超 on 2023/8/28.",
+          "file": "ios/EaseChatroomUIKit/Classes/Service/Protocol/UserService.swift",
+          "line": 11,
+          "methods": [
+            "toJsonObject"
+          ]
+        },
+        {
+          "name": "UserServiceProtocol",
+          "type": "protocol",
+          "file": "ios/EaseChatroomUIKit/Classes/Service/Protocol/UserService.swift",
+          "line": 31,
+          "methods": [
+            "bindUserStateChangedListener",
+            "unBindUserStateChangedListener",
+            "userInfo",
+            "userInfos",
+            "updateUserInfo",
+            "login",
+            "logout"
+          ]
+        },
+        {
+          "name": "ChatBottomItemProtocol",
+          "type": "protocol",
+          "description": "BottomItemCell.swift ChatroomUIKit Created by 朱继超 on 2023/9/5. ChatBottomBar item protocol",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Chat/Cells/ChatBottomItemCell.swift",
+          "line": 11,
+          "methods": []
+        },
+        {
+          "name": "IPinMessageViewDriver",
+          "type": "protocol",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Chat/Views/PinMessageView.swift",
+          "line": 12,
+          "methods": [
+            "showNewMessage",
+            "removeMessage",
+            "showPinMessages"
+          ]
+        },
+        {
+          "name": "PinMessageViewDelegate",
+          "type": "protocol",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Chat/Views/PinMessageView.swift",
+          "line": 18,
+          "methods": [
+            "pinMessageViewDidLongPress"
+          ]
+        },
+        {
+          "name": "GiftMessageListTransformAnimationDataSource",
+          "type": "protocol",
+          "description": "A protocol that defines optional methods for transforming animations in the GiftMessageList.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Gift/Views/GiftMessageList.swift",
+          "line": 18,
+          "methods": []
+        },
+        {
+          "name": "GiftsViewActionEventsDelegate",
+          "type": "protocol",
+          "description": "GiftsView.swift ChatroomUIKit Created by 朱继超 on 2023/9/1. GiftsView event actions delegate",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Gift/Views/GiftsView.swift",
+          "line": 11,
+          "methods": [
+            "onGiftSendClick",
+            "onGiftSelected"
+          ]
+        },
+        {
+          "name": "ChatroomViewActionEventsDelegate",
+          "type": "protocol",
+          "description": "ChatroomView.swift ChatroomUIKit Created by 朱继超 on 2023/9/8. ChatroomView all action events delegate.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Room/Views/ChatroomView.swift",
+          "line": 12,
+          "methods": [
+            "onMessageClicked",
+            "onMessageLongPressed",
+            "onKeyboardRaiseClicked",
+            "onExtensionBottomItemClicked",
+            "onPinMessageViewLongPressed"
+          ]
+        },
+        {
+          "name": "ThemeSwitchProtocol",
+          "type": "protocol",
+          "description": "When the system theme changes, you can use this static method to switch between the light and dark themes of the chat room UIKit.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/Theme/Theme.swift",
+          "line": 18,
+          "methods": [
+            "switchTheme"
+          ]
+        },
+        {
+          "name": "ActionSheetItemProtocol",
+          "type": "protocol",
+          "description": "A protocol that defines properties and methods for an action sheet item.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/DialogComponent/ActionSheetItem.swift",
+          "line": 20,
+          "methods": []
+        },
+        {
+          "name": "ChatBottomItemCell",
+          "type": "class",
+          "description": "可继承的 ChatBottomItemCell 类",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Chat/Cells/ChatBottomItemCell.swift",
+          "line": 33
+        },
+        {
+          "name": "ChatMessageCell",
+          "type": "class",
+          "description": "可继承的 ChatMessageCell 类",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Chat/Cells/ChatMessageCell.swift",
+          "line": 18
+        },
+        {
+          "name": "ReportOptionCell",
+          "type": "class",
+          "description": "ReportOptionCell.swift ChatroomUIKit Created by 朱继超 on 2023/9/12.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Chat/Cells/ReportOptionCell.swift",
+          "line": 10
+        },
+        {
+          "name": "ReportOptionsController",
+          "type": "class",
+          "description": "ReportOptionsController.swift ChatroomUIKit Created by 朱继超 on 2023/9/12.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Chat/Controllers/ReportOptionsController.swift",
+          "line": 10
+        },
+        {
+          "name": "PinMessageView",
+          "type": "class",
+          "description": "可继承的 PinMessageView 类",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Chat/Views/PinMessageView.swift",
+          "line": 22
+        },
+        {
+          "name": "GiftEntityCell",
+          "type": "class",
+          "description": "可继承的 GiftEntityCell 类",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Gift/Cells/GiftEntityCell.swift",
+          "line": 17
+        },
+        {
+          "name": "GiftMessageCell",
+          "type": "class",
+          "description": "可继承的 GiftMessageCell 类",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Gift/Cells/GiftMessageCell.swift",
+          "line": 15
+        },
+        {
+          "name": "GiftsViewController",
+          "type": "class",
+          "description": "GiftsViewController.swift ChatroomUIKit Created by 朱继超 on 2023/9/6.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Gift/Controllers/GiftsViewController.swift",
+          "line": 10
+        },
+        {
+          "name": "GiftsView",
+          "type": "class",
+          "description": "可继承的 GiftsView 类",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Gift/Views/GiftsView.swift",
+          "line": 22
+        },
+        {
+          "name": "ChatEmojiView",
+          "type": "class",
+          "description": "ChatEmojiView.swift ChatroomUIKit Created by 朱继超 on 2023/8/30.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Input/Views/ChatEmojiView.swift",
+          "line": 10
+        },
+        {
+          "name": "ChatEmojiCell",
+          "type": "class",
+          "description": "可继承的 ChatEmojiCell 类",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Input/Views/ChatEmojiView.swift",
+          "line": 79
+        },
+        {
+          "name": "ChatroomParticipantsCell",
+          "type": "class",
+          "description": "ChatroomParticipantsCell.swift ChatroomUIKit Created by 朱继超 on 2023/9/8.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Room/Cells/ChatroomParticipantsCell.swift",
+          "line": 10
+        },
+        {
+          "name": "ParticipantsController",
+          "type": "class",
+          "description": "ParticipantsController.swift ChatroomUIKit Created by 朱继超 on 2023/9/11. Chatroom participants list",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Room/Controllers/ParticipantsController.swift",
+          "line": 11
+        },
+        {
+          "name": "ChatroomView",
+          "type": "class",
+          "description": "ChatroomUIKit's ChatroomView UI component.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Components/Room/Views/ChatroomView.swift",
+          "line": 35
+        },
+        {
+          "name": "ActionSheetCell",
+          "type": "class",
+          "description": "可继承的 ActionSheetCell 类",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/DialogComponent/ActionSheet.swift",
+          "line": 205
+        },
+        {
+          "name": "AlertViewController",
+          "type": "class",
+          "description": "AlertViewController.swift ChatroomUIKit Created by 朱继超 on 2023/9/22.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/DialogComponent/AlertViewController.swift",
+          "line": 10
+        },
+        {
+          "name": "AlertView",
+          "type": "class",
+          "description": "可继承的 AlertView 类",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/DialogComponent/AlertViewController.swift",
+          "line": 45
+        },
+        {
+          "name": "ChoiceItemCell",
+          "type": "class",
+          "description": "可继承的 ChoiceItemCell 类",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/DialogComponent/PageContainerTitleBar.swift",
+          "line": 117
+        },
+        {
+          "name": "EmptyStateView",
+          "type": "class",
+          "description": "EmptyView.swift ChatroomUIKit Created by 朱继超 on 2023/9/18.",
+          "file": "ios/EaseChatroomUIKit/Classes/UI/Core/UIKit/EmptyStateView.swift",
+          "line": 10
+        }
+      ]
+    }
+  },
+  "stats": {
+    "componentCount": 4,
+    "configPropertyCount": 40,
+    "extensionPointCount": 148
+  }
+}

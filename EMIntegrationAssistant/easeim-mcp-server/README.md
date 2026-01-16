@@ -67,6 +67,18 @@
 
 ## 技术实现
 
+### 🔧 源码索引增强（参数名准确性）
+
+为降低“参数名猜测”错误，源码索引增强了权威定义信息：
+
+- 索引符号新增 `startLine`/`endLine`，便于精准定位定义块
+- 提取并展示 `signature`（支持多行声明拼接）
+- 解析并保留 `params`（参数名/类型/外部标签）
+- 增加 `owner`（所属类/协议）与 `doc/description`（注释摘要）
+
+对应脚本：`scripts/generate-source-index.ts`  
+索引输出：`data/sources/index.json`
+
 ### 🎉 本次实现的两大功能总结
 
 | 功能 | 代码行数 | 测试覆盖 | 用户价值 |

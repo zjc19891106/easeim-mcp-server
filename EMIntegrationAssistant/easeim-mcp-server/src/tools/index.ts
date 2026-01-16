@@ -14,7 +14,8 @@ export const TOOLS = [
           description: '错误码数字，如 508'
         }
       },
-      required: ['code']
+      required: ['code'],
+      additionalProperties: false
     }
   },
   {
@@ -48,7 +49,8 @@ export const TOOLS = [
           default: 10
         }
       },
-      required: ['query']
+      required: ['query'],
+      additionalProperties: false
     }
   },
   {
@@ -73,7 +75,8 @@ export const TOOLS = [
           default: 10
         }
       },
-      required: ['query']
+      required: ['query'],
+      additionalProperties: false
     }
   },
   {
@@ -88,7 +91,8 @@ export const TOOLS = [
           description: '指南主题：quickstart(快速开始), login(登录), message(消息), group(群组), chatroom(聊天室), push(推送), migration(迁移升级)'
         }
       },
-      required: ['topic']
+      required: ['topic'],
+      additionalProperties: false
     }
   },
   {
@@ -102,7 +106,8 @@ export const TOOLS = [
           description: '问题症状描述，如 "消息发送失败"、"被拉黑"、"登录超时"'
         }
       },
-      required: ['symptom']
+      required: ['symptom'],
+      additionalProperties: false
     }
   },
   {
@@ -116,7 +121,8 @@ export const TOOLS = [
           description: '文档路径，如 "api/message_send.md"'
         }
       },
-      required: ['path']
+      required: ['path'],
+      additionalProperties: false
     }
   },
   {
@@ -138,7 +144,8 @@ export const TOOLS = [
           description: '结束行号（可选）'
         }
       },
-      required: ['path']
+      required: ['path'],
+      additionalProperties: false
     }
   },
   {
@@ -154,7 +161,8 @@ export const TOOLS = [
           default: 'all'
         }
       },
-      required: []
+      required: [],
+      additionalProperties: false
     }
   },
   {
@@ -176,7 +184,8 @@ export const TOOLS = [
           default: 'all'
         }
       },
-      required: []
+      required: [],
+      additionalProperties: false
     }
   },
   {
@@ -196,7 +205,8 @@ export const TOOLS = [
           default: 'all'
         }
       },
-      required: ['propertyName']
+      required: ['propertyName'],
+      additionalProperties: false
     }
   },
   // ============================================================
@@ -217,7 +227,8 @@ export const TOOLS = [
           description: '(可选) 会话 ID，用于维护上下文。同一会话使用相同 ID 可获得连续性支持'
         }
       },
-      required: ['query']
+      required: ['query'],
+      additionalProperties: false
     }
   },
   {
@@ -241,7 +252,8 @@ export const TOOLS = [
           default: 120
         }
       },
-      required: ['scenario']
+      required: ['scenario'],
+      additionalProperties: false
     }
   },
   {
@@ -255,7 +267,8 @@ export const TOOLS = [
           description: '类名，如 "CustomMessageCell"、"MessageCell"、"MessageListController"、"ComponentsRegister"'
         }
       },
-      required: ['className']
+      required: ['className'],
+      additionalProperties: false
     }
   },
   {
@@ -269,7 +282,8 @@ export const TOOLS = [
           description: '可选的关键词过滤，如 "消息"、"菜单"、"主题"'
         }
       },
-      required: []
+      required: [],
+      additionalProperties: false
     }
   },
   // ============================================================
@@ -291,7 +305,8 @@ export const TOOLS = [
           description: 'Podfile 文件内容（可选，用于检查具体配置问题）'
         }
       },
-      required: ['component']
+      required: ['component'],
+      additionalProperties: false
     }
   },
   {
@@ -305,7 +320,8 @@ export const TOOLS = [
           description: '构建错误信息，如 "Sandbox: rsync.samba deny file-write-create"、"PBXFileSystemSynchronizedRootGroup"'
         }
       },
-      required: ['errorMessage']
+      required: ['errorMessage'],
+      additionalProperties: false
     }
   },
   {
@@ -320,7 +336,8 @@ export const TOOLS = [
           description: '目标组件：EaseChatUIKit, EaseCallUIKit, EaseChatroomUIKit'
         }
       },
-      required: ['component']
+      required: ['component'],
+      additionalProperties: false
     }
   },
   {
@@ -335,7 +352,8 @@ export const TOOLS = [
           description: '目标组件：EaseChatUIKit, EaseCallUIKit, EaseChatroomUIKit, EaseIMKit'
         }
       },
-      required: ['component']
+      required: ['component'],
+      additionalProperties: false
     }
   },
   {
@@ -351,7 +369,8 @@ export const TOOLS = [
           default: 'all'
         }
       },
-      required: []
+      required: [],
+      additionalProperties: false
     }
   }
 ] as const;

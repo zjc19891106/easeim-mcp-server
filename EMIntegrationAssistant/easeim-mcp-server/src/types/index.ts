@@ -163,10 +163,24 @@ export interface CodeSymbol {
   file: string;
   /** 行号 */
   line: number;
+  /** 起始行号 */
+  startLine?: number;
+  /** 结束行号 */
+  endLine?: number;
   /** 签名 */
   signature: string;
+  /** 所属类型（类/结构体/协议等） */
+  owner?: string;
+  /** 参数列表 */
+  params?: Array<{
+    name: string;
+    type?: string;
+    label?: string;
+  }>;
   /** 描述（从注释提取） */
   description?: string;
+  /** 原始注释 */
+  doc?: string;
   /** 功能标签 */
   tags?: string[];
 }

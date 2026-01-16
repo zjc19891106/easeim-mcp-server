@@ -83,6 +83,7 @@ export class EaseIMServer {
       const { name, arguments: args } = request.params;
 
       try {
+        this.validateToolArgs(name, args);
         switch (name) {
           case 'lookup_error':
             return await this.handleLookupError(args);
@@ -161,6 +162,63 @@ export class EaseIMServer {
         };
       }
     });
+  }
+
+  /**
+   * 工具参数校验（基于 inputSchema，避免参数名猜测）
+   */
+  private validateToolArgs(toolName: string, args: any) {
+    const tool = TOOLS.find(t => t.name === toolName);
+    if (!tool || !tool.inputSchema || tool.inputSchema.type !== 'object') {
+      return;
+    }
+
+    const schema = tool.inputSchema as {
+      type: 'object';
+      properties?: Record<string, { type?: string; enum?: Array<string | number | boolean> }>;
+      required?: string[];
+      additionalProperties?: boolean;
+    };
+
+    const normalizedArgs = args ?? {};
+    if (typeof normalizedArgs !== 'object' || Array.isArray(normalizedArgs)) {
+      throw new Error('参数必须是对象');
+    }
+
+    const properties = schema.properties || {};
+    const required = schema.required || [];
+    const allowedKeys = new Set(Object.keys(properties));
+
+    for (const key of required) {
+      if (!(key in normalizedArgs)) {
+        throw new Error(`缺少必填参数: ${key}`);
+      }
+    }
+
+    if (schema.additionalProperties === false) {
+      const extraKeys = Object.keys(normalizedArgs).filter(key => !allowedKeys.has(key));
+      if (extraKeys.length > 0) {
+        throw new Error(`存在未定义参数: ${extraKeys.join(', ')}。允许参数: ${[...allowedKeys].join(', ') || '无'}`);
+      }
+    }
+
+    for (const [key, value] of Object.entries(normalizedArgs)) {
+      const property = properties[key];
+      if (!property) continue;
+
+      if (property.type === 'string' && typeof value !== 'string') {
+        throw new Error(`参数 ${key} 类型错误，应为 string`);
+      }
+      if (property.type === 'number' && typeof value !== 'number') {
+        throw new Error(`参数 ${key} 类型错误，应为 number`);
+      }
+      if (property.type === 'boolean' && typeof value !== 'boolean') {
+        throw new Error(`参数 ${key} 类型错误，应为 boolean`);
+      }
+      if (property.enum && !property.enum.includes(value as any)) {
+        throw new Error(`参数 ${key} 取值不在允许范围内：${property.enum.join(', ')}`);
+      }
+    }
   }
 
   /**
@@ -432,13 +490,18 @@ ${results.map((r, i) => `
 ${r.matchedSymbols && r.matchedSymbols.length > 0 ? `
 ### 匹配的符号：
 
-${r.matchedSymbols.map(s => `- **${s.name}** (${s.type}) - 第 ${s.line} 行${s.description ? `\n  ${s.description}` : ''}`).join('\n')}
+${r.matchedSymbols.map(s => {
+  const startLine = s.startLine || s.line;
+  const endLine = s.endLine || s.line;
+  const lineText = startLine === endLine ? `第 ${startLine} 行` : `第 ${startLine}-${endLine} 行`;
+  return `- **${s.name}** (${s.type}) - ${lineText}${s.signature ? `\n  \`${s.signature}\`` : ''}${s.description ? `\n  ${s.description}` : ''}`;
+}).join('\n')}
 ` : ''}
 `).join('\n')}
 
 ---
 
-💡 提示：使用 \`read_source\` 工具可以查看完整的源码内容。
+💡 提示：使用 \`read_source\` 工具可以查看完整的源码内容；参数名请以签名中的字段为准。
 `;
 
     return {

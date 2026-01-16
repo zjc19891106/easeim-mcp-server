@@ -23,7 +23,13 @@ interface CodeSymbol {
   type: string;
   file: string;
   line: number;
+  startLine: number;
+  endLine: number;
   signature: string;
+  owner?: string;
+  params?: Array<{ name: string; type?: string; label?: string }>;
+  description?: string;
+  doc?: string;
   platform: Platform;
   component: string;
 }
@@ -42,6 +48,184 @@ interface SourceIndex {
   platforms: Platform[];
   files: SourceFile[];
   symbols: CodeSymbol[];
+}
+
+function countChar(text: string, char: string): number {
+  return text.split(char).length - 1;
+}
+
+function extractDocComment(lines: string[], startIndex: number): { doc?: string; description?: string } {
+  let i = startIndex - 1;
+  const docLines: string[] = [];
+
+  while (i >= 0) {
+    const raw = lines[i];
+    const line = raw.trim();
+
+    if (!line) {
+      break;
+    }
+
+    if (line.startsWith('///') || line.startsWith('//')) {
+      docLines.unshift(line.replace(/^\/\/\/?/, '').trim());
+      i -= 1;
+      continue;
+    }
+
+    if (line.endsWith('*/')) {
+      const block: string[] = [];
+      block.unshift(line.replace(/\*\/\s*$/, '').trim());
+      i -= 1;
+      while (i >= 0) {
+        const blockLine = lines[i].trim();
+        const isStart = blockLine.startsWith('/**') || blockLine.startsWith('/*');
+        block.unshift(blockLine.replace(/^\/\*\*?/, '').replace(/^\*/, '').trim());
+        i -= 1;
+        if (isStart) break;
+      }
+      const cleaned = block.filter(Boolean);
+      docLines.unshift(...cleaned);
+      break;
+    }
+
+    break;
+  }
+
+  if (docLines.length === 0) return {};
+
+  const doc = docLines.join('\n');
+  const description = docLines[0] || undefined;
+  return { doc, description };
+}
+
+function extractParamSection(signature: string): string {
+  let depth = 0;
+  let started = false;
+  let result = '';
+  for (const char of signature) {
+    if (char === '(') {
+      if (!started) {
+        started = true;
+        depth = 1;
+        continue;
+      }
+      depth += 1;
+    } else if (char === ')') {
+      depth -= 1;
+      if (started && depth === 0) break;
+    }
+    if (started && depth >= 1) {
+      result += char;
+    }
+  }
+  return result.trim();
+}
+
+function splitTopLevelParams(paramSection: string): string[] {
+  const params: string[] = [];
+  let current = '';
+  let angle = 0;
+  let paren = 0;
+  let bracket = 0;
+
+  for (const char of paramSection) {
+    if (char === '<') angle += 1;
+    if (char === '>') angle = Math.max(0, angle - 1);
+    if (char === '(') paren += 1;
+    if (char === ')') paren = Math.max(0, paren - 1);
+    if (char === '[') bracket += 1;
+    if (char === ']') bracket = Math.max(0, bracket - 1);
+
+    if (char === ',' && angle === 0 && paren === 0 && bracket === 0) {
+      if (current.trim()) params.push(current.trim());
+      current = '';
+      continue;
+    }
+    current += char;
+  }
+  if (current.trim()) params.push(current.trim());
+  return params;
+}
+
+function parseSwiftParams(signature: string): Array<{ name: string; type?: string; label?: string }> {
+  const section = extractParamSection(signature);
+  if (!section) return [];
+  const params = splitTopLevelParams(section);
+  return params.map(param => {
+    const cleaned = param.split('=').shift()?.trim() || param.trim();
+    const [namePart, typePart] = cleaned.split(':').map(part => part.trim());
+    if (!typePart) {
+      return { name: namePart };
+    }
+    const nameTokens = namePart.split(/\s+/).filter(Boolean);
+    if (nameTokens.length >= 2) {
+      return { label: nameTokens[0], name: nameTokens[1], type: typePart };
+    }
+    return { name: nameTokens[0], label: nameTokens[0], type: typePart };
+  });
+}
+
+function parseKotlinParams(signature: string): Array<{ name: string; type?: string }> {
+  const section = extractParamSection(signature);
+  if (!section) return [];
+  const params = splitTopLevelParams(section);
+  return params.map(param => {
+    const cleaned = param.split('=').shift()?.trim() || param.trim();
+    const [namePart, typePart] = cleaned.split(':').map(part => part.trim());
+    if (!typePart) return { name: namePart };
+    return { name: namePart, type: typePart };
+  });
+}
+
+function parseJavaParams(signature: string): Array<{ name: string; type?: string }> {
+  const section = extractParamSection(signature);
+  if (!section) return [];
+  const params = splitTopLevelParams(section);
+  return params.map(param => {
+    const cleaned = param.replace(/@\w+(\([^)]*\))?\s*/g, '').replace(/\bfinal\s+/g, '').trim();
+    const parts = cleaned.split(/\s+/).filter(Boolean);
+    if (parts.length < 2) return { name: cleaned };
+    const name = parts[parts.length - 1];
+    const type = parts.slice(0, -1).join(' ');
+    return { name, type };
+  });
+}
+
+function collectDeclaration(lines: string[], startIndex: number): string {
+  const signatureLines: string[] = [];
+  let parenBalance = 0;
+  for (let i = startIndex; i < lines.length; i += 1) {
+    const line = lines[i].trim();
+    signatureLines.push(line);
+    parenBalance += countChar(line, '(');
+    parenBalance -= countChar(line, ')');
+    if (parenBalance <= 0 && line.endsWith(')')) break;
+    if (parenBalance <= 0 && line.includes('{')) break;
+    if (parenBalance <= 0 && line.endsWith(';')) break;
+    if (parenBalance <= 0 && line.endsWith(') {')) break;
+  }
+  return signatureLines.join(' ').replace(/\s+/g, ' ').trim();
+}
+
+function findBlockEnd(lines: string[], startIndex: number): number {
+  let depth = 0;
+  let seenBrace = false;
+  for (let i = startIndex; i < lines.length; i += 1) {
+    const line = lines[i];
+    const open = countChar(line, '{');
+    const close = countChar(line, '}');
+    if (open > 0) {
+      seenBrace = true;
+      depth += open;
+    }
+    if (close > 0) {
+      depth -= close;
+    }
+    if (seenBrace && depth <= 0) {
+      return i + 1;
+    }
+  }
+  return startIndex + 1;
 }
 
 /**
@@ -71,20 +255,109 @@ function parseFile(filePath: string, platform: Platform, component: string): { s
   const relativePath = path.relative(RAW_SOURCES_DIR, filePath);
   const symbols: CodeSymbol[] = [];
   const classes: string[] = [];
+  const ownerStack: Array<{ name: string; endLine: number }> = [];
 
   // Swift 简单解析
   if (filePath.endsWith('.swift')) {
     const classRegex = /(class|struct|protocol|enum)\s+([A-Z]\w+)/g;
-    const methodRegex = /func\s+([a-z]\w+)\s*\(/g;
+    const extensionRegex = /extension\s+([A-Z]\w+)/g;
+    const methodRegex = /\bfunc\s+([a-zA-Z_]\w*)\s*\(/g;
+    const initRegex = /\b(init)\s*\(/g;
+    const propertyRegex = /\b(var|let)\s+([a-zA-Z_]\w*)\s*:/g;
     
     lines.forEach((line, index) => {
+      while (ownerStack.length > 0 && ownerStack[ownerStack.length - 1].endLine < index + 1) {
+        ownerStack.pop();
+      }
+      const currentOwner = ownerStack[ownerStack.length - 1]?.name;
+
       let match;
+      classRegex.lastIndex = 0;
+      extensionRegex.lastIndex = 0;
+      methodRegex.lastIndex = 0;
+      initRegex.lastIndex = 0;
+      propertyRegex.lastIndex = 0;
+
       if ((match = classRegex.exec(line)) !== null) {
         classes.push(match[2]);
-        symbols.push({ name: match[2], type: match[1], file: relativePath, line: index + 1, signature: line.trim(), platform, component });
+        const signature = line.trim();
+        const { doc, description } = extractDocComment(lines, index);
+        const endLine = findBlockEnd(lines, index);
+        symbols.push({
+          name: match[2],
+          type: match[1],
+          file: relativePath,
+          line: index + 1,
+          startLine: index + 1,
+          endLine,
+          signature,
+          description,
+          doc,
+          platform,
+          component
+        });
+        ownerStack.push({ name: match[2], endLine });
+      } else if ((match = extensionRegex.exec(line)) !== null) {
+        const endLine = findBlockEnd(lines, index);
+        ownerStack.push({ name: match[1], endLine });
       }
       if ((match = methodRegex.exec(line)) !== null) {
-        symbols.push({ name: match[1], type: 'method', file: relativePath, line: index + 1, signature: line.trim(), platform, component });
+        const signature = collectDeclaration(lines, index);
+        const params = parseSwiftParams(signature);
+        const { doc, description } = extractDocComment(lines, index);
+        const endLine = signature.includes('{') ? findBlockEnd(lines, index) : index + 1;
+        symbols.push({
+          name: match[1],
+          type: 'method',
+          file: relativePath,
+          line: index + 1,
+          startLine: index + 1,
+          endLine,
+          signature,
+          owner: currentOwner,
+          params,
+          description,
+          doc,
+          platform,
+          component
+        });
+      } else if ((match = initRegex.exec(line)) !== null) {
+        const signature = collectDeclaration(lines, index);
+        const params = parseSwiftParams(signature);
+        const { doc, description } = extractDocComment(lines, index);
+        const endLine = signature.includes('{') ? findBlockEnd(lines, index) : index + 1;
+        symbols.push({
+          name: 'init',
+          type: 'method',
+          file: relativePath,
+          line: index + 1,
+          startLine: index + 1,
+          endLine,
+          signature,
+          owner: currentOwner,
+          params,
+          description,
+          doc,
+          platform,
+          component
+        });
+      } else if ((match = propertyRegex.exec(line)) !== null) {
+        const signature = line.trim();
+        const { doc, description } = extractDocComment(lines, index);
+        symbols.push({
+          name: match[2],
+          type: 'property',
+          file: relativePath,
+          line: index + 1,
+          startLine: index + 1,
+          endLine: index + 1,
+          signature,
+          owner: currentOwner,
+          description,
+          doc,
+          platform,
+          component
+        });
       }
     });
   }
@@ -95,10 +368,33 @@ function parseFile(filePath: string, platform: Platform, component: string): { s
     const methodRegex = /(fun|void|[\w<>]+)\s+([a-z]\w+)\s*\(/g; // 简化版匹配
 
     lines.forEach((line, index) => {
+      while (ownerStack.length > 0 && ownerStack[ownerStack.length - 1].endLine < index + 1) {
+        ownerStack.pop();
+      }
+      const currentOwner = ownerStack[ownerStack.length - 1]?.name;
+
       let match;
+      classRegex.lastIndex = 0;
+      methodRegex.lastIndex = 0;
       if ((match = classRegex.exec(line)) !== null) {
         classes.push(match[2]);
-        symbols.push({ name: match[2], type: match[1], file: relativePath, line: index + 1, signature: line.trim(), platform, component });
+        const signature = line.trim();
+        const { doc, description } = extractDocComment(lines, index);
+        const endLine = findBlockEnd(lines, index);
+        symbols.push({
+          name: match[2],
+          type: match[1],
+          file: relativePath,
+          line: index + 1,
+          startLine: index + 1,
+          endLine,
+          signature,
+          description,
+          doc,
+          platform,
+          component
+        });
+        ownerStack.push({ name: match[2], endLine });
       }
       // Java/Kotlin 方法匹配比较复杂，这里仅做简单匹配，避免噪音
       if ((match = methodRegex.exec(line)) !== null) {
@@ -106,7 +402,25 @@ function parseFile(filePath: string, platform: Platform, component: string): { s
         const keyword = match[1];
         // 排除常见控制流关键字
         if (!['if', 'for', 'while', 'switch', 'catch'].includes(methodName) && keyword !== 'new') {
-           symbols.push({ name: methodName, type: 'method', file: relativePath, line: index + 1, signature: line.trim(), platform, component });
+           const signature = collectDeclaration(lines, index);
+           const params = filePath.endsWith('.kt') ? parseKotlinParams(signature) : parseJavaParams(signature);
+           const { doc, description } = extractDocComment(lines, index);
+           const endLine = signature.includes('{') ? findBlockEnd(lines, index) : index + 1;
+           symbols.push({
+             name: methodName,
+             type: 'method',
+             file: relativePath,
+             line: index + 1,
+             startLine: index + 1,
+             endLine,
+             signature,
+             owner: currentOwner,
+             params,
+             description,
+             doc,
+             platform,
+             component
+           });
         }
       }
     });
@@ -159,7 +473,7 @@ function main() {
 
   // 1. 写入索引
   const index: SourceIndex = {
-    version: '2.0.0',
+    version: '2.1.0',
     lastUpdated: new Date().toISOString(),
     platforms: platformsDir as Platform[],
     files: allFiles,

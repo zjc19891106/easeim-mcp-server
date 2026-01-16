@@ -173,10 +173,10 @@ export class EaseIMServer {
       return;
     }
 
-    const schema = tool.inputSchema as {
+    const schema = tool.inputSchema as unknown as {
       type: 'object';
-      properties?: Record<string, { type?: string; enum?: Array<string | number | boolean> }>;
-      required?: string[];
+      properties?: Record<string, { type?: string; enum?: ReadonlyArray<string | number | boolean> }>;
+      required?: ReadonlyArray<string>;
       additionalProperties?: boolean;
     };
 

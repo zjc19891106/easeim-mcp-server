@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "harmony",
+  "synonyms": {
+    "arkui": [
+      "ark ui",
+      "arkts"
+    ],
+    "viewmodel": [
+      "baseviewmodel",
+      "state"
+    ],
+    "ability": [
+      "uiability",
+      "featureability"
+    ],
+    "router": [
+      "navigation",
+      "navdestination"
+    ],
+    "component": [
+      "ark component",
+      "ui component"
+    ],
+    "state": [
+      "@state",
+      "@link",
+      "@prop"
+    ],
+    "layout": [
+      "row",
+      "column",
+      "stack"
+    ],
+    "resource": [
+      "resource",
+      "string",
+      "media"
+    ],
+    "permission": [
+      "permission",
+      "bundle"
+    ],
+    "lifecycle": [
+      "onPageShow",
+      "onPageHide"
+    ],
+    "module": [
+      "module.json5",
+      "bundle"
+    ],
+    "ets": [
+      "ets",
+      "arkts"
+    ],
+    "hsp": [
+      "shared package",
+      "hsp"
+    ],
+    "har": [
+      "library",
+      "har"
+    ],
+    "build": [
+      "hvigor",
+      "build"
+    ],
+    "sign": [
+      "signature",
+      "certificate"
+    ]
+  },
+  "abbreviations": {
+    "hv": [
+      "harmony"
+    ],
+    "ark": [
+      "arkui",
+      "arkts"
+    ],
+    "fa": [
+      "feature ability"
+    ],
+    "ua": [
+      "ui ability"
+    ]
+  },
+  "stopWords": [],
+  "dictionary": {
+    "coreTerms": [
+      "arkui",
+      "arkts",
+      "viewmodel",
+      "ability",
+      "router",
+      "navdestination",
+      "module",
+      "bundle"
+    ],
+    "uikitTerms": [
+      "component",
+      "state",
+      "props",
+      "row",
+      "column",
+      "stack"
+    ],
+    "codeTerms": [
+      "baseviewmodel",
+      "uiability",
+      "@state",
+      "@link",
+      "@prop"
+    ],
+    "pinyinTerms": []
+  },
+  "highFrequency": {
+    "arkui": 60,
+    "viewmodel": 55,
+    "ability": 50,
+    "state": 45,
+    "router": 45,
+    "module": 40,
+    "build": 40
+  },
+  "popularTerms": {
+    "arkui": 60,
+    "viewmodel": 55,
+    "ability": 50,
+    "state": 45,
+    "module": 40
+  },
+  "categoryKeywords": {
+    "ArkUI": [
+      "arkui",
+      "arkts"
+    ],
+    "状态管理": [
+      "viewmodel",
+      "state"
+    ],
+    "架构": [
+      "ability",
+      "navigation",
+      "component"
+    ],
+    "构建": [
+      "bundle",
+      "module",
+      "resource"
+    ],
+    "运行时": [
+      "ark runtime",
+      "harmony runtime"
+    ]
+  }
+}

@@ -4,6 +4,7 @@
  */
 
 import { SpellCorrector } from './SpellCorrector.js';
+import { LexiconRegistry } from './LexiconRegistry.js';
 
 export type SuggestionType = 'related' | 'clarify' | 'popular' | 'category';
 
@@ -23,43 +24,14 @@ export interface SuggesterOptions {
 export class SearchSuggester {
   private spellCorrector: SpellCorrector;
   private options: Required<SuggesterOptions>;
+  private popularTerms: Map<string, number> = new Map();
+  private categoryKeywords: Map<string, string[]> = new Map();
 
-  // 热门搜索词（基于使用频率）
-  private popularTerms: Map<string, number> = new Map([
-    // 核心概念
-    ['message', 100],
-    ['conversation', 95],
-    ['chat', 90],
-    ['group', 85],
-    ['user', 80],
-    ['avatar', 75],
-    ['bubble', 70],
-    ['cell', 70],
-    ['controller', 65],
-    ['view', 60],
-    // 功能
-    ['send', 55],
-    ['receive', 50],
-    ['callback', 50],
-    ['delegate', 50],
-    ['appearance', 45],
-    ['custom', 45],
-    ['style', 40],
-    ['theme', 40],
-  ]);
-
-  // 类别关键词映射
-  private categoryKeywords: Map<string, string[]> = new Map([
-    ['消息相关', ['message', 'msg', 'text', 'bubble', 'send', 'receive']],
-    ['会话相关', ['conversation', 'conv', 'chat', 'thread']],
-    ['联系人相关', ['contact', 'user', 'friend', 'profile', 'avatar']],
-    ['群组相关', ['group', 'member', 'owner', 'admin']],
-    ['UI组件', ['cell', 'view', 'controller', 'button', 'label']],
-    ['样式配置', ['appearance', 'style', 'theme', 'color', 'font']],
-  ]);
-
-  constructor(options: SuggesterOptions = {}) {
-    this.spellCorrector = new SpellCorrector();
+  constructor(options: SuggesterOptions = {}, registry?: LexiconRegistry, platform: string = 'common') {
+    const lexicon = (registry || new LexiconRegistry()).load(platform);
+    this.spellCorrector = new SpellCorrector(registry, platform);
+    this.popularTerms = new Map(Object.entries(lexicon.popularTerms));
+    this.categoryKeywords = new Map(Object.entries(lexicon.categoryKeywords));
     this.options = {
       minResultsForSuggestion: options.minResultsForSuggestion ?? 3,
       maxResultsForClarify: options.maxResultsForClarify ?? 20,
@@ -243,42 +215,21 @@ export class SearchSuggester {
    * 查找相似的热门搜索词
    */
   private findSimilarPopularTerms(query: string): string[] {
-    const queryLower = query.toLowerCase();
-    const candidates: Array<{ term: string; score: number }> = [];
+    const lowerQuery = query.toLowerCase();
+    const suggestions: Array<{ term: string; score: number }> = [];
 
-    for (const [term, frequency] of this.popularTerms) {
-      // 计算相似度
-      let score = 0;
-
-      // 完全包含
-      if (queryLower.includes(term) || term.includes(queryLower)) {
-        score += 100;
-      }
-
-      // 首字母相同
-      if (queryLower[0] === term[0]) {
-        score += 20;
-      }
-
-      // 拼写相似度
-      const corrected = this.spellCorrector.correct(queryLower);
-      if (corrected.corrected === term) {
-        score += 50;
-      }
-
-      // 频率加成
-      score += frequency / 10;
-
-      if (score > 0) {
-        candidates.push({ term, score });
+    for (const [term, score] of this.popularTerms) {
+      const distance = this.spellCorrector.getDistance(lowerQuery, term);
+      const finalScore = score - distance * 10;
+      if (finalScore > 0) {
+        suggestions.push({ term, score: finalScore });
       }
     }
 
-    // 排序并返回前 N 个
-    return candidates
+    return suggestions
       .sort((a, b) => b.score - a.score)
       .slice(0, this.options.maxSuggestions)
-      .map(c => c.term);
+      .map(s => s.term);
   }
 
   /**

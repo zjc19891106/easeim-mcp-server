@@ -1,0 +1,164 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "android",
+  "synonyms": {
+    "gradle": [
+      "build.gradle",
+      "gradle plugin",
+      "gradle wrapper"
+    ],
+    "manifest": [
+      "androidmanifest",
+      "android manifest"
+    ],
+    "kotlin": [
+      "kt",
+      "kotlinx"
+    ],
+    "jetpack": [
+      "androidx",
+      "compose"
+    ],
+    "compose": [
+      "jetpack compose",
+      "android compose"
+    ],
+    "activity": [
+      "android activity",
+      "lifecycle"
+    ],
+    "fragment": [
+      "android fragment",
+      "navigation"
+    ],
+    "viewmodel": [
+      "android viewmodel",
+      "livedata"
+    ],
+    "proguard": [
+      "r8",
+      "minify"
+    ],
+    "abi": [
+      "arm64",
+      "armeabi",
+      "x86_64"
+    ],
+    "multidex": [
+      "dex",
+      "65k"
+    ],
+    "manifestmerger": [
+      "manifest merger",
+      "merge manifest"
+    ],
+    "aapt": [
+      "aapt2",
+      "resource compiler"
+    ],
+    "ndk": [
+      "ndk",
+      "c++"
+    ],
+    "so": [
+      ".so",
+      "native lib"
+    ],
+    "minify": [
+      "r8",
+      "shrinkResources"
+    ]
+  },
+  "abbreviations": {
+    "mvvm": [
+      "viewmodel"
+    ],
+    "dagger": [
+      "dagger2",
+      "hilt"
+    ],
+    "nav": [
+      "navigation",
+      "nav graph"
+    ],
+    "gradle": [
+      "build.gradle"
+    ]
+  },
+  "stopWords": [],
+  "dictionary": {
+    "coreTerms": [
+      "gradle",
+      "kotlin",
+      "androidx",
+      "manifest",
+      "jetpack",
+      "compose",
+      "proguard",
+      "multidex",
+      "ndk",
+      "aapt"
+    ],
+    "uikitTerms": [
+      "activity",
+      "fragment",
+      "viewmodel",
+      "livedata",
+      "recyclerview",
+      "constraintlayout",
+      "composeview"
+    ],
+    "codeTerms": [
+      "oncreate",
+      "onresume",
+      "lifecycle",
+      "intent",
+      "bundle",
+      "onactivityresult"
+    ],
+    "pinyinTerms": []
+  },
+  "highFrequency": {
+    "gradle": 60,
+    "kotlin": 55,
+    "manifest": 50,
+    "compose": 50,
+    "activity": 45,
+    "proguard": 45,
+    "multidex": 40
+  },
+  "popularTerms": {
+    "gradle": 60,
+    "kotlin": 55,
+    "compose": 50,
+    "manifest": 45,
+    "multidex": 40
+  },
+  "categoryKeywords": {
+    "构建系统": [
+      "gradle",
+      "manifest",
+      "kotlin"
+    ],
+    "Jetpack": [
+      "androidx",
+      "compose",
+      "viewmodel"
+    ],
+    "架构": [
+      "activity",
+      "fragment",
+      "lifecycle"
+    ],
+    "构建": [
+      "gradle wrapper",
+      "proguard",
+      "r8"
+    ],
+    "运行时": [
+      "abi",
+      "arm64",
+      "x86_64"
+    ]
+  }
+}

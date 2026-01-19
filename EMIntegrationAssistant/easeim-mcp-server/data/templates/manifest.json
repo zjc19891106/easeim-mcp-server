@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.0",
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-19T07:22:02.814Z",
+  "description": "模板分片清单",
+  "platforms": [
+    "common",
+    "ios",
+    "android",
+    "web",
+    "flutter",
+    "unity"
+  ],
+  "shards": {
+    "common": {
+      "path": "shards/common.json",
+      "platform": "common",
+      "templateCount": 1,
+      "sizeBytes": 628,
+      "keywords": [
+        "common",
+        "shared",
+        "base"
+      ]
+    },
+    "ios": {
+      "path": "shards/ios.json",
+      "platform": "ios",
+      "templateCount": 11,
+      "sizeBytes": 21054,
+      "keywords": [
+        "ios",
+        "swift",
+        "uikit",
+        "xcode",
+        "cocoapods"
+      ]
+    },
+    "android": {
+      "path": "shards/android.json",
+      "platform": "android",
+      "templateCount": 0,
+      "sizeBytes": 72,
+      "keywords": [
+        "android",
+        "kotlin",
+        "java",
+        "gradle"
+      ]
+    },
+    "web": {
+      "path": "shards/web.json",
+      "platform": "web",
+      "templateCount": 0,
+      "sizeBytes": 68,
+      "keywords": [
+        "web",
+        "javascript",
+        "typescript",
+        "react"
+      ]
+    },
+    "flutter": {
+      "path": "shards/flutter.json",
+      "platform": "flutter",
+      "templateCount": 0,
+      "sizeBytes": 72,
+      "keywords": [
+        "flutter",
+        "dart"
+      ]
+    },
+    "unity": {
+      "path": "shards/unity.json",
+      "platform": "unity",
+      "templateCount": 0,
+      "sizeBytes": 70,
+      "keywords": [
+        "unity",
+        "c#"
+      ]
+    }
+  }
+}

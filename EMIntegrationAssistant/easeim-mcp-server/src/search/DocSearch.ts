@@ -16,6 +16,7 @@ import { QueryExpander } from '../intelligence/QueryExpander.js';
 import { InvertedIndex, IndexedDocument } from './InvertedIndex.js';
 import { SpellCorrector, QueryCorrectionResult } from '../intelligence/SpellCorrector.js';
 import { SearchSuggester, SearchSuggestion } from '../intelligence/SearchSuggester.js';
+import { SearchPipeline } from './SearchPipeline.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,6 +28,7 @@ export class DocSearch {
   private queryExpander: QueryExpander;
   private spellCorrector: SpellCorrector;
   private searchSuggester: SearchSuggester;
+  private pipeline: SearchPipeline;
 
   // 倒排索引实例
   private invertedIndex: InvertedIndex;
@@ -38,6 +40,10 @@ export class DocSearch {
     this.queryExpander = new QueryExpander();
     this.spellCorrector = new SpellCorrector();
     this.searchSuggester = new SearchSuggester();
+    this.pipeline = new SearchPipeline(this.queryExpander, {
+      spellCorrector: this.spellCorrector,
+      searchSuggester: this.searchSuggester
+    });
     this.invertedIndex = new InvertedIndex({
       fieldWeights: {
         'name': 4.0,      // 名称权重最高
@@ -141,16 +147,10 @@ export class DocSearch {
   } {
     const index = this.loadIndex();
 
-    // === 步骤 1: 拼写纠错 ===
-    const spellCorrection = this.spellCorrector.correctQuery(query);
-    const correctedQuery = spellCorrection.correctedQuery;
-
-    // === 步骤 2: 查询扩展（基于纠错后的查询）===
-    const expandedQuery = this.queryExpander.expand(correctedQuery);
-    const expandedQueryStr = expandedQuery.expanded.join(' ');
+    const prepared = this.pipeline.prepareQuery(query);
 
     // === 步骤 3: 使用倒排索引进行 BM25 搜索（O(k) 复杂度）===
-    const indexResults = this.invertedIndex.search(expandedQueryStr, limit * 2);
+    const indexResults = this.invertedIndex.search(prepared.expandedQueryStr, limit * 2);
 
     // === 转换结果并应用平台过滤 ===
     const results: ApiSearchResult[] = [];
@@ -196,21 +196,16 @@ export class DocSearch {
     const limitedResults = results.slice(0, limit);
     const ambiguity = this.ambiguityDetector.detectApiAmbiguity(query, limitedResults, context);
 
-    // 生成搜索建议
-    const suggestion = this.searchSuggester.generateSuggestions(
-      query,
-      limitedResults,
-      {
-        correctedQuery: spellCorrection.hasCorrected ? spellCorrection.correctedQuery : undefined,
-        expandedTerms: expandedQuery.expanded
-      }
-    );
+    const suggestion = this.pipeline.buildSuggestion(query, limitedResults, {
+      correctedQuery: prepared.spellCorrection?.correctedQuery,
+      expandedTerms: prepared.expandedQuery.expanded
+    });
 
     return {
       results: limitedResults,
       ambiguity,
-      expandedTerms: expandedQuery.synonymsUsed.length > 0 ? expandedQuery.expanded : undefined,
-      spellCorrection: spellCorrection.hasCorrected ? spellCorrection : undefined,
+      expandedTerms: prepared.expandedQuery.synonymsUsed.length > 0 ? prepared.expandedQuery.expanded : undefined,
+      spellCorrection: prepared.spellCorrection,
       suggestion
     };
   }
@@ -231,16 +226,10 @@ export class DocSearch {
   } {
     this.loadIndex();
 
-    // 拼写纠错
-    const spellCorrection = this.spellCorrector.correctQuery(query);
-    const correctedQuery = spellCorrection.correctedQuery;
-
-    // 查询扩展
-    const expandedQuery = this.queryExpander.expand(correctedQuery);
-    const expandedQueryStr = expandedQuery.expanded.join(' ');
+    const prepared = this.pipeline.prepareQuery(query);
 
     // 使用倒排索引搜索
-    const indexResults = this.invertedIndex.search(expandedQueryStr, limit * 2);
+    const indexResults = this.invertedIndex.search(prepared.expandedQueryStr, limit * 2);
 
     // 过滤出指南类型的结果
     const results = indexResults
@@ -257,8 +246,9 @@ export class DocSearch {
 
     return {
       results,
-      spellCorrection: spellCorrection.hasCorrected ? spellCorrection : undefined
+      spellCorrection: prepared.spellCorrection
     };
+
   }
 
   getGuidePath(topic: string): string | null {

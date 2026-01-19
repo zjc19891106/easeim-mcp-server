@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "ios",
+  "synonyms": {
+    "pod": [
+      "cocoapods",
+      "podfile"
+    ],
+    "xcode": [
+      "xcodebuild",
+      "xcode project",
+      "xcode settings"
+    ],
+    "scheme": [
+      "build scheme",
+      "target",
+      "workspace"
+    ],
+    "uikit": [
+      "ui kit",
+      "ios uikit"
+    ],
+    "spm": [
+      "swift package manager",
+      "swift pm"
+    ],
+    "delegate": [
+      "appdelegate",
+      "scenedelegate"
+    ],
+    "plist": [
+      "info.plist",
+      "privacy"
+    ],
+    "simulator": [
+      "ios simulator",
+      "rosetta"
+    ],
+    "codesign": [
+      "code signing",
+      "provisioning profile"
+    ],
+    "entitlement": [
+      "entitlements",
+      "capabilities"
+    ],
+    "bitcode": [
+      "enable bitcode",
+      "bitcode"
+    ],
+    "arch": [
+      "arm64",
+      "x86_64"
+    ],
+    "ld": [
+      "linker",
+      "ld"
+    ],
+    "rpath": [
+      "runpath search paths",
+      "@rpath"
+    ]
+  },
+  "abbreviations": {
+    "xc": [
+      "xcode"
+    ],
+    "pbx": [
+      "xcode project"
+    ],
+    "spm": [
+      "swift package manager"
+    ],
+    "cocoapods": [
+      "pod",
+      "podfile"
+    ]
+  },
+  "stopWords": [],
+  "dictionary": {
+    "coreTerms": [
+      "xcode",
+      "podfile",
+      "cocoapods",
+      "spm",
+      "swift",
+      "uikit",
+      "delegate",
+      "protocol",
+      "simulator",
+      "rosetta",
+      "codesign",
+      "entitlement",
+      "bitcode",
+      "rpath"
+    ],
+    "uikitTerms": [
+      "uiview",
+      "uiviewcontroller",
+      "uinavigationcontroller",
+      "storyboard",
+      "autolayout",
+      "constraint"
+    ],
+    "codeTerms": [
+      "appdelegate",
+      "scenedelegate",
+      "didfinishlaunching",
+      "viewdidload",
+      "setneedslayout",
+      "deinit"
+    ],
+    "pinyinTerms": []
+  },
+  "highFrequency": {
+    "uikit": 60,
+    "swift": 55,
+    "podfile": 50,
+    "xcode": 50,
+    "spm": 45,
+    "codesign": 45,
+    "entitlement": 40
+  },
+  "popularTerms": {
+    "uikit": 60,
+    "swift": 55,
+    "podfile": 50,
+    "xcode": 50,
+    "spm": 45,
+    "codesign": 40
+  },
+  "categoryKeywords": {
+    "工程配置": [
+      "xcode",
+      "podfile",
+      "spm"
+    ],
+    "UIKit": [
+      "uikit",
+      "uiview",
+      "uiviewcontroller"
+    ],
+    "架构": [
+      "delegate",
+      "protocol",
+      "navigationcontroller"
+    ],
+    "构建": [
+      "xcodebuild",
+      "scheme",
+      "workspace"
+    ],
+    "运行时": [
+      "simulator",
+      "rosetta",
+      "runtime"
+    ]
+  }
+}

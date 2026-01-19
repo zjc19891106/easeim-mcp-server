@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "ios",
+  "scenarios": [
+    {
+      "id": "ios:custom_message",
+      "scenario": "自定义消息类型",
+      "description": "iOS 版自定义消息类型实现",
+      "platform": "ios",
+      "keywords": [
+        "自定义消息",
+        "自定义cell",
+        "custom message"
+      ],
+      "steps": [
+        "继承 CustomMessageCell",
+        "实现 createContent()",
+        "在 ComponentsRegister 注册"
+      ],
+      "relatedClasses": [
+        "CustomMessageCell",
+        "ComponentsRegister"
+      ],
+      "relatedApis": [
+        "sendMessage"
+      ],
+      "relatedConfigs": [
+        "MessageCellStyle"
+      ],
+      "codeTemplate": "ios:message:custom_message_full",
+      "difficulty": "medium",
+      "extends": "common:custom_message"
+    },
+    {
+      "id": "ios:chat_uikit_options",
+      "scenario": "ChatUIKitOptions 配置项用法",
+      "description": "iOS UIKit 初始化时的 UIOptions 配置项示例",
+      "platform": "ios",
+      "keywords": [
+        "loadLocalHistoryMessages",
+        "本地历史消息",
+        "服务器端获取消息",
+        "只从服务器拉取",
+        "不加载本地历史",
+        "saveConversationInfo",
+        "soundOnReceivedNewMessage",
+        "enableContact",
+        "ChatUIKitClient option",
+        "UIOptions 配置"
+      ],
+      "steps": [
+        "创建 ChatUIKitOptions 实例",
+        "配置 option_UI.loadLocalHistoryMessages（如需只从服务器拉取，设置为 false）",
+        "配置 option_UI.saveConversationInfo",
+        "配置 option_UI.soundOnReceivedNewMessage",
+        "配置 option_UI.enableContact",
+        "赋值给 ChatUIKitClient.shared.option"
+      ],
+      "relatedClasses": [
+        "ChatUIKitOptions",
+        "UIOptions",
+        "ChatUIKitClient"
+      ],
+      "relatedApis": [],
+      "relatedConfigs": [
+        "option_UI.loadLocalHistoryMessages",
+        "option_UI.saveConversationInfo",
+        "option_UI.soundOnReceivedNewMessage",
+        "option_UI.enableContact"
+      ],
+      "codeTemplate": "ios:options:chat_uikit_options",
+      "difficulty": "low"
+    },
+    {
+      "id": "ios:message_ext_before_send",
+      "scenario": "发送前填充消息附属信息",
+      "description": "在消息发送前通过回调注入自定义 ext 信息",
+      "platform": "ios",
+      "keywords": [
+        "发送消息之前带入信息",
+        "消息即将发送的回调",
+        "消息的附属信息",
+        "messageWillSendFillExtensionInfo",
+        "ext",
+        "消息扩展字段"
+      ],
+      "steps": [
+        "继承 MessageListController",
+        "重写 messageWillSendFillExtensionInfo",
+        "在 ext 中写入自定义字段",
+        "注册到 ComponentsRegister"
+      ],
+      "relatedClasses": [
+        "MessageListController",
+        "ComponentsRegister"
+      ],
+      "relatedApis": [],
+      "relatedConfigs": [],
+      "codeTemplate": "ios:message:message_ext_before_send",
+      "difficulty": "low"
+    }
+  ]
+}

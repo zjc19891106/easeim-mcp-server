@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-16T09:38:12.428Z",
+  "description": "搜索词库分片清单",
+  "platforms": [
+    "common",
+    "ios",
+    "android",
+    "web",
+    "flutter",
+    "harmony",
+    "rn",
+    "unity"
+  ],
+  "shards": {
+    "common": {
+      "path": "shards/common.json",
+      "platform": "common",
+      "sizeBytes": 13297,
+      "synonymCount": 87,
+      "abbreviationCount": 12,
+      "stopWordCount": 39
+    },
+    "ios": {
+      "path": "shards/ios.json",
+      "platform": "ios",
+      "sizeBytes": 2534,
+      "synonymCount": 14,
+      "abbreviationCount": 4,
+      "stopWordCount": 0
+    },
+    "android": {
+      "path": "shards/android.json",
+      "platform": "android",
+      "sizeBytes": 2558,
+      "synonymCount": 16,
+      "abbreviationCount": 4,
+      "stopWordCount": 0
+    },
+    "web": {
+      "path": "shards/web.json",
+      "platform": "web",
+      "sizeBytes": 2298,
+      "synonymCount": 16,
+      "abbreviationCount": 4,
+      "stopWordCount": 0
+    },
+    "flutter": {
+      "path": "shards/flutter.json",
+      "platform": "flutter",
+      "sizeBytes": 2467,
+      "synonymCount": 17,
+      "abbreviationCount": 4,
+      "stopWordCount": 0
+    },
+    "harmony": {
+      "path": "shards/harmony.json",
+      "platform": "harmony",
+      "sizeBytes": 2326,
+      "synonymCount": 16,
+      "abbreviationCount": 4,
+      "stopWordCount": 0
+    },
+    "rn": {
+      "path": "shards/rn.json",
+      "platform": "rn",
+      "sizeBytes": 2238,
+      "synonymCount": 15,
+      "abbreviationCount": 4,
+      "stopWordCount": 0
+    },
+    "unity": {
+      "path": "shards/unity.json",
+      "platform": "unity",
+      "sizeBytes": 2291,
+      "synonymCount": 16,
+      "abbreviationCount": 4,
+      "stopWordCount": 0
+    }
+  }
+}

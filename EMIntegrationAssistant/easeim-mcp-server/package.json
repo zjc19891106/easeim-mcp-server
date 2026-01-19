@@ -15,7 +15,12 @@
     "generate-source-index": "tsx scripts/generate-source-index.ts",
     "generate-config-index": "tsx scripts/generate-config-index.ts",
     "analyze-config-impact": "tsx scripts/analyze-config-impact.ts",
-    "generate-all": "npm run generate-docs-index && npm run generate-source-index && npm run generate-config-index && npm run analyze-config-impact"
+    "generate-template-shards": "tsx scripts/generate-template-shards.ts",
+    "generate-knowledge-shards": "tsx scripts/generate-knowledge-shards.ts",
+    "generate-class-shards": "tsx scripts/generate-class-shards.ts",
+    "generate-integration-shards": "tsx scripts/generate-integration-shards.ts",
+    "generate-lexicon-shards": "tsx scripts/generate-lexicon-shards.ts",
+    "generate-all": "npm run generate-docs-index && npm run generate-source-index && npm run generate-config-index && npm run analyze-config-impact && npm run generate-template-shards && npm run generate-knowledge-shards && npm run generate-class-shards && npm run generate-integration-shards && npm run generate-lexicon-shards"
   },
   "keywords": [
     "easemob",

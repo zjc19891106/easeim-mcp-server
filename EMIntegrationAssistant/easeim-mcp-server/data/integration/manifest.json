@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-16T09:25:19.985Z",
+  "description": "集成诊断分片清单",
+  "platforms": [
+    "common",
+    "ios",
+    "android",
+    "web",
+    "flutter",
+    "harmony",
+    "rn",
+    "unity"
+  ],
+  "shards": {
+    "common": {
+      "path": "shards/common.json",
+      "platform": "common",
+      "requirementCount": 0,
+      "problemCount": 0,
+      "templateCount": 0,
+      "sizeBytes": 118
+    },
+    "ios": {
+      "path": "shards/ios.json",
+      "platform": "ios",
+      "requirementCount": 4,
+      "problemCount": 10,
+      "templateCount": 3,
+      "sizeBytes": 14460
+    },
+    "android": {
+      "path": "shards/android.json",
+      "platform": "android",
+      "requirementCount": 0,
+      "problemCount": 0,
+      "templateCount": 0,
+      "sizeBytes": 119
+    },
+    "web": {
+      "path": "shards/web.json",
+      "platform": "web",
+      "requirementCount": 0,
+      "problemCount": 0,
+      "templateCount": 0,
+      "sizeBytes": 115
+    },
+    "flutter": {
+      "path": "shards/flutter.json",
+      "platform": "flutter",
+      "requirementCount": 0,
+      "problemCount": 0,
+      "templateCount": 0,
+      "sizeBytes": 119
+    },
+    "harmony": {
+      "path": "shards/harmony.json",
+      "platform": "harmony",
+      "requirementCount": 0,
+      "problemCount": 0,
+      "templateCount": 0,
+      "sizeBytes": 119
+    },
+    "rn": {
+      "path": "shards/rn.json",
+      "platform": "rn",
+      "requirementCount": 0,
+      "problemCount": 0,
+      "templateCount": 0,
+      "sizeBytes": 114
+    },
+    "unity": {
+      "path": "shards/unity.json",
+      "platform": "unity",
+      "requirementCount": 0,
+      "problemCount": 0,
+      "templateCount": 0,
+      "sizeBytes": 117
+    }
+  }
+}

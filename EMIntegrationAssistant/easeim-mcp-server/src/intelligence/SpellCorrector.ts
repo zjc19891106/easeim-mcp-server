@@ -19,167 +19,36 @@ export interface QueryCorrectionResult {
   suggestion?: string;  // 用户友好的提示
 }
 
+import { LexiconRegistry } from './LexiconRegistry.js';
+
 export class SpellCorrector {
-
-  // 环信 SDK 领域词典
   private dictionary: Set<string> = new Set();
-
-  // 词频统计（用于优先选择高频词）
   private wordFrequency: Map<string, number> = new Map();
-
-  // 最大编辑距离阈值
   private readonly MAX_EDIT_DISTANCE = 2;
-
-  // 最小词长（太短的词不纠错）
   private readonly MIN_WORD_LENGTH = 3;
 
-  constructor() {
-    this.initDictionary();
+  constructor(registry?: LexiconRegistry, platform: string = 'common') {
+    this.initDictionary(registry, platform);
   }
 
-  /**
-   * 初始化领域词典
-   */
-  private initDictionary(): void {
-    // ============================================================
-    // 核心 SDK 术语
-    // ============================================================
-    const coreTerms = [
-      // 消息相关
-      'message', 'messages', 'chat', 'chatting', 'send', 'receive', 'recall',
-      'text', 'image', 'voice', 'video', 'file', 'location', 'custom',
-      'body', 'content', 'extension', 'attribute', 'timestamp',
+  private initDictionary(registry?: LexiconRegistry, platform: string = 'common'): void {
+    const lexicon = (registry || new LexiconRegistry()).load(platform);
+    const { coreTerms, uikitTerms, codeTerms, pinyinTerms } = lexicon.dictionary;
 
-      // 会话相关
-      'conversation', 'conversations', 'conv', 'session', 'thread',
-      'unread', 'read', 'receipt', 'pin', 'pinned', 'mute', 'muted',
-
-      // 用户相关
-      'user', 'users', 'profile', 'avatar', 'nickname', 'contact', 'contacts',
-      'friend', 'friends', 'block', 'blocked', 'presence', 'status',
-
-      // 群组/聊天室
-      'group', 'groups', 'chatroom', 'chatrooms', 'room', 'member', 'members',
-      'owner', 'admin', 'admins', 'manager', 'invite', 'join', 'leave', 'kick',
-      'announcement', 'description', 'name',
-
-      // 连接/登录
-      'login', 'logout', 'connect', 'disconnect', 'connection', 'token',
-      'appkey', 'initialize', 'init', 'client', 'options', 'config',
-
-      // 推送
-      'push', 'notification', 'notifications', 'apns', 'fcm', 'badge',
-      'sound', 'alert', 'silent', 'display',
-
-      // 回调/监听
-      'callback', 'delegate', 'listener', 'handler', 'event', 'events',
-      'observer', 'protocol', 'notification',
-
-      // 错误
-      'error', 'errors', 'code', 'exception', 'fail', 'failed', 'failure',
-      'success', 'result', 'response',
-    ];
-
-    // ============================================================
-    // UIKit 组件术语
-    // ============================================================
-    const uikitTerms = [
-      // 组件名
-      'easechatuikit', 'easecalluikit', 'easechatroomunikit', 'easeimkit',
-      'chatuikit', 'calluikit', 'uikit', 'kit',
-
-      // UI 元素
-      'cell', 'cells', 'view', 'views', 'controller', 'controllers',
-      'bubble', 'bubbles', 'avatar', 'avatars', 'button', 'buttons',
-      'label', 'labels', 'image', 'imageview', 'container',
-      'list', 'listview', 'tableview', 'collectionview',
-      'menu', 'menus', 'action', 'actions', 'actionsheet',
-      'input', 'inputbar', 'toolbar', 'navbar', 'titlebar',
-
-      // 样式/外观
-      'appearance', 'style', 'styles', 'theme', 'themes', 'color', 'colors',
-      'font', 'fonts', 'size', 'radius', 'corner', 'background', 'foreground',
-      'primary', 'secondary', 'hue', 'tint',
-
-      // 布局
-      'layout', 'frame', 'bounds', 'constraint', 'constraints',
-      'width', 'height', 'margin', 'padding', 'inset', 'offset',
-
-      // 类名常见后缀
-      'entity', 'model', 'data', 'provider', 'service', 'manager',
-      'register', 'factory', 'builder', 'adapter', 'driver',
-    ];
-
-    // ============================================================
-    // 类名/方法名常见词
-    // ============================================================
-    const codeTerms = [
-      // 常见类名组成
-      'message', 'cell', 'view', 'controller', 'entity', 'bubble',
-      'custom', 'default', 'base', 'abstract', 'protocol',
-      'list', 'detail', 'preview', 'render', 'display',
-
-      // 常见方法名组成
-      'get', 'set', 'add', 'remove', 'delete', 'update', 'create',
-      'load', 'reload', 'refresh', 'fetch', 'save', 'clear',
-      'show', 'hide', 'present', 'dismiss', 'push', 'pop',
-      'register', 'unregister', 'configure', 'setup', 'init',
-      'handle', 'process', 'parse', 'convert', 'transform',
-
-      // Swift 关键词
-      'override', 'func', 'class', 'struct', 'enum', 'protocol',
-      'public', 'private', 'open', 'internal', 'static', 'lazy',
-      'optional', 'required', 'convenience', 'extension',
-    ];
-
-    // ============================================================
-    // 中文关键词（拼音）- 支持拼音纠错
-    // ============================================================
-    const pinyinTerms = [
-      'xiaoxi', 'fasong', 'jieshou', 'huihua', 'qunzu', 'liaotianshi',
-      'touxiang', 'nicheng', 'yonghu', 'denglu', 'tuichu', 'lianjie',
-      'cuowu', 'tuisong', 'tongzhi', 'yangshi', 'zhuti', 'yanse',
-    ];
-
-    // 合并所有词典
     const allTerms = [...coreTerms, ...uikitTerms, ...codeTerms, ...pinyinTerms];
-
     for (const term of allTerms) {
       this.dictionary.add(term.toLowerCase());
     }
 
-    // 设置高频词权重
-    this.setHighFrequencyWords();
+    this.setHighFrequencyWords(lexicon.highFrequency);
   }
 
-  /**
-   * 设置高频词（纠错时优先选择）
-   */
-  private setHighFrequencyWords(): void {
-    const highFrequency: Record<string, number> = {
-      'message': 100,
-      'conversation': 90,
-      'chat': 85,
-      'user': 80,
-      'group': 75,
-      'cell': 70,
-      'view': 70,
-      'controller': 65,
-      'bubble': 60,
-      'avatar': 60,
-      'callback': 55,
-      'delegate': 55,
-      'appearance': 50,
-      'custom': 50,
-      'error': 45,
-      'send': 45,
-      'receive': 45,
-    };
-
+  private setHighFrequencyWords(highFrequency: Record<string, number>): void {
     for (const [word, freq] of Object.entries(highFrequency)) {
       this.wordFrequency.set(word, freq);
     }
   }
+
 
   /**
    * 动态添加词到词典（从索引加载时调用）
@@ -190,6 +59,10 @@ export class SpellCorrector {
         this.dictionary.add(word.toLowerCase());
       }
     }
+  }
+
+  getDistance(a: string, b: string): number {
+    return this.levenshteinDistance(a.toLowerCase(), b.toLowerCase());
   }
 
   /**

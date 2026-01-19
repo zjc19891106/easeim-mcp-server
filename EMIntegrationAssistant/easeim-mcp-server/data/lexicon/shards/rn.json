@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "rn",
+  "synonyms": {
+    "rn": [
+      "react native",
+      "native module"
+    ],
+    "bridge": [
+      "native bridge",
+      "js bridge"
+    ],
+    "hooks": [
+      "useeffect",
+      "usestate"
+    ],
+    "component": [
+      "jsx",
+      "react component"
+    ],
+    "native": [
+      "native component",
+      "view manager"
+    ],
+    "metro": [
+      "bundler",
+      "metro"
+    ],
+    "fabric": [
+      "new architecture",
+      "fabric"
+    ],
+    "turbo": [
+      "turbomodule",
+      "turbo module"
+    ],
+    "gesture": [
+      "gesture handler",
+      "reanimated"
+    ],
+    "nav": [
+      "react navigation",
+      "stack navigator"
+    ],
+    "hermes": [
+      "js engine",
+      "hermes"
+    ],
+    "pod": [
+      "cocoapods",
+      "podfile"
+    ],
+    "gradle": [
+      "android build",
+      "gradle"
+    ],
+    "linking": [
+      "autolink",
+      "manual link"
+    ],
+    "bundle": [
+      "metro bundle",
+      "release bundle"
+    ]
+  },
+  "abbreviations": {
+    "jsi": [
+      "javascript interface"
+    ],
+    "hermes": [
+      "js engine"
+    ],
+    "turbo": [
+      "turbomodule"
+    ],
+    "fabric": [
+      "new architecture"
+    ]
+  },
+  "stopWords": [],
+  "dictionary": {
+    "coreTerms": [
+      "react",
+      "native",
+      "bridge",
+      "hooks",
+      "jsx",
+      "fabric",
+      "turbo",
+      "hermes",
+      "metro"
+    ],
+    "uikitTerms": [
+      "component",
+      "props",
+      "state",
+      "gesture",
+      "animated"
+    ],
+    "codeTerms": [
+      "useeffect",
+      "usestate",
+      "usememo",
+      "usenavigation",
+      "usecallback"
+    ],
+    "pinyinTerms": []
+  },
+  "highFrequency": {
+    "hooks": 60,
+    "bridge": 55,
+    "jsx": 50,
+    "fabric": 45,
+    "turbo": 45,
+    "hermes": 40,
+    "metro": 40
+  },
+  "popularTerms": {
+    "hooks": 60,
+    "bridge": 55,
+    "jsx": 50,
+    "fabric": 45,
+    "hermes": 40
+  },
+  "categoryKeywords": {
+    "架构": [
+      "bridge",
+      "jsi",
+      "turbomodule"
+    ],
+    "Hooks": [
+      "hooks",
+      "useeffect",
+      "usestate"
+    ],
+    "构建": [
+      "metro",
+      "bundle",
+      "hermes"
+    ],
+    "运行时": [
+      "js runtime",
+      "native runtime"
+    ]
+  }
+}

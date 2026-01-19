@@ -1,0 +1,152 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "unity",
+  "synonyms": {
+    "c#": [
+      "csharp",
+      "mono"
+    ],
+    "scene": [
+      "game scene",
+      "unity scene"
+    ],
+    "mono": [
+      "il2cpp",
+      "runtime"
+    ],
+    "prefab": [
+      "unity prefab",
+      "component"
+    ],
+    "script": [
+      "monobehaviour",
+      "component script"
+    ],
+    "ecs": [
+      "entity component system",
+      "dots"
+    ],
+    "render": [
+      "urp",
+      "hdrp"
+    ],
+    "asset": [
+      "asset bundle",
+      "addressables"
+    ],
+    "input": [
+      "input system",
+      "legacy input"
+    ],
+    "shader": [
+      "shadergraph",
+      "shader"
+    ],
+    "build": [
+      "build pipeline",
+      "player settings"
+    ],
+    "package": [
+      "upm",
+      "package manager"
+    ],
+    "plugin": [
+      "native plugin",
+      "ios plugin"
+    ],
+    "android": [
+      "android player",
+      "gradle"
+    ],
+    "ios": [
+      "ios player",
+      "xcode"
+    ],
+    "crash": [
+      "crash",
+      "stacktrace"
+    ]
+  },
+  "abbreviations": {
+    "ecs": [
+      "entity component system"
+    ],
+    "il2cpp": [
+      "cpp backend"
+    ],
+    "srv": [
+      "scene"
+    ],
+    "gfx": [
+      "rendering"
+    ]
+  },
+  "stopWords": [],
+  "dictionary": {
+    "coreTerms": [
+      "csharp",
+      "mono",
+      "scene",
+      "prefab",
+      "addressables",
+      "shadergraph"
+    ],
+    "uikitTerms": [
+      "component",
+      "gameobject",
+      "script",
+      "monobehaviour",
+      "prefab"
+    ],
+    "codeTerms": [
+      "start",
+      "update",
+      "awake",
+      "fixedupdate",
+      "onenable"
+    ],
+    "pinyinTerms": []
+  },
+  "highFrequency": {
+    "scene": 60,
+    "prefab": 55,
+    "csharp": 50,
+    "ecs": 45,
+    "render": 45,
+    "shader": 40,
+    "build": 40
+  },
+  "popularTerms": {
+    "scene": 60,
+    "prefab": 55,
+    "csharp": 50,
+    "ecs": 45,
+    "shader": 40
+  },
+  "categoryKeywords": {
+    "引擎": [
+      "scene",
+      "prefab",
+      "component"
+    ],
+    "脚本": [
+      "csharp",
+      "mono",
+      "il2cpp"
+    ],
+    "架构": [
+      "gameobject",
+      "system",
+      "ecs"
+    ],
+    "构建": [
+      "asset bundle",
+      "addressables"
+    ],
+    "运行时": [
+      "player",
+      "runtime",
+      "shader"
+    ]
+  }
+}

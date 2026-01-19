@@ -1,0 +1,890 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "common",
+  "synonyms": {
+    "消息": [
+      "message",
+      "msg",
+      "信息",
+      "聊天"
+    ],
+    "message": [
+      "消息",
+      "msg",
+      "信息"
+    ],
+    "msg": [
+      "message",
+      "消息"
+    ],
+    "发送": [
+      "send",
+      "发",
+      "推送",
+      "传送"
+    ],
+    "send": [
+      "发送",
+      "发",
+      "post"
+    ],
+    "接收": [
+      "receive",
+      "收到",
+      "收取",
+      "获取"
+    ],
+    "receive": [
+      "接收",
+      "收到",
+      "get"
+    ],
+    "头像": [
+      "avatar",
+      "图像",
+      "照片",
+      "用户头像"
+    ],
+    "avatar": [
+      "头像",
+      "profile image",
+      "photo"
+    ],
+    "昵称": [
+      "nickname",
+      "名称",
+      "用户名",
+      "显示名"
+    ],
+    "nickname": [
+      "昵称",
+      "name",
+      "display name"
+    ],
+    "用户": [
+      "user",
+      "成员",
+      "联系人"
+    ],
+    "user": [
+      "用户",
+      "member",
+      "contact"
+    ],
+    "群": [
+      "group",
+      "群组",
+      "群聊"
+    ],
+    "group": [
+      "群",
+      "群组",
+      "群聊"
+    ],
+    "群组": [
+      "group",
+      "群",
+      "群聊"
+    ],
+    "聊天室": [
+      "chatroom",
+      "room",
+      "直播间",
+      "房间"
+    ],
+    "chatroom": [
+      "聊天室",
+      "room",
+      "直播间"
+    ],
+    "直播间": [
+      "chatroom",
+      "聊天室",
+      "room"
+    ],
+    "会话": [
+      "conversation",
+      "conv",
+      "对话",
+      "聊天"
+    ],
+    "conversation": [
+      "会话",
+      "conv",
+      "chat"
+    ],
+    "conv": [
+      "conversation",
+      "会话"
+    ],
+    "气泡": [
+      "bubble",
+      "消息框",
+      "消息气泡"
+    ],
+    "bubble": [
+      "气泡",
+      "消息框",
+      "message bubble"
+    ],
+    "颜色": [
+      "color",
+      "色彩",
+      "配色"
+    ],
+    "color": [
+      "颜色",
+      "色彩",
+      "hue"
+    ],
+    "样式": [
+      "style",
+      "外观",
+      "风格",
+      "UI"
+    ],
+    "style": [
+      "样式",
+      "外观",
+      "appearance"
+    ],
+    "主题": [
+      "theme",
+      "风格",
+      "皮肤"
+    ],
+    "theme": [
+      "主题",
+      "风格",
+      "skin"
+    ],
+    "背景": [
+      "background",
+      "bg",
+      "底色"
+    ],
+    "background": [
+      "背景",
+      "bg"
+    ],
+    "按钮": [
+      "button",
+      "btn",
+      "控件"
+    ],
+    "button": [
+      "按钮",
+      "btn"
+    ],
+    "btn": [
+      "button",
+      "按钮"
+    ],
+    "菜单": [
+      "menu",
+      "选项",
+      "操作栏"
+    ],
+    "menu": [
+      "菜单",
+      "选项"
+    ],
+    "回调": [
+      "callback",
+      "delegate",
+      "监听",
+      "listener",
+      "事件"
+    ],
+    "callback": [
+      "回调",
+      "delegate",
+      "handler"
+    ],
+    "delegate": [
+      "回调",
+      "callback",
+      "代理"
+    ],
+    "监听": [
+      "listener",
+      "callback",
+      "观察",
+      "observer"
+    ],
+    "listener": [
+      "监听",
+      "callback",
+      "observer"
+    ],
+    "修改": [
+      "change",
+      "更改",
+      "设置",
+      "调整",
+      "modify"
+    ],
+    "change": [
+      "修改",
+      "更改",
+      "update"
+    ],
+    "设置": [
+      "set",
+      "配置",
+      "修改"
+    ],
+    "set": [
+      "设置",
+      "configure",
+      "setup"
+    ],
+    "自定义": [
+      "custom",
+      "customize",
+      "定制",
+      "个性化"
+    ],
+    "custom": [
+      "自定义",
+      "customize",
+      "定制"
+    ],
+    "customize": [
+      "自定义",
+      "custom",
+      "定制"
+    ],
+    "添加": [
+      "add",
+      "增加",
+      "新增",
+      "插入"
+    ],
+    "add": [
+      "添加",
+      "增加",
+      "insert"
+    ],
+    "删除": [
+      "delete",
+      "移除",
+      "清除",
+      "remove"
+    ],
+    "delete": [
+      "删除",
+      "remove",
+      "clear"
+    ],
+    "remove": [
+      "删除",
+      "delete",
+      "移除"
+    ],
+    "错误": [
+      "error",
+      "异常",
+      "问题",
+      "失败"
+    ],
+    "error": [
+      "错误",
+      "异常",
+      "exception",
+      "failure"
+    ],
+    "失败": [
+      "fail",
+      "failed",
+      "错误",
+      "不成功"
+    ],
+    "fail": [
+      "失败",
+      "failed",
+      "error"
+    ],
+    "编译": [
+      "compile",
+      "build",
+      "构建"
+    ],
+    "构建": [
+      "build",
+      "compile",
+      "打包"
+    ],
+    "链接": [
+      "link",
+      "linker",
+      "ld"
+    ],
+    "依赖": [
+      "dependency",
+      "package",
+      "库"
+    ],
+    "冲突": [
+      "conflict",
+      "version conflict",
+      "冲突"
+    ],
+    "崩溃": [
+      "crash",
+      "exception",
+      "崩溃"
+    ],
+    "运行": [
+      "run",
+      "execute",
+      "启动"
+    ],
+    "推送": [
+      "push",
+      "通知",
+      "notification"
+    ],
+    "push": [
+      "推送",
+      "notification"
+    ],
+    "音视频": [
+      "audio video",
+      "通话",
+      "call",
+      "rtc"
+    ],
+    "通话": [
+      "call",
+      "音视频",
+      "voice",
+      "video"
+    ],
+    "call": [
+      "通话",
+      "音视频",
+      "呼叫"
+    ],
+    "登录": [
+      "login",
+      "登陆",
+      "签入",
+      "sign in"
+    ],
+    "login": [
+      "登录",
+      "sign in",
+      "authenticate"
+    ],
+    "退出": [
+      "logout",
+      "登出",
+      "注销",
+      "sign out"
+    ],
+    "logout": [
+      "退出",
+      "sign out",
+      "注销"
+    ],
+    "文本": [
+      "text",
+      "文字"
+    ],
+    "text": [
+      "文本",
+      "文字"
+    ],
+    "图片": [
+      "image",
+      "照片",
+      "picture",
+      "photo"
+    ],
+    "image": [
+      "图片",
+      "picture",
+      "photo"
+    ],
+    "语音": [
+      "voice",
+      "音频",
+      "audio"
+    ],
+    "voice": [
+      "语音",
+      "audio"
+    ],
+    "视频": [
+      "video",
+      "影片"
+    ],
+    "文件": [
+      "file",
+      "附件",
+      "文档"
+    ],
+    "file": [
+      "文件",
+      "attachment",
+      "document"
+    ],
+    "位置": [
+      "location",
+      "地理位置",
+      "地点"
+    ],
+    "location": [
+      "位置",
+      "地点",
+      "position"
+    ],
+    "uikit": [
+      "UI组件",
+      "界面组件",
+      "UI Kit"
+    ],
+    "sdk": [
+      "SDK",
+      "开发包",
+      "开发套件"
+    ]
+  },
+  "abbreviations": {
+    "msg": [
+      "message"
+    ],
+    "conv": [
+      "conversation"
+    ],
+    "btn": [
+      "button"
+    ],
+    "bg": [
+      "background"
+    ],
+    "img": [
+      "image"
+    ],
+    "cfg": [
+      "config",
+      "configuration"
+    ],
+    "init": [
+      "initialize",
+      "initialization"
+    ],
+    "auth": [
+      "authentication",
+      "authorize"
+    ],
+    "pwd": [
+      "password"
+    ],
+    "usr": [
+      "user"
+    ],
+    "grp": [
+      "group"
+    ],
+    "rm": [
+      "room",
+      "chatroom"
+    ]
+  },
+  "stopWords": [
+    "的",
+    "是",
+    "在",
+    "了",
+    "和",
+    "与",
+    "或",
+    "一个",
+    "这个",
+    "那个",
+    "如何",
+    "怎么",
+    "怎样",
+    "什么",
+    "为什么",
+    "哪个",
+    "哪些",
+    "the",
+    "a",
+    "an",
+    "is",
+    "are",
+    "to",
+    "for",
+    "of",
+    "in",
+    "on",
+    "how",
+    "what",
+    "why",
+    "which",
+    "when",
+    "where",
+    "can",
+    "could",
+    "would",
+    "should",
+    "do",
+    "does"
+  ],
+  "dictionary": {
+    "coreTerms": [
+      "message",
+      "messages",
+      "chat",
+      "chatting",
+      "send",
+      "receive",
+      "recall",
+      "text",
+      "image",
+      "voice",
+      "video",
+      "file",
+      "location",
+      "custom",
+      "body",
+      "content",
+      "extension",
+      "attribute",
+      "timestamp",
+      "conversation",
+      "conversations",
+      "conv",
+      "session",
+      "thread",
+      "unread",
+      "read",
+      "receipt",
+      "pin",
+      "pinned",
+      "mute",
+      "muted",
+      "user",
+      "users",
+      "profile",
+      "avatar",
+      "nickname",
+      "contact",
+      "contacts",
+      "friend",
+      "friends",
+      "block",
+      "blocked",
+      "presence",
+      "status",
+      "group",
+      "groups",
+      "chatroom",
+      "chatrooms",
+      "room",
+      "member",
+      "members",
+      "owner",
+      "admin",
+      "admins",
+      "manager",
+      "invite",
+      "join",
+      "leave",
+      "kick",
+      "announcement",
+      "description",
+      "name",
+      "login",
+      "logout",
+      "connect",
+      "disconnect",
+      "connection",
+      "token",
+      "appkey",
+      "initialize",
+      "init",
+      "client",
+      "options",
+      "config",
+      "push",
+      "notification",
+      "notifications",
+      "apns",
+      "fcm",
+      "badge",
+      "sound",
+      "alert",
+      "silent",
+      "display",
+      "callback",
+      "delegate",
+      "listener",
+      "handler",
+      "event",
+      "events",
+      "observer",
+      "protocol",
+      "notification",
+      "error",
+      "errors",
+      "code",
+      "exception",
+      "fail",
+      "failed",
+      "failure",
+      "success",
+      "result",
+      "response"
+    ],
+    "uikitTerms": [
+      "easechatuikit",
+      "easecalluikit",
+      "easechatroomunikit",
+      "easeimkit",
+      "chatuikit",
+      "calluikit",
+      "uikit",
+      "kit",
+      "cell",
+      "cells",
+      "view",
+      "views",
+      "controller",
+      "controllers",
+      "bubble",
+      "bubbles",
+      "avatar",
+      "avatars",
+      "button",
+      "buttons",
+      "label",
+      "labels",
+      "image",
+      "imageview",
+      "container",
+      "list",
+      "listview",
+      "tableview",
+      "collectionview",
+      "menu",
+      "menus",
+      "action",
+      "actions",
+      "actionsheet",
+      "input",
+      "inputbar",
+      "toolbar",
+      "navbar",
+      "titlebar",
+      "appearance",
+      "style",
+      "styles",
+      "theme",
+      "themes",
+      "color",
+      "colors",
+      "font",
+      "fonts",
+      "size",
+      "radius",
+      "corner",
+      "background",
+      "foreground",
+      "primary",
+      "secondary",
+      "hue",
+      "tint",
+      "layout",
+      "frame",
+      "bounds",
+      "constraint",
+      "constraints",
+      "width",
+      "height",
+      "margin",
+      "padding",
+      "inset",
+      "offset",
+      "entity",
+      "model",
+      "data",
+      "provider",
+      "service",
+      "manager",
+      "register",
+      "factory",
+      "builder",
+      "adapter",
+      "driver"
+    ],
+    "codeTerms": [
+      "message",
+      "cell",
+      "view",
+      "controller",
+      "entity",
+      "bubble",
+      "custom",
+      "default",
+      "base",
+      "abstract",
+      "protocol",
+      "list",
+      "detail",
+      "preview",
+      "render",
+      "display",
+      "get",
+      "set",
+      "add",
+      "remove",
+      "delete",
+      "update",
+      "create",
+      "load",
+      "reload",
+      "refresh",
+      "fetch",
+      "save",
+      "clear",
+      "show",
+      "hide",
+      "present",
+      "dismiss",
+      "push",
+      "pop",
+      "register",
+      "unregister",
+      "configure",
+      "setup",
+      "init",
+      "handle",
+      "process",
+      "parse",
+      "convert",
+      "transform",
+      "override",
+      "func",
+      "class",
+      "struct",
+      "enum",
+      "protocol",
+      "public",
+      "private",
+      "open",
+      "internal",
+      "static",
+      "lazy",
+      "optional",
+      "required",
+      "convenience",
+      "extension"
+    ],
+    "pinyinTerms": [
+      "xiaoxi",
+      "fasong",
+      "jieshou",
+      "huihua",
+      "qunzu",
+      "liaotianshi",
+      "touxiang",
+      "nicheng",
+      "yonghu",
+      "denglu",
+      "tuichu",
+      "lianjie",
+      "cuowu",
+      "tuisong",
+      "tongzhi",
+      "yangshi",
+      "zhuti",
+      "yanse"
+    ]
+  },
+  "highFrequency": {
+    "message": 100,
+    "conversation": 90,
+    "chat": 85,
+    "user": 80,
+    "group": 75,
+    "cell": 70,
+    "view": 70,
+    "controller": 65,
+    "bubble": 60,
+    "avatar": 60,
+    "callback": 55,
+    "delegate": 55,
+    "appearance": 50,
+    "custom": 50,
+    "error": 45,
+    "send": 45,
+    "receive": 45
+  },
+  "popularTerms": {
+    "message": 100,
+    "conversation": 95,
+    "chat": 90,
+    "group": 85,
+    "user": 80,
+    "avatar": 75,
+    "bubble": 70,
+    "cell": 70,
+    "controller": 65,
+    "view": 60,
+    "send": 55,
+    "receive": 50,
+    "callback": 50,
+    "delegate": 50,
+    "appearance": 45,
+    "custom": 45,
+    "style": 40,
+    "theme": 40
+  },
+  "categoryKeywords": {
+    "消息相关": [
+      "message",
+      "msg",
+      "text",
+      "bubble",
+      "send",
+      "receive"
+    ],
+    "会话相关": [
+      "conversation",
+      "conv",
+      "chat",
+      "thread"
+    ],
+    "联系人相关": [
+      "contact",
+      "user",
+      "friend",
+      "profile",
+      "avatar"
+    ],
+    "群组相关": [
+      "group",
+      "member",
+      "owner",
+      "admin"
+    ],
+    "UI组件": [
+      "cell",
+      "view",
+      "controller",
+      "button",
+      "label"
+    ],
+    "样式配置": [
+      "appearance",
+      "style",
+      "theme",
+      "color",
+      "font"
+    ]
+  }
+}

@@ -4,6 +4,16 @@
  */
 
 import { InteractionHint, InteractionOption, MCPToolResponse } from '../types/index.js';
+import { ResponseComposer } from './ResponseComposer.js';
+import {
+  buildAmbiguousInteraction,
+  buildFeatureImplementationInteraction,
+  buildMissingInfoInteraction,
+  buildMultipleOptionsInteraction,
+  buildNoResultsInteraction,
+  buildPlatformSelectionInteraction,
+  buildTooBroadInteraction
+} from './InteractionStrategies.js';
 
 /**
  * 响应构建器 - 封装 MCP 工具的统一响应格式
@@ -86,17 +96,7 @@ export class ResponseBuilder {
     suggestions?: string[];
     alternativeTools?: Array<{ tool: string; reason: string; exampleArgs?: Record<string, any> }>;
   }): this {
-    this.interaction = {
-      needsClarification: true,
-      clarificationType: 'no_results',
-      question: `未找到与 "${options.query}" 相关的结果，您可以尝试：`,
-      examples: options.suggestions || [
-        '使用更通用的关键词',
-        '检查拼写是否正确',
-        '尝试中文或英文关键词'
-      ],
-      suggestedTools: options.alternativeTools
-    };
+    this.interaction = buildNoResultsInteraction(options);
     return this;
   }
 
@@ -108,12 +108,7 @@ export class ResponseBuilder {
     filterOptions: InteractionOption[];
     question?: string;
   }): this {
-    this.interaction = {
-      needsClarification: true,
-      clarificationType: 'too_broad',
-      question: options.question || `搜索结果过多（${options.resultCount} 个），请选择一个范围来缩小结果：`,
-      options: options.filterOptions
-    };
+    this.interaction = buildTooBroadInteraction(options);
     return this;
   }
 
@@ -125,13 +120,7 @@ export class ResponseBuilder {
     options: InteractionOption[];
     missingInfo?: string[];
   }): this {
-    this.interaction = {
-      needsClarification: true,
-      clarificationType: 'ambiguous_query',
-      question: options.question,
-      options: options.options,
-      missingInfo: options.missingInfo
-    };
+    this.interaction = buildAmbiguousInteraction(options);
     return this;
   }
 
@@ -143,13 +132,7 @@ export class ResponseBuilder {
     question: string;
     examples?: string[];
   }): this {
-    this.interaction = {
-      needsClarification: true,
-      clarificationType: 'missing_info',
-      question: options.question,
-      missingInfo: options.missingFields,
-      examples: options.examples
-    };
+    this.interaction = buildMissingInfoInteraction(options);
     return this;
   }
 
@@ -161,12 +144,7 @@ export class ResponseBuilder {
     options: InteractionOption[];
     allowMultiple?: boolean;
   }): this {
-    this.interaction = {
-      needsClarification: true,
-      clarificationType: 'multiple_options',
-      question: options.question,
-      options: options.options
-    };
+    this.interaction = buildMultipleOptionsInteraction(options);
     return this;
   }
 
@@ -191,27 +169,7 @@ export class ResponseBuilder {
     question?: string;
     includeAll?: boolean;
   }): this {
-    const platformOptions: InteractionOption[] = [
-      { label: 'iOS', value: 'ios', description: 'iPhone/iPad 应用开发 (Swift/ObjC)' },
-      { label: 'Android', value: 'android', description: 'Android 应用开发 (Kotlin/Java)' },
-      { label: 'Web', value: 'web', description: '网页端开发 (JavaScript/TypeScript)' },
-      { label: 'Flutter', value: 'flutter', description: '跨平台开发 (Dart, 无 CallKit 文档/源码)' },
-      { label: 'React Native', value: 'react-native', description: '跨平台开发 (JS, 无 CallKit 文档/源码)' },
-      { label: 'Unity', value: 'unity', description: '游戏开发 (C#, 仅支持 IMSDK)' },
-      { label: 'Windows', value: 'windows', description: 'Windows 桌面开发 (C++/C#, 仅支持 IMSDK)' }
-    ];
-
-    if (options?.includeAll) {
-      platformOptions.push({ label: '全部平台', value: 'all', description: '查看所有平台的实现' });
-    }
-
-    this.interaction = {
-      needsClarification: true,
-      clarificationType: 'missing_info',
-      question: options?.question || '请选择您的目标开发平台：',
-      options: platformOptions,
-      missingInfo: ['目标平台']
-    };
+    this.interaction = buildPlatformSelectionInteraction(options);
     return this;
   }
 
@@ -224,43 +182,7 @@ export class ResponseBuilder {
     askDetails?: boolean;
     detailOptions?: InteractionOption[];
   }): this {
-    const questions: string[] = [];
-    const missingFields: string[] = [];
-
-    if (options.askPlatform) {
-      questions.push('您的目标平台是什么？');
-      missingFields.push('目标平台 (iOS/Android/Web/Flutter/RN/Windows/Unity)');
-    }
-
-    if (options.askDetails) {
-      questions.push('请提供更多实现细节');
-      missingFields.push('具体实现需求');
-    }
-
-    const platformOptions: InteractionOption[] = [
-      { label: 'iOS', value: 'ios', description: 'Swift/Objective-C' },
-      { label: 'Android', value: 'android', description: 'Kotlin/Java' },
-      { label: 'Web', value: 'web', description: 'JavaScript/TypeScript' },
-      { label: 'Flutter', value: 'flutter', description: 'Dart 跨平台 (无 CallKit)' },
-      { label: 'React Native', value: 'react-native', description: 'JavaScript 跨平台 (无 CallKit)' },
-      { label: 'Unity', value: 'unity', description: 'C# 游戏开发 (仅 IMSDK)' },
-      { label: 'Windows', value: 'windows', description: 'C++/C# 桌面开发 (仅 IMSDK)' }
-    ];
-
-    // 合并平台选项和自定义选项
-    const allOptions = options.detailOptions
-      ? [...platformOptions, ...options.detailOptions]
-      : platformOptions;
-
-    this.interaction = {
-      needsClarification: true,
-      clarificationType: 'missing_info',
-      question: options.featureName
-        ? `您想在哪个平台实现「${options.featureName}」功能？`
-        : questions.join(' '),
-      options: allOptions,
-      missingInfo: missingFields
-    };
+    this.interaction = buildFeatureImplementationInteraction(options);
     return this;
   }
 
@@ -270,89 +192,7 @@ export class ResponseBuilder {
    * 构建最终的 MCP 响应
    */
   build(): { content: Array<{ type: string; text: string }> } {
-    let finalText = this.text;
-
-    // 如果有交互信息，附加到文本末尾（供 AI 客户端解析）
-    if (this.interaction && this.interaction.needsClarification) {
-      finalText += this.buildInteractionSection();
-    }
-
-    // 添加元数据部分（JSON 格式，供程序解析）
-    if (Object.keys(this.metadata).length > 0 || this.interaction) {
-      const metaBlock = {
-        ...this.metadata,
-        interaction: this.interaction
-      };
-      finalText += `\n\n<!-- MCP_METADATA\n${JSON.stringify(metaBlock, null, 2)}\nMCP_METADATA -->`;
-    }
-
-    return {
-      content: [
-        {
-          type: 'text',
-          text: finalText
-        }
-      ]
-    };
-  }
-
-  /**
-   * 构建交互引导部分的 Markdown
-   */
-  private buildInteractionSection(): string {
-    if (!this.interaction) return '';
-
-    let section = '\n---\n\n## 🤔 需要更多信息\n\n';
-
-    if (this.interaction.question) {
-      section += `**${this.interaction.question}**\n\n`;
-    }
-
-    // 显示选项
-    if (this.interaction.options && this.interaction.options.length > 0) {
-      section += '可选项：\n\n';
-      for (const option of this.interaction.options) {
-        section += `- **${option.label}**`;
-        if (option.description) {
-          section += ` - ${option.description}`;
-        }
-        section += '\n';
-      }
-      section += '\n';
-    }
-
-    // 显示示例
-    if (this.interaction.examples && this.interaction.examples.length > 0) {
-      section += '示例：\n\n';
-      for (const example of this.interaction.examples) {
-        section += `- \`${example}\`\n`;
-      }
-      section += '\n';
-    }
-
-    // 显示推荐工具
-    if (this.interaction.suggestedTools && this.interaction.suggestedTools.length > 0) {
-      section += '推荐尝试：\n\n';
-      for (const tool of this.interaction.suggestedTools) {
-        section += `- **${tool.tool}**: ${tool.reason}`;
-        if (tool.exampleArgs) {
-          section += `\n  示例: \`${tool.tool} ${JSON.stringify(tool.exampleArgs)}\``;
-        }
-        section += '\n';
-      }
-      section += '\n';
-    }
-
-    // 显示缺失信息
-    if (this.interaction.missingInfo && this.interaction.missingInfo.length > 0) {
-      section += '请提供以下信息：\n\n';
-      for (const info of this.interaction.missingInfo) {
-        section += `- ❓ ${info}\n`;
-      }
-      section += '\n';
-    }
-
-    return section;
+    return ResponseComposer.buildResponse(this.text, this.interaction, this.metadata);
   }
 }
 

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "common",
+  "scenarios": [
+    {
+      "id": "common:custom_message",
+      "scenario": "自定义消息类型",
+      "description": "创建新的消息类型，如订单消息、商品消息、位置消息等",
+      "platform": "common",
+      "keywords": [
+        "自定义消息",
+        "custom message",
+        "自定义cell"
+      ],
+      "steps": [
+        "继承 CustomMessageCell",
+        "实现 createContent()",
+        "注册到 ComponentsRegister"
+      ],
+      "relatedClasses": [
+        "CustomMessageCell",
+        "ComponentsRegister"
+      ],
+      "relatedApis": [
+        "sendMessage"
+      ],
+      "relatedConfigs": [
+        "MessageCellStyle"
+      ],
+      "codeTemplate": "common:message:custom_message_full",
+      "difficulty": "medium"
+    }
+  ]
+}

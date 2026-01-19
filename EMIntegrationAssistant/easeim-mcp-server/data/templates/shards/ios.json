@@ -1,0 +1,237 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "ios",
+  "templates": [
+    {
+      "id": "ios:message:custom_message_full",
+      "name": "自定义消息完整实现",
+      "description": "包含数据模型、Cell、注册、发送、点击处理、长按菜单定制的完整代码",
+      "platform": "ios",
+      "domain": "message",
+      "variables": [
+        {
+          "name": "messageName",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "eventIdentifier",
+          "type": "string",
+          "required": false,
+          "default": "CUSTOM_MESSAGE"
+        },
+        {
+          "name": "cellHeight",
+          "type": "string",
+          "required": false,
+          "default": "120"
+        }
+      ],
+      "template": "// ============================================================ \n// MARK: - {{messageName}} 消息完整实现 (渲染/逻辑/交互全闭环)\n// ============================================================ \n\nimport UIKit\nimport EaseChatUIKit\n\n// MARK: - 1. 消息标识符定义\nlet EaseChatUIKit_{{messageName_lower}}_message = \"{{eventIdentifier}}\"\n\n// MARK: - 2. 数据模型\nstruct {{messageName}}MessageData {\n    let id: String\n    let title: String\n    let subtitle: String\n    let imageURL: String\n    let price: Double\n    let status: String\n\n    func toExtension() -> [String: Any] {\n        return [\"id\": id, \"title\": title, \"subtitle\": subtitle, \"imageURL\": imageURL, \"price\": price, \"status\": status]\n    }\n\n    static func from(ext: [String: Any]?) -> {{messageName}}MessageData? {\n        guard let ext = ext, let id = ext[\"id\"] as? String, let title = ext[\"title\"] as? String else { return nil }\n        return {{messageName}}MessageData(\n            id: id,\n            title: title,\n            subtitle: ext[\"subtitle\"] as? String ?? \"\",\n            imageURL: ext[\"imageURL\"] as? String ?? \"\",\n            price: ext[\"price\"] as? Double ?? 0,\n            status: ext[\"status\"] as? String ?? \"\"\n        )\n    }\n}\n\n// MARK: - 3. 自定义消息 Cell (UI 渲染层)\n@objc open class {{messageName}}MessageCell: CustomMessageCell {\n\n    public private(set) lazy var titleLabel: UILabel = {\n        let label = UILabel()\n        label.font = UIFont.systemFont(ofSize: 15, weight: .medium)\n        label.numberOfLines = 2\n        return label\n    }()\n\n    public private(set) lazy var priceLabel: UILabel = {\n        let label = UILabel()\n        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)\n        label.textColor = .systemRed\n        return label\n    }()\n\n    @objc required public init(towards: BubbleTowards, reuseIdentifier: String) {\n        super.init(towards: towards, reuseIdentifier: reuseIdentifier)\n        self.content.addSubview(titleLabel)\n        self.content.addSubview(priceLabel)\n    }\n\n    required public init?(coder: NSCoder) { fatalError() }\n\n    open override func refresh(entity: MessageEntity) {\n        super.refresh(entity: entity)\n        guard let body = entity.message.body as? ChatCustomMessageBody,\n              let data = {{messageName}}MessageData.from(ext: body.customExt) else { return }\n        \n        titleLabel.text = data.title\n        priceLabel.text = \"¥\\(data.price)\"\n        \n        // 布局 (示例)\n        let bubbleWidth = self.bubbleWithArrow.frame.width\n        titleLabel.frame = CGRect(x: 12, y: 12, width: bubbleWidth - 24, height: 40)\n        priceLabel.frame = CGRect(x: 12, y: 56, width: 100, height: 20)\n    }\n}\n\n// MARK: - 4. 消息实体与高度计算 (数据/布局层)\n@objcMembers open class {{messageName}}MessageEntity: MessageEntity {\n\n    public var customData: {{messageName}}MessageData?\n\n    public override init(message: ChatMessage) {\n        super.init(message: message)\n        if let body = message.body as? ChatCustomMessageBody {\n            self.customData = {{messageName}}MessageData.from(ext: body.customExt)\n        }\n    }\n\n    open override func customSize() -> CGSize {\n        guard let body = self.message.body as? ChatCustomMessageBody,\n              body.event == EaseChatUIKit_{{messageName_lower}}_message else {\n            return super.customSize()\n        }\n        return CGSize(width: limitBubbleWidth, height: {{cellHeight}})\n    }\n}\n\n// MARK: - 5. 自定义消息列表控制器 (业务/交互层)\n@objcMembers open class {{messageName}}MessageListController: MessageListController {\n\n    // --- A. 发送逻辑 ---\n    open override func handleAttachmentAction(item: ActionSheetItemProtocol) {\n        if item.tag == \"{{messageName}}\" {\n            send{{messageName}}Message()\n            return\n        }\n        super.handleAttachmentAction(item: item)\n    }\n\n    private func send{{messageName}}Message() {\n        let testData = {{messageName}}MessageData(id: \"123\", title: \"测试{{messageName}}\", subtitle: \"\", imageURL: \"\", price: 99.0, status: \"OK\")\n        let body = ChatCustomMessageBody(event: EaseChatUIKit_{{messageName_lower}}_message, customExt: testData.toExtension())\n        let message = ChatMessage(conversationID: self.profile.id, body: body, ext: nil)\n        self.viewModel.driver?.showMessage(message: message)\n        ChatClient.shared().chatManager?.send(message, progress: nil, completion: nil)\n    }\n\n    // --- B. 点击处理 ---\n    open override func messageBubbleClicked(message: MessageEntity) {\n        if let body = message.message.body as? ChatCustomMessageBody, body.event == EaseChatUIKit_{{messageName_lower}}_message {\n            print(\"点击了{{messageName}}消息\")\n            return\n        }\n        super.messageBubbleClicked(message: message)\n    }\n\n    // --- C. 长按菜单定制 (关键补充) ---\n    open override func filterMessageActions(message: MessageEntity) -> [ActionSheetItemProtocol] {\n        var actions = super.filterMessageActions(message: message)\n        \n        if let body = message.message.body as? ChatCustomMessageBody, body.event == EaseChatUIKit_{{messageName_lower}}_message {\n            // 1. 移除不需要的项 (如翻译)\n            actions.removeAll { $0.tag == \"Translate\" || $0.tag == \"OriginalText\" }\n            \n            // 2. 新增业务项\n            let customAction = ActionSheetItem(title: \"业务操作\", type: .normal, tag: \"BizAction\", image: UIImage(systemName: \"star\"))\n            actions.append(customAction)\n        }\n        return actions\n    }\n\n    open override func processMessage(item: ActionSheetItemProtocol, message: ChatMessage) {\n        if item.tag == \"BizAction\" {\n            print(\"执行自定义菜单操作\")\n            return\n        }\n        super.processMessage(item: item, message: message)\n    }\n}\n\n// MARK: - 6. 初始化注册\nfunc setup{{messageName}}Message() {\n    ComponentsRegister.shared.registerCustomCellClasses(cellType: {{messageName}}MessageCell.self, identifier: EaseChatUIKit_{{messageName_lower}}_message)\n    ComponentsRegister.shared.MessageRenderEntity = {{messageName}}MessageEntity.self\n    ComponentsRegister.shared.MessageViewController = {{messageName}}MessageListController.self\n    \n    let menuItem = ActionSheetItem(title: \"发送{{messageName}}\", type: .normal, tag: \"{{messageName}}\", image: UIImage(systemName: \"cart\"))\n    Appearance.chat.inputExtendActions.append(menuItem)\n}\n",
+      "usage": [
+        "在 AppDelegate 中调用 setup{{messageName}}Message() 完成初始化",
+        "需要保证自定义消息事件唯一"
+      ],
+      "extends": "common:message:custom_message_full"
+    },
+    {
+      "id": "ios:message:attachment_menu",
+      "name": "添加附件菜单项",
+      "description": "在输入框 + 按钮菜单中添加自定义选项",
+      "platform": "ios",
+      "domain": "message",
+      "variables": [
+        {
+          "name": "menuName",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "menuTag",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "iconName",
+          "type": "string",
+          "required": false,
+          "default": "doc"
+        }
+      ],
+      "template": "// ============================================================ \n// MARK: - 添加附件菜单项：{{menuName}}\n// ============================================================ \n\nimport UIKit\nimport EaseChatUIKit\n\n// MARK: - 1. 添加菜单项配置\nfunc addCustomMenuItem() {\n    let menuItem = ActionSheetItem(\n        title: \"{{menuName}}\",\n        type: .normal,\n        tag: \"{{menuTag}}\",\n        image: UIImage(systemName: \"{{iconName}}\")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)\n    )\n    Appearance.chat.inputExtendActions.append(menuItem)\n}\n\n// MARK: - 2. 自定义消息列表控制器处理点击\n@objcMembers open class Custom{{menuTag}}MessageListController: MessageListController {\n\n    open override func handleAttachmentAction(item: ActionSheetItemProtocol) {\n        switch item.tag {\n        case \"{{menuTag}}\":\n            handle{{menuTag}}Action()\n        default:\n            super.handleAttachmentAction(item: item)\n        }\n    }\n\n    @objc open func handle{{menuTag}}Action() {\n        print(\"{{menuName}} 被点击了\")\n    }\n}\n\n// MARK: - 3. 注册自定义控制器\nfunc setupCustomMenu() {\n    addCustomMenuItem()\n    ComponentsRegister.shared.MessageViewController = Custom{{menuTag}}MessageListController.self\n}\n",
+      "usage": [
+        "调用 setupCustomMenu() 完成注册",
+        "如需处理点击逻辑，重写 handle{{menuTag}}Action()"
+      ]
+    },
+    {
+      "id": "ios:theme:theme_config",
+      "name": "主题颜色配置",
+      "description": "配置 UIKit 的主题色调",
+      "platform": "ios",
+      "domain": "theme",
+      "variables": [
+        {
+          "name": "primaryHue",
+          "type": "string",
+          "required": false,
+          "default": "203"
+        },
+        {
+          "name": "secondaryHue",
+          "type": "string",
+          "required": false,
+          "default": "155"
+        }
+      ],
+      "template": "// ============================================================ \n// MARK: - UIKit 主题颜色配置\n// ============================================================ \n\nimport EaseChatUIKit\n\nfunc configureTheme() {\n    Appearance.primaryHue = {{primaryHue}}/360.0\n    Appearance.secondaryHue = {{secondaryHue}}/360.0\n    Appearance.errorHue = 350/360.0\n    Appearance.neutralHue = 203/360.0\n    Appearance.neutralSpecialHue = 220/360.0\n}\n",
+      "usage": [
+        "在应用启动时调用 configureTheme()"
+      ]
+    },
+    {
+      "id": "ios:message:bubble_style",
+      "name": "消息气泡样式配置",
+      "description": "配置消息气泡的外观样式",
+      "platform": "ios",
+      "domain": "message",
+      "variables": [],
+      "template": "// ============================================================ \n// MARK: - 消息气泡样式配置\n// ============================================================ \n\nimport EaseChatUIKit\n\nfunc configureBubbleStyle() {\n    Appearance.chat.bubbleStyle = .withArrow\n    Appearance.chat.contentStyle = [.withReply,.withAvatar,.withNickName,.withDateAndTime]\n    Appearance.chat.imageMessageCorner = 8\n    Appearance.avatarRadius = .medium\n}\n",
+      "usage": [
+        "在 UIKit 初始化前调用 configureBubbleStyle()"
+      ]
+    },
+    {
+      "id": "ios:message:long_press_menu",
+      "name": "消息长按菜单配置",
+      "description": "自定义消息长按后的操作菜单",
+      "platform": "ios",
+      "domain": "message",
+      "variables": [
+        {
+          "name": "actionName",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "actionTag",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "template": "// ============================================================ \n// MARK: - 消息长按菜单配置\n// ============================================================ \n\nimport EaseChatUIKit\n\n// MARK: - 1. 添加自定义菜单项\nfunc addCustomLongPressAction() {\n    let customAction = ActionSheetItem(title: \"{{actionName}}\", type: .normal, tag: \"{{actionTag}}\", image: UIImage(systemName: \"star\"))\n    Appearance.chat.messageLongPressedActions.append(customAction)\n}\n\n// MARK: - 2. 处理自定义操作\n@objcMembers open class CustomMenuMessageListController: MessageListController {\n    open override func processMessage(item: ActionSheetItemProtocol, message: ChatMessage) {\n        if item.tag == \"{{actionTag}}\" {\n            print(\"执行 {{actionName}} 操作\")\n            return\n        }\n        super.processMessage(item: item, message: message)\n    }\n}\n\nfunc setupCustomLongPressMenu() {\n    addCustomLongPressAction()\n    ComponentsRegister.shared.MessageViewController = CustomMenuMessageListController.self\n}\n",
+      "usage": [
+        "调用 setupCustomLongPressMenu() 完成注册"
+      ]
+    },
+    {
+      "id": "ios:profile:avatar_config",
+      "name": "头像样式配置",
+      "description": "配置头像的圆角和占位图",
+      "platform": "ios",
+      "domain": "profile",
+      "variables": [],
+      "template": "// ============================================================ \n// MARK: - 头像样式配置\n// ============================================================ \n\nimport EaseChatUIKit\n\nfunc configureAvatarStyle() {\n    Appearance.avatarRadius = .medium\n    Appearance.avatarPlaceHolder = UIImage(named: \"default_avatar\")\n    Appearance.conversation.singlePlaceHolder = UIImage(named: \"single\")\n    Appearance.conversation.groupPlaceHolder = UIImage(named: \"group\")\n}\n",
+      "usage": [
+        "在 UIKit 初始化前调用 configureAvatarStyle()"
+      ]
+    },
+    {
+      "id": "ios:message:text_style_customization",
+      "name": "文本消息样 (深度定制)",
+      "description": "通过重写 MessageEntity 拦截富文本生成过程，修改文字颜色、字体等。",
+      "platform": "ios",
+      "domain": "message",
+      "variables": [
+        {
+          "name": "textColor",
+          "type": "string",
+          "required": false,
+          "default": "UIColor.systemPurple"
+        },
+        {
+          "name": "fontSize",
+          "type": "string",
+          "required": false,
+          "default": "16"
+        }
+      ],
+      "template": "// ============================================================ \n// MARK: - 文本消息样式深度定制\n// ============================================================ \n\nimport UIKit\nimport EaseChatUIKit\n\n@objcMembers open class CustomTextStyleEntity: MessageEntity {\n    open override func convertTextAttribute() -> NSAttributedString? {\n        guard let original = super.convertTextAttribute() else { return nil }\n        let mutable = NSMutableAttributedString(attributedString: original)\n        let fullRange = NSRange(location: 0, length: mutable.length)\n        let textColor = (self.message.direction == .send) ? UIColor.white : {{textColor}}\n        mutable.addAttribute(.foregroundColor, value: textColor, range: fullRange)\n        mutable.addAttribute(.font, value: UIFont.systemFont(ofSize: {{fontSize}}), range: fullRange)\n        return mutable\n    }\n}\n\nfunc setupCustomTextStyle() {\n    ComponentsRegister.shared.MessageRenderEntity = CustomTextStyleEntity.self\n}\n",
+      "usage": [
+        "调用 setupCustomTextStyle() 完成注册"
+      ]
+    },
+    {
+      "id": "ios:options:chat_uikit_options",
+      "name": "ChatUIKitOptions 配置项用法",
+      "description": "ChatUIKitClient 初始化时的 UIOptions 配置示例",
+      "platform": "ios",
+      "domain": "options",
+      "variables": [],
+      "template": "// ============================================================ \n// MARK: - ChatUIKitOptions 配置项用法\n// ============================================================ \n\nimport EaseChatUIKit\n\nfunc configureChatUIKitOptions() {\n    let options = ChatUIKitOptions()\n    // 是否加载本地历史消息（控制首次展示是否从本地拉取）\n    options.option_UI.loadLocalHistoryMessages = true\n    // 如需只从服务器端拉取，可显式关闭本地历史：\n    // options.option_UI.loadLocalHistoryMessages = false\n    // 是否保存会话信息（会话列表显示）\n    options.option_UI.saveConversationInfo = true\n    // 收到新消息是否播放提示音\n    options.option_UI.soundOnReceivedNewMessage = true\n    // 是否启用联系人功能\n    options.option_UI.enableContact = true\n\n    ChatUIKitClient.shared.option = options\n}\n",
+      "usage": [
+        "在 ChatUIKitClient 初始化前调用 configureChatUIKitOptions()"
+      ]
+    },
+    {
+      "id": "ios:message:message_ext_before_send",
+      "name": "发送前填充消息附属信息",
+      "description": "在消息发送前注入自定义 ext 信息",
+      "platform": "ios",
+      "domain": "message",
+      "variables": [],
+      "template": "// ============================================================ \n// MARK: - 发送前填充消息附属信息 (ext)\n// ============================================================ \n\nimport EaseChatUIKit\n\n@objcMembers open class CustomMessageListController: MessageListController {\n    open override func messageWillSendFillExtensionInfo(_ ext: [AnyHashable: Any]) -> [AnyHashable: Any] {\n        var extra = ext\n        extra[\"client_tag\"] = \"ios\"\n        extra[\"trace_id\"] = UUID().uuidString\n        return extra\n    }\n}\n\nfunc registerMessageListController() {\n    ComponentsRegister.shared.MessageViewController = CustomMessageListController.self\n}\n",
+      "usage": [
+        "注册自定义 MessageListController 后，发送消息会自动带上 ext"
+      ]
+    },
+    {
+      "id": "ios:chat:chat_background_config",
+      "name": "聊天页面背景定制",
+      "description": "为聊天页面添加自定义背景图",
+      "platform": "ios",
+      "domain": "chat",
+      "variables": [
+        {
+          "name": "imageName",
+          "type": "string",
+          "required": false,
+          "default": "chat_bg"
+        }
+      ],
+      "template": "// ============================================================ \n// MARK: - 聊天页面背景定制\n// ============================================================ \n\nimport UIKit\nimport EaseChatUIKit\n\n@objcMembers open class CustomBackgroundMessageController: MessageListController {\n    public private(set) lazy var backgroundImageView: UIImageView = {\n        let imageView = UIImageView(frame: self.view.bounds)\n        imageView.image = UIImage(named: \"{{imageName}}\")\n        imageView.contentMode = .scaleAspectFill\n        imageView.autoresizingMask = [.flexibleWidth, .autoresizableHeight]\n        return imageView\n    }()\n\n    open override func viewDidLoad() {\n        super.viewDidLoad()\n        self.view.insertSubview(backgroundImageView, at: 0)\n        self.messageContainer.backgroundColor = .clear\n        self.messageContainer.messageList.backgroundColor = .clear\n    }\n}\n\nfunc setupChatBackground() {\n    ComponentsRegister.shared.MessageViewController = CustomBackgroundMessageController.self\n}\n",
+      "usage": [
+        "在应用初始化时调用 setupChatBackground()"
+      ]
+    },
+    {
+      "id": "ios:user:user_profile_customization",
+      "name": "手动更新用户信息 (userCache)",
+      "description": "手动向缓存注入用户信息以实时刷新 UI",
+      "platform": "ios",
+      "domain": "user",
+      "variables": [
+        {
+          "name": "userId",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "nickname",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "avatarURL",
+          "type": "string",
+          "required": false,
+          "default": ""
+        }
+      ],
+      "template": "// ============================================================ \n// MARK: - 用户资料更新方案 (Provider 与 Cache)\n// ============================================================ \n\nimport EaseChatUIKit\n\nfunc setupUserProfileProvider(provider: ChatUserProfileProvider) {\n    ChatUIKitContext.shared?.userProfileProvider = provider\n    // CallKitManager.shared.profileProvider = provider\n}\n\nfunc updateUserInfoManually(userId: String, nickname: String, avatarURL: String) {\n    let profile = ChatUserProfile()\n    profile.id = userId\n    profile.nickname = nickname\n    profile.avatarURL = avatarURL\n    ChatUIKitContext.shared?.userCache?[userId] = profile\n}\n",
+      "usage": [
+        "在需要更新资料处调用 updateUserInfoManually()"
+      ]
+    }
+  ]
+}

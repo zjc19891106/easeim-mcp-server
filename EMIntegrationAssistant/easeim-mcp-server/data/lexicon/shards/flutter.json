@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "flutter",
+  "synonyms": {
+    "widget": [
+      "component",
+      "ui widget"
+    ],
+    "state": [
+      "stateful",
+      "stateless"
+    ],
+    "dart": [
+      "flutter",
+      "pubspec"
+    ],
+    "route": [
+      "navigator",
+      "router"
+    ],
+    "callback": [
+      "onTap",
+      "onPressed"
+    ],
+    "controller": [
+      "protocol",
+      "delegate"
+    ],
+    "bloc": [
+      "state management",
+      "provider"
+    ],
+    "channel": [
+      "methodchannel",
+      "platform channel"
+    ],
+    "render": [
+      "render object",
+      "build context"
+    ],
+    "inherited": [
+      "inheritedwidget",
+      "provider"
+    ],
+    "cupertino": [
+      "ios widgets",
+      "cupertino"
+    ],
+    "material": [
+      "material design",
+      "materialapp"
+    ],
+    "pub": [
+      "pub get",
+      "pubspec.lock"
+    ],
+    "build": [
+      "flutter build",
+      "flutter run"
+    ],
+    "engine": [
+      "skia",
+      "flutter engine"
+    ],
+    "gradle": [
+      "android build",
+      "gradle"
+    ],
+    "cocoapods": [
+      "ios build",
+      "podfile"
+    ]
+  },
+  "abbreviations": {
+    "pb": [
+      "pubspec"
+    ],
+    "bloc": [
+      "flutter bloc"
+    ],
+    "cupertino": [
+      "ios style widget"
+    ],
+    "mf": [
+      "method channel"
+    ]
+  },
+  "stopWords": [],
+  "dictionary": {
+    "coreTerms": [
+      "widget",
+      "dart",
+      "pubspec",
+      "state",
+      "route",
+      "methodchannel",
+      "cupertino",
+      "material"
+    ],
+    "uikitTerms": [
+      "stateless",
+      "stateful",
+      "build",
+      "context",
+      "inheritedwidget",
+      "renderobject"
+    ],
+    "codeTerms": [
+      "navigator",
+      "controller",
+      "callback",
+      "onpressed",
+      "ontap",
+      "initstate"
+    ],
+    "pinyinTerms": []
+  },
+  "highFrequency": {
+    "widget": 60,
+    "dart": 55,
+    "controller": 50,
+    "route": 50,
+    "channel": 45,
+    "pub": 40,
+    "engine": 40
+  },
+  "popularTerms": {
+    "widget": 60,
+    "dart": 55,
+    "route": 50,
+    "channel": 45,
+    "pub": 40
+  },
+  "categoryKeywords": {
+    "Widget": [
+      "widget",
+      "stateful",
+      "stateless"
+    ],
+    "路由": [
+      "route",
+      "navigator"
+    ],
+    "架构": [
+      "controller",
+      "callback",
+      "provider"
+    ],
+    "构建": [
+      "pubspec",
+      "build",
+      "channel"
+    ],
+    "运行时": [
+      "dart",
+      "engine",
+      "skia"
+    ]
+  }
+}

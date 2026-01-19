@@ -1,0 +1,241 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-16T10:30:00.000Z",
+  "patterns": [
+    {
+      "intent": "customize_message",
+      "weight": 100,
+      "patterns": [
+        "自定义.*(消息|message)",
+        "新增.*(消息类型|消息样式)",
+        "(订单|商品|位置|名片|卡片|红包).*(消息|message)",
+        "custom.*message",
+        "发送.*(订单|商品|位置|名片|卡片)",
+        "展示.*(订单|商品|位置|名片).*(消息|样式)"
+      ]
+    },
+    {
+      "intent": "add_menu_item",
+      "weight": 90,
+      "patterns": [
+        "添加.*(菜单|menu|按钮)",
+        "增加.*(菜单|附件|选项)",
+        "(菜单|附件).*(增加|添加|新增)",
+        "inputExtendActions",
+        "attachment.*menu"
+      ]
+    },
+    {
+      "intent": "fix_error",
+      "weight": 95,
+      "patterns": [
+        "错误码?\\s*[:：]?\\s*\\d+",
+        "error\\s*code?\\s*[:：]?\\s*\\d+",
+        "(失败|报错|异常|崩溃|闪退)",
+        "failed|error|crash|exception",
+        "为什么.*(失败|不行|不能|无法)",
+        "怎么解决.*(错误|问题|异常)"
+      ]
+    },
+    {
+      "intent": "customize_ui",
+      "weight": 85,
+      "patterns": [
+        "自定义.*(样式|颜色|UI|界面|气泡|头像|主题|字体|字号)",
+        "修改.*(样式|外观|主题|颜色|背景|头像|昵称|字体|字号)",
+        "更换.*(图标|图片|颜色|背景|头像)",
+        "设置.*(头像|昵称|用户信息)",
+        "更新.*(头像|昵称|用户资料)",
+        "customize|custom.*style|theme",
+        "(气泡|bubble).*(颜色|样式|圆角)",
+        "Appearance",
+        "userCache",
+        "userProfileProvider"
+      ]
+    },
+    {
+      "intent": "understand_class",
+      "weight": 75,
+      "patterns": [
+        "(\\w+Cell|\\w+View|\\w+Controller)\\s*(是什么|怎么用|作用)",
+        "(MessageCell|CustomMessageCell|MessageEntity)\\b",
+        "继承.*(类|class)",
+        "(\\w+).*怎么(继承|重写|扩展)"
+      ]
+    },
+    {
+      "intent": "implement_feature",
+      "weight": 60,
+      "patterns": [
+        "如何(实现|发送|接收|创建|添加|显示)",
+        "怎么(实现|发送|接收|创建|添加|显示)",
+        "how to (send|receive|create|add|show|implement)",
+        "实现.*(消息|群组|聊天室|推送|音视频)"
+      ]
+    },
+    {
+      "intent": "integrate_sdk",
+      "weight": 55,
+      "patterns": [
+        "集成|接入|初始化|配置.*SDK",
+        "integrate|setup|initialize|configure",
+        "快速开始|入门|getting started",
+        "安装|install|pod|cocoapods|spm"
+      ]
+    }
+  ],
+  "scenarioTargets": [
+    {
+      "id": "custom_message",
+      "text": "自定义 消息 类型 实现 样式 发送 展示 逻辑 注册 Cell"
+    },
+    {
+      "id": "user_profile_update",
+      "text": "更新 头像 修改 昵称 用户 信息 缓存 userCache Provider 设置 头像 个人 资料 刷新"
+    },
+    {
+      "id": "text_style_customization",
+      "text": "修改 文本 消息 颜色 字体 大小 样式 color font size"
+    }
+  ],
+  "scenarioIntentMap": {
+    "user_profile_update": "customize_ui",
+    "text_style_customization": "customize_ui",
+    "custom_message": "customize_message"
+  },
+  "intentDescriptions": {
+    "implement_feature": "实现功能",
+    "customize_ui": "定制 UI 样式",
+    "customize_message": "自定义消息类型",
+    "add_menu_item": "添加菜单项",
+    "fix_error": "修复错误",
+    "understand_api": "理解 API",
+    "understand_class": "理解类/组件",
+    "integrate_sdk": "集成 SDK",
+    "configure_appearance": "配置外观",
+    "unknown": "未知意图"
+  },
+  "entityRules": {
+    "common": {
+      "errorCode": {
+        "patterns": [
+          "错误码?\\s*[:：]?\\s*(\\d+)",
+          "error\\s*code?\\s*[:：]?\\s*(\\d+)",
+          "code\\s*[:：]?\\s*(\\d+)",
+          "(\\d{3})\\s*(错误|error)",
+          "\\b(5\\d{2}|4\\d{2}|1\\d{2})\\b"
+        ],
+        "range": { "min": 1, "max": 999 }
+      },
+      "component": {
+        "patterns": [
+          "\\b(EaseChatUIKit|ChatUIKit)\\b",
+          "\\b(EaseCallUIKit|CallUIKit|CallKit)\\b",
+          "\\b(EaseChatroomUIKit|ChatroomUIKit)\\b",
+          "\\b(EaseIMKit|IMKit)\\b"
+        ],
+        "mapping": {
+          "easechatuikit": "EaseChatUIKit",
+          "chatuikit": "EaseChatUIKit",
+          "easecalluikit": "EaseCallUIKit",
+          "calluikit": "EaseCallUIKit",
+          "callkit": "EaseCallUIKit",
+          "easechatroomunikit": "EaseChatroomUIKit",
+          "chatroomunikit": "EaseChatroomUIKit",
+          "easeimkit": "EaseIMKit",
+          "imkit": "EaseIMKit"
+        }
+      },
+      "className": {
+        "patterns": [
+          "\\b([A-Z][a-z]+(?:[A-Z][a-z0-9]+)+(?:Cell|View|Controller|Manager|Entity|Provider|Protocol|Delegate))\\b",
+          "\\b([A-Z][a-z]+(?:[A-Z][a-z]+){1,})\\b",
+          "(?:类|class)\\s*[:：]?\\s*([A-Z][a-zA-Z0-9]+)",
+          "([A-Z][a-zA-Z0-9]+)\\s*(?:类|class)"
+        ],
+        "exclude": ["UIKit", "SDK", "API", "iOS", "Swift", "Xcode"]
+      },
+      "messageName": {
+        "patterns": [
+          "(订单|商品|位置|名片|卡片|红包|礼物|优惠券|投票|问卷|预约|打卡)\\s*消息",
+          "(order|product|location|contact|card|gift|coupon|vote|survey)\\s*message",
+          "自定义\\s*([\\u4e00-\\u9fa5]+)\\s*消息",
+          "custom\\s+(\\w+)\\s+message"
+        ]
+      },
+      "configProperty": {
+        "patterns": [
+          "\\b(primaryHue|secondaryHue|errorHue|neutralHue|neutralSpecialHue)\\b",
+          "\\b(avatarRadius|avatarPlaceHolder)\\b",
+          "\\b(bubbleStyle|contentStyle|imageMessageCorner)\\b",
+          "\\b(inputExtendActions|messageLongPressedActions)\\b",
+          "\\b(alertStyle|actionSheetRowHeight)\\b",
+          "Appearance\\s*\\.\\s*(\\w+)"
+        ]
+      },
+      "featureName": {
+        "patterns": [
+          "(消息|群组|聊天室|好友|联系人|会话|推送|音视频|通话)",
+          "(message|group|chatroom|contact|conversation|push|call)",
+          "实现\\s*([\\u4e00-\\u9fa5]+)\\s*功能"
+        ]
+      }
+    },
+    "ios": {
+      "configProperty": {
+        "patterns": [
+          "\\b(appearance|primaryHue|secondaryHue|errorHue|neutralHue)\\b",
+          "\\b(avatarRadius|avatarPlaceHolder|bubbleStyle|contentStyle|imageMessageCorner)\\b"
+        ]
+      }
+    },
+    "android": {
+      "featureName": {
+        "patterns": [
+          "(fragment|activity|viewmodel|compose)",
+          "(androidx|gradle|manifest)"
+        ]
+      }
+    },
+    "web": {
+      "featureName": {
+        "patterns": [
+          "(react|vue|dom|hook|router)",
+          "(ssr|csr|cors)"
+        ]
+      }
+    },
+    "flutter": {
+      "featureName": {
+        "patterns": [
+          "(widget|dart|methodchannel|navigator)",
+          "(provider|bloc)"
+        ]
+      }
+    },
+    "harmony": {
+      "featureName": {
+        "patterns": [
+          "(arkui|arkts|viewmodel|ability)",
+          "(navdestination|module)"
+        ]
+      }
+    },
+    "rn": {
+      "featureName": {
+        "patterns": [
+          "(react native|bridge|hooks|jsx)",
+          "(metro|hermes|fabric|turbo)"
+        ]
+      }
+    },
+    "unity": {
+      "featureName": {
+        "patterns": [
+          "(scene|prefab|gameobject|mono)",
+          "(shader|addressables)"
+        ]
+      }
+    }
+  }
+}

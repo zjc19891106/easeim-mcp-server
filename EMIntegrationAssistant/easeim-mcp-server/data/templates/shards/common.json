@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "common",
+  "templates": [
+    {
+      "id": "common:message:custom_message_full",
+      "name": "自定义消息模板(通用)",
+      "description": "通用自定义消息模板结构",
+      "platform": "common",
+      "domain": "message",
+      "variables": [
+        {
+          "name": "messageName",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "template": "class {{messageName}}MessageCell { ... }",
+      "usage": [
+        "继承并实现自定义渲染",
+        "注册到组件表",
+        "发送自定义消息体"
+      ]
+    }
+  ]
+}

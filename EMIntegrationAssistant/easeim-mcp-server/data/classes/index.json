@@ -1,0 +1,201 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-16T08:00:00.000Z",
+  "platforms": [
+    "common",
+    "ios",
+    "android",
+    "web",
+    "flutter",
+    "unity"
+  ],
+  "classes": [
+    {
+      "name": "CustomMessageCell",
+      "description": "自定义消息 Cell 的基类，用于展示自定义类型的消息",
+      "superclass": "MessageCell",
+      "protocols": [
+        "ThemeSwitchProtocol"
+      ],
+      "isOpen": true,
+      "file": "EaseChatUIKit/Classes/UI/Components/Chat/Cells/CustomMessageCell.swift",
+      "keyMethods": [
+        "refresh(entity:)",
+        "switchTheme(style:)"
+      ],
+      "keyProperties": [
+        "content",
+        "towards"
+      ],
+      "usageScenarios": [
+        "custom_message"
+      ],
+      "platform": "ios"
+    },
+    {
+      "name": "MessageCell",
+      "description": "消息 Cell 的基类，所有消息类型的 Cell 都继承自它",
+      "superclass": "UITableViewCell",
+      "protocols": [
+        "ThemeSwitchProtocol"
+      ],
+      "isOpen": true,
+      "file": "EaseChatUIKit/Classes/UI/Components/Chat/Cells/MessageCell.swift",
+      "keyMethods": [
+        "refresh(entity:)",
+        "switchTheme(style:)",
+        "createContent()",
+        "setupConstraints()"
+      ],
+      "keyProperties": [
+        "entity",
+        "towards",
+        "bubbleWithArrow",
+        "bubbleMultiCorners",
+        "content",
+        "avatar",
+        "nickName"
+      ],
+      "usageScenarios": [
+        "custom_message",
+        "custom_bubble_style"
+      ],
+      "platform": "ios"
+    },
+    {
+      "name": "MessageEntity",
+      "description": "消息实体类，封装 ChatMessage 并提供 UI 渲染所需的计算属性。注意：文本消息的颜色和字体是在该类的 convertTextAttribute 中确定的。",
+      "superclass": "NSObject",
+      "protocols": [],
+      "isOpen": true,
+      "file": "EaseChatUIKit/Classes/UI/Components/Chat/ViewModel/MessageEntity.swift",
+      "keyMethods": [
+        "cellHeight()",
+        "updateBubbleSize()",
+        "customSize()",
+        "convertTextAttribute()"
+      ],
+      "keyProperties": [
+        "message",
+        "bubbleSize",
+        "height",
+        "content",
+        "replySize"
+      ],
+      "usageScenarios": [
+        "custom_message",
+        "text_style_customization"
+      ],
+      "platform": "ios"
+    },
+    {
+      "name": "MessageListController",
+      "description": "消息列表页面控制器，管理消息的展示和交互",
+      "superclass": "UIViewController",
+      "protocols": [
+        "MessageListDriverEventsListener",
+        "ThemeSwitchProtocol"
+      ],
+      "isOpen": true,
+      "file": "EaseChatUIKit/Classes/UI/Components/Chat/Controllers/MessageListController.swift",
+      "keyMethods": [
+        "handleAttachmentAction(item:)",
+        "messageBubbleClicked(message:)",
+        "processMessage(item:message:)",
+        "sendMessage()"
+      ],
+      "keyProperties": [
+        "viewModel",
+        "messageContainer",
+        "profile",
+        "chatType"
+      ],
+      "usageScenarios": [
+        "custom_message",
+        "add_attachment_menu",
+        "message_long_press_menu",
+        "chat_background_customization"
+      ],
+      "platform": "ios"
+    },
+    {
+      "name": "ComponentsRegister",
+      "description": "组件注册中心，用于注册和替换 UIKit 中的各种组件",
+      "superclass": "NSObject",
+      "protocols": [],
+      "isOpen": false,
+      "file": "EaseChatUIKit/Classes/UI/Core/UIKit/Commons/ComponentsRegister.swift",
+      "keyMethods": [
+        "registerCustomizeCellClass(cellType:)",
+        "registerCustomCellClasses(cellType:identifier:)"
+      ],
+      "keyProperties": [
+        "shared",
+        "customCellClasses",
+        "customCellMaps",
+        "MessageViewController",
+        "MessageRenderEntity"
+      ],
+      "usageScenarios": [
+        "custom_message"
+      ],
+      "platform": "ios"
+    },
+    {
+      "name": "ActionSheetItem",
+      "description": "操作菜单项，用于定义菜单的标题、图标、类型等",
+      "superclass": null,
+      "protocols": [
+        "ActionSheetItemProtocol"
+      ],
+      "isOpen": false,
+      "file": "EaseChatUIKit/Classes/UI/Core/UIKit/Commons/ActionSheetItem.swift",
+      "keyMethods": [],
+      "keyProperties": [
+        "title",
+        "type",
+        "tag",
+        "image",
+        "action"
+      ],
+      "usageScenarios": [
+        "add_attachment_menu",
+        "message_long_press_menu"
+      ],
+      "platform": "ios"
+    }
+  ],
+  "inheritance": [
+    {
+      "superclass": "MessageCell",
+      "subclasses": [
+        "CustomMessageCell",
+        "TextMessageCell",
+        "ImageMessageCell",
+        "AudioMessageCell",
+        "VideoMessageCell",
+        "FileMessageCell",
+        "ContactCardCell",
+        "AlertMessageCell",
+        "LocationMessageCell",
+        "CombineMessageCell",
+        "GIFMessageCell"
+      ],
+      "platform": "ios"
+    },
+    {
+      "superclass": "CustomMessageCell",
+      "subclasses": [],
+      "platform": "ios"
+    },
+    {
+      "superclass": "UIViewController",
+      "subclasses": [
+        "MessageListController",
+        "ConversationListController",
+        "ContactViewController"
+      ],
+      "platform": "ios"
+    }
+  ]
+}

@@ -17,6 +17,7 @@ import type { SourceSearchResult, CodeSymbol, AmbiguityDetection } from '../type
 import { InvertedIndex, IndexedDocument, SearchResult as IndexSearchResult } from './InvertedIndex.js';
 import { QueryExpander } from '../intelligence/QueryExpander.js';
 import { AmbiguityDetector } from './AmbiguityDetector.js';
+import { SearchPipeline } from './SearchPipeline.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -137,12 +138,16 @@ export class ShardedSourceSearch {
   private shardCache: LRUCache<string, CachedShard>;
   private queryExpander: QueryExpander;
   private ambiguityDetector: AmbiguityDetector;
+  private pipeline: SearchPipeline;
 
   constructor(maxCachedShards: number = 4) {
     this.sourcesDir = path.join(__dirname, '../../data/sources');
     this.shardCache = new LRUCache(maxCachedShards);
     this.queryExpander = new QueryExpander();
     this.ambiguityDetector = new AmbiguityDetector();
+    this.pipeline = new SearchPipeline(this.queryExpander, {
+      preprocess: (input) => `${input} ${this.splitCamelCase(input)}`
+    });
   }
 
   /**
@@ -317,12 +322,7 @@ export class ShardedSourceSearch {
   } {
     const manifest = this.loadManifest();
 
-    // 查询预处理：驼峰拆分 + 原始查询
-    const processedQuery = `${query} ${this.splitCamelCase(query)}`;
-
-    // 查询扩展
-    const expandedQuery = this.queryExpander.expand(processedQuery);
-    const expandedQueryStr = expandedQuery.expanded.join(' ');
+    const prepared = this.pipeline.prepareQuery(query);
 
     // 确定要搜索的组件
     const targetComponents = component === 'all'
@@ -340,7 +340,7 @@ export class ShardedSourceSearch {
       loadedShards.push(comp);
 
       // 使用倒排索引搜索
-      const indexResults = cached.index.search(expandedQueryStr, limit * 2);
+      const indexResults = cached.index.search(prepared.expandedQueryStr, limit * 2);
 
       // 转换结果
       for (const result of indexResults) {
@@ -371,7 +371,7 @@ export class ShardedSourceSearch {
     return {
       results: sortedResults,
       ambiguity,
-      expandedTerms: expandedQuery.synonymsUsed.length > 0 ? expandedQuery.expanded : undefined,
+      expandedTerms: prepared.expandedQuery.synonymsUsed.length > 0 ? prepared.expandedQuery.expanded : undefined,
       loadedShards,
     };
   }

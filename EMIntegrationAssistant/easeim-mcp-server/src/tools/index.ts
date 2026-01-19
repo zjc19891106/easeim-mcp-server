@@ -12,9 +12,14 @@ export const TOOLS = [
         code: {
           type: 'number',
           description: '错误码数字，如 508'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
         }
       },
-      required: ['code'],
+      required: ['code', 'platform'],
       additionalProperties: false
     }
   },
@@ -30,8 +35,8 @@ export const TOOLS = [
         },
         platform: {
           type: 'string',
-          enum: ['ios', 'android', 'web', 'flutter', 'unity'],
-          description: '指定平台，可选：ios, android, web, flutter, unity'
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
         },
         layer: {
           type: 'string',
@@ -49,7 +54,7 @@ export const TOOLS = [
           default: 10
         }
       },
-      required: ['query'],
+      required: ['query', 'platform'],
       additionalProperties: false
     }
   },
@@ -63,6 +68,11 @@ export const TOOLS = [
           type: 'string',
           description: '搜索关键词，如类名、方法名、"消息气泡"、"MessageBubble"'
         },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
+        },
         component: {
           type: 'string',
           enum: ['EaseChatUIKit', 'EaseCallUIKit', 'EaseChatroomUIKit', 'all'],
@@ -75,7 +85,7 @@ export const TOOLS = [
           default: 10
         }
       },
-      required: ['query'],
+      required: ['query', 'platform'],
       additionalProperties: false
     }
   },
@@ -89,9 +99,14 @@ export const TOOLS = [
           type: 'string',
           enum: ['quickstart', 'login', 'message', 'group', 'chatroom', 'push', 'migration'],
           description: '指南主题：quickstart(快速开始), login(登录), message(消息), group(群组), chatroom(聊天室), push(推送), migration(迁移升级)'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
         }
       },
-      required: ['topic'],
+      required: ['topic', 'platform'],
       additionalProperties: false
     }
   },
@@ -104,9 +119,14 @@ export const TOOLS = [
         symptom: {
           type: 'string',
           description: '问题症状描述，如 "消息发送失败"、"被拉黑"、"登录超时"'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
         }
       },
-      required: ['symptom'],
+      required: ['symptom', 'platform'],
       additionalProperties: false
     }
   },
@@ -119,9 +139,14 @@ export const TOOLS = [
         path: {
           type: 'string',
           description: '文档路径，如 "api/message_send.md"'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
         }
       },
-      required: ['path'],
+      required: ['path', 'platform'],
       additionalProperties: false
     }
   },
@@ -135,6 +160,11 @@ export const TOOLS = [
           type: 'string',
           description: '源码文件路径，相对于 sources/ 目录'
         },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
+        },
         startLine: {
           type: 'number',
           description: '起始行号（可选）'
@@ -144,7 +174,7 @@ export const TOOLS = [
           description: '结束行号（可选）'
         }
       },
-      required: ['path'],
+      required: ['path', 'platform'],
       additionalProperties: false
     }
   },
@@ -159,9 +189,14 @@ export const TOOLS = [
           enum: ['EaseChatUIKit', 'EaseCallUIKit', 'EaseChatroomUIKit', 'EaseIMKit', 'all'],
           description: '指定组件，或 "all" 查看所有组件的配置项',
           default: 'all'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
         }
       },
-      required: [],
+      required: ['platform'],
       additionalProperties: false
     }
   },
@@ -182,9 +217,14 @@ export const TOOLS = [
           enum: ['protocol', 'class', 'all'],
           description: '扩展点类型：protocol(协议) / class(可继承类) / all(全部)',
           default: 'all'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
         }
       },
-      required: [],
+      required: ['platform'],
       additionalProperties: false
     }
   },
@@ -203,9 +243,14 @@ export const TOOLS = [
           enum: ['EaseChatUIKit', 'EaseCallUIKit', 'EaseChatroomUIKit', 'EaseIMKit', 'all'],
           description: '指定组件（可选），默认搜索所有组件',
           default: 'all'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
         }
       },
-      required: ['propertyName'],
+      required: ['propertyName', 'platform'],
       additionalProperties: false
     }
   },
@@ -225,9 +270,14 @@ export const TOOLS = [
         session_id: {
           type: 'string',
           description: '(可选) 会话 ID，用于维护上下文。同一会话使用相同 ID 可获得连续性支持'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，如 ios/android/web/flutter/rn/harmony/unity'
         }
       },
-      required: ['query'],
+      required: ['query', 'platform'],
       additionalProperties: false
     }
   },
@@ -250,9 +300,14 @@ export const TOOLS = [
           type: 'number',
           description: '消息 Cell 高度（仅 custom_message 场景需要），默认 120',
           default: 120
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
         }
       },
-      required: ['scenario'],
+      required: ['scenario', 'platform'],
       additionalProperties: false
     }
   },
@@ -264,10 +319,16 @@ export const TOOLS = [
       properties: {
         className: {
           type: 'string',
-          description: '类名，如 "CustomMessageCell"、"MessageCell"、"MessageListController"、"ComponentsRegister"'
+          description: '类名，如 "MessageCell"、"ChatViewController"'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
         }
       },
-      required: ['className'],
+      required: ['className', 'platform'],
+
       additionalProperties: false
     }
   },
@@ -279,10 +340,16 @@ export const TOOLS = [
       properties: {
         keyword: {
           type: 'string',
-          description: '可选的关键词过滤，如 "消息"、"菜单"、"主题"'
+          description: '搜索关键词（可选），用于过滤场景列表'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
         }
       },
-      required: [],
+      required: ['platform'],
+
       additionalProperties: false
     }
   },
@@ -305,7 +372,7 @@ export const TOOLS = [
           description: 'Podfile 文件内容（可选，用于检查具体配置问题）'
         }
       },
-      required: ['component'],
+      required: ['component', 'platform'],
       additionalProperties: false
     }
   },
@@ -318,9 +385,14 @@ export const TOOLS = [
         errorMessage: {
           type: 'string',
           description: '构建错误信息，如 "Sandbox: rsync.samba deny file-write-create"、"PBXFileSystemSynchronizedRootGroup"'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios'],
+          description: '指定平台，仅支持 ios'
         }
       },
-      required: ['errorMessage'],
+      required: ['errorMessage', 'platform'],
       additionalProperties: false
     }
   },
@@ -334,9 +406,14 @@ export const TOOLS = [
           type: 'string',
           enum: ['EaseChatUIKit', 'EaseCallUIKit', 'EaseChatroomUIKit'],
           description: '目标组件：EaseChatUIKit, EaseCallUIKit, EaseChatroomUIKit'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios'],
+          description: '指定平台，仅支持 ios'
         }
       },
-      required: ['component'],
+      required: ['component', 'platform'],
       additionalProperties: false
     }
   },
@@ -350,9 +427,14 @@ export const TOOLS = [
           type: 'string',
           enum: ['EaseChatUIKit', 'EaseCallUIKit', 'EaseChatroomUIKit', 'EaseIMKit'],
           description: '目标组件：EaseChatUIKit, EaseCallUIKit, EaseChatroomUIKit, EaseIMKit'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios'],
+          description: '指定平台，仅支持 ios'
         }
       },
-      required: ['component'],
+      required: ['component', 'platform'],
       additionalProperties: false
     }
   },
@@ -367,9 +449,14 @@ export const TOOLS = [
           enum: ['EaseChatUIKit', 'EaseCallUIKit', 'EaseChatroomUIKit', 'EaseIMKit', 'all'],
           description: '目标组件，或 "all" 查看所有组件的要求',
           default: 'all'
+        },
+        platform: {
+          type: 'string',
+          enum: ['ios'],
+          description: '指定平台，仅支持 ios'
         }
       },
-      required: [],
+      required: ['platform'],
       additionalProperties: false
     }
   }

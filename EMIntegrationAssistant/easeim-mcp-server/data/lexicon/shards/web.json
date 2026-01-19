@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "1.0",
+  "platform": "web",
+  "synonyms": {
+    "dom": [
+      "document",
+      "browser"
+    ],
+    "react": [
+      "jsx",
+      "component",
+      "hooks"
+    ],
+    "vue": [
+      "composition api",
+      "vue3"
+    ],
+    "ts": [
+      "typescript",
+      "tsconfig"
+    ],
+    "vite": [
+      "bundler",
+      "dev server"
+    ],
+    "webpack": [
+      "bundler",
+      "loader"
+    ],
+    "router": [
+      "react router",
+      "vue router"
+    ],
+    "hook": [
+      "useeffect",
+      "usestate"
+    ],
+    "state": [
+      "redux",
+      "pinia",
+      "zustand"
+    ],
+    "ssr": [
+      "next",
+      "nuxt"
+    ],
+    "csr": [
+      "spa",
+      "client render"
+    ],
+    "cors": [
+      "cross origin",
+      "cors"
+    ],
+    "fetch": [
+      "http",
+      "xhr"
+    ],
+    "bundle": [
+      "bundle",
+      "chunk",
+      "tree shaking"
+    ],
+    "polyfill": [
+      "compat",
+      "polyfill"
+    ],
+    "hydrate": [
+      "hydrate",
+      "ssr hydrate"
+    ]
+  },
+  "abbreviations": {
+    "csr": [
+      "client side render"
+    ],
+    "ssr": [
+      "server side render"
+    ],
+    "spa": [
+      "single page app"
+    ],
+    "pwa": [
+      "progressive web app"
+    ]
+  },
+  "stopWords": [],
+  "dictionary": {
+    "coreTerms": [
+      "dom",
+      "browser",
+      "react",
+      "vue",
+      "component",
+      "props",
+      "ssr",
+      "csr",
+      "cors",
+      "fetch"
+    ],
+    "uikitTerms": [
+      "hook",
+      "state",
+      "effect",
+      "ref",
+      "memo",
+      "context"
+    ],
+    "codeTerms": [
+      "render",
+      "hydrate",
+      "router",
+      "provider",
+      "middleware"
+    ],
+    "pinyinTerms": []
+  },
+  "highFrequency": {
+    "react": 60,
+    "dom": 55,
+    "hooks": 50,
+    "router": 45,
+    "ssr": 45,
+    "cors": 40,
+    "bundle": 40
+  },
+  "popularTerms": {
+    "react": 60,
+    "hooks": 55,
+    "dom": 50,
+    "router": 45,
+    "cors": 40
+  },
+  "categoryKeywords": {
+    "框架": [
+      "react",
+      "vue",
+      "component"
+    ],
+    "渲染": [
+      "dom",
+      "ssr",
+      "csr"
+    ],
+    "架构": [
+      "hooks",
+      "state",
+      "router"
+    ],
+    "构建": [
+      "vite",
+      "webpack",
+      "bundler"
+    ],
+    "运行时": [
+      "browser",
+      "node",
+      "runtime"
+    ]
+  }
+}

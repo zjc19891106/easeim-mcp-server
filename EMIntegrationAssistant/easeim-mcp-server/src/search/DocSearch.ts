@@ -192,8 +192,8 @@ export class DocSearch {
       });
     }
 
-    // 限制结果数量
-    const limitedResults = results.slice(0, limit);
+    const reranked = this.rerankApiResults(query, results);
+    const limitedResults = this.truncateApiResults(reranked, limit);
     const ambiguity = this.ambiguityDetector.detectApiAmbiguity(query, limitedResults, context);
 
     const suggestion = this.pipeline.buildSuggestion(query, limitedResults, {
@@ -208,6 +208,40 @@ export class DocSearch {
       spellCorrection: prepared.spellCorrection,
       suggestion
     };
+  }
+
+  private rerankApiResults(query: string, results: ApiSearchResult[]): ApiSearchResult[] {
+    if (results.length === 0) return results;
+    const normalized = query.toLowerCase().trim();
+
+    const scored = results.map(result => {
+      let bonus = 0;
+      const name = result.name.toLowerCase();
+      const module = result.module.toLowerCase();
+      const description = result.description.toLowerCase();
+
+      if (name === normalized) bonus += 50;
+      if (name.includes(normalized)) bonus += 20;
+      if (module.includes(normalized)) bonus += 10;
+      if (description.includes(normalized)) bonus += 5;
+      if (normalized.includes(name)) bonus += 10;
+
+      return { result, score: result.score + bonus };
+    });
+
+    return scored
+      .sort((a, b) => b.score - a.score)
+      .map(item => item.result);
+  }
+
+  private truncateApiResults(results: ApiSearchResult[], limit: number): ApiSearchResult[] {
+    if (results.length <= limit) return results;
+    const topScore = results[0].score || 0;
+    const threshold = topScore * 0.6;
+    const filtered = results.filter(result => result.score >= threshold);
+    const minimum = Math.min(3, limit);
+    const sliced = filtered.length >= minimum ? filtered : results.slice(0, minimum);
+    return sliced.slice(0, limit);
   }
 
   /**

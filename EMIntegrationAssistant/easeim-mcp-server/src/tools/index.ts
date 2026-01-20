@@ -160,10 +160,20 @@ export const TOOLS = [
           type: 'string',
           description: '源码文件路径，相对于 sources/ 目录'
         },
+        symbol: {
+          type: 'string',
+          description: '符号名称（类/方法），如 "MessageListController" 或 "MessageListController.handleAttachmentAction"'
+        },
+        component: {
+          type: 'string',
+          enum: ['EaseChatUIKit', 'EaseCallUIKit', 'EaseChatroomUIKit', 'EaseIMKit', 'all'],
+          description: '指定搜索的组件（可选）',
+          default: 'all'
+        },
         platform: {
           type: 'string',
           enum: ['ios', 'android', 'web', 'flutter', 'unity', 'rn', 'harmony', 'windows'],
-          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony'
+          description: '指定平台，可选：ios, android, web, flutter, unity, rn, harmony, windows'
         },
         startLine: {
           type: 'number',
@@ -174,7 +184,8 @@ export const TOOLS = [
           description: '结束行号（可选）'
         }
       },
-      required: ['path', 'platform'],
+      required: ['platform'],
+
       additionalProperties: false
     }
   },

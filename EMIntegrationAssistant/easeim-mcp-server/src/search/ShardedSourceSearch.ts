@@ -359,11 +359,11 @@ export class ShardedSourceSearch {
       }
     }
 
-    // 排序并限制结果
-    const sortedResults = allResults
-      .sort((a, b) => b._score - a._score)
-      .slice(0, limit)
-      .map(({ _score, ...rest }) => rest);
+    const sortedResults = this.truncateSourceResults(
+      this.rerankSourceResults(query, allResults)
+        .map(({ _score, ...rest }) => rest),
+      limit
+    );
 
     // 检测歧义
     const ambiguity = this.ambiguityDetector.detectSourceAmbiguity(query, sortedResults);
@@ -374,6 +374,37 @@ export class ShardedSourceSearch {
       expandedTerms: prepared.expandedQuery.synonymsUsed.length > 0 ? prepared.expandedQuery.expanded : undefined,
       loadedShards,
     };
+  }
+
+  private rerankSourceResults(
+    query: string,
+    results: Array<SourceSearchResult & { _score: number }>
+  ): Array<SourceSearchResult & { _score: number }> {
+    if (results.length === 0) return results;
+    const normalized = query.toLowerCase().trim();
+
+    return results.map(result => {
+      let bonus = 0;
+      const fileName = result.path.split('/').pop()?.toLowerCase() || '';
+      const classNames = result.classes.map(name => name.toLowerCase()).join(' ');
+      const description = result.description.toLowerCase();
+
+      if (fileName === normalized || fileName.includes(normalized)) bonus += 20;
+      if (classNames.includes(normalized)) bonus += 15;
+      if (description.includes(normalized)) bonus += 5;
+
+      return { ...result, _score: result._score + bonus };
+    }).sort((a, b) => b._score - a._score);
+  }
+
+  private truncateSourceResults(results: SourceSearchResult[], limit: number): SourceSearchResult[] {
+    if (results.length <= limit) return results;
+    const topScore = results[0]?.score || 0;
+    const threshold = topScore * 0.6;
+    const filtered = results.filter(result => result.score >= threshold);
+    const minimum = Math.min(3, limit);
+    const sliced = filtered.length >= minimum ? filtered : results.slice(0, minimum);
+    return sliced.slice(0, limit);
   }
 
   /**
@@ -393,7 +424,7 @@ export class ShardedSourceSearch {
    */
   findClass(className: string, component?: string): CodeSymbol | null {
     const manifest = this.loadManifest();
-    const targetComponents = component ? [component] : Object.keys(manifest.shards);
+    const targetComponents = component && component !== 'all' ? [component] : Object.keys(manifest.shards);
 
     for (const comp of targetComponents) {
       // 先检查清单中是否包含该类
@@ -417,7 +448,7 @@ export class ShardedSourceSearch {
    */
   findClassMembers(className: string, component?: string): CodeSymbol[] {
     const manifest = this.loadManifest();
-    const targetComponents = component ? [component] : Object.keys(manifest.shards);
+    const targetComponents = component && component !== 'all' ? [component] : Object.keys(manifest.shards);
     const members: CodeSymbol[] = [];
 
     for (const comp of targetComponents) {

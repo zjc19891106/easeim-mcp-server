@@ -746,22 +746,46 @@ ${e.solutions.map((s: any, j: number) => `${j + 1}. ${s}`).join('\n')}
    * 处理 read_source
    */
   private async handleReadSource(args: any) {
-    const { path, startLine, endLine } = args;
+    const { path, symbol, component = 'all', startLine, endLine } = args;
 
-    if (typeof path !== 'string' || !path.trim()) {
-      throw new Error('path 参数必须是非空字符串');
+    if (!path && !symbol) {
+      throw new Error('path 或 symbol 必须至少提供一个');
     }
 
-    let content: string | null;
+    let content: string | null = null;
+    let resolvedPath = path as string | undefined;
+    let resolvedRange: { startLine: number; endLine: number } | null = null;
+
+    if (symbol) {
+      const symbolName = String(symbol);
+      const componentFilter = component === 'all' ? undefined : component;
+      const classMatch = symbolName.split('.')[0];
+
+      const classSymbol = this.sourceSearch.findClass(classMatch, componentFilter || undefined);
+      const memberSymbol = this.sourceSearch.findClassMembers(classMatch, componentFilter || undefined)
+        .find(s => s.name === symbolName);
+      const targetSymbol = memberSymbol || classSymbol;
+
+      if (targetSymbol) {
+        resolvedPath = targetSymbol.file;
+        resolvedRange = { startLine: targetSymbol.startLine || targetSymbol.line, endLine: targetSymbol.endLine || targetSymbol.line };
+      }
+    }
+
+    if (!resolvedPath) {
+      throw new Error('无法定位源码文件路径');
+    }
 
     if (startLine !== undefined && endLine !== undefined) {
-      content = this.sourceSearch.getFileLines(path, startLine, endLine);
+      content = this.sourceSearch.getFileLines(resolvedPath, startLine, endLine);
+    } else if (resolvedRange) {
+      content = this.sourceSearch.getFileLines(resolvedPath, resolvedRange.startLine, resolvedRange.endLine);
     } else {
-      content = this.sourceSearch.readSource(path);
+      content = this.sourceSearch.readSource(resolvedPath);
     }
 
     if (!content) {
-      throw new Error(`无法读取源码文件: ${path}`);
+      throw new Error(`无法读取源码文件: ${resolvedPath}`);
     }
 
     return {

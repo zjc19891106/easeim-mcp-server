@@ -317,6 +317,7 @@ export class EaseIMServer {
 
 **模块**: ${error.module}
 **简述**: ${error.brief}
+**证据**: data/docs/index.json#errorCodeIndex.${error.code}
 
 ## 详细描述
 
@@ -381,9 +382,10 @@ ${error.solutions.map((s: any, i: number) => `${i + 1}. ${s}`).join('\n')}
     };
 
     const { results, ambiguity } = this.docSearch.searchApi(query, context, limit);
+    const resultsWithEvidence = results.filter(result => typeof result.docPath === 'string' && result.docPath.trim());
 
     // === 无结果时的交互引导 ===
-    if (results.length === 0) {
+    if (resultsWithEvidence.length === 0) {
       const builder = ResponseBuilder.create();
       builder.addTitle('🔍 API 搜索结果');
       builder.addParagraph(`未找到与 "${query}" 相关的 API。`);
@@ -412,33 +414,47 @@ ${error.solutions.map((s: any, i: number) => `${i + 1}. ${s}`).join('\n')}
       return builder.build();
     }
 
+    if (ambiguity.hasAmbiguity) {
+      const builder = ResponseBuilder.create();
+      builder.addTitle('🔍 API 搜索需要澄清');
+      builder.addParagraph(ambiguity.question || '检测到多个可能的检索范围，请先确定范围以保证准确性。');
+
+      if (ambiguity.options && ambiguity.options.length > 0) {
+        const missingInfo = ambiguity.type ? [ambiguity.type] : undefined;
+        builder.setAmbiguousInteraction({
+          question: ambiguity.question || '请选择更具体的检索范围：',
+          options: ambiguity.options.map(option => ({
+            label: option.value,
+            value: option.value,
+            description: `${option.description}${option.count ? ` (${option.count} 个结果)` : ''}`
+          })),
+          missingInfo
+        });
+      } else {
+        builder.setMissingInfoInteraction({
+          question: '请补充更具体的检索范围',
+          missingFields: ['platform', 'layer', 'component']
+        });
+      }
+
+      return builder.build();
+    }
+
     // 构建结果文本
     let resultText = '';
 
-    // 如果存在歧义，先显示歧义提示
-    if (ambiguity.hasAmbiguity) {
-      resultText += `⚠️ **检测到可能的歧义**\n\n${ambiguity.question}\n\n`;
-      if (ambiguity.options) {
-        resultText += '可用选项：\n';
-        for (const option of ambiguity.options) {
-          resultText += `- **${option.description}** (${option.count} 个结果)\n`;
-        }
-        resultText += '\n您可以通过指定 `platform`、`layer` 或 `component` 参数来过滤结果。\n\n---\n\n';
-      }
-    }
-
     resultText += `# API 搜索结果：${query}
 
-找到 ${results.length} 个相关 API：
+找到 ${resultsWithEvidence.length} 个相关 API：
 
-${results.map((r, i) => `
+${resultsWithEvidence.map((r, i) => `
 ## ${i + 1}. ${r.name}
 
 **模块**: ${r.moduleName} (${r.module})
 **平台**: ${r.platform}
 **层级**: ${r.layer}${r.component ? `\n**组件**: ${r.component}` : ''}
 **描述**: ${r.description}
-**文档**: ${r.docPath}
+**证据**: ${r.docPath}#${r.module}
 **相关性**: ${r.score.toFixed(0)} 分
 `).join('\n')}
 
@@ -498,9 +514,21 @@ ${results.map((r, i) => `
     }
 
     const { results, ambiguity } = this.sourceSearch.search(query, component, limit);
+    const resultsWithEvidence = results.map(result => {
+      const evidence = (result.matchedSymbols || [])
+        .filter(symbol => typeof symbol.line === 'number')
+        .slice(0, 3)
+        .map(symbol => {
+          const startLine = symbol.startLine || symbol.line;
+          const endLine = symbol.endLine || symbol.line;
+          const lineText = startLine === endLine ? `${startLine}` : `${startLine}-${endLine}`;
+          return `${result.path}:${lineText} (${symbol.name})`;
+        });
+      return { result, evidence };
+    }).filter(item => item.evidence.length > 0);
 
     // === 无结果时的交互引导 ===
-    if (results.length === 0) {
+    if (resultsWithEvidence.length === 0) {
       const builder = ResponseBuilder.create();
       builder.addTitle('📦 源码搜索结果');
       builder.addParagraph(`未找到与 "${query}" 相关的源码。`);
@@ -529,32 +557,52 @@ ${results.map((r, i) => `
       return builder.build();
     }
 
+    if (ambiguity.hasAmbiguity) {
+      const builder = ResponseBuilder.create();
+      builder.addTitle('📦 源码搜索需要澄清');
+      builder.addParagraph(ambiguity.question || '检测到多个组件相关结果，请先指定组件范围。');
+
+      if (ambiguity.options && ambiguity.options.length > 0) {
+        builder.setAmbiguousInteraction({
+          question: ambiguity.question || '请选择要搜索的组件：',
+          options: ambiguity.options.map(option => ({
+            label: option.value,
+            value: option.value,
+            description: `${option.description}${option.count ? ` (${option.count} 个结果)` : ''}`
+          })),
+          missingInfo: ['component']
+        });
+      } else {
+        builder.setAmbiguousInteraction({
+          question: '请选择要搜索的组件：',
+          options: [
+            { label: 'EaseChatUIKit', value: 'EaseChatUIKit', description: '聊天界面 UI 组件' },
+            { label: 'EaseCallUIKit', value: 'EaseCallUIKit', description: '音视频通话 UI' },
+            { label: 'EaseChatroomUIKit', value: 'EaseChatroomUIKit', description: '聊天室 UI' }
+          ],
+          missingInfo: ['component']
+        });
+      }
+
+      return builder.build();
+    }
+
     // 构建结果文本
     let resultText = '';
 
-    // 如果存在歧义，先显示歧义提示
-    if (ambiguity.hasAmbiguity) {
-      resultText += `⚠️ **检测到可能的歧义**\n\n${ambiguity.question}\n\n`;
-      if (ambiguity.options) {
-        resultText += '可用选项：\n';
-        for (const option of ambiguity.options) {
-          resultText += `- **${option.description}** (${option.count} 个结果)\n`;
-        }
-        resultText += '\n您可以通过指定 `component` 参数来过滤结果。\n\n---\n\n';
-      }
-    }
-
     resultText += `# 源码搜索结果：${query}
 
-找到 ${results.length} 个相关文件：
+找到 ${resultsWithEvidence.length} 个相关文件：
 
-${results.map((r, i) => `
+${resultsWithEvidence.map(({ result: r, evidence }, i) => `
 ## ${i + 1}. ${r.path}
 
 **组件**: ${r.component}
 **描述**: ${r.description}
 **包含的类**: ${r.classes.join(', ') || '无'}
 **标签**: ${r.tags.join(', ') || '无'}
+**证据**:
+${evidence.map(item => `- ${item}`).join('\n')}
 **相关性**: ${r.score.toFixed(0)} 分
 
 ${r.matchedSymbols && r.matchedSymbols.length > 0 ? `
@@ -695,6 +743,7 @@ ${errors.map((e, i) => `
 
 **模块**: ${e.module}
 **描述**: ${e.brief}
+**证据**: data/docs/index.json#errorCodeIndex.${e.code}
 
 ### 可能原因
 ${e.causes.map((c: any, j: number) => `${j + 1}. ${c}`).join('\n')}

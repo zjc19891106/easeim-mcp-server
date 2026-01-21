@@ -91,3 +91,9 @@ cd easeim-mcp-server/EMIntegrationAssistant/easeim-mcp-server/ && npm install &&
 | `get_platform_requirements` | 📋 查询平台版本要求 |
 
 ---
+
+# 精准度保障
+
+- 最小相关性阈值：低于阈值直接视为未命中
+- 歧义强制澄清：平台/层级/组件歧义不直接输出结果
+- 证据绑定输出：API 文档路径、源码行号或错误码索引可追溯

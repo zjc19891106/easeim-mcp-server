@@ -133,6 +133,7 @@ class LRUCache<K, V> {
 // ==================== 分片搜索引擎 ====================
 
 export class ShardedSourceSearch {
+  private readonly minSourceScore: number = 1.5;
   private sourcesDir: string;
   private manifest: ShardManifest | null = null;
   private shardCache: LRUCache<string, CachedShard>;
@@ -393,15 +394,19 @@ export class ShardedSourceSearch {
       if (classNames.includes(normalized)) bonus += 15;
       if (description.includes(normalized)) bonus += 5;
 
-      return { ...result, _score: result._score + bonus };
+      const boostedScore = result._score + bonus;
+      return { ...result, score: boostedScore, _score: boostedScore };
     }).sort((a, b) => b._score - a._score);
   }
 
   private truncateSourceResults(results: SourceSearchResult[], limit: number): SourceSearchResult[] {
-    if (results.length <= limit) return results;
+    if (results.length === 0) return results;
     const topScore = results[0]?.score || 0;
-    const threshold = topScore * 0.6;
+    if (topScore < this.minSourceScore) return [];
+    const threshold = Math.max(this.minSourceScore, topScore * 0.6);
     const filtered = results.filter(result => result.score >= threshold);
+    if (filtered.length === 0) return [];
+    if (filtered.length <= limit) return filtered;
     const minimum = Math.min(3, limit);
     const sliced = filtered.length >= minimum ? filtered : results.slice(0, minimum);
     return sliced.slice(0, limit);

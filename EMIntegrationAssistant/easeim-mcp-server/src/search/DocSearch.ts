@@ -22,6 +22,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export class DocSearch {
+  private readonly minApiScore: number = 2.0;
   private index: any = null;
   private indexPath: string;
   private ambiguityDetector: AmbiguityDetector;
@@ -226,19 +227,20 @@ export class DocSearch {
       if (description.includes(normalized)) bonus += 5;
       if (normalized.includes(name)) bonus += 10;
 
-      return { result, score: result.score + bonus };
+      return { ...result, score: result.score + bonus };
     });
 
-    return scored
-      .sort((a, b) => b.score - a.score)
-      .map(item => item.result);
+    return scored.sort((a, b) => b.score - a.score);
   }
 
   private truncateApiResults(results: ApiSearchResult[], limit: number): ApiSearchResult[] {
-    if (results.length <= limit) return results;
+    if (results.length === 0) return results;
     const topScore = results[0].score || 0;
-    const threshold = topScore * 0.6;
+    if (topScore < this.minApiScore) return [];
+    const threshold = Math.max(this.minApiScore, topScore * 0.6);
     const filtered = results.filter(result => result.score >= threshold);
+    if (filtered.length === 0) return [];
+    if (filtered.length <= limit) return filtered;
     const minimum = Math.min(3, limit);
     const sliced = filtered.length >= minimum ? filtered : results.slice(0, minimum);
     return sliced.slice(0, limit);

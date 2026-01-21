@@ -19,6 +19,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export class SourceSearch {
+  private readonly minSourceScore: number = 20;
   private index: SourceIndex | null = null;
   private indexPath: string;
   private ambiguityDetector: AmbiguityDetector;
@@ -209,16 +210,17 @@ export class SourceSearch {
     // 按得分排序并限制数量
     const sortedResults = results
       .sort((a, b) => b._score - a._score)
-      .slice(0, limit)
       .map(({ _score, ...rest }) => rest);
 
+    const filteredResults = this.truncateSourceResults(sortedResults, limit);
+
     // 检测歧义
-    const ambiguity = this.ambiguityDetector.detectSourceAmbiguity(query, sortedResults);
+    const ambiguity = this.ambiguityDetector.detectSourceAmbiguity(query, filteredResults);
 
     // 生成搜索建议
     const suggestion = this.searchSuggester.generateSuggestions(
       query,
-      sortedResults,
+      filteredResults,
       {
         correctedQuery: spellCorrection.hasCorrected ? spellCorrection.correctedQuery : undefined,
         expandedTerms: searchTerms
@@ -226,12 +228,22 @@ export class SourceSearch {
     );
 
     return {
-      results: sortedResults,
+      results: filteredResults,
       ambiguity,
       expandedTerms: expandedQuery.synonymsUsed.length > 0 ? searchTerms : undefined,
       spellCorrection: spellCorrection.hasCorrected ? spellCorrection : undefined,
       suggestion
     };
+  }
+
+  private truncateSourceResults(results: SourceSearchResult[], limit: number): SourceSearchResult[] {
+    if (results.length === 0) return results;
+    const topScore = results[0]?.score || 0;
+    if (topScore < this.minSourceScore) return [];
+    const threshold = Math.max(this.minSourceScore, topScore * 0.6);
+    const filtered = results.filter(result => result.score >= threshold);
+    if (filtered.length === 0) return [];
+    return filtered.slice(0, limit);
   }
 
   /**

@@ -65,6 +65,33 @@
 
 ---
 
+## 工具日志获取（全局）
+
+所有 tools 调用均输出结构化日志（JSON Lines），用于问题复现与优化排查。
+
+### 开启日志
+
+```bash
+EASEIM_TOOL_LOG=1
+```
+
+### 输出位置（可选）
+
+未设置路径时，日志默认写到 stderr。
+
+```bash
+EASEIM_TOOL_LOG=1
+EASEIM_TOOL_LOG_PATH="/tmp/easeim-tool.log"
+```
+
+### 日志内容示例（JSONL）
+
+```json
+{"log_version":"v1","timestamp":"2025-01-01T00:00:00.000Z","request_id":"...","session_id":"default","tool":{"name":"search_api","args":{"query":"发送消息"}},"response":{"type":"success","content_length":256},"timing_ms":{"total":12}}
+```
+
+---
+
 ## 技术实现
 
 ### 🔧 源码索引增强（参数名准确性）

@@ -1,4 +1,4 @@
-import { IntentClassifier, UserIntent } from '../intelligence/IntentClassifier.js';
+import { ExtractedEntities, IntentClassifier, UserIntent } from '../intelligence/IntentClassifier.js';
 import { ResponseBuilder, analyzeQueryAmbiguity, detectMissingPlatform } from '../utils/ResponseBuilder.js';
 import { SmartAssistContext } from './SmartAssistContext.js';
 import { SmartAssistResponse } from './SmartAssistResponse.js';
@@ -10,6 +10,7 @@ import { ConfigSearch } from '../search/ConfigSearch.js';
 import { KnowledgeGraph } from '../intelligence/KnowledgeGraph.js';
 import { ShardedSourceSearch } from '../search/ShardedSourceSearch.js';
 import { SimilarityMatcher, Vectorizable } from '../intelligence/SimilarityMatcher.js';
+import { SmartAssistLogger } from '../utils/SmartAssistLogger.js';
 
 export class SmartAssistService {
   constructor(
@@ -28,15 +29,60 @@ export class SmartAssistService {
   async handle(args: any) {
     const { query, session_id, platform } = args;
 
+    const startTime = Date.now();
+    const requestId = SmartAssistLogger.newRequestId();
+    const sessionId = session_id || 'default';
+    const rawQuery = typeof query === 'string' ? query : String(query ?? '');
+    const toEntityLog = (value: ExtractedEntities): Record<string, string | number | null> => ({
+      ...value
+    });
+
+    const logAndReturn = (entry: Omit<Parameters<typeof SmartAssistLogger.log>[0], 'log_version' | 'timestamp' | 'request_id' | 'session_id' | 'raw_query' | 'timing_ms'>, result: any) => {
+      SmartAssistLogger.log({
+        log_version: 'v1',
+        timestamp: new Date().toISOString(),
+        request_id: requestId,
+        session_id: sessionId,
+        raw_query: rawQuery,
+        timing_ms: {
+          total: Date.now() - startTime
+        },
+        ...entry
+      });
+      return result;
+    };
+
     if (typeof query !== 'string' || !query.trim()) {
+      SmartAssistLogger.log({
+        log_version: 'v1',
+        timestamp: new Date().toISOString(),
+        request_id: requestId,
+        session_id: sessionId,
+        raw_query: rawQuery,
+        route: { name: 'invalid_query', reason: 'empty_query' },
+        response: { type: 'error' },
+        timing_ms: {
+          total: Date.now() - startTime
+        },
+        error: { message: 'query 参数必须是非空字符串' }
+      });
       throw new Error('query 参数必须是非空字符串');
     }
 
-    const sessionId = session_id || 'default';
-
     const ambiguityAnalysis = analyzeQueryAmbiguity(query);
     if (ambiguityAnalysis.isAmbiguous) {
-      return this.responses.buildAmbiguousQueryResponse(query, ambiguityAnalysis);
+      return logAndReturn(
+        {
+          platform: { provided: platform ?? null },
+          ambiguity: {
+            is_ambiguous: true,
+            type: ambiguityAnalysis.ambiguityType
+          },
+          route: { name: 'ambiguous', reason: ambiguityAnalysis.ambiguityType },
+          response: { type: 'clarification' }
+        },
+        this.responses.buildAmbiguousQueryResponse(query, ambiguityAnalysis)
+      );
     }
 
     const continuity = this.context.detectContinuity(query, sessionId);
@@ -46,7 +92,22 @@ export class SmartAssistService {
     const platformCheck = detectMissingPlatform(query, platform);
     if (platformCheck.needsPlatform && platformCheck.isImplementationQuery) {
       const missingPlatformResult = this.intentClassifier.classify(enhancedQuery);
-      return this.responses.buildPlatformSelectionResponse(query, platformCheck.featureName, missingPlatformResult);
+      return logAndReturn(
+        {
+          enhanced_query: enhancedQuery,
+          platform: { provided: platform ?? null, detected: platformCheck.detectedPlatform ?? null },
+          continuity: { is_continuation: continuity.isContinuation, type: continuity.type },
+          intent: {
+            name: missingPlatformResult.intent,
+            confidence: missingPlatformResult.confidence,
+            sub_intent: missingPlatformResult.subIntent
+          },
+          entities: toEntityLog(missingPlatformResult.entities),
+          route: { name: 'missing_platform', reason: platformCheck.featureName },
+          response: { type: 'clarification' }
+        },
+        this.responses.buildPlatformSelectionResponse(query, platformCheck.featureName, missingPlatformResult)
+      );
     }
 
     const effectivePlatform = platformCheck.detectedPlatform || platform;
@@ -57,14 +118,56 @@ export class SmartAssistService {
 
     const templateMatch = this.matchTemplateIntent(enhancedQuery, normalizedPlatform);
     if (templateMatch) {
-      return this.buildTemplateMatchResponse(templateMatch, normalizedPlatform);
+      return logAndReturn(
+        {
+          enhanced_query: enhancedQuery,
+          platform: {
+            provided: platform ?? null,
+            detected: platformCheck.detectedPlatform ?? null,
+            effective: effectivePlatform ?? platformForAnswer
+          },
+          continuity: { is_continuation: continuity.isContinuation, type: continuity.type },
+          intent: {
+            name: intent,
+            confidence,
+            sub_intent: intentResult.subIntent
+          },
+          entities: toEntityLog(entities),
+          template_match: {
+            template_name: templateMatch.templateName,
+            score: templateMatch.score
+          },
+          route: { name: 'template_match', reason: templateMatch.templateName },
+          response: { type: 'answer' }
+        },
+        this.buildTemplateMatchResponse(templateMatch, normalizedPlatform)
+      );
     }
 
     this.context.recordSearch(query, intentResult, sessionId);
 
     if (confidence < 50 && intent === UserIntent.UNKNOWN) {
       const possibleIntents = this.getPossibleIntents(query);
-      return this.responses.buildLowConfidenceResponse(query, intentResult, possibleIntents);
+      return logAndReturn(
+        {
+          enhanced_query: enhancedQuery,
+          platform: {
+            provided: platform ?? null,
+            detected: platformCheck.detectedPlatform ?? null,
+            effective: effectivePlatform ?? platformForAnswer
+          },
+          continuity: { is_continuation: continuity.isContinuation, type: continuity.type },
+          intent: {
+            name: intent,
+            confidence,
+            sub_intent: intentResult.subIntent
+          },
+          entities: toEntityLog(entities),
+          route: { name: 'low_confidence' },
+          response: { type: 'clarification' }
+        },
+        this.responses.buildLowConfidenceResponse(query, intentResult, possibleIntents)
+      );
     }
 
     const builder = ResponseBuilder.create();
@@ -189,14 +292,33 @@ export class SmartAssistService {
       resultText += `</details>\n`;
     }
 
-    return {
-      content: [
-        {
-          type: 'text',
-          text: resultText
-        }
-      ]
-    };
+    return logAndReturn(
+      {
+        enhanced_query: enhancedQuery,
+        platform: {
+          provided: platform ?? null,
+          detected: platformCheck.detectedPlatform ?? null,
+          effective: effectivePlatform ?? platformForAnswer
+        },
+        continuity: { is_continuation: continuity.isContinuation, type: continuity.type },
+        intent: {
+          name: intent,
+          confidence,
+          sub_intent: intentResult.subIntent
+        },
+        entities: toEntityLog(entities),
+        route: { name: `intent:${intent}` },
+        response: { type: 'answer' }
+      },
+      {
+        content: [
+          {
+            type: 'text',
+            text: resultText
+          }
+        ]
+      }
+    );
   }
 
   private matchTemplateIntent(query: string, platform: string) {

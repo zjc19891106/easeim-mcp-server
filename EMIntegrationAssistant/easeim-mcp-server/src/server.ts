@@ -26,6 +26,7 @@ import { ResponseBuilder, analyzeQueryAmbiguity } from './utils/ResponseBuilder.
 import { SmartAssistResponse } from './assist/SmartAssistResponse.js';
 import { SmartAssistService } from './assist/SmartAssistService.js';
 import { SmartAssistContext } from './assist/SmartAssistContext.js';
+import { ToolLogger } from './utils/ToolLogger.js';
 
 export class EaseIMServer {
   private server: Server;
@@ -111,6 +112,9 @@ export class EaseIMServer {
 
     this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const { name, arguments: args } = request.params;
+      const requestId = ToolLogger.newRequestId();
+      const startTime = Date.now();
+      const sessionId = args && typeof args === 'object' && 'session_id' in args ? String((args as { session_id?: unknown }).session_id ?? '') : undefined;
 
       try {
         this.validateToolArgs(name, args);
@@ -120,75 +124,123 @@ export class EaseIMServer {
           return platformCheck;
         }
 
+        let result: any;
         switch (name) {
 
           case 'lookup_error':
-            return await this.handleLookupError(args);
+            result = await this.handleLookupError(args);
+            break;
 
           case 'search_api':
-            return await this.handleSearchApi(args);
+            result = await this.handleSearchApi(args);
+            break;
 
           case 'search_source':
-            return await this.handleSearchSource(args);
+            result = await this.handleSearchSource(args);
+            break;
 
           case 'get_guide':
-            return await this.handleGetGuide(args);
+            result = await this.handleGetGuide(args);
+            break;
 
           case 'diagnose':
-            return await this.handleDiagnose(args);
+            result = await this.handleDiagnose(args);
+            break;
 
           case 'read_doc':
-            return await this.handleReadDoc(args);
+            result = await this.handleReadDoc(args);
+            break;
 
           case 'read_source':
-            return await this.handleReadSource(args);
+            result = await this.handleReadSource(args);
+            break;
 
           case 'list_config_options':
-            return await this.handleListConfigOptions(args);
+            result = await this.handleListConfigOptions(args);
+            break;
 
           case 'get_extension_points':
-            return await this.handleGetExtensionPoints(args);
+            result = await this.handleGetExtensionPoints(args);
+            break;
 
           case 'get_config_usage':
-            return await this.handleGetConfigUsage(args);
+            result = await this.handleGetConfigUsage(args);
+            break;
 
           // ============================================================
           // 智能化工具 (P0)
           // ============================================================
           case 'smart_assist':
-            return await this.handleSmartAssist(args);
+            result = await this.handleSmartAssist(args);
+            break;
 
           case 'generate_code':
-            return await this.handleGenerateCode(args);
+            result = await this.handleGenerateCode(args);
+            break;
 
           case 'explain_class':
-            return await this.handleExplainClass(args);
+            result = await this.handleExplainClass(args);
+            break;
 
           case 'list_scenarios':
-            return await this.handleListScenarios(args);
+            result = await this.handleListScenarios(args);
+            break;
 
           // ============================================================
           // 集成诊断工具 (Integration)
           // ============================================================
           case 'check_integration':
-            return await this.handleCheckIntegration(args);
+            result = await this.handleCheckIntegration(args);
+            break;
 
           case 'diagnose_build_error':
-            return await this.handleDiagnoseBuildError(args);
+            result = await this.handleDiagnoseBuildError(args);
+            break;
 
           case 'get_podfile_template':
-            return await this.handleGetPodfileTemplate(args);
+            result = await this.handleGetPodfileTemplate(args);
+            break;
 
           case 'get_integration_checklist':
-            return await this.handleGetIntegrationChecklist(args);
+            result = await this.handleGetIntegrationChecklist(args);
+            break;
 
           case 'get_platform_requirements':
-            return await this.handleGetPlatformRequirements(args);
+            result = await this.handleGetPlatformRequirements(args);
+            break;
 
           default:
             throw new Error(`Unknown tool: ${name}`);
         }
+
+        const contentLength = Array.isArray(result?.content)
+          ? result.content.reduce((sum: number, item: { text?: unknown }) => (
+            sum + (typeof item?.text === 'string' ? item.text.length : 0)
+          ), 0)
+          : undefined;
+
+        ToolLogger.log({
+          log_version: 'v1',
+          timestamp: new Date().toISOString(),
+          request_id: requestId,
+          session_id: sessionId,
+          tool: { name, args: args ?? null },
+          response: { type: 'success', content_length: contentLength },
+          timing_ms: { total: Date.now() - startTime }
+        });
+
+        return result;
       } catch (error) {
+        ToolLogger.log({
+          log_version: 'v1',
+          timestamp: new Date().toISOString(),
+          request_id: requestId,
+          session_id: sessionId,
+          tool: { name, args: args ?? null },
+          response: { type: 'error' },
+          timing_ms: { total: Date.now() - startTime },
+          error: { message: error instanceof Error ? error.message : String(error) }
+        });
         return {
           content: [
             {
